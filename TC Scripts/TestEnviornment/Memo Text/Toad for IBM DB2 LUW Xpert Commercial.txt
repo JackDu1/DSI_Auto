@@ -1,0 +1,11 @@
+The Toad™ for IBM® DB2® LUW installer is applicable for the following editions:
+
+•	Toad for IBM DB2 LUW Xpert (includes SQL Optimizer for IBM® DB2® LUW)
+•	DB Admin Module
+
+
+Your Toad for IBM DB2 LUW license key determines the edition and will enable Toad for IBM DB2 LUW functionality accordingly.
+
+Whether you are a new or experienced Toad user, visit Toad World at www.toadworld.com, your one-stop resource for education, expertise and collaboration.
+
+Please click Next to continue with the installation.

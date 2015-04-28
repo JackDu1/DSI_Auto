@@ -1,0 +1,11 @@
+﻿The Toad® for Oracle installer is applicable for the Toad® for Oracle Base Edition, Toad® for Oracle Professional Edition and Toad® for Oracle Xpert Edition with DB Admin Module add-on.
+
+
+
+
+Your Toad for Oracle license key determines the edition and will enable Toad for Oracle functionality accordingly.  Toad for Oracle® provides free access to Toad® Data Modeler.
+
+
+Whether you are a new or experienced Toad user, visit Toad World at www.toadworld.com, your one-stop resource for education, expertise and collaboration.
+
+Please click Next to continue with the installation.

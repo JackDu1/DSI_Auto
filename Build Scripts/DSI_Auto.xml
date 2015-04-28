@@ -1,0 +1,291 @@
+<project name="AutomationTesting" basedir="." default="RunAutomation"
+	xmlns:props="antlib:org.apache.ant.props">
+
+	<propertyhelper>
+		<props:nested />
+	</propertyhelper>
+
+	<taskdef resource="net/sf/antcontrib/antcontrib.properties" />
+	<taskdef resource="net/sf/antcontrib/antlib.xml" />
+
+	<property file="./DSI_Auto.Properties" />
+	<property environment="JenkinsEnv" />
+	<property environment="env" />
+
+	<property name="TestVM.AntScripts.dir"
+		value="${Git.dir}\Jenkins Build Scripts" />
+	<property name="TestVM.TCScripts.dir"
+		value="${Git.dir}\TCScripts\DSI_Auto" />
+	<property name="TestVM.AntUtilities.dir"
+		value="${Git.dir}\AntUtilities" />
+
+	<!-- ===================Main Target================== -->
+	<target name="RunAutomation">
+		<echo>FileServer.Build :	${FileServer.Build}</echo>
+		<parallel>
+			<for param="i" end="420">
+			<sequential>
+				<antcall target="HeartBeat"/>
+			</sequential>
+			</for>
+			<sequential>
+				<antcallback target="InitJenkinsServerJobWorkSpace" return="TimeLogging"/>
+				<antcall target="CopyBuilds" />
+				<antcall target="PrepareEnv"/>
+				<!--<antcallback target="RunTestCasesOnVM" return="VBRunResultCode"/>-->
+				<!--<antcall target="ProcessTestCasesResults" /> -->
+				<touch file="C:/Runfinished.txt"/>
+			</sequential>
+		</parallel>
+		
+		<if>
+			<equals arg1="${VBRunResultCode}" arg2="400"/>
+			<then>
+				<antcall target="GetLicenseStatus"/>
+			</then>
+		</if>
+		<antcall target="ProcessTestCasesResults" />
+	</target>
+	
+	<!-- ================================================ -->
+	<target name="HeartBeat">
+		<condition property="fileExists" > 
+			<and>
+			<available file="C:/Runfinished.txt" type="file"/>
+			</and>
+		</condition>
+		<if>
+			<not>
+			<equals arg1="${fileExists}" arg2="true"/>
+			</not>
+			<then>
+				<echo message="Heart beat signal..."/>
+				<sleep seconds="30"/>
+			</then>
+		</if>
+	</target>
+
+	<!-- ================================================ -->
+	<target name="InitJenkinsServerJobWorkSpace">
+		<tstamp>
+			<format property="TimeLogging" pattern="MM-dd-yyyy_HH-mm-ss"
+				locale="en" />
+		</tstamp>
+
+		<tstamp>
+			<format property="CopyrightYear" pattern="yyyy" locale="en" />
+		</tstamp>
+
+		<tstamp>
+			<format property="BuildStartTime" pattern="MM/dd/yyyy HH:mm:ss"
+				locale="en" />
+		</tstamp>
+
+	</target>
+
+	<!-- ================================================ -->
+	<target name="CopyBuilds">
+		<echo message="FileServer.Build :	   ${FileServer.Build}" />
+		<echo message="TestVM.BuildDir :       ${TestVM.TCScripts.dir}" />
+
+		<condition property="RemoteBuild.exists" else="false">
+			<available file="${FileServer.Build}" />
+		</condition>
+
+		<if>
+			<equals arg1="${RemoteBuild.exists}" arg2="true" />
+			<then>
+				<copy file="${FileServer.Build}" todir="${TestVM.TCScripts.dir}" failonerror="true"
+					overwrite="true"/>
+			</then>
+			<else>
+				<fail message="${FileServer.Build} does not exist." />
+			</else>
+		</if>
+	</target>
+	
+	<!-- ================================================ -->
+	<target name="PrepareEnv">
+	<!-- loop to install software according to parameters -->
+		<for list="${${RunGroups}_Components}" delimiter="," param="Component">
+			<sequential>
+				<antcall target="@{Component}"/>
+			</sequential>
+		</for>
+	</target>
+	
+	<!-- ================================================ -->
+	<target name="GetLicenseStatus">
+		<property name="licenseStatusURL" value="http://10.1.145.11:1947/_int_/features.html"/>
+		<property name="licenseSessionURL" value="http://10.1.145.11:1947/_int_/sessions.html?haspid=266647369897&amp;featureid=1031"/>
+		<property name="SwarmServiceStatusURL" value="http://jenkins.skytapbuilddb.local:15795/"/>
+		<script language="javascript" src="${TestVM.AntScripts.dir}/LicenseStatus.js"/>
+	</target>
+	
+	<!-- ================================================ -->
+	<target name="RunTestCasesOnVM">
+		<echo
+			message="-----------------Error code information--------------------------" />
+		<echo message="wscript returns 0, means test case run successful!" />
+		<echo message="wscript returns 1, means test cases had a warning!" />
+		<echo message="wscript returns 2, means test cases run failed!" />
+		<echo message="wscript returns 300, means launching test tool failed!" />
+		<echo message="wscript returns 400, means getting test tool object failed, maybe no license is available!" />
+		<echo message="wscript returns 500, means test tool name is unavailable, only 'TestExecute' and 'TestComplete' are allowed." />
+		<echo
+			message="wscript returns 1000, means test tool can not open the project, please check parameters." />
+		<echo
+			message="-----------------------------------------------------------------" />
+
+		<!-- check whether need start second VM for upgrade remote test -->
+		<echo
+			message="-----------------Basic information------------------------------" />
+		<echo>TCScripts.dir : ${TestVM.TCScripts.dir}</echo>
+		<echo>TestExecutable: ${Automation.TestExecutable}</echo>
+		<echo>ProjectSuit   : ${Automation.pjs}</echo>
+		<echo
+			message="------------------------------------------------------------------" />
+		<echo message="Sit back and relax, TestCase is running" />
+
+		<echo message="&quot;${TestVM.TCScripts.dir}\RunGroup.vbs&quot; &quot;${Automation.TestExecutable}&quot; &quot;${TestVM.TCScripts.dir}\${Automation.pjs}&quot; &quot;${Automation.ProjectName}&quot; &quot;${${RunGroups}}&quot;" />
+		<exec executable="cscript" failonerror="false" timeout="18000000"
+			outputproperty="VBRunOutput" errorproperty="VBErrorMsg"
+			resultproperty="VBRunResultCode">
+			<arg
+				line="&quot;${TestVM.TCScripts.dir}\RunGroup.vbs&quot; &quot;${Automation.TestExecutable}&quot; &quot;${TestVM.TCScripts.dir}\${Automation.pjs}&quot; &quot;${Automation.ProjectName}&quot; &quot;${${RunGroups}}&quot;" />
+		</exec>
+		<echo message="===================VBRunOutput==========================" />
+		<echo message="${VBRunOutput}" />
+		<echo message="${VBErrorMsg}" />
+		<echo message="VBRunResultCode: ${VBRunResultCode}" />
+		<echo message="===================VBRunOutput==========================" />
+		<!-- <if> <not> <equals arg1="${VBRunResultCode}" arg2="0" /> </not> <then> 
+			<echo message="Calling TakeFailedSnapshotOnVM." /> <antcall target="TakeFailedSnapshotOnVM" 
+			/> </then> </if> -->
+	</target>
+
+	<!-- ================================================ -->
+	<target name="ProcessTestCasesResults">
+		<!-- Check results exist -->
+		<trycatch property="errormessage">
+			<try>
+				<path id="TestComplete.RawLogInXml.Folder">
+					<fileset dir="${TestVM.TCScripts.dir}/RawResultsInXml"
+						includes="**/Log/**/{*}" />
+				</path>
+
+				<path id="TestComplete.ConvertedLogInHtml.Folder">
+					<fileset dir="C:\AutomatedLog" includes="**/*" />
+				</path>
+
+				<property name="TestComplete.RawResultsInXml" refid="TestComplete.RawLogInXml.Folder" />
+
+				<property name="TestComplete.ConvertedResultsInHtml" refid="TestComplete.ConvertedLogInHtml.Folder" />
+			</try>
+			<catch>
+				<echo message="${errormessage}" />
+			</catch>
+		</trycatch>
+
+		<condition property="TestComplete.Results.existed" else="false">
+			<and>
+				<not>
+					<equals arg1="" arg2="${TestComplete.RawResultsInXml}" />
+				</not>
+				<not>
+					<equals arg1="" arg2="${TestComplete.ConvertedResultsInHtml}" />
+				</not>
+			</and>
+		</condition>
+		<echo
+			message="TestComplete finished running. Results is generated:${TestComplete.Results.existed}" />
+
+		<!-- Use Delphi program to convert TestComplete Raw Log from XML into JUnit 
+			format. The JUnit format results is used by Jenkins to determine the job 
+			status. -->
+		<if>
+			<equals arg1="${TestComplete.Results.existed}" arg2="true" />
+			<then>
+				<copy todir="${TestVM.TCScripts.dir}\ConvertedLog" flatten="true">
+					<fileset dir="${TestVM.TCScripts.dir}/RawResultsInXml"
+						includes="**/Log/**/{*}" />
+				</copy>
+				<exec executable="${TestVM.AntUtilities.dir}/TestCompleteResultsTransform.exe"
+					failonerror="true" timeout="7200000">
+					<arg value="resultDir=${TestVM.TCScripts.dir}\ConvertedLog" />
+				</exec>
+			</then>
+		</if>
+		<available file="${TestVM.TCScripts.dir}/ConvertedLog/Results.xml" property="JUnitReport.exists"/>
+		<echo>JUnit report generated : ${JUnitReport.exists}</echo>
+		<echo>Workspace : ${JenkinsEnv.WORKSPACE}</echo>
+		<copy file="${TestVM.TCScripts.dir}/ConvertedLog/Results.xml" todir="${JenkinsEnv.WORKSPACE}"/>
+		<copy todir="${JenkinsEnv.WORKSPACE}" flatten="true">
+			<fileset dir="${env.APPDATA}\Quest Software"
+				includes="**/Toad.log" />
+		</copy>
+		<copy todir="${JenkinsEnv.WORKSPACE}" flatten="true">
+			<fileset dir="C:\"
+				includes="TDPRuntimeStatus.txt" />
+		</copy>
+	</target>
+	
+	<!-- ===============Components Begin================= -->
+	<target name="TestExecute">
+		<copy todir="C:/Components/TestExecute">
+			<fileset dir="${EnvComponents.dir}\TestExecute\${TestExecute.dir}"/>
+		</copy>
+		<copy file="${TestVM.AntUtilities.dir}/${TestExecute.config}" tofile="C:/Components/TestExecute/setup.iss"/>
+		<exec executable="${TestVM.AntUtilities.dir}/InstallTestExecute.bat"
+					failonerror="true" timeout="1800000" outputproperty="TEOutput" errorproperty="TEErrorMsg"
+			resultproperty="TEResultCode">
+		</exec>
+		<echo message="===================TEOutput==========================" />
+		<echo message="${TEOutput}" />
+		<echo message="${TEErrorMsg}" />
+		<echo message="TEResultCode: ${TEResultCode}" />
+		<echo message="===================TEOutput==========================" />
+		<exec executable="${TestVM.AntUtilities.dir}/HASPConfig.bat" 
+					failonerror="true" timeout="180000" outputproperty="TEConfigOutput" errorproperty="TEConfigErrorMsg"
+			resultproperty="TEConfigResultCode">
+		</exec>
+		<echo message="===================TEConfigOutput==========================" />
+		<echo message="${TEConfigOutput}" />
+		<echo message="${TEConfigErrorMsg}" />
+		<echo message="TEConfigResultCode: ${TEConfigResultCode}" />
+		<echo message="===================TEConfigOutput==========================" />
+	</target>
+		
+	<!-- ================Components End================== -->
+	
+	<!-- ================================================ -->
+	<!-- Expired -->
+	<target name="SetBuildDisPlayName">
+		<java jar="${TestVM.AntUtilities.dir}/Jenkins-cli.jar" fork="true"
+			failonerror="true" maxmemory="128m">
+			<arg value="-s" />
+			<arg line="${JenkinsEnv.JENKINS_URL}" />
+			<arg value="set-build-display-name" />
+			<arg value="${JenkinsEnv.JOB_NAME}" />
+			<arg value="${JenkinsEnv.BUILD_NUMBER}" />
+			<arg value="#${JenkinsEnv.BUILD_NUMBER} ${JenkinsServer.LatestBuild}" />
+			<classpath>
+				<pathelement location="${TestVM.AntUtilities.dir}/Jenkins-cli.jar" />
+				<pathelement path="${java.class.path}" />
+			</classpath>
+		</java>
+		<echo message="Set build display name is:${JenkinsServer.LatestBuild}" />
+	</target>
+
+	<!-- ================================================ -->
+	<!-- Expired -->
+	<target name="TakeFailedSnapshotOnVM">
+		<echo message="Calling ExecuteEsxCommand." />
+		<antcall target="ExecuteEsxCommand">
+			<param name="argCommand" value="snapshotfailure" />
+			<param name="AutomationExecuteVM" value="${label}" />
+		</antcall>
+	</target>
+
+</project>
+

@@ -1,0 +1,10 @@
+The  Toad™ for IBM® DB2® z/OS® installer is applicable for the following editions:
+•	Toad for IBM DB2 z/OS Xpert (includes  SQL Optimizer for IBM® DB2® z/OS®) 
+•	DB Admin Module
+ 
+
+Your Toad for IBM DB2 z/OS license key determines the edition and will enable Toad for IBM DB2 z/OS functionality accordingly.
+
+Whether you are a new or experienced Toad user, visit Toad World at www.toadworld.com, your one-stop resource for education, expertise and collaboration.
+
+Please click Next to continue with the installation.

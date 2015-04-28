@@ -1,0 +1,10 @@
+The installer did not find a Toad license key in your computer.
+This may be the first time you install Toad or you may have an older type key.
+
+It is recommended for you to enter your license key here. 
+However, you may continue without the installer finding a key. 
+Toad will prompt you to enter the license key upon initial launch if needed.
+
+Note: At this time you can only enter license keys generated for Toad 10.x and above.
+If you have a key generated for Toad 9.7 and below, please skip this step.
+Visit our support knowledge base for additional information on license keys.

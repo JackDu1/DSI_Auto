@@ -1,0 +1,9 @@
+The Toad® for SQL Server installer is applicable for the following editions: 
+•	Toad for SQL Server Professional
+•	Toad for SQL Server Xpert (includes Quest® SQL Optimizer for SQL Server)
+
+Your Toad for SQL Server license key determines the edition and will enable Toad for SQL Server functionality accordingly.
+
+Whether you are a new or experienced Toad user, visit Toad World at www.toadworld.com, your one-stop resource for education, expertise and collaboration.
+
+Please click Next to continue with the installation.

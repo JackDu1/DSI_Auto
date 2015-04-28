@@ -1,0 +1,12 @@
+The  Toad™ for IBM® DB2® LUW Suite installer consists of:
+
+•	Toad for IBM DB2 LUW Xpert (includes  SQL Optimizer for IBM® DB2® LUW)
+•	DB Admin Module
+•	Benchmark Factory™ for Databases – IBM DB2 Edition
+•	Spotlight™ on IBM® DB2® LUW
+•	Toad™ Data Modeler 
+
+
+Whether you are a new or experienced Toad user, visit Toad World at www.toadworld.com, your one-stop resource for education, expertise and collaboration.
+
+Please click Next to continue with the installation.
