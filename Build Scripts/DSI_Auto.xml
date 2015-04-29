@@ -30,7 +30,7 @@
 			</for>
 			<sequential>
 				<antcallback target="InitJenkinsServerJobWorkSpace" return="TimeLogging"/>
-				<antcall target="CopyBuilds" />
+				<antcall target="CopySuiteInstallerToTestVM" />
 				<antcall target="PrepareEnv"/>
 				<!--<antcallback target="RunTestCasesOnVM" return="VBRunResultCode"/>-->
 				<!--<antcall target="ProcessTestCasesResults" /> -->
@@ -44,7 +44,7 @@
 				<antcall target="GetLicenseStatus"/>
 			</then>
 		</if>
-		<antcall target="ProcessTestCasesResults" />
+		<!--<antcall target="ProcessTestCasesResults" />-->
 	</target>
 	
 	<!-- ================================================ -->
@@ -84,22 +84,28 @@
 	</target>
 
 	<!-- ================================================ -->
-	<target name="CopyBuilds">
-		<echo message="FileServer.Build :	   ${FileServer.Build}" />
-		<echo message="TestVM.BuildDir :       ${TestVM.TCScripts.dir}" />
-
-		<condition property="RemoteBuild.exists" else="false">
-			<available file="${FileServer.Build}" />
+	<target name="CopySuiteInstallerToTestVM">
+		<echo message="FileServer.BuildDir   : ${FileServer.BuildDir}"/>
+		<echo message="FileServer.BuildName  : ${FileServer.BuildName}"/>
+		<echo message="Product Build in Local : ${TestVM.SuiteInstaller.dir}"/>
+		
+		<condition property="file.exists" else="false">
+			<available file="${FileServer.BuildDir}\${FileServer.BuildName}"/>
 		</condition>
-
+		<echo message="file existed:${file.exists}"/>
+		
+		<copy todir="${TestVM.SuiteInstaller.dir}"  overwrite="true" failonerror="false">
+		  <fileset file="${FileServer.BuildDir}\${FileServer.BuildName}"/>
+		</copy>
+		<echo message="Checking the build copy process if successed"/>
 		<if>
-			<equals arg1="${RemoteBuild.exists}" arg2="true" />
+			<available file="${TestVM.SuiteInstaller.dir}\${FileServer.BuildName}"/>
 			<then>
-				<copy file="${FileServer.Build}" todir="${TestVM.TCScripts.dir}" failonerror="true"
-					overwrite="true"/>
+				<property name="file.exists" value="true"/>
+				<echo message="Copy Suite Installer to local successfull!"/>
 			</then>
 			<else>
-				<fail message="${FileServer.Build} does not exist." />
+				<fail message="Copy Suite Installer to local failure!"/>
 			</else>
 		</if>
 	</target>
