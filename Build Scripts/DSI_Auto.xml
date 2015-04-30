@@ -21,7 +21,6 @@
 
 	<!-- ===================Main Target================== -->
 	<target name="RunAutomation">
-		<echo>FileServer.Build :	${FileServer.Build}</echo>
 		<parallel>
 			<for param="i" end="420">
 			<sequential>
@@ -85,21 +84,21 @@
 
 	<!-- ================================================ -->
 	<target name="CopySuiteInstallerToTestVM">
-		<echo message="FileServer.BuildDir   : ${FileServer.BuildDir}"/>
-		<echo message="FileServer.BuildName  : ${FileServer.BuildName}"/>
+		<echo message="FileServer.Build.Dir   : ${FileServer.Build.Dir}"/>
+		<echo message="FileServer.Build.Name  : ${FileServer.Build.Name}"/>
 		<echo message="Product Build in Local : ${TestVM.SuiteInstaller.dir}"/>
 		
 		<condition property="file.exists" else="false">
-			<available file="${FileServer.BuildDir}\${FileServer.BuildName}"/>
+			<available file="${FileServer.Build.Dir}\${FileServer.Build.Name}"/>
 		</condition>
 		<echo message="file existed:${file.exists}"/>
 		
 		<copy todir="${TestVM.SuiteInstaller.dir}"  overwrite="true" failonerror="false">
-		  <fileset file="${FileServer.BuildDir}\${FileServer.BuildName}"/>
+		  <fileset file="${FileServer.Build.Dir}\${FileServer.Build.Name}"/>
 		</copy>
 		<echo message="Checking the build copy process if successed"/>
 		<if>
-			<available file="${TestVM.SuiteInstaller.dir}\${FileServer.BuildName}"/>
+			<available file="${TestVM.SuiteInstaller.dir}\${FileServer.Build.Name}"/>
 			<then>
 				<property name="file.exists" value="true"/>
 				<echo message="Copy Suite Installer to local successfull!"/>
