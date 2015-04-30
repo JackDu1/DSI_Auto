@@ -1,9 +1,9 @@
 <project name="AutomationTesting" basedir="." default="RunAutomation"
 	xmlns:props="antlib:org.apache.ant.props">
 
-	<propertyhelper>
+	<!--<propertyhelper>
 		<props:nested />
-	</propertyhelper>
+	</propertyhelper>-->
 
 	<taskdef resource="net/sf/antcontrib/antcontrib.properties" />
 	<taskdef resource="net/sf/antcontrib/antlib.xml" />
