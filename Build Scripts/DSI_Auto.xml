@@ -112,7 +112,8 @@
 	<!-- ================================================ -->
 	<target name="PrepareEnv">
 	<!-- loop to install software according to parameters -->
-		<for list="${${RunGroups}_Components}" delimiter="," param="Component">
+		<echo message="RunGroup_Components: ${${RunGroups}_Components}">
+		<for list="${"${RunGroups}"_Components}" delimiter="," param="Component">
 			<sequential>
 				<antcall target="@{Component}"/>
 			</sequential>
