@@ -21,21 +21,15 @@
 
 	<!-- ===================Main Target================== -->
 	<target name="RunAutomation">
-		<parallel>
-			<for param="i" end="420">
-			<sequential>
-				<antcall target="HeartBeat"/>
-			</sequential>
-			</for>
-			<sequential>
-				<antcallback target="InitJenkinsServerJobWorkSpace" return="TimeLogging"/>
-				<antcall target="CopySuiteInstallerToTestVM" />
-				<antcall target="PrepareEnv"/>
-				<!--<antcallback target="RunTestCasesOnVM" return="VBRunResultCode"/>-->
-				<!--<antcall target="ProcessTestCasesResults" /> -->
-				<touch file="C:/Runfinished.txt"/>
-			</sequential>
-		</parallel>
+	
+		<sequential>
+			<antcallback target="InitJenkinsServerJobWorkSpace" return="TimeLogging"/>
+			<antcall target="CopySuiteInstallerToTestVM" />
+			<antcall target="PrepareEnv"/>
+			<!--<antcallback target="RunTestCasesOnVM" return="VBRunResultCode"/>-->
+			<!--<antcall target="ProcessTestCasesResults" /> -->
+			<touch file="C:/Runfinished.txt"/>
+		</sequential>
 		
 		<if>
 			<equals arg1="${VBRunResultCode}" arg2="400"/>
@@ -93,9 +87,8 @@
 		</condition>
 		<echo message="file existed:${file.exists}"/>
 		
-		<copy todir="${TestVM.SuiteInstaller.dir}"  overwrite="true" failonerror="false">
-		  <fileset file="${FileServer.Build.Dir}\${FileServer.Build.Name}"/>
-		</copy>
+		<copy file="${FileServer.Build.Dir}\${FileServer.Build.Name}" todir="${TestVM.SuiteInstaller.dir}"  overwrite="true" failonerror="false"/>
+		
 		<echo message="Checking the build copy process if successed"/>
 		<if>
 			<available file="${TestVM.SuiteInstaller.dir}\${FileServer.Build.Name}"/>
@@ -242,9 +235,8 @@
 		</copy>
 		<copy file="${TestExecute.config.dir}/${TestExecute.config}" tofile="C:/Components/TestExecute/setup.iss"/>
 		
-		<copy file="${TestExecute.config.dir}/InstallTestExecute.bat" tofile="${TestVM.AntUtilities.dir}"/>
 		
-		<exec executable="${TestVM.AntUtilities.dir}/InstallTestExecute.bat"
+		<exec executable="C:/DSI_workspace/TestComplete/InstallTestExecute.bat"
 					failonerror="true" timeout="1800000" outputproperty="TEOutput" errorproperty="TEErrorMsg"
 			resultproperty="TEResultCode">
 		</exec>
