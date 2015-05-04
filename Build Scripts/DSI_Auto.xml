@@ -112,8 +112,7 @@
 	<!-- ================================================ -->
 	<target name="PrepareEnv">
 	<!-- loop to install software according to parameters -->
-		<echo message="RunGroup_Components: ${${RunGroups}_Components}">
-		<for list="${"${RunGroups}"_Components}" delimiter="," param="Component">
+		<for list="${${RunGroups}_Components}" delimiter="," param="Component">
 			<sequential>
 				<antcall target="@{Component}"/>
 			</sequential>
@@ -241,7 +240,10 @@
 		<copy todir="C:/Components/TestExecute">
 			<fileset dir="${EnvComponents.dir}\TestExecute\${TestExecute.dir}"/>
 		</copy>
-		<copy file="${TestVM.AntUtilities.dir}/${TestExecute.config}" tofile="C:/Components/TestExecute/setup.iss"/>
+		<copy file="${TestExecute.config.dir}/${TestExecute.config}" tofile="C:/Components/TestExecute/setup.iss"/>
+		
+		<copy file="${TestExecute.config.dir}/InstallTestExecute.bat" tofile="${TestVM.AntUtilities.dir}"/>
+		
 		<exec executable="${TestVM.AntUtilities.dir}/InstallTestExecute.bat"
 					failonerror="true" timeout="1800000" outputproperty="TEOutput" errorproperty="TEErrorMsg"
 			resultproperty="TEResultCode">
