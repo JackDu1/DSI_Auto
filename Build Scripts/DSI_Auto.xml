@@ -236,7 +236,7 @@
 		<copy file="${TestExecute.config.dir}/${TestExecute.config}" tofile="C:/Components/TestExecute/setup.iss"/>
 		
 		
-		<exec executable="C:/DSI_workspace/TestComplete/InstallTestExecute.bat"
+		<exec executable="C:/DSI_workspace/TestComplete/Build Scripts/InstallTestExecute.bat"
 					failonerror="true" timeout="1800000" outputproperty="TEOutput" errorproperty="TEErrorMsg"
 			resultproperty="TEResultCode">
 		</exec>
