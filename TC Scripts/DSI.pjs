@@ -49,7 +49,7 @@
 				<Prp name="value" type="S" value="Log"/>
 			</Node>
 			<Prp name="key" type="S" value="{DE3E1AF7-D017-448C-B674-E49E83E38B0F}"/>
-			<Prp name="settingsversion" type="S" value="9.20"/>
+			<Prp name="settingsversion" type="S" value="9.31"/>
 		</Node>
 		<Node name="test data">
 			<Node name="child list">
