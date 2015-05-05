@@ -1,0 +1,35 @@
+<Configuration Product="ProPlus">
+
+	<Display Level="none" CompletionNotice="no" SuppressModal="yes" AcceptEula="yes" />
+	
+	<!-- <Logging Type="standard" Path="%temp%" Template="Microsoft Office Professional Plus Setup(*).txt" /> -->
+
+	<!-- <USERNAME Value="Customer" /> -->
+	
+	<!-- <COMPANYNAME Value="MyCompany" /> -->
+	
+	<!-- <INSTALLLOCATION Value="%programfiles%\Microsoft Office" /> -->
+	
+	<!-- <LIS CACHEACTION="CacheOnly" /> -->
+	
+	<!-- <LIS SOURCELIST="\\server1\share\Office;\\server2\share\Office" /> -->
+	
+	<!-- <DistributionPoint Location="\\server\share\Office" /> -->
+	
+	<OptionState Id="ExcelFiles" State="Local" Children="force" /> 
+	<OptionState Id="ACCESSFiles" State="Absent" />
+	<OptionState Id="GrooveFiles" State="Absent" />
+	<OptionState Id="OneNoteFiles" State="Absent" />
+	<OptionState Id="OUTLOOKFiles" State="Absent" />
+	<OptionState Id="PPTFiles" State="Absent" />
+	<OptionState Id="PubPrimary" State="Absent" />
+	<OptionState Id="WORDFiles" State="Absent" />
+	<OptionState Id="XDOCSFiles" State="Absent" />
+	<OptionState Id="SHAREDFiles" State="Absent" />
+	<OptionState Id="TOOLSFiles" State="Absent" />
+	
+	<!-- <Setting Id="SETUP_REBOOT" Value="IfNeeded" /> -->
+	
+	<!-- <Command Path="%windir%\system32\msiexec.exe" Args="/i \\server\share\my.msi" QuietArg="/q" ChainPosition="after" Execute="install" /> -->
+
+</Configuration>

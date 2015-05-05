@@ -117,7 +117,7 @@
 		<property name="licenseStatusURL" value="http://10.1.145.11:1947/_int_/features.html"/>
 		<property name="licenseSessionURL" value="http://10.1.145.11:1947/_int_/sessions.html?haspid=266647369897&amp;featureid=1031"/>
 		<property name="SwarmServiceStatusURL" value="http://jenkins.skytapbuilddb.local:15795/"/>
-		<script language="javascript" src="${TestVM.AntScripts.dir}/LicenseStatus.js"/>
+		<script language="javascript" src="${TestVM.AntUtilities.dir}/LicenseStatus.js"/>
 	</target>
 	
 	<!-- ================================================ -->
@@ -233,10 +233,10 @@
 		<copy todir="C:/Components/TestExecute">
 			<fileset dir="${EnvComponents.dir}\TestExecute\${TestExecute.dir}"/>
 		</copy>
-		<copy file="${TestExecute.config.dir}/${TestExecute.config}" tofile="C:/Components/TestExecute/setup.iss"/>
+		<copy file="${TestVM.AntUtilities.dir}/${TestExecute.config}" tofile="C:/Components/TestExecute/setup.iss"/>
 		
 		
-		<exec executable="C:/DSI_workspace/TestComplete/Build Scripts/InstallTestExecute.bat"
+		<exec executable="${TestVM.AntUtilities.dir}/InstallTestExecute.bat"
 					failonerror="true" timeout="1800000" outputproperty="TEOutput" errorproperty="TEErrorMsg"
 			resultproperty="TEResultCode">
 		</exec>

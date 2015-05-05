@@ -1,3 +1,6 @@
-cd C:\Components\TestExecute
+C:\Components\TestExecute\setup.exe /s
+ping /n 10 127.0.0.1 > nul
 
-Setup.exe /s
+:waitstop
+	ping /n 2 127.0.0.1 > nul
+	tasklist /v /fi "WINDOWTITLE eq SmartBear TestExecute*" |findstr /C:"INFO: No tasks" > nul || goto :waitstop
