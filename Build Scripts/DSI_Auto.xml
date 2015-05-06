@@ -239,7 +239,7 @@
 		
 		
 		<exec executable="${TestVM.AntUtilities.dir}/InstallTestExecute.bat"
-					failonerror="true" timeout="1800000" outputproperty="TEOutput" errorproperty="TEErrorMsg"
+					failonerror="true" timeout="3600000" outputproperty="TEOutput" errorproperty="TEErrorMsg"
 			resultproperty="TEResultCode">
 		</exec>
 		<echo message="===================TEOutput==========================" />
