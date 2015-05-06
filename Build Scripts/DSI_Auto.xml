@@ -248,6 +248,7 @@
 		<echo message="TEResultCode: ${TEResultCode}" />
 		<echo message="===================TEOutput==========================" />
 		<exec executable="${TestVM.AntUtilities.dir}/HASPConfig.bat" 
+					failonerror="true" timeout="3600000" outputproperty="TEConfigOutput" errorproperty="TEConfigErrorMsg"
 			resultproperty="TEConfigResultCode">
 		</exec>
 		<echo message="===================TEConfigOutput==========================" />
