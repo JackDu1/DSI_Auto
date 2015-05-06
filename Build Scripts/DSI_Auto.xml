@@ -27,7 +27,7 @@
 			<antcall target="CopySuiteInstallerToTestVM" />
 			<antcall target="PrepareEnv"/>
 			<!--<antcallback target="RunTestCasesOnVM" return="VBRunResultCode"/>-->
-			<!--<antcall target="ProcessTestCasesResults" /> -->
+			<!--<antcall target="ProcessTestCasesResults" />-->
 			<touch file="C:/Runfinished.txt"/>
 		</sequential>
 		
@@ -124,9 +124,11 @@
 	<target name="RunTestCasesOnVM">
 		<echo
 			message="-----------------Error code information--------------------------" />
+		<echo message="wscript returns -1, means Unable to launch TestExecute because the license check has failed and TestExecute cannot obtain a license!" />
 		<echo message="wscript returns 0, means test case run successful!" />
 		<echo message="wscript returns 1, means test cases had a warning!" />
 		<echo message="wscript returns 2, means test cases run failed!" />
+		<echo message="wscript returns 4, means the test run wsa stopped by the Timeout specified with the /Timeout Command-line argument!" />
 		<echo message="wscript returns 300, means launching test tool failed!" />
 		<echo message="wscript returns 400, means getting test tool object failed, maybe no license is available!" />
 		<echo message="wscript returns 500, means test tool name is unavailable, only 'TestExecute' and 'TestComplete' are allowed." />
@@ -145,12 +147,12 @@
 			message="------------------------------------------------------------------" />
 		<echo message="Sit back and relax, TestCase is running" />
 
-		<echo message="&quot;${TestVM.TCScripts.dir}\RunGroup.vbs&quot; &quot;${Automation.TestExecutable}&quot; &quot;${TestVM.TCScripts.dir}\${Automation.pjs}&quot; &quot;${Automation.ProjectName}&quot; &quot;${${RunGroups}}&quot;" />
+		<echo message="&quot;${TestVM.AntUtilities.dir}\RunGroup.vbs&quot; &quot;${Automation.TestExecutable}&quot; &quot;${TestVM.TCScripts.dir}\${Automation.pjs}&quot; &quot;${Automation.ProjectName}&quot; &quot;${${RunGroups}}&quot;" />
 		<exec executable="cscript" failonerror="false" timeout="18000000"
 			outputproperty="VBRunOutput" errorproperty="VBErrorMsg"
 			resultproperty="VBRunResultCode">
 			<arg
-				line="&quot;${TestVM.TCScripts.dir}\RunGroup.vbs&quot; &quot;${Automation.TestExecutable}&quot; &quot;${TestVM.TCScripts.dir}\${Automation.pjs}&quot; &quot;${Automation.ProjectName}&quot; &quot;${${RunGroups}}&quot;" />
+				line="&quot;TestVM.AntUtilities.dir\RunGroup.vbs&quot; &quot;${Automation.TestExecutable}&quot; &quot;${TestVM.TCScripts.dir}\${Automation.pjs}&quot; &quot;${Automation.ProjectName}&quot; &quot;${${RunGroups}}&quot;" />
 		</exec>
 		<echo message="===================VBRunOutput==========================" />
 		<echo message="${VBRunOutput}" />
