@@ -12,19 +12,19 @@ Result=1
 [{E1060B2E-6973-4EAD-8233-724BAC44AAF2}-SdLicense2Rtf-0]
 Result=1
 [{E1060B2E-6973-4EAD-8233-724BAC44AAF2}-SdCustomerInfo-0]
-szName=temp
+szName=Windows User
 szCompany=-
 nvUser=1
 Result=1
 [{E1060B2E-6973-4EAD-8233-724BAC44AAF2}-SdAskDestPath-0]
-szDir=C:\Program Files\SmartBear\TestExecute 10
+szDir=C:\Program Files (x86)\SmartBear\TestExecute 10
 Result=1
 [{E1060B2E-6973-4EAD-8233-724BAC44AAF2}-AskMobileExtensions-0]
 INSTALL_ANDROID_PLUGIN=FALSE
 INSTALL_IOS_PLUGIN=FALSE
 Result=1
 [{E1060B2E-6973-4EAD-8233-724BAC44AAF2}-SdComponentTree-0]
-szDir=C:\Program Files\SmartBear\TestExecute 10\
+szDir=C:\Program Files (x86)\SmartBear\TestExecute 10\
 Extensions\OpenApp-type=string
 Extensions\OpenApp-count=14
 Extensions\OpenApp-0=Extensions\OpenApp\VisualBasic
@@ -85,12 +85,18 @@ TestExecute-0=TestExecute\HASP
 TestExecute-1=TestExecute\ConnectedApps
 TestExecute-2=TestExecute\ProgramComponents
 TestExecute-3=TestExecute\DefaultExtension
-TestExecute-4=TestExecute\Win7
+TestExecute-4=TestExecute\Win8
 TestExecute-5=TestExecute\aqHelper2x32
+MSVS-type=string
+MSVS-count=1
+MSVS-0=MSVS\MSBuild
 Component-type=string
-Component-count=2
+Component-count=5
 Component-0=Extensions
 Component-1=TestExecute
+Component-2=x64Bit
+Component-3=x64Win8
+Component-4=MSVS
 Result=1
 [{E1060B2E-6973-4EAD-8233-724BAC44AAF2}-SdFinish-0]
 Result=1
