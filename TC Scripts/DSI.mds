@@ -94,6 +94,9 @@
 			<Node name="script\txtfile.sd">
 				<Prp name="relpath" type="S" value="Script\TXTFile.sd"/>
 			</Node>
+			<Node name="script\unit1.sd">
+				<Prp name="relpath" type="S" value="Script\Unit1.sd"/>
+			</Node>
 			<Node name="script\xmlunit.sd">
 				<Prp name="relpath" type="S" value="Script\XMLUnit.sd"/>
 			</Node>
@@ -207,7 +210,7 @@
 			</Node>
 			<Node name="{2fcb2eb2-336e-4fd4-96a3-8710a73addd8}">
 				<Prp name="type" type="I" value="1"/>
-				<Prp name="value" type="B" value="0"/>
+				<Prp name="value" type="B" value="-1"/>
 			</Node>
 			<Node name="{323facda-38e8-4c1b-b22c-99e0ab90eadc}">
 				<Prp name="type" type="I" value="5"/>
@@ -1094,21 +1097,6 @@
 									<Prp name="name" type="S" value="ProjectTestItem1"/>
 									<Prp name="stoponerror" type="I" value="2"/>
 									<Prp name="stoponexception" type="I" value="2"/>
-									<Prp name="test moniker" type="S" value="{7092F7C6-1291-45A6-9252-CFF3A9F651F7}DSI_LaunchSuiteInstaller"/>
-									<Prp name="timeout" type="I" value="0"/>
-								</Node>
-								<Node name="item0000000001">
-									<Node name="child list"/>
-									<Node name="test parameters"/>
-									<Prp name="count" type="I" value="1"/>
-									<Prp name="description" type="S" value=""/>
-									<Prp name="enabled" type="B" value="-1"/>
-									<Prp name="group" type="B" value="0"/>
-									<Prp name="index" type="I" value="1"/>
-									<Prp name="key" type="S" value="{CB66AFEE-EA04-4DCB-81ED-8C9EADBFF8C2}"/>
-									<Prp name="name" type="S" value="ProjectTestItem2"/>
-									<Prp name="stoponerror" type="I" value="2"/>
-									<Prp name="stoponexception" type="I" value="2"/>
 									<Prp name="test moniker" type="S" value="{7092F7C6-1291-45A6-9252-CFF3A9F651F7}DSI_ClickCancelButton"/>
 									<Prp name="timeout" type="I" value="0"/>
 								</Node>
@@ -1120,7 +1108,7 @@
 							<Prp name="group" type="B" value="-1"/>
 							<Prp name="index" type="I" value="0"/>
 							<Prp name="key" type="S" value="{09230EF0-DA2F-456B-BC74-601DAEC7DBEB}"/>
-							<Prp name="name" type="S" value="Group2"/>
+							<Prp name="name" type="S" value="W1 - CancelInstallation"/>
 							<Prp name="stoponerror" type="I" value="2"/>
 							<Prp name="stoponexception" type="I" value="2"/>
 							<Prp name="test moniker" type="S" value=""/>
@@ -1134,7 +1122,7 @@
 					<Prp name="group" type="B" value="-1"/>
 					<Prp name="index" type="I" value="0"/>
 					<Prp name="key" type="S" value="{ACD30E88-230F-4E5C-85AB-07396872A0C7}"/>
-					<Prp name="name" type="S" value="Group1"/>
+					<Prp name="name" type="S" value="W1"/>
 					<Prp name="stoponerror" type="I" value="2"/>
 					<Prp name="stoponexception" type="I" value="2"/>
 					<Prp name="test moniker" type="S" value=""/>
