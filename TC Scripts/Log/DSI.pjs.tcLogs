@@ -22,18 +22,7 @@
 		<Node name="folders">
 			<Node name="folders"/>
 		</Node>
-		<Node name="logs">
-			<Node name="log0">
-				<Prp name="caption" type="S" value=""/>
-				<Prp name="datetime" type="D" value="42131.6561873264"/>
-				<Prp name="description" type="S" value=""/>
-				<Prp name="index" type="I" value="0"/>
-				<Prp name="key" type="S" value="{10CD0812-96C1-4142-AA4F-88F37CD4E3C6}"/>
-				<Prp name="nameofroot" type="S" value="DSI"/>
-				<Prp name="relpath" type="S" value="5_7_2015_3_44 PM_54_585\Description.tcLog"/>
-				<Prp name="status" type="I" value="2"/>
-			</Node>
-		</Node>
+		<Node name="logs"/>
 		<Prp name="signature" type="S" value="{6511DB44-2372-47B8-8349-ADA0DB4D9E14}"/>
 		<Prp name="version" type="S" value="7.0"/>
 	</Node>

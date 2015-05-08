@@ -94,9 +94,6 @@
 			<Node name="script\txtfile.sd">
 				<Prp name="relpath" type="S" value="Script\TXTFile.sd"/>
 			</Node>
-			<Node name="script\unit1.sd">
-				<Prp name="relpath" type="S" value="Script\Unit1.sd"/>
-			</Node>
 			<Node name="script\xmlunit.sd">
 				<Prp name="relpath" type="S" value="Script\XMLUnit.sd"/>
 			</Node>
