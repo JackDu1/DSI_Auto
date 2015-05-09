@@ -26,6 +26,7 @@
 			<antcallback target="InitJenkinsServerJobWorkSpace" return="TimeLogging"/>
 			<antcall target="CopySuiteInstallerToTestVM" />
 			<antcall target="PrepareEnv"/>
+			<antcall target="LaunchSuiteInstallerInVM"/>
 			<!--<antcallback target="RunTestCasesOnVM" return="VBRunResultCode"/>-->
 			<!--<antcall target="ProcessTestCasesResults" />-->
 			<touch file="C:/Runfinished.txt"/>
@@ -163,7 +164,21 @@
 			<echo message="Calling TakeFailedSnapshotOnVM." /> <antcall target="TakeFailedSnapshotOnVM" 
 			/> </then> </if> -->
 	</target>
-
+	
+	<!-- ================================================ -->
+	<target name="LaunchSuiteInstallerInVM">
+		<echo message="FileServer.Build.Dir   	: ${FileServer.Build.Dir}"/>
+		<echo message="FileServer.Build.Name  	: ${FileServer.Build.Name}"/>
+		<echo message="ProductFamily   			: ${ProductFamily}"/>
+		<echo message="Product Build in Local 	: ${TestVM.SuiteInstaller.dir}"/>
+		
+		<condition property="file.exists" else="false">
+			<available file="${TestVM.SuiteInstaller.dir}\${FileServer.Build.Name}"/>
+		</condition>
+		<echo message="The Suite Installer :${TestVM.SuiteInstaller.dir}\${FileServer.Build.Name} existed:${file.exists}"/>
+		<exec executable="${TestVM.SuiteInstaller.dir}\${FileServer.Build.Name}" failonerror="true" timeout="7200000"/>
+	</target>
+	
 	<!-- ================================================ -->
 	<target name="ProcessTestCasesResults">
 		<!-- Check results exist -->
