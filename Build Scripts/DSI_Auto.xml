@@ -165,7 +165,11 @@
 			/> </then> </if> -->
 	</target>
 	
+<<<<<<< HEAD
 		<!-- ================================================ -->
+=======
+	<!-- ================================================ -->
+>>>>>>> origin/master
 	<target name="LaunchSuiteInstallerInVM">
 		<echo message="FileServer.Build.Dir   	: ${FileServer.Build.Dir}"/>
 		<echo message="FileServer.Build.Name  	: ${FileServer.Build.Name}"/>
@@ -178,7 +182,11 @@
 		<echo message="The Suite Installer :${TestVM.SuiteInstaller.dir}\${FileServer.Build.Name} existed:${file.exists}"/>
 		<exec executable="${TestVM.SuiteInstaller.dir}\${FileServer.Build.Name}" failonerror="true" timeout="7200000"/>
 	</target>
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> origin/master
 	<!-- ================================================ -->
 	<target name="ProcessTestCasesResults">
 		<!-- Check results exist -->
