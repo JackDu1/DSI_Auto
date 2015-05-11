@@ -165,28 +165,20 @@
 			/> </then> </if> -->
 	</target>
 	
-<<<<<<< HEAD
-		<!-- ================================================ -->
-=======
 	<!-- ================================================ -->
->>>>>>> origin/master
 	<target name="LaunchSuiteInstallerInVM">
-		<echo message="FileServer.Build.Dir   	: ${FileServer.Build.Dir}"/>
-		<echo message="FileServer.Build.Name  	: ${FileServer.Build.Name}"/>
-		<echo message="ProductFamily   			: ${ProductFamily}"/>
-		<echo message="Product Build in Local 	: ${TestVM.SuiteInstaller.dir}"/>
+		<echo message="FileServer.Build.Dir		: ${FileServer.Build.Dir}"/>
+		<echo message="FileServer.Build.Name	: ${FileServer.Build.Name}"/>
+		<echo message="ProductFamily			: ${ProductFamily}"/>
+		<echo message="Product Build in Local	: ${TestVM.SuiteInstaller.dir}"/>
 		
 		<condition property="file.exists" else="false">
 			<available file="${TestVM.SuiteInstaller.dir}\${FileServer.Build.Name}"/>
 		</condition>
 		<echo message="The Suite Installer :${TestVM.SuiteInstaller.dir}\${FileServer.Build.Name} existed:${file.exists}"/>
-		<exec executable="${TestVM.SuiteInstaller.dir}\${FileServer.Build.Name}" failonerror="true" timeout="7200000"/>
+		<exec executable="${TestVM.SuiteInstaller.dir}\${FileServer.Build.Name}" failonerror="true" timeout="3600"/>
 	</target>
-<<<<<<< HEAD
 
-=======
-	
->>>>>>> origin/master
 	<!-- ================================================ -->
 	<target name="ProcessTestCasesResults">
 		<!-- Check results exist -->
