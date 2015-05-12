@@ -176,9 +176,10 @@
 			<available file="${TestVM.SuiteInstaller.dir}\${FileServer.Build.Name}"/>
 		</condition>
 		<echo message="The Suite Installer :${TestVM.SuiteInstaller.dir}\${FileServer.Build.Name} existed:${file.exists}"/>
-		<exec executable="${TestVM.SuiteInstaller.dir}\${FileServer.Build.Name}" 
-					failonerror="false" timeout="120000" outputproperty="SuiteInstallerOutput" errorproperty="SuiteInstallerErrorMsg"
-					resultproperty="SuiteInstallerResult">
+		<property name="SuiteInstaller" location="${TestVM.SuiteInstaller.dir}\${FileServer.Build.Name}"/>
+		<exec executable="${SuiteInstaller}" 
+				outputproperty="SuiteInstallerOutput" errorproperty="SuiteInstallerErrorMsg"
+				resultproperty="SuiteInstallerResult">		
 		</exec>
 		<echo message="=====================SuiteInstallerOutput==========================" />
 		<echo message="Output Property	: ${SuiteInstallerOutput}"/>
