@@ -180,6 +180,11 @@
 					failonerror="false" timeout="120000" outputproperty="SuiteInstallerOutput" errorproperty="SuiteInstallerErrorMsg"
 					resultproperty="SuiteInstallerResult">
 		</exec>
+		<echo message="=====================SuiteInstallerOutput==========================" />
+		<echo message="Output Property	: ${SuiteInstallerOutput}"/>
+		<echo message="Error Property	: ${SuiteInstallerErrorMsg}"/>
+		<echo message="Result Property	: ${SuiteInstallerResult}"/>
+		<echo message="=====================SuiteInstallerOutput==========================" />
 	</target>
 
 	<!-- ================================================ -->
