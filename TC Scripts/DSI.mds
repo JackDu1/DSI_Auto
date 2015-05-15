@@ -94,6 +94,9 @@
 			<Node name="script\txtfile.sd">
 				<Prp name="relpath" type="S" value="Script\TXTFile.sd"/>
 			</Node>
+			<Node name="script\unit2.sd">
+				<Prp name="relpath" type="S" value="Script\Unit2.sd"/>
+			</Node>
 			<Node name="script\xmlunit.sd">
 				<Prp name="relpath" type="S" value="Script\XMLUnit.sd"/>
 			</Node>
@@ -1094,7 +1097,7 @@
 									<Prp name="name" type="S" value="ProjectTestItem1"/>
 									<Prp name="stoponerror" type="I" value="2"/>
 									<Prp name="stoponexception" type="I" value="2"/>
-									<Prp name="test moniker" type="S" value="{7092F7C6-1291-45A6-9252-CFF3A9F651F7}DSI_ClickCancelButton"/>
+									<Prp name="test moniker" type="S" value="{0C718DEA-2C5B-4BED-A490-B7B4822122B6}Main"/>
 									<Prp name="timeout" type="I" value="0"/>
 								</Node>
 							</Node>
@@ -1120,6 +1123,53 @@
 					<Prp name="index" type="I" value="0"/>
 					<Prp name="key" type="S" value="{ACD30E88-230F-4E5C-85AB-07396872A0C7}"/>
 					<Prp name="name" type="S" value="W1"/>
+					<Prp name="stoponerror" type="I" value="2"/>
+					<Prp name="stoponexception" type="I" value="2"/>
+					<Prp name="test moniker" type="S" value=""/>
+					<Prp name="timeout" type="I" value="0"/>
+				</Node>
+				<Node name="item0000000001">
+					<Node name="child list">
+						<Node name="item0000000000">
+							<Node name="child list">
+								<Node name="item0000000000">
+									<Node name="child list"/>
+									<Node name="test parameters"/>
+									<Prp name="count" type="I" value="1"/>
+									<Prp name="description" type="S" value=""/>
+									<Prp name="enabled" type="B" value="-1"/>
+									<Prp name="group" type="B" value="0"/>
+									<Prp name="index" type="I" value="0"/>
+									<Prp name="key" type="S" value="{32652DDA-EEB1-4A36-9D1C-396DD24DB723}"/>
+									<Prp name="name" type="S" value="ProjectTestItem2"/>
+									<Prp name="stoponerror" type="I" value="2"/>
+									<Prp name="stoponexception" type="I" value="2"/>
+									<Prp name="test moniker" type="S" value="{0C718DEA-2C5B-4BED-A490-B7B4822122B6}Main"/>
+									<Prp name="timeout" type="I" value="0"/>
+								</Node>
+							</Node>
+							<Node name="test parameters"/>
+							<Prp name="count" type="I" value="1"/>
+							<Prp name="description" type="S" value=""/>
+							<Prp name="enabled" type="B" value="-1"/>
+							<Prp name="group" type="B" value="-1"/>
+							<Prp name="index" type="I" value="0"/>
+							<Prp name="key" type="S" value="{DD6D50C6-342B-4039-89CF-3D29319AF4C6}"/>
+							<Prp name="name" type="S" value="W2 - Default Install and Uninstall"/>
+							<Prp name="stoponerror" type="I" value="2"/>
+							<Prp name="stoponexception" type="I" value="2"/>
+							<Prp name="test moniker" type="S" value=""/>
+							<Prp name="timeout" type="I" value="0"/>
+						</Node>
+					</Node>
+					<Node name="test parameters"/>
+					<Prp name="count" type="I" value="1"/>
+					<Prp name="description" type="S" value=""/>
+					<Prp name="enabled" type="B" value="0"/>
+					<Prp name="group" type="B" value="-1"/>
+					<Prp name="index" type="I" value="1"/>
+					<Prp name="key" type="S" value="{DEDB605F-D805-4B63-84CB-4B4D77921F58}"/>
+					<Prp name="name" type="S" value="W2"/>
 					<Prp name="stoponerror" type="I" value="2"/>
 					<Prp name="stoponexception" type="I" value="2"/>
 					<Prp name="test moniker" type="S" value=""/>
