@@ -119,17 +119,17 @@
 		StartService("hasplms")
 		
 		'Start to run		
-		If Not IntegrationObject.IsRunning Then
-		   IntegrationObject.RunProjectSuite()
-		End If
+		'If Not IntegrationObject.IsRunning Then
+		'   IntegrationObject.RunProjectSuite()
+		'End If
 	
 	'Wait until TestExecute finished
-	While IntegrationObject.IsRunning
-     Wscript.sleep(10000)
-   Wend
+	'While IntegrationObject.IsRunning
+     'Wscript.sleep(10000)
+   'Wend
 	
-	Wscript.sleep(10000)	 
-   Set TestStatus=IntegrationObject.GetLastResultDescription()
+	'Wscript.sleep(10000)	 
+   'Set TestStatus=IntegrationObject.GetLastResultDescription()
 	TestExecuteApp.Quit
    Wscript.Quit TestStatus.Status
 End Sub
