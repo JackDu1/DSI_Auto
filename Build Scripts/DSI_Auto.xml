@@ -27,9 +27,8 @@
 			<antcallback target="InitJenkinsServerJobWorkSpace" return="TimeLogging"/>
 			<antcall target="CopySuiteInstallerToTestVM"/>
 			<antcall target="PrepareEnv"/>
+			<antcall target="SelectGroupforUserDefinedAxis"/>
 			<antcall target="LaunchSuiteInstallerInVM"/>
-			<!--<antcallback target="RunTestCasesOnVM" return="VBRunResultCode"/>-->
-			<!--<antcall target="ProcessTestCasesResults" />-->
 			<touch file="C:/Runfinished.txt"/>
 		</sequential>
 		
@@ -121,6 +120,43 @@
 		<property name="licenseSessionURL" value="http://10.1.145.11:1947/_int_/sessions.html?haspid=266647369897&amp;featureid=1031"/>
 		<property name="SwarmServiceStatusURL" value="http://jenkins.skytapbuilddb.local:15795/"/>
 		<script language="javascript" src="${TestVM.AntUtilities.dir}/LicenseStatus.js"/>
+	</target>
+	
+	<!-- ================================================ -->
+	<target name="SelectGroupforUserDefinedAxis">
+	
+		
+		<!-- check whether need start second VM for upgrade remote test -->
+		<echo
+			message="-----------------Basic information------------------------------" />
+		<echo>The mds file path : ${TestVM.TCScripts.dir}\${Automation.ProjectName}.mds</echo>
+		<echo>ProjectName   	: ${Automation.ProjectName}</echo>
+		<echo message="&quot;${TestVM.AntUtilities.dir}\SelectGroup.vbs&quot; &quot;${TestVM.TCScripts.dir}\${Automation.ProjectName}.mds&quot;&quot;${${RunGroups}}&quot;"/>
+		
+		<condition property="file.exists" else="false">
+			<available file="${TestVM.TCScripts.dir}\${Automation.ProjectName}.mds"/>
+		</condition>
+		<echo message="Checking the project configuration if exists"/>
+		<if>
+			<available file="${TestVM.TCScripts.dir}\${Automation.ProjectName}.mds"/>
+			<then>
+				<echo message="the project configuration file exists"/>
+			</then>
+			<else>
+				<fail message="the project configuration does not exists!"/>
+			</else>
+		</if>
+		<exec executable="cscript" failonerror="false" timeout="18000000"
+			outputproperty="VBRunOutput" errorproperty="VBErrorMsg"
+			resultproperty="VBRunResultCode">
+			<arg
+				line="&quot;${TestVM.AntUtilities.dir}\SelectGroup.vbs&quot; &quot;${TestVM.TCScripts.dir}\${Automation.ProjectName}.mds&quot;&quot;${${RunGroups}}&quot;" />
+		</exec>
+		<echo message="===================VBRunOutput==========================" />
+		<echo message="${VBRunOutput}" />
+		<echo message="${VBErrorMsg}" />
+		<echo message="VBRunResultCode: ${VBRunResultCode}" />
+		<echo message="===================VBRunOutput==========================" />
 	</target>
 	
 	<!-- ================================================ -->
