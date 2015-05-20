@@ -54,11 +54,11 @@ Sub ProcessNode(aNode,aGroupName)
 	for i = 0 to aNode.childnodes.length - 1
 		set childlist=anode.childnodes(i)
 		for j = 0 to childlist.attributes.length - 1
-			if UCase(childlist.attributes.item(j).nodename) = UCase("value") and UCase(left(childlist.attributes.item(j).nodevalue,2)) = UCase(Trim(aGroupName)) then
+			if UCase(childlist.attributes.item(j).nodename) = UCase("value") and UCase(Left(childlist.attributes.item(j).nodevalue,2)) = UCase(Left(Trim(aGroupName),2))then
 				'set attribute enabled=-1
+				wscript.echo("find it")
 				set bothernode=anode.childnodes(i-4)
-					call bothernode.setAttribute("value","-1")
-				exit for
+				call bothernode.setAttribute("value","-1")
 			end if
 		next
 		Call ProcessNode(childlist,aGroupName)
