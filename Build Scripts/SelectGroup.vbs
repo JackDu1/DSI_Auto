@@ -15,7 +15,7 @@ Sub XMLDriver()
 		wscript.Quit 400
 	End If
 
-	set XMLDoc=wscript.CreateObject("MSXML2.DOMDOCUMENT")
+	set XMLDoc=CreateObject("MSXML2.DOMDOCUMENT")
 
 	XMLDoc.async=False
 
