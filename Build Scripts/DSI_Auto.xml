@@ -150,7 +150,7 @@
 			outputproperty="VBRunOutput" errorproperty="VBErrorMsg"
 			resultproperty="VBRunResultCode">
 			<arg
-				line="&quot;${TestVM.AntUtilities.dir}\SelectGroup.vbs&quot; &quot;${TestVM.TCScripts.dir}\${Automation.ProjectName}.mds&quot;&quot;${${RunGroups}}&quot;" />
+				line="&quot;${TestVM.AntUtilities.dir}\SelectGroup.vbs&quot; &quot;${TestVM.TCScripts.dir}\${Automation.ProjectName}.mds&quot; &quot;${${RunGroups}}&quot;" />
 		</exec>
 		<echo message="===================VBRunOutput==========================" />
 		<echo message="${VBRunOutput}" />
