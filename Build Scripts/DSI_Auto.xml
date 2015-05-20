@@ -146,7 +146,7 @@
 				<fail message="the project configuration does not exists!"/>
 			</else>
 		</if>
-		<exec executable="cscript" failonerror="false" timeout="18000000"
+		<exec executable="cmd.exe" failonerror="false" timeout="18000000"
 			outputproperty="VBRunOutput" errorproperty="VBErrorMsg"
 			resultproperty="VBRunResultCode">
 			<arg
