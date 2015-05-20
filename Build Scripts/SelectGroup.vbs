@@ -1,5 +1,6 @@
 Sub XMLDriver()
-	on error resume next
+	'on error resume next
+
 	Dim XMLDoc
 	Dim ErrorMsg
 	Dim ProjectFile
