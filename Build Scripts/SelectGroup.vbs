@@ -1,5 +1,5 @@
 Sub XMLDriver()
-	'on error resume next
+	on error resume next
 
 	Dim XMLDoc
 	Dim ErrorMsg
@@ -15,7 +15,7 @@ Sub XMLDriver()
 		wscript.Quit 400
 	End If
 
-	set XMLDoc=wscript.CreateObject("MSXML2.DOMDOCUMENT.4.0")
+	set XMLDoc=wscript.CreateObject("MSXML2.DOMDOCUMENT")
 
 	XMLDoc.async=False
 
