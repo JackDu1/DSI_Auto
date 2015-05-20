@@ -131,7 +131,7 @@
 			message="-----------------Basic information------------------------------" />
 		<echo>The mds file path : ${TestVM.TCScripts.dir}\${Automation.ProjectName}.mds</echo>
 		<echo>ProjectName   	: ${Automation.ProjectName}</echo>
-		<echo message="&quot;${TestVM.AntUtilities.dir}\SelectGroup.vbs&quot; &quot;${TestVM.TCScripts.dir}\${Automation.ProjectName}.mds&quot;&quot;${${RunGroups}}&quot;"/>
+		<echo message="&quot;${TestVM.AntUtilities.dir}\SelectGroup.vbs&quot; &quot;${TestVM.TCScripts.dir}\${Automation.ProjectName}.mds&quot; &quot;${RunGroups}&quot;"/>
 		
 		<condition property="file.exists" else="false">
 			<available file="${TestVM.TCScripts.dir}\${Automation.ProjectName}.mds"/>
