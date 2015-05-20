@@ -146,11 +146,11 @@
 				<fail message="the project configuration does not exists!"/>
 			</else>
 		</if>
-		<exec executable="cmd.exe" failonerror="false" timeout="18000000"
+		<exec executable="cmd" failonerror="true" timeout="18000000"
 			outputproperty="VBRunOutput" errorproperty="VBErrorMsg"
 			resultproperty="VBRunResultCode">
 			<arg
-				line="&quot;${TestVM.AntUtilities.dir}\SelectGroup.vbs&quot; &quot;${TestVM.TCScripts.dir}\${Automation.ProjectName}.mds&quot; &quot;${${RunGroups}}&quot;" />
+				line="&quot;${TestVM.AntUtilities.dir}\SelectGroup.vbs&quot; &quot;${TestVM.TCScripts.dir}\${Automation.ProjectName}.mds&quot; &quot;${RunGroups}&quot;" />
 		</exec>
 		<echo message="===================VBRunOutput==========================" />
 		<echo message="${VBRunOutput}" />
