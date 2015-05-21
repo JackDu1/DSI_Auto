@@ -1,3 +1,24 @@
+
+'===============================================================================
+Function ProcessNode(aNode,aGroupName)
+
+	for i = 0 to aNode.childnodes.length - 1
+		set childlist=anode.childnodes(i)
+		for j = 0 to childlist.attributes.length - 1
+			if UCase(childlist.attributes.item(j).nodename) = UCase("value") and UCase(childlist.attributes.item(j).nodevalue) = UCase(Trim(aGroupName))then
+				'set attribute enabled=-1
+				set bothernode=anode.childnodes(i-4)
+				call bothernode.setAttribute("value","-1")
+				exit Function
+			end if
+		next
+		Call ProcessNode(childlist,aGroupName)
+	Next
+	
+End Function
+
+'================================================================================
+
 Sub XMLDriver()
 	on error resume next
 
@@ -5,6 +26,7 @@ Sub XMLDriver()
 	Dim ErrorMsg
 	Dim ProjectFile
 	Dim RunGroupName
+	Dim ParentGroup,groupowner,childgroup
 
 	If WScript.Arguments.Count>=2 then
 		ProjectFile=Trim(WScript.Arguments(0))
@@ -40,29 +62,27 @@ Sub XMLDriver()
 	
 	'loop to find the specified Node according to the Group Name
 	for i = 0 to Ubound(RunGroupNameArray)
-	
-		Call ProcessNode(GroupNode,RunGroupNameArray(i))
-		
+		if GroupNode.haschildnodes then
+			'find the parent group
+			for j = 0 to groupnode.childnodes.length - 1
+				parentgroup=Left(Trim(RunGroupNameArray(i)),2)
+				call ProcessNode(GroupNode,parentgroup)
+			next
+			'find the group self
+			for k = 0 to groupnode.childnodes.length - 1
+				groupowner=RunGroupNameArray(i)
+				call ProcessNode(GroupNode,groupowner)
+			next
+			'find the child test item group
+			for m = 0 to groupnode.childnodes.length - 1
+				childgroup=Left(Trim(RunGroupNameArray(i)),2) & "TestItem"
+				call ProcessNode(GroupNode,childgroup)
+			next
+		end if	
 	Next
 	'Close and save the project file
 	XMLDOC.save(ProjectFile)
 
-End Sub
-
-'===============================================================================
-Sub ProcessNode(aNode,aGroupName)
-	for i = 0 to aNode.childnodes.length - 1
-		set childlist=anode.childnodes(i)
-		for j = 0 to childlist.attributes.length - 1
-			if UCase(childlist.attributes.item(j).nodename) = UCase("value") and UCase(Left(childlist.attributes.item(j).nodevalue,2)) = UCase(Left(Trim(aGroupName),2))then
-				'set attribute enabled=-1
-				set bothernode=anode.childnodes(i-4)
-				call bothernode.setAttribute("value","-1")
-			end if
-		next
-		Call ProcessNode(childlist,aGroupName)
-	Next
-	
 End Sub
 
 '================================================================================
