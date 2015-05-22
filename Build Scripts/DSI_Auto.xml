@@ -140,17 +140,18 @@
 		<if>
 			<available file="${TestVM.TCScripts.dir}\${Automation.ProjectName}.mds"/>
 			<then>
-				<echo message="the project configuration file exists"/>
+				<echo message="If the project configuration file exists : ${file.exists}"/>
 			</then>
 			<else>
-				<fail message="the project configuration does not exists!"/>
+				<fail message="If the project configuration file exists? ${file.exists}"/>
 			</else>
 		</if>
-		<exec executable="cmd" failonerror="true" timeout="18000000"
+		
+		<property name="scriptfile" location="${TestVM.AntUtilities.dir}\SelectGroup.vbs"/>
+		<exec executable="cscript" failonerror="true" timeout="18000000"
 			outputproperty="VBRunOutput" errorproperty="VBErrorMsg"
 			resultproperty="VBRunResultCode">
-			<arg
-				line="&quot;${TestVM.AntUtilities.dir}\SelectGroup.vbs&quot; &quot;${TestVM.TCScripts.dir}\${Automation.ProjectName}.mds&quot; &quot;${RunGroups}&quot;" />
+			<arg line="&quot;${scriptfile}&quot; &quot;${TestVM.TCScripts.dir}\${Automation.ProjectName}.mds&quot; &quot;${RunGroups}&quot;" />
 		</exec>
 		<echo message="===================VBRunOutput==========================" />
 		<echo message="${VBRunOutput}" />
@@ -211,10 +212,11 @@
 		<echo message="Product Build in Local	: ${TestVM.SuiteInstaller.dir}"/>
 		
 		<condition property="file.exists" else="false">
-			<available file="${TestVM.SuiteInstaller.dir}${VersionNumber}\${FileServer.Build.Name}"/>
+			<available file="${TestVM.SuiteInstaller.dir}\${FileServer.Build.Name}"/>
 		</condition>
 		<echo message="The Suite Installer in Local:${TestVM.SuiteInstaller.dir}\${FileServer.Build.Name}"/>
-		<echo message="if file existed in Local?:${file.exists}"/>
+		<echo message="if file existed in Local? : ${file.exists}"/>
+		
 		<property name="SuiteInstaller" location="${TestVM.SuiteInstaller.dir}\${FileServer.Build.Name}"/>
 		<echo message="Start to Launch Suite Installer......" />
 		<exec executable="${SuiteInstaller}" spawn="true"/>	

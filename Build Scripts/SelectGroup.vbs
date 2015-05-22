@@ -1,7 +1,6 @@
 
 '===============================================================================
 Function ProcessNode(aNode,aGroupName)
-
 	for i = 0 to aNode.childnodes.length - 1
 		set childlist=anode.childnodes(i)
 		for j = 0 to childlist.attributes.length - 1
