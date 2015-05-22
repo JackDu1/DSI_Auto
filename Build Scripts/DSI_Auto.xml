@@ -124,9 +124,7 @@
 	
 	<!-- ================================================ -->
 	<target name="SelectGroupforUserDefinedAxis">
-	
 		
-		<!-- check whether need start second VM for upgrade remote test -->
 		<echo
 			message="-----------------Basic information------------------------------" />
 		<echo>The mds file path : ${TestVM.TCScripts.dir}\${Automation.ProjectName}.mds</echo>
