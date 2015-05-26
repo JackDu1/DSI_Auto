@@ -1649,7 +1649,7 @@
 									<Node name="test parameters"/>
 									<Prp name="count" type="I" value="1"/>
 									<Prp name="description" type="S" value=""/>
-									<Prp name="enabled" type="B" value="-1"/>
+									<Prp name="enabled" type="B" value="0"/>
 									<Prp name="group" type="B" value="0"/>
 									<Prp name="index" type="I" value="0"/>
 									<Prp name="key" type="S" value="{E97F5DAE-39E6-4C79-84B3-B805F628BD57}"/>
@@ -1667,7 +1667,7 @@
 							<Prp name="group" type="B" value="-1"/>
 							<Prp name="index" type="I" value="8"/>
 							<Prp name="key" type="S" value="{DFC4BA8A-7EB6-4B69-B006-9AFB11198288}"/>
-							<Prp name="name" type="S" value="W3 - x86_Web_Suite"/>
+							<Prp name="name" type="S" value="W3 - x86_Web_SuiteTerm"/>
 							<Prp name="stoponerror" type="I" value="2"/>
 							<Prp name="stoponexception" type="I" value="2"/>
 							<Prp name="test moniker" type="S" value=""/>

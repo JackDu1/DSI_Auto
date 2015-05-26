@@ -28,7 +28,7 @@
 				<Node name="datav3">
 					<Node name="var0">
 						<Node name="value">
-							<Prp name="intvalue" type="I" value="22"/>
+							<Prp name="intvalue" type="I" value="27"/>
 						</Node>
 						<Prp name="name" type="S" value="StepIndex"/>
 					</Node>
