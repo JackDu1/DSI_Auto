@@ -1,18 +1,24 @@
 
 '===============================================================================
 Function ProcessNode(aNode,aGroupName)
-	for i = 0 to aNode.childnodes.length - 1
-		set childlist=anode.childnodes(i)
-		for j = 0 to childlist.attributes.length - 1
-			if UCase(childlist.attributes.item(j).nodename) = UCase("value") and UCase(childlist.attributes.item(j).nodevalue) = UCase(Trim(aGroupName))then
-				'set attribute enabled=-1
-				set bothernode=anode.childnodes(i-4)
-				call bothernode.setAttribute("value","-1")
-				exit Function
-			end if
-		next
-		Call ProcessNode(childlist,aGroupName)
-	Next
+
+	if aNode.haschildnodes then
+		for i = 0 to aNode.childnodes.length - 1
+			set childlist=anode.childnodes(i)
+			for j = 0 to childlist.attributes.length - 1
+				if UCase(childlist.attributes.item(j).nodename) = UCase("value") and UCase(childlist.attributes.item(j).nodevalue) = UCase(Trim(aGroupName))then
+					'set attribute enabled=-1
+					set bothernode=anode.childnodes(i-4)
+					call bothernode.setAttribute("value","-1")
+					ProcessNode=True
+					exit function
+				else
+					ProcessNode=False
+				end if
+			next
+			Call ProcessNode(childlist,aGroupName)
+		Next
+	end if
 	
 End Function
 
@@ -57,7 +63,7 @@ Sub XMLDriver()
 	Set RootNode=XMLDoc.documentElement
 	
 	'Find a particular element using XPath:
-	Set GroupNode=XMLDOC.selectSingleNode("//Nodes/Node/Node[@name='test data']")
+	Set GroupNode=XMLDOC.selectSingleNode("//Nodes/Node/Node/Node[@name='child list']")
 	
 	'loop to find the specified Node according to the Group Name
 	for i = 0 to Ubound(RunGroupNameArray)
@@ -65,18 +71,23 @@ Sub XMLDriver()
 			'find the parent group
 			for j = 0 to groupnode.childnodes.length - 1
 				parentgroup=Left(Trim(RunGroupNameArray(i)),2)
-				call ProcessNode(GroupNode,parentgroup)
+				if ProcessNode(GroupNode,parentgroup)=0 then
+					'wscript.echo("find the parent group")
+					'find the group itself
+					groupowner=RunGroupNameArray(i)
+					if ProcessNode(GroupNode,groupowner)=0 then
+						'wscript.echo("find the group itself")
+						'find the child group
+						childgroup=Left(Trim(RunGroupNameArray(i)),2) & "TestItem"
+						if ProcessNode(GroupNode,childgroup) =0 then
+							'wscript.echo("find the Child group")
+							exit for
+						end if
+					end if
+				end if
 			next
-			'find the group self
-			for k = 0 to groupnode.childnodes.length - 1
-				groupowner=RunGroupNameArray(i)
-				call ProcessNode(GroupNode,groupowner)
-			next
-			'find the child test item group
-			for m = 0 to groupnode.childnodes.length - 1
-				childgroup=Left(Trim(RunGroupNameArray(i)),2) & "TestItem"
-				call ProcessNode(GroupNode,childgroup)
-			next
+		else
+			exit for
 		end if	
 	Next
 	'Close and save the project file
