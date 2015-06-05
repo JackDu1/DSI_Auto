@@ -94,9 +94,6 @@
 			<Node name="script\txtfile.sd">
 				<Prp name="relpath" type="S" value="Script\TXTFile.sd"/>
 			</Node>
-			<Node name="script\unit2.sd">
-				<Prp name="relpath" type="S" value="Script\Unit2.sd"/>
-			</Node>
 			<Node name="script\xmlunit.sd">
 				<Prp name="relpath" type="S" value="Script\XMLUnit.sd"/>
 			</Node>
@@ -1077,7 +1074,7 @@
 				<Prp name="type" type="I" value="6"/>
 			</Node>
 			<Prp name="key" type="S" value="{C8D68BF2-FAC1-4F51-9EF7-7A452377213C}"/>
-			<Prp name="settingsversion" type="S" value="9.31"/>
+			<Prp name="settingsversion" type="S" value="9.30"/>
 		</Node>
 		<Node name="test data">
 			<Node name="child list">
