@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<Root Signature="{5DCBAC3B-D39C-497C-9BE8-744CBADD37AA}" NameMappingVersion="4" Cookie="179">
+<Root Signature="{5DCBAC3B-D39C-497C-9BE8-744CBADD37AA}" NameMappingVersion="4" Cookie="180">
 	<Nodes Name="NameMapping" Key="{BE401E45-B2D6-4FBA-931A-C2117D5C51AD}">
 		<Properties />
 		<Children>
@@ -815,8 +815,7 @@
 					</Child7>
 					<Child8 Name="cmd" Key="{76AFF31C-E347-41C9-AA5C-717A7B1CC522}">
 						<Properties>
-							<Property0 Name="ProcessName" Cookie="164" />
-							<Property1 Name="Index" Cookie="165" />
+							<Property0 Name="ProcessName" Cookie="179" />
 						</Properties>
 						<Children>
 							<Child0 Name="wndConsoleWindowClass" Key="{888D6F77-FC0D-4DF5-8328-06395D8EC859}">
@@ -1086,21 +1085,20 @@
 			<Property141 Cookie="161" PropertyType="0" Value="System.Windows.Forms.Panel" Type="5" />
 			<Property142 Cookie="162" PropertyType="0" Value="" Type="5" />
 			<Property143 Cookie="163" PropertyType="0" Value="System.Windows.Forms.DataGridViewTextBoxEditingControl" Type="5" />
-			<Property144 Cookie="164" PropertyType="0" Value="cmd" Type="5" />
-			<Property145 Cookie="165" PropertyType="0" Value="2" Type="0" />
-			<Property146 Cookie="166" PropertyType="0" Value="ConsoleWindowClass" Type="5" />
-			<Property147 Cookie="167" PropertyType="0" Value="*" Type="5" />
-			<Property148 Cookie="168" PropertyType="0" Value="txtDirectory" Type="5" />
-			<Property149 Cookie="169" PropertyType="0" Value="MainForm" Type="5" />
-			<Property150 Cookie="170" PropertyType="0" Value="WinFormsObject(&apos;MainForm&apos;)" Type="5" />
-			<Property151 Cookie="171" PropertyType="0" Value="pnlNavigation" Type="5" />
-			<Property152 Cookie="172" PropertyType="0" Value="WinFormsObject(&apos;pnlNavigation&apos;)" Type="5" />
-			<Property153 Cookie="173" PropertyType="0" Value="btnCancel" Type="5" />
-			<Property154 Cookie="174" PropertyType="0" Value="WinFormsObject(&apos;btnCancel&apos;)" Type="5" />
-			<Property155 Cookie="175" PropertyType="0" Value="btnBack" Type="5" />
-			<Property156 Cookie="176" PropertyType="0" Value="WinFormsObject(&apos;btnBack&apos;)" Type="5" />
-			<Property157 Cookie="177" PropertyType="0" Value="btnNext" Type="5" />
-			<Property158 Cookie="178" PropertyType="0" Value="WinFormsObject(&apos;btnNext&apos;)" Type="5" />
+			<Property144 Cookie="166" PropertyType="0" Value="ConsoleWindowClass" Type="5" />
+			<Property145 Cookie="167" PropertyType="0" Value="*" Type="5" />
+			<Property146 Cookie="168" PropertyType="0" Value="txtDirectory" Type="5" />
+			<Property147 Cookie="169" PropertyType="0" Value="MainForm" Type="5" />
+			<Property148 Cookie="170" PropertyType="0" Value="WinFormsObject(&apos;MainForm&apos;)" Type="5" />
+			<Property149 Cookie="171" PropertyType="0" Value="pnlNavigation" Type="5" />
+			<Property150 Cookie="172" PropertyType="0" Value="WinFormsObject(&apos;pnlNavigation&apos;)" Type="5" />
+			<Property151 Cookie="173" PropertyType="0" Value="btnCancel" Type="5" />
+			<Property152 Cookie="174" PropertyType="0" Value="WinFormsObject(&apos;btnCancel&apos;)" Type="5" />
+			<Property153 Cookie="175" PropertyType="0" Value="btnBack" Type="5" />
+			<Property154 Cookie="176" PropertyType="0" Value="WinFormsObject(&apos;btnBack&apos;)" Type="5" />
+			<Property155 Cookie="177" PropertyType="0" Value="btnNext" Type="5" />
+			<Property156 Cookie="178" PropertyType="0" Value="WinFormsObject(&apos;btnNext&apos;)" Type="5" />
+			<Property157 Cookie="179" PropertyType="0" Value="cmd" Type="5" />
 		</Child0>
 	</Storages>
 	<TypeInfo StoreCodeCompletion="1">
