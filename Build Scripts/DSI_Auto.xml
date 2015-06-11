@@ -28,7 +28,6 @@
 			<antcall target="CopySuiteInstallerToTestVM"/>
 			<antcall target="PrepareEnv"/>
 			<antcall target="SelectGroupforUserDefinedAxis"/>
-			<antcall target="LaunchSuiteInstallerInVM"/>
 			<touch file="C:/Runfinished.txt"/>
 		</sequential>
 		
