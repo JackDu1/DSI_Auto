@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<Root Signature="{5DCBAC3B-D39C-497C-9BE8-744CBADD37AA}" NameMappingVersion="4" Cookie="180">
+<Root Signature="{5DCBAC3B-D39C-497C-9BE8-744CBADD37AA}" NameMappingVersion="4" Cookie="183">
 	<Nodes Name="NameMapping" Key="{BE401E45-B2D6-4FBA-931A-C2117D5C51AD}">
 		<Properties />
 		<Children>
@@ -106,15 +106,7 @@
 																<Properties>
 																	<Property0 Name="NativeClrObject.Name" Cookie="26" />
 																</Properties>
-																<Children>
-																	<Child0 Name="ProductInstallFolderBrowse" Key="{FF934FAF-805F-4508-A8B5-7E85F89674EA}">
-																		<Properties>
-																			<Property0 Name="NativeClrObject.Name" Cookie="28" />
-																		</Properties>
-																		<Children />
-																		<TypeInfo Item0="3" />
-																	</Child0>
-																</Children>
+																<Children />
 																<TypeInfo Item0="2" />
 															</Child0>
 															<Child1 Name="wbrDescription" Key="{33FE0904-13E6-4848-9EF6-C52A2677BDCF}">
@@ -156,6 +148,13 @@
 														<Children />
 														<TypeInfo Item0="4" />
 													</Child2>
+													<Child3 Name="btnFolderBrowse" Key="{0BEFE860-D9A5-4BF5-A745-74B90FF4E6EF}" ParallelWalk="True">
+														<Properties>
+															<Property0 Name="NativeClrObject.Name" Cookie="180" />
+														</Properties>
+														<Children />
+														<TypeInfo Item0="3" />
+													</Child3>
 												</Children>
 												<TypeInfo Item0="2" />
 											</Child1>
@@ -346,6 +345,14 @@
 										</Children>
 										<TypeInfo Item0="10" />
 									</Child0>
+									<Child1 Name="btnOK" Key="{DEE28C71-4F46-4E44-9935-AF1FD5C0ABB8}" ParallelWalk="True">
+										<Properties>
+											<Property0 Name="WndClass" Cookie="181" />
+											<Property1 Name="WndCaption" Cookie="182" />
+										</Properties>
+										<Children />
+										<TypeInfo Item0="23" />
+									</Child1>
 								</Children>
 								<TypeInfo Item0="9" />
 							</Child2>
@@ -851,8 +858,8 @@
 			<Child5 Name="MainFormHeader" Owner="{A1F1B7F5-873C-4968-9487-6405906CBDFF}" />
 			<Child6 Name="ProductSelectionPage" Owner="{3018CB86-C62A-4395-AAB2-4C9B07D73C82}">
 				<Child0 Name="SelectProducts" Owner="{40A7C4DB-A16C-48D6-B7AD-B61309045DE0}" />
-				<Child1 Name="ProductInstallFolderBrowse" Owner="{FF934FAF-805F-4508-A8B5-7E85F89674EA}" />
-				<Child2 Name="ProductInstallDirectory" Owner="{4D1D4087-3A66-4C52-8072-BA51D3C4430E}" />
+				<Child1 Name="ProductInstallDirectory" Owner="{4D1D4087-3A66-4C52-8072-BA51D3C4430E}" />
+				<Child2 Name="btnFolderBrowse" Owner="{0BEFE860-D9A5-4BF5-A745-74B90FF4E6EF}" />
 			</Child6>
 			<Child7 Name="ChangeLanguage" Owner="{E280281C-4227-4552-BE73-B1A564AC00B7}" />
 			<Child8 Name="LanguageIcon" Owner="{89CAE3BF-F5CB-48D3-AEB6-0DF12240974D}" />
@@ -870,6 +877,7 @@
 		</Child0>
 		<Child1 Name="Win_frm_Main" Owner="{F7C502EF-87D9-402A-AA53-F4F4BC69D067}">
 			<Child0 Name="SysTreeView" Owner="{6BFFBB80-05BE-401E-9D94-CC87A40E0E66}" />
+			<Child1 Name="btnOK" Owner="{DEE28C71-4F46-4E44-9935-AF1FD5C0ABB8}" />
 		</Child1>
 		<Child2 Name="Toad" Owner="{D9F3A7C5-5085-43F5-96A0-7A8BC09CDC38}">
 			<Child0 Name="ToadLicensingForm" Owner="{3ED87FE9-FAB7-47BF-BEE9-3A797EA7835E}">
@@ -979,7 +987,7 @@
 			<Property35 Cookie="45" PropertyType="0" Value="Browse For Folder" Type="5" />
 			<Property36 Cookie="46" PropertyType="0" Value="SHBrowseForFolder ShellNameSpace Control" Type="5" />
 			<Property37 Cookie="47" PropertyType="0" Value="SysTreeView32" Type="5" />
-			<Property38 Cookie="48" PropertyType="0" Value="Select suite root folder." Type="5" />
+			<Property38 Cookie="48" PropertyType="0" Value="Select the root folder" Type="5" />
 			<Property39 Cookie="50" PropertyType="0" Value="Toad_for_Oracle_*" Type="5" />
 			<Property40 Cookie="51" PropertyType="0" Value="2" Type="0" />
 			<Property41 Cookie="52" PropertyType="0" Value="ProductLicensing" Type="5" />
@@ -1099,6 +1107,9 @@
 			<Property155 Cookie="177" PropertyType="0" Value="btnNext" Type="5" />
 			<Property156 Cookie="178" PropertyType="0" Value="WinFormsObject(&apos;btnNext&apos;)" Type="5" />
 			<Property157 Cookie="179" PropertyType="0" Value="cmd" Type="5" />
+			<Property158 Cookie="180" PropertyType="0" Value="btnFolderBrowse" Type="5" />
+			<Property159 Cookie="181" PropertyType="0" Value="Button" Type="5" />
+			<Property160 Cookie="182" PropertyType="0" Value="OK" Type="5" />
 		</Child0>
 	</Storages>
 	<TypeInfo StoreCodeCompletion="1">
