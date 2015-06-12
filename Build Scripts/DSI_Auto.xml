@@ -28,6 +28,7 @@
 			<antcall target="CopySuiteInstallerToTestVM"/>
 			<antcall target="PrepareEnv"/>
 			<antcall target="SelectGroupforUserDefinedAxis"/>
+                        <antcall target="LaunchSuiteInstallerInVM"/>
 			<touch file="C:/Runfinished.txt"/>
 		</sequential>
 		
@@ -201,7 +202,7 @@
 			/> </then> </if> -->
 	</target>
 	
-	<!-- ================================================ 
+	<!-- ================================================ -->
 	<target name="LaunchSuiteInstallerInVM">
 		<echo message="FileServer.Build.Dir		: ${FileServer.Build.Dir}${VersionNumber}"/>
 		<echo message="FileServer.Build.Name	: ${FileServer.Build.Name}"/>
@@ -219,7 +220,7 @@
 		<exec executable="${SuiteInstaller}" spawn="true"/>	
 		<echo message="Suite Installer have started......" />
 	</target>
-        -->
+        
 	<!-- ================================================ -->
 	<target name="ProcessTestCasesResults">
 		<!-- Check results exist -->
