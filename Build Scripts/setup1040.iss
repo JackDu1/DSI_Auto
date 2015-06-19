@@ -80,15 +80,10 @@ TestExecute-2=TestExecute\ProgramComponents
 TestExecute-3=TestExecute\DefaultExtension
 TestExecute-4=TestExecute\Win7
 TestExecute-5=TestExecute\aqHelper2x32
-MSVS-type=string
-MSVS-count=1
-MSVS-0=MSVS\MSBuild
 Component-type=string
-Component-count=4
+Component-count=2
 Component-0=Extensions
 Component-1=TestExecute
-Component-2=x64Bit
-Component-3=MSVS
 Result=1
 [{E1040B2E-6973-4EAD-8233-724BAC44AAF2}-SdFinish-0]
 Result=1
