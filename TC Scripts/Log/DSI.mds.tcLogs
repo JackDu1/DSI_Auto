@@ -22,7 +22,38 @@
 		<Node name="folders">
 			<Node name="folders"/>
 		</Node>
-		<Node name="logs"/>
+		<Node name="logs">
+			<Node name="log0">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="42179.5991883449"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="index" type="I" value="0"/>
+				<Prp name="key" type="S" value="{1D55561F-2FBE-443C-9A78-EE61BA59FD4A}"/>
+				<Prp name="nameofroot" type="S" value="DSI"/>
+				<Prp name="relpath" type="S" value="6_24_2015_2_22 PM_49_873\Description.tcLog"/>
+				<Prp name="status" type="I" value="2"/>
+			</Node>
+			<Node name="log1">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="42179.603688044"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="index" type="I" value="1"/>
+				<Prp name="key" type="S" value="{1B00D042-B9D7-47E5-98B6-A519853AE21D}"/>
+				<Prp name="nameofroot" type="S" value="DSI"/>
+				<Prp name="relpath" type="S" value="6_24_2015_2_29 PM_18_647\Description.tcLog"/>
+				<Prp name="status" type="I" value="2"/>
+			</Node>
+			<Node name="log2">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="42179.6065977431"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="index" type="I" value="2"/>
+				<Prp name="key" type="S" value="{5B5E5FC7-7DB9-4C3F-9A80-8E0D1E84702E}"/>
+				<Prp name="nameofroot" type="S" value="DSI"/>
+				<Prp name="relpath" type="S" value="6_24_2015_2_33 PM_30_45\Description.tcLog"/>
+				<Prp name="status" type="I" value="0"/>
+			</Node>
+		</Node>
 		<Prp name="signature" type="S" value="{681DCC69-A39F-4C4D-8E7D-B2D9362FAF4F}"/>
 		<Prp name="version" type="S" value="7.0"/>
 	</Node>

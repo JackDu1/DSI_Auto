@@ -1,0 +1,1168 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE Nodes [
+
+<!ENTITY % NameValue "CDATA">
+<!ENTITY % PropType "(I|S|D|L|H|B)">
+<!ENTITY % VersionValue "CDATA">
+
+<!ELEMENT Prp (#PCDATA)>
+<!ELEMENT Node (Node|Prp)*>
+<!ELEMENT Nodes (Node)+>
+
+<!ATTLIST Nodes version CDATA "1">
+
+<!ATTLIST Node name CDATA #REQUIRED>
+
+<!ATTLIST Prp name CDATA #REQUIRED>
+<!ATTLIST Prp type CDATA #REQUIRED>
+<!ATTLIST Prp value CDATA #REQUIRED>
+]>
+<Nodes version="1">
+	<Node name="root">
+		<Node name="message 7">
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="message" type="S" value="step - 3-: The Next button Exist"/>
+			<Prp name="owner id" type="I" value="6"/>
+			<Prp name="type" type="I" value="0"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="line no" type="I" value="43"/>
+			<Prp name="id" type="I" value="7"/>
+			<Prp name="remarks" type="S" value=""/>
+			<Prp name="date" type="D" value="42179.599631331"/>
+			<Prp name="child index" type="I" value="-1"/>
+		</Node>
+		<Node name="message 0">
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="message" type="S" value="TestCase: W3 - x64_Web_Suite"/>
+			<Prp name="owner id" type="I" value="-1"/>
+			<Prp name="type" type="I" value="3"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="line no" type="I" value="23"/>
+			<Prp name="id" type="I" value="0"/>
+			<Prp name="remarks" type="S" value=""/>
+			<Prp name="date" type="D" value="42179.5993382639"/>
+			<Prp name="child index" type="I" value="-1"/>
+		</Node>
+		<Node name="message 21">
+			<Prp name="unit id" type="I" value="1"/>
+			<Prp name="stack beginning" type="I" value="13"/>
+			<Prp name="priority" type="I" value="400"/>
+			<Prp name="as html" type="B" value="-1"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="message" type="S" value="The object does not exist. See Additional Information for details."/>
+			<Prp name="owner id" type="I" value="18"/>
+			<Prp name="type" type="I" value="3"/>
+			<Prp name="picture" type="S" value="Picture4.png"/>
+			<Prp name="line no" type="I" value="938"/>
+			<Prp name="stack end" type="I" value="16"/>
+			<Prp name="id" type="I" value="21"/>
+			<Prp name="remarks" type="S" value="&lt;html&gt;&lt;style&gt;body {font-family : Courier New, Arial; font-size : 10pt; font-weight : normal; padding : 14px 8px 8px 14px; margin : 0 0 0 0;} p {margin : 4px 0 4px 0; padding : 0 0 0 0;} h4 {font-size: 10pt; font-weight : bold; margin : 12px 0 0 16px; padding : 0 0 0 0;} table {margin-left : 16px; border-top: 1px solid grey;} td {font-size : 10pt; font-weight : normal; padding-left : 8px;} &lt;/style&gt;&lt;body&gt;&lt;p&gt;An error occurred while accessing the &quot;wRowCount&quot; method or property of the &quot;&lt;a href=&quot;lnamemapping://{D40AD501-505E-4354-8A38-0403CED001CB}.{FB92A380-7F09-4441-8949-1849E0058277}&quot;&gt;SelectProducts&lt;/a&gt;&quot; object.&lt;br/&gt;The object or one of its parent objects was not found.&lt;/p&gt;&lt;h4&gt;Object Whose Method or Property Was Accessed&lt;/h4&gt;&lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; noborder&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Alias:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Aliases.DSI.ProductSelectionPage.SelectProducts&lt;/td&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Name mapping item:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;NameMapping.Sys.Toad_for_Oracle_Installer.DSI.pnlMain.ProductSelectionPage.SelectProducts&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;h4&gt;Object That Was Not Found&lt;/h4&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Alias:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;lnamemapping://{D40AD501-505E-4354-8A38-0403CED001CB}.{3777E2A6-72D1-4749-A88A-47E0ADC08590}&quot;&gt;Aliases.DSI.ProductSelectionPage&lt;/a&gt;&lt;/td&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Name mapping item:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;namemapping://{D40AD501-505E-4354-8A38-0403CED001CB}.{3018CB86-C62A-4395-AAB2-4C9B07D73C82}&quot;&gt;NameMapping.Sys.Toad_for_Oracle_Installer.DSI.pnlMain.ProductSelectionPage&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;p style=&quot;margin-top: 12px;&quot;&gt;Click the link above to view and configure mapping settings for the missing object.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;aqa-help://2201&quot;&gt;Learn about possible causes of the error&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"/>
+			<Prp name="date" type="D" value="42179.6005621412"/>
+			<Prp name="child index" type="I" value="-1"/>
+		</Node>
+		<Node name="item 83">
+			<Prp name="stacktext" type="S" value="GetToTestObjective(1,15)"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="353"/>
+		</Node>
+		<Node name="message 20">
+			<Prp name="unit id" type="I" value="1"/>
+			<Prp name="stack beginning" type="I" value="9"/>
+			<Prp name="priority" type="I" value="400"/>
+			<Prp name="as html" type="B" value="-1"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="message" type="S" value="The object does not exist. See Additional Information for details."/>
+			<Prp name="owner id" type="I" value="18"/>
+			<Prp name="type" type="I" value="3"/>
+			<Prp name="picture" type="S" value="Picture3.png"/>
+			<Prp name="line no" type="I" value="915"/>
+			<Prp name="stack end" type="I" value="12"/>
+			<Prp name="id" type="I" value="20"/>
+			<Prp name="remarks" type="S" value="&lt;html&gt;&lt;style&gt;body {font-family : Courier New, Arial; font-size : 10pt; font-weight : normal; padding : 14px 8px 8px 14px; margin : 0 0 0 0;} p {margin : 4px 0 4px 0; padding : 0 0 0 0;} h4 {font-size: 10pt; font-weight : bold; margin : 12px 0 0 16px; padding : 0 0 0 0;} table {margin-left : 16px; border-top: 1px solid grey;} td {font-size : 10pt; font-weight : normal; padding-left : 8px;} &lt;/style&gt;&lt;body&gt;&lt;p&gt;An error occurred while accessing the &quot;wRowCount&quot; method or property of the &quot;&lt;a href=&quot;lnamemapping://{D40AD501-505E-4354-8A38-0403CED001CB}.{FB92A380-7F09-4441-8949-1849E0058277}&quot;&gt;SelectProducts&lt;/a&gt;&quot; object.&lt;br/&gt;The object or one of its parent objects was not found.&lt;/p&gt;&lt;h4&gt;Object Whose Method or Property Was Accessed&lt;/h4&gt;&lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; noborder&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Alias:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Aliases.DSI.ProductSelectionPage.SelectProducts&lt;/td&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Name mapping item:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;NameMapping.Sys.Toad_for_Oracle_Installer.DSI.pnlMain.ProductSelectionPage.SelectProducts&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;h4&gt;Object That Was Not Found&lt;/h4&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Alias:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;lnamemapping://{D40AD501-505E-4354-8A38-0403CED001CB}.{3777E2A6-72D1-4749-A88A-47E0ADC08590}&quot;&gt;Aliases.DSI.ProductSelectionPage&lt;/a&gt;&lt;/td&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Name mapping item:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;namemapping://{D40AD501-505E-4354-8A38-0403CED001CB}.{3018CB86-C62A-4395-AAB2-4C9B07D73C82}&quot;&gt;NameMapping.Sys.Toad_for_Oracle_Installer.DSI.pnlMain.ProductSelectionPage&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;p style=&quot;margin-top: 12px;&quot;&gt;Click the link above to view and configure mapping settings for the missing object.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;aqa-help://2201&quot;&gt;Learn about possible causes of the error&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"/>
+			<Prp name="date" type="D" value="42179.6004439583"/>
+			<Prp name="child index" type="I" value="-1"/>
+		</Node>
+		<Node name="item 43">
+			<Prp name="stacktext" type="S" value="DSI_ProductSelectionPage_SelectProducts('9')"/>
+			<Prp name="unit id" type="I" value="1"/>
+			<Prp name="line no" type="I" value="915"/>
+		</Node>
+		<Node name="item 56">
+			<Prp name="stacktext" type="S" value="DSI_ProductSelectionPage_SelectProducts('11')"/>
+			<Prp name="unit id" type="I" value="1"/>
+			<Prp name="line no" type="I" value="913"/>
+		</Node>
+		<Node name="message 10">
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="message" type="S" value="step - 5-: The Product License Page Header Display Correct."/>
+			<Prp name="owner id" type="I" value="9"/>
+			<Prp name="type" type="I" value="0"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="line no" type="I" value="43"/>
+			<Prp name="id" type="I" value="10"/>
+			<Prp name="remarks" type="S" value=""/>
+			<Prp name="date" type="D" value="42179.5997929167"/>
+			<Prp name="child index" type="I" value="-1"/>
+		</Node>
+		<Node name="item 71">
+			<Prp name="stacktext" type="S" value="GetToTestObjective(1,15)"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="353"/>
+		</Node>
+		<Node name="message 36">
+			<Prp name="unit id" type="I" value="1"/>
+			<Prp name="stack beginning" type="I" value="77"/>
+			<Prp name="priority" type="I" value="400"/>
+			<Prp name="as html" type="B" value="-1"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="message" type="S" value="The object does not exist. See Additional Information for details."/>
+			<Prp name="owner id" type="I" value="18"/>
+			<Prp name="type" type="I" value="3"/>
+			<Prp name="picture" type="S" value="Picture19.png"/>
+			<Prp name="line no" type="I" value="915"/>
+			<Prp name="stack end" type="I" value="80"/>
+			<Prp name="id" type="I" value="36"/>
+			<Prp name="remarks" type="S" value="&lt;html&gt;&lt;style&gt;body {font-family : Courier New, Arial; font-size : 10pt; font-weight : normal; padding : 14px 8px 8px 14px; margin : 0 0 0 0;} p {margin : 4px 0 4px 0; padding : 0 0 0 0;} h4 {font-size: 10pt; font-weight : bold; margin : 12px 0 0 16px; padding : 0 0 0 0;} table {margin-left : 16px; border-top: 1px solid grey;} td {font-size : 10pt; font-weight : normal; padding-left : 8px;} &lt;/style&gt;&lt;body&gt;&lt;p&gt;An error occurred while accessing the &quot;wRowCount&quot; method or property of the &quot;&lt;a href=&quot;lnamemapping://{D40AD501-505E-4354-8A38-0403CED001CB}.{FB92A380-7F09-4441-8949-1849E0058277}&quot;&gt;SelectProducts&lt;/a&gt;&quot; object.&lt;br/&gt;The object or one of its parent objects was not found.&lt;/p&gt;&lt;h4&gt;Object Whose Method or Property Was Accessed&lt;/h4&gt;&lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; noborder&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Alias:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Aliases.DSI.ProductSelectionPage.SelectProducts&lt;/td&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Name mapping item:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;NameMapping.Sys.Toad_for_Oracle_Installer.DSI.pnlMain.ProductSelectionPage.SelectProducts&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;h4&gt;Object That Was Not Found&lt;/h4&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Alias:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;lnamemapping://{D40AD501-505E-4354-8A38-0403CED001CB}.{3777E2A6-72D1-4749-A88A-47E0ADC08590}&quot;&gt;Aliases.DSI.ProductSelectionPage&lt;/a&gt;&lt;/td&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Name mapping item:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;namemapping://{D40AD501-505E-4354-8A38-0403CED001CB}.{3018CB86-C62A-4395-AAB2-4C9B07D73C82}&quot;&gt;NameMapping.Sys.Toad_for_Oracle_Installer.DSI.pnlMain.ProductSelectionPage&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;p style=&quot;margin-top: 12px;&quot;&gt;Click the link above to view and configure mapping settings for the missing object.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;aqa-help://2201&quot;&gt;Learn about possible causes of the error&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"/>
+			<Prp name="date" type="D" value="42179.6023522338"/>
+			<Prp name="child index" type="I" value="-1"/>
+		</Node>
+		<Node name="item 12">
+			<Prp name="stacktext" type="S" value="Main"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="119"/>
+		</Node>
+		<Node name="item 61">
+			<Prp name="stacktext" type="S" value="Drive('15','3')"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="239"/>
+		</Node>
+		<Node name="n-0">
+			<Node name="data">
+				<Prp name="d-0" type="D" value="42179.6024844329"/>
+			</Node>
+			<Prp name="countertype" type="I" value="4"/>
+			<Prp name="name" type="S" value="Date&amp;Time"/>
+			<Prp name="type" type="I" value="0"/>
+			<Prp name="id" type="S" value="{5C4EF7C7-C2C9-43CB-85AE-66E5E6E35778}"/>
+			<Prp name="length" type="I" value="1"/>
+			<Prp name="isinteger" type="B" value="0"/>
+			<Prp name="color" type="I" value="0"/>
+			<Prp name="columnindex" type="I" value="0"/>
+			<Prp name="description" type="S" value=""/>
+		</Node>
+		<Node name="message 6">
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="message" type="S" value="Script: DSI_ClickNextButton"/>
+			<Prp name="owner id" type="I" value="1"/>
+			<Prp name="type" type="I" value="0"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="line no" type="I" value="23"/>
+			<Prp name="id" type="I" value="6"/>
+			<Prp name="remarks" type="S" value=""/>
+			<Prp name="date" type="D" value="42179.5995151389"/>
+			<Prp name="child index" type="I" value="-1"/>
+		</Node>
+		<Node name="item 41">
+			<Prp name="stacktext" type="S" value="GetToTestObjective(1,15)"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="353"/>
+		</Node>
+		<Node name="item 58">
+			<Prp name="stacktext" type="S" value="GetToTestObjective(1,15)"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="353"/>
+		</Node>
+		<Node name="message 33">
+			<Prp name="unit id" type="I" value="1"/>
+			<Prp name="stack beginning" type="I" value="64"/>
+			<Prp name="priority" type="I" value="400"/>
+			<Prp name="as html" type="B" value="-1"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="message" type="S" value="The object does not exist. See Additional Information for details."/>
+			<Prp name="owner id" type="I" value="18"/>
+			<Prp name="type" type="I" value="3"/>
+			<Prp name="picture" type="S" value="Picture16.png"/>
+			<Prp name="line no" type="I" value="938"/>
+			<Prp name="stack end" type="I" value="67"/>
+			<Prp name="id" type="I" value="33"/>
+			<Prp name="remarks" type="S" value="&lt;html&gt;&lt;style&gt;body {font-family : Courier New, Arial; font-size : 10pt; font-weight : normal; padding : 14px 8px 8px 14px; margin : 0 0 0 0;} p {margin : 4px 0 4px 0; padding : 0 0 0 0;} h4 {font-size: 10pt; font-weight : bold; margin : 12px 0 0 16px; padding : 0 0 0 0;} table {margin-left : 16px; border-top: 1px solid grey;} td {font-size : 10pt; font-weight : normal; padding-left : 8px;} &lt;/style&gt;&lt;body&gt;&lt;p&gt;An error occurred while accessing the &quot;wRowCount&quot; method or property of the &quot;&lt;a href=&quot;lnamemapping://{D40AD501-505E-4354-8A38-0403CED001CB}.{FB92A380-7F09-4441-8949-1849E0058277}&quot;&gt;SelectProducts&lt;/a&gt;&quot; object.&lt;br/&gt;The object or one of its parent objects was not found.&lt;/p&gt;&lt;h4&gt;Object Whose Method or Property Was Accessed&lt;/h4&gt;&lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; noborder&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Alias:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Aliases.DSI.ProductSelectionPage.SelectProducts&lt;/td&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Name mapping item:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;NameMapping.Sys.Toad_for_Oracle_Installer.DSI.pnlMain.ProductSelectionPage.SelectProducts&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;h4&gt;Object That Was Not Found&lt;/h4&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Alias:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;lnamemapping://{D40AD501-505E-4354-8A38-0403CED001CB}.{3777E2A6-72D1-4749-A88A-47E0ADC08590}&quot;&gt;Aliases.DSI.ProductSelectionPage&lt;/a&gt;&lt;/td&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Name mapping item:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;namemapping://{D40AD501-505E-4354-8A38-0403CED001CB}.{3018CB86-C62A-4395-AAB2-4C9B07D73C82}&quot;&gt;NameMapping.Sys.Toad_for_Oracle_Installer.DSI.pnlMain.ProductSelectionPage&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;p style=&quot;margin-top: 12px;&quot;&gt;Click the link above to view and configure mapping settings for the missing object.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;aqa-help://2201&quot;&gt;Learn about possible causes of the error&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"/>
+			<Prp name="date" type="D" value="42179.6019934375"/>
+			<Prp name="child index" type="I" value="-1"/>
+		</Node>
+		<Node name="item 11">
+			<Prp name="stacktext" type="S" value="GetToTestObjective(1,15)"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="353"/>
+		</Node>
+		<Node name="item 17">
+			<Prp name="stacktext" type="S" value="Log_StepError('Cannot Find the Product: Toad™ Data Modeler')"/>
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="line no" type="I" value="61"/>
+		</Node>
+		<Node name="units">
+			<Prp name="unit 0" type="S" value="{10F1FEFB-20D5-4292-92F6-E2485DD8D63A}"/>
+			<Prp name="unit 2" type="S" value="{0C718DEA-2C5B-4BED-A490-B7B4822122B6}"/>
+			<Prp name="unit 1" type="S" value="{7092F7C6-1291-45A6-9252-CFF3A9F651F7}"/>
+		</Node>
+		<Node name="message 23">
+			<Prp name="unit id" type="I" value="1"/>
+			<Prp name="stack beginning" type="I" value="22"/>
+			<Prp name="priority" type="I" value="400"/>
+			<Prp name="as html" type="B" value="-1"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="message" type="S" value="The object does not exist. See Additional Information for details."/>
+			<Prp name="owner id" type="I" value="18"/>
+			<Prp name="type" type="I" value="3"/>
+			<Prp name="picture" type="S" value="Picture6.png"/>
+			<Prp name="line no" type="I" value="913"/>
+			<Prp name="stack end" type="I" value="25"/>
+			<Prp name="id" type="I" value="23"/>
+			<Prp name="remarks" type="S" value="&lt;html&gt;&lt;style&gt;body {font-family : Courier New, Arial; font-size : 10pt; font-weight : normal; padding : 14px 8px 8px 14px; margin : 0 0 0 0;} p {margin : 4px 0 4px 0; padding : 0 0 0 0;} h4 {font-size: 10pt; font-weight : bold; margin : 12px 0 0 16px; padding : 0 0 0 0;} table {margin-left : 16px; border-top: 1px solid grey;} td {font-size : 10pt; font-weight : normal; padding-left : 8px;} &lt;/style&gt;&lt;body&gt;&lt;p&gt;An error occurred while accessing the &quot;Refresh&quot; method or property of the &quot;&lt;a href=&quot;lnamemapping://{D40AD501-505E-4354-8A38-0403CED001CB}.{FB92A380-7F09-4441-8949-1849E0058277}&quot;&gt;SelectProducts&lt;/a&gt;&quot; object.&lt;br/&gt;The object or one of its parent objects was not found.&lt;/p&gt;&lt;h4&gt;Object Whose Method or Property Was Accessed&lt;/h4&gt;&lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; noborder&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Alias:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Aliases.DSI.ProductSelectionPage.SelectProducts&lt;/td&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Name mapping item:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;NameMapping.Sys.Toad_for_Oracle_Installer.DSI.pnlMain.ProductSelectionPage.SelectProducts&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;h4&gt;Object That Was Not Found&lt;/h4&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Alias:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;lnamemapping://{D40AD501-505E-4354-8A38-0403CED001CB}.{3777E2A6-72D1-4749-A88A-47E0ADC08590}&quot;&gt;Aliases.DSI.ProductSelectionPage&lt;/a&gt;&lt;/td&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Name mapping item:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;namemapping://{D40AD501-505E-4354-8A38-0403CED001CB}.{3018CB86-C62A-4395-AAB2-4C9B07D73C82}&quot;&gt;NameMapping.Sys.Toad_for_Oracle_Installer.DSI.pnlMain.ProductSelectionPage&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;p style=&quot;margin-top: 12px;&quot;&gt;Click the link above to view and configure mapping settings for the missing object.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;aqa-help://2201&quot;&gt;Learn about possible causes of the error&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"/>
+			<Prp name="date" type="D" value="42179.6006868287"/>
+			<Prp name="child index" type="I" value="-1"/>
+		</Node>
+		<Node name="item 52">
+			<Prp name="stacktext" type="S" value="DSI_ProductSelectionPage_SelectProducts('9')"/>
+			<Prp name="unit id" type="I" value="1"/>
+			<Prp name="line no" type="I" value="955"/>
+		</Node>
+		<Node name="item 2">
+			<Prp name="stacktext" type="S" value="Drive('15','3')"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="239"/>
+		</Node>
+		<Node name="item 36">
+			<Prp name="stacktext" type="S" value="Drive('15','3')"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="239"/>
+		</Node>
+		<Node name="item 89">
+			<Prp name="stacktext" type="S" value="Main"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="119"/>
+		</Node>
+		<Node name="item 26">
+			<Prp name="stacktext" type="S" value="DSI_ProductSelectionPage_SelectProducts('7')"/>
+			<Prp name="unit id" type="I" value="1"/>
+			<Prp name="line no" type="I" value="915"/>
+		</Node>
+		<Node name="item 42">
+			<Prp name="stacktext" type="S" value="Main"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="119"/>
+		</Node>
+		<Node name="item 74">
+			<Prp name="stacktext" type="S" value="Drive('15','3')"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="239"/>
+		</Node>
+		<Node name="item 34">
+			<Prp name="stacktext" type="S" value="Log_StepError('Cannot Find the Product: Toad™ for MySQL')"/>
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="line no" type="I" value="61"/>
+		</Node>
+		<Node name="item 46">
+			<Prp name="stacktext" type="S" value="Main"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="119"/>
+		</Node>
+		<Node name="item 50">
+			<Prp name="stacktext" type="S" value="Main"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="119"/>
+		</Node>
+		<Node name="item 39">
+			<Prp name="stacktext" type="S" value="DSI_ProductSelectionPage_SelectProducts('9')"/>
+			<Prp name="unit id" type="I" value="1"/>
+			<Prp name="line no" type="I" value="913"/>
+		</Node>
+		<Node name="item 84">
+			<Prp name="stacktext" type="S" value="Main"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="119"/>
+		</Node>
+		<Node name="item 38">
+			<Prp name="stacktext" type="S" value="Main"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="119"/>
+		</Node>
+		<Node name="item 54">
+			<Prp name="stacktext" type="S" value="GetToTestObjective(1,15)"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="353"/>
+		</Node>
+		<Node name="item 72">
+			<Prp name="stacktext" type="S" value="Main"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="119"/>
+		</Node>
+		<Node name="item 88">
+			<Prp name="stacktext" type="S" value="GetToTestObjective(1,15)"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="353"/>
+		</Node>
+		<Node name="item 20">
+			<Prp name="stacktext" type="S" value="GetToTestObjective(1,15)"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="353"/>
+		</Node>
+		<Node name="stack"/>
+		<Node name="item 60">
+			<Prp name="stacktext" type="S" value="DSI_ProductSelectionPage_SelectProducts('11')"/>
+			<Prp name="unit id" type="I" value="1"/>
+			<Prp name="line no" type="I" value="915"/>
+		</Node>
+		<Node name="item 66">
+			<Prp name="stacktext" type="S" value="GetToTestObjective(1,15)"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="353"/>
+		</Node>
+		<Node name="item 81">
+			<Prp name="stacktext" type="S" value="DSI_ProductSelectionPage_SelectProducts('12')"/>
+			<Prp name="unit id" type="I" value="1"/>
+			<Prp name="line no" type="I" value="938"/>
+		</Node>
+		<Node name="message 40">
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="message" type="S" value="step - 17-: The Cancel button Exist"/>
+			<Prp name="owner id" type="I" value="39"/>
+			<Prp name="type" type="I" value="0"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="line no" type="I" value="43"/>
+			<Prp name="id" type="I" value="40"/>
+			<Prp name="remarks" type="S" value=""/>
+			<Prp name="date" type="D" value="42179.6024815394"/>
+			<Prp name="child index" type="I" value="-1"/>
+		</Node>
+		<Node name="item 85">
+			<Prp name="stacktext" type="S" value="Log_StepError('Cannot Find the Product: Benchmark Factory™ 64-bit')"/>
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="line no" type="I" value="61"/>
+		</Node>
+		<Node name="item 47">
+			<Prp name="stacktext" type="S" value="DSI_ProductSelectionPage_SelectProducts('9')"/>
+			<Prp name="unit id" type="I" value="1"/>
+			<Prp name="line no" type="I" value="938"/>
+		</Node>
+		<Node name="message 4">
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="message" type="S" value="Script: DSI_LicensePage_UserSelection"/>
+			<Prp name="owner id" type="I" value="1"/>
+			<Prp name="type" type="I" value="0"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="line no" type="I" value="23"/>
+			<Prp name="id" type="I" value="4"/>
+			<Prp name="remarks" type="S" value=""/>
+			<Prp name="date" type="D" value="42179.5994295023"/>
+			<Prp name="child index" type="I" value="-1"/>
+		</Node>
+		<Node name="item 16">
+			<Prp name="stacktext" type="S" value="Main"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="119"/>
+		</Node>
+		<Node name="item 79">
+			<Prp name="stacktext" type="S" value="GetToTestObjective(1,15)"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="353"/>
+		</Node>
+		<Node name="item 69">
+			<Prp name="stacktext" type="S" value="DSI_ProductSelectionPage_SelectProducts('11')"/>
+			<Prp name="unit id" type="I" value="1"/>
+			<Prp name="line no" type="I" value="955"/>
+		</Node>
+		<Node name="message 19">
+			<Prp name="unit id" type="I" value="1"/>
+			<Prp name="stack beginning" type="I" value="5"/>
+			<Prp name="priority" type="I" value="400"/>
+			<Prp name="as html" type="B" value="-1"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="message" type="S" value="The object does not exist. See Additional Information for details."/>
+			<Prp name="owner id" type="I" value="18"/>
+			<Prp name="type" type="I" value="3"/>
+			<Prp name="picture" type="S" value="Picture2.png"/>
+			<Prp name="line no" type="I" value="913"/>
+			<Prp name="stack end" type="I" value="8"/>
+			<Prp name="id" type="I" value="19"/>
+			<Prp name="remarks" type="S" value="&lt;html&gt;&lt;style&gt;body {font-family : Courier New, Arial; font-size : 10pt; font-weight : normal; padding : 14px 8px 8px 14px; margin : 0 0 0 0;} p {margin : 4px 0 4px 0; padding : 0 0 0 0;} h4 {font-size: 10pt; font-weight : bold; margin : 12px 0 0 16px; padding : 0 0 0 0;} table {margin-left : 16px; border-top: 1px solid grey;} td {font-size : 10pt; font-weight : normal; padding-left : 8px;} &lt;/style&gt;&lt;body&gt;&lt;p&gt;An error occurred while accessing the &quot;Refresh&quot; method or property of the &quot;&lt;a href=&quot;lnamemapping://{D40AD501-505E-4354-8A38-0403CED001CB}.{FB92A380-7F09-4441-8949-1849E0058277}&quot;&gt;SelectProducts&lt;/a&gt;&quot; object.&lt;br/&gt;The object or one of its parent objects was not found.&lt;/p&gt;&lt;h4&gt;Object Whose Method or Property Was Accessed&lt;/h4&gt;&lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; noborder&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Alias:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Aliases.DSI.ProductSelectionPage.SelectProducts&lt;/td&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Name mapping item:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;NameMapping.Sys.Toad_for_Oracle_Installer.DSI.pnlMain.ProductSelectionPage.SelectProducts&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;h4&gt;Object That Was Not Found&lt;/h4&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Alias:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;lnamemapping://{D40AD501-505E-4354-8A38-0403CED001CB}.{3777E2A6-72D1-4749-A88A-47E0ADC08590}&quot;&gt;Aliases.DSI.ProductSelectionPage&lt;/a&gt;&lt;/td&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Name mapping item:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;namemapping://{D40AD501-505E-4354-8A38-0403CED001CB}.{3018CB86-C62A-4395-AAB2-4C9B07D73C82}&quot;&gt;NameMapping.Sys.Toad_for_Oracle_Installer.DSI.pnlMain.ProductSelectionPage&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;p style=&quot;margin-top: 12px;&quot;&gt;Click the link above to view and configure mapping settings for the missing object.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;aqa-help://2201&quot;&gt;Learn about possible causes of the error&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"/>
+			<Prp name="date" type="D" value="42179.6002098495"/>
+			<Prp name="child index" type="I" value="-1"/>
+		</Node>
+		<Node name="message 35">
+			<Prp name="unit id" type="I" value="1"/>
+			<Prp name="stack beginning" type="I" value="73"/>
+			<Prp name="priority" type="I" value="400"/>
+			<Prp name="as html" type="B" value="-1"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="message" type="S" value="The object does not exist. See Additional Information for details."/>
+			<Prp name="owner id" type="I" value="18"/>
+			<Prp name="type" type="I" value="3"/>
+			<Prp name="picture" type="S" value="Picture18.png"/>
+			<Prp name="line no" type="I" value="913"/>
+			<Prp name="stack end" type="I" value="76"/>
+			<Prp name="id" type="I" value="35"/>
+			<Prp name="remarks" type="S" value="&lt;html&gt;&lt;style&gt;body {font-family : Courier New, Arial; font-size : 10pt; font-weight : normal; padding : 14px 8px 8px 14px; margin : 0 0 0 0;} p {margin : 4px 0 4px 0; padding : 0 0 0 0;} h4 {font-size: 10pt; font-weight : bold; margin : 12px 0 0 16px; padding : 0 0 0 0;} table {margin-left : 16px; border-top: 1px solid grey;} td {font-size : 10pt; font-weight : normal; padding-left : 8px;} &lt;/style&gt;&lt;body&gt;&lt;p&gt;An error occurred while accessing the &quot;Refresh&quot; method or property of the &quot;&lt;a href=&quot;lnamemapping://{D40AD501-505E-4354-8A38-0403CED001CB}.{FB92A380-7F09-4441-8949-1849E0058277}&quot;&gt;SelectProducts&lt;/a&gt;&quot; object.&lt;br/&gt;The object or one of its parent objects was not found.&lt;/p&gt;&lt;h4&gt;Object Whose Method or Property Was Accessed&lt;/h4&gt;&lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; noborder&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Alias:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Aliases.DSI.ProductSelectionPage.SelectProducts&lt;/td&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Name mapping item:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;NameMapping.Sys.Toad_for_Oracle_Installer.DSI.pnlMain.ProductSelectionPage.SelectProducts&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;h4&gt;Object That Was Not Found&lt;/h4&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Alias:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;lnamemapping://{D40AD501-505E-4354-8A38-0403CED001CB}.{3777E2A6-72D1-4749-A88A-47E0ADC08590}&quot;&gt;Aliases.DSI.ProductSelectionPage&lt;/a&gt;&lt;/td&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Name mapping item:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;namemapping://{D40AD501-505E-4354-8A38-0403CED001CB}.{3018CB86-C62A-4395-AAB2-4C9B07D73C82}&quot;&gt;NameMapping.Sys.Toad_for_Oracle_Installer.DSI.pnlMain.ProductSelectionPage&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;p style=&quot;margin-top: 12px;&quot;&gt;Click the link above to view and configure mapping settings for the missing object.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;aqa-help://2201&quot;&gt;Learn about possible causes of the error&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"/>
+			<Prp name="date" type="D" value="42179.6021182176"/>
+			<Prp name="child index" type="I" value="-1"/>
+		</Node>
+		<Node name="item 82">
+			<Prp name="stacktext" type="S" value="Drive('15','3')"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="239"/>
+		</Node>
+		<Node name="item 1">
+			<Prp name="stacktext" type="S" value="DSI_LaunchSuiteInstaller('5')"/>
+			<Prp name="unit id" type="I" value="1"/>
+			<Prp name="line no" type="I" value="63"/>
+		</Node>
+		<Node name="item 67">
+			<Prp name="stacktext" type="S" value="Main"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="119"/>
+		</Node>
+		<Node name="item 6">
+			<Prp name="stacktext" type="S" value="Drive('15','3')"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="239"/>
+		</Node>
+		<Node name="item 14">
+			<Prp name="stacktext" type="S" value="Drive('15','3')"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="239"/>
+		</Node>
+		<Node name="item 29">
+			<Prp name="stacktext" type="S" value="Main"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="119"/>
+		</Node>
+		<Node name="item 4">
+			<Prp name="stacktext" type="S" value="Main"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="119"/>
+		</Node>
+		<Node name="item 76">
+			<Prp name="stacktext" type="S" value="Main"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="119"/>
+		</Node>
+		<Node name="message 5">
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="message" type="S" value="step - 2-: Click Accept Button!"/>
+			<Prp name="owner id" type="I" value="4"/>
+			<Prp name="type" type="I" value="0"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="line no" type="I" value="43"/>
+			<Prp name="id" type="I" value="5"/>
+			<Prp name="remarks" type="S" value=""/>
+			<Prp name="date" type="D" value="42179.5995060069"/>
+			<Prp name="child index" type="I" value="-1"/>
+		</Node>
+		<Node name="item 7">
+			<Prp name="stacktext" type="S" value="GetToTestObjective(1,15)"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="353"/>
+		</Node>
+		<Node name="item 3">
+			<Prp name="stacktext" type="S" value="GetToTestObjective(1,15)"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="353"/>
+		</Node>
+		<Node name="item 32">
+			<Prp name="stacktext" type="S" value="GetToTestObjective(1,15)"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="353"/>
+		</Node>
+		<Node name="message 11">
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="message" type="S" value="step - 6-: The Licnese Package: Toad for Oracle Suite License"/>
+			<Prp name="owner id" type="I" value="9"/>
+			<Prp name="type" type="I" value="0"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="line no" type="I" value="43"/>
+			<Prp name="id" type="I" value="11"/>
+			<Prp name="remarks" type="S" value=""/>
+			<Prp name="date" type="D" value="42179.5997942708"/>
+			<Prp name="child index" type="I" value="-1"/>
+		</Node>
+		<Node name="message 18">
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="message" type="S" value="Script: DSI_ProductSelectionPage_SelectProducts"/>
+			<Prp name="owner id" type="I" value="1"/>
+			<Prp name="type" type="I" value="3"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="line no" type="I" value="23"/>
+			<Prp name="id" type="I" value="18"/>
+			<Prp name="remarks" type="S" value=""/>
+			<Prp name="date" type="D" value="42179.6000854282"/>
+			<Prp name="child index" type="I" value="-1"/>
+		</Node>
+		<Node name="item 0">
+			<Prp name="stacktext" type="S" value="Log_StepError('The Build File Toad_for_Oracle_2015_x64_Web.exeDoes Not Existence under Folder: C:\SuiteInstaller\Toad_for_Oracle_2015\')"/>
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="line no" type="I" value="61"/>
+		</Node>
+		<Node name="item 73">
+			<Prp name="stacktext" type="S" value="DSI_ProductSelectionPage_SelectProducts('12')"/>
+			<Prp name="unit id" type="I" value="1"/>
+			<Prp name="line no" type="I" value="913"/>
+		</Node>
+		<Node name="item 22">
+			<Prp name="stacktext" type="S" value="DSI_ProductSelectionPage_SelectProducts('7')"/>
+			<Prp name="unit id" type="I" value="1"/>
+			<Prp name="line no" type="I" value="913"/>
+		</Node>
+		<Node name="item 45">
+			<Prp name="stacktext" type="S" value="GetToTestObjective(1,15)"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="353"/>
+		</Node>
+		<Node name="item 77">
+			<Prp name="stacktext" type="S" value="DSI_ProductSelectionPage_SelectProducts('12')"/>
+			<Prp name="unit id" type="I" value="1"/>
+			<Prp name="line no" type="I" value="915"/>
+		</Node>
+		<Node name="item 80">
+			<Prp name="stacktext" type="S" value="Main"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="119"/>
+		</Node>
+		<Node name="message 32">
+			<Prp name="unit id" type="I" value="1"/>
+			<Prp name="stack beginning" type="I" value="60"/>
+			<Prp name="priority" type="I" value="400"/>
+			<Prp name="as html" type="B" value="-1"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="message" type="S" value="The object does not exist. See Additional Information for details."/>
+			<Prp name="owner id" type="I" value="18"/>
+			<Prp name="type" type="I" value="3"/>
+			<Prp name="picture" type="S" value="Picture15.png"/>
+			<Prp name="line no" type="I" value="915"/>
+			<Prp name="stack end" type="I" value="63"/>
+			<Prp name="id" type="I" value="32"/>
+			<Prp name="remarks" type="S" value="&lt;html&gt;&lt;style&gt;body {font-family : Courier New, Arial; font-size : 10pt; font-weight : normal; padding : 14px 8px 8px 14px; margin : 0 0 0 0;} p {margin : 4px 0 4px 0; padding : 0 0 0 0;} h4 {font-size: 10pt; font-weight : bold; margin : 12px 0 0 16px; padding : 0 0 0 0;} table {margin-left : 16px; border-top: 1px solid grey;} td {font-size : 10pt; font-weight : normal; padding-left : 8px;} &lt;/style&gt;&lt;body&gt;&lt;p&gt;An error occurred while accessing the &quot;wRowCount&quot; method or property of the &quot;&lt;a href=&quot;lnamemapping://{D40AD501-505E-4354-8A38-0403CED001CB}.{FB92A380-7F09-4441-8949-1849E0058277}&quot;&gt;SelectProducts&lt;/a&gt;&quot; object.&lt;br/&gt;The object or one of its parent objects was not found.&lt;/p&gt;&lt;h4&gt;Object Whose Method or Property Was Accessed&lt;/h4&gt;&lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; noborder&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Alias:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Aliases.DSI.ProductSelectionPage.SelectProducts&lt;/td&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Name mapping item:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;NameMapping.Sys.Toad_for_Oracle_Installer.DSI.pnlMain.ProductSelectionPage.SelectProducts&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;h4&gt;Object That Was Not Found&lt;/h4&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Alias:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;lnamemapping://{D40AD501-505E-4354-8A38-0403CED001CB}.{3777E2A6-72D1-4749-A88A-47E0ADC08590}&quot;&gt;Aliases.DSI.ProductSelectionPage&lt;/a&gt;&lt;/td&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Name mapping item:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;namemapping://{D40AD501-505E-4354-8A38-0403CED001CB}.{3018CB86-C62A-4395-AAB2-4C9B07D73C82}&quot;&gt;NameMapping.Sys.Toad_for_Oracle_Installer.DSI.pnlMain.ProductSelectionPage&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;p style=&quot;margin-top: 12px;&quot;&gt;Click the link above to view and configure mapping settings for the missing object.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;aqa-help://2201&quot;&gt;Learn about possible causes of the error&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"/>
+			<Prp name="date" type="D" value="42179.6018753472"/>
+			<Prp name="child index" type="I" value="-1"/>
+		</Node>
+		<Node name="item 19">
+			<Prp name="stacktext" type="S" value="Drive('15','3')"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="239"/>
+		</Node>
+		<Node name="message 15">
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="message" type="S" value="Script: DSI_ClickNextButton"/>
+			<Prp name="owner id" type="I" value="1"/>
+			<Prp name="type" type="I" value="0"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="line no" type="I" value="23"/>
+			<Prp name="id" type="I" value="15"/>
+			<Prp name="remarks" type="S" value=""/>
+			<Prp name="date" type="D" value="42179.599816875"/>
+			<Prp name="child index" type="I" value="-1"/>
+		</Node>
+		<Node name="item 62">
+			<Prp name="stacktext" type="S" value="GetToTestObjective(1,15)"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="353"/>
+		</Node>
+		<Node name="message 1">
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="message" type="S" value="WorkflowID(3)"/>
+			<Prp name="owner id" type="I" value="0"/>
+			<Prp name="type" type="I" value="3"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="line no" type="I" value="23"/>
+			<Prp name="id" type="I" value="1"/>
+			<Prp name="remarks" type="S" value=""/>
+			<Prp name="date" type="D" value="42179.5993384491"/>
+			<Prp name="child index" type="I" value="-1"/>
+		</Node>
+		<Node name="item 68">
+			<Prp name="stacktext" type="S" value="Log_StepError('Cannot Find the Product: Dell™ SQL Optimizer for Oracle 64-bit')"/>
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="line no" type="I" value="61"/>
+		</Node>
+		<Node name="message 26">
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="stack beginning" type="I" value="34"/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="message" type="S" value="step - 13-: Cannot Find the Product: Toad™ for MySQL"/>
+			<Prp name="owner id" type="I" value="18"/>
+			<Prp name="type" type="I" value="3"/>
+			<Prp name="picture" type="S" value="Picture9.png"/>
+			<Prp name="line no" type="I" value="61"/>
+			<Prp name="stack end" type="I" value="38"/>
+			<Prp name="id" type="I" value="26"/>
+			<Prp name="remarks" type="S" value=""/>
+			<Prp name="date" type="D" value="42179.6010411921"/>
+			<Prp name="child index" type="I" value="-1"/>
+		</Node>
+		<Node name="item 87">
+			<Prp name="stacktext" type="S" value="Drive('15','3')"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="239"/>
+		</Node>
+		<Node name="message 14">
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="message" type="S" value="step - 9-: Enter Site Message: Dell &lt;.@&amp;&quot;'&gt; - prod\djiang"/>
+			<Prp name="owner id" type="I" value="9"/>
+			<Prp name="type" type="I" value="0"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="line no" type="I" value="43"/>
+			<Prp name="id" type="I" value="14"/>
+			<Prp name="remarks" type="S" value=""/>
+			<Prp name="date" type="D" value="42179.5998052083"/>
+			<Prp name="child index" type="I" value="-1"/>
+		</Node>
+		<Node name="item 8">
+			<Prp name="stacktext" type="S" value="Main"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="119"/>
+		</Node>
+		<Node name="item 23">
+			<Prp name="stacktext" type="S" value="Drive('15','3')"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="239"/>
+		</Node>
+		<Node name="message 30">
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="stack beginning" type="I" value="51"/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="message" type="S" value="step - 14-: Cannot Find the Product: Toad™ for Oracle 64-bit"/>
+			<Prp name="owner id" type="I" value="18"/>
+			<Prp name="type" type="I" value="3"/>
+			<Prp name="picture" type="S" value="Picture13.png"/>
+			<Prp name="line no" type="I" value="61"/>
+			<Prp name="stack end" type="I" value="55"/>
+			<Prp name="id" type="I" value="30"/>
+			<Prp name="remarks" type="S" value=""/>
+			<Prp name="date" type="D" value="42179.6015189005"/>
+			<Prp name="child index" type="I" value="-1"/>
+		</Node>
+		<Node name="message 17">
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="message" type="S" value="step - 11-: Click Next Button"/>
+			<Prp name="owner id" type="I" value="15"/>
+			<Prp name="type" type="I" value="0"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="line no" type="I" value="43"/>
+			<Prp name="id" type="I" value="17"/>
+			<Prp name="remarks" type="S" value=""/>
+			<Prp name="date" type="D" value="42179.5999606481"/>
+			<Prp name="child index" type="I" value="-1"/>
+		</Node>
+		<Node name="item 27">
+			<Prp name="stacktext" type="S" value="Drive('15','3')"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="239"/>
+		</Node>
+		<Node name="item 25">
+			<Prp name="stacktext" type="S" value="Main"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="119"/>
+		</Node>
+		<Node name="item 55">
+			<Prp name="stacktext" type="S" value="Main"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="119"/>
+		</Node>
+		<Node name="item 37">
+			<Prp name="stacktext" type="S" value="GetToTestObjective(1,15)"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="353"/>
+		</Node>
+		<Node name="item 75">
+			<Prp name="stacktext" type="S" value="GetToTestObjective(1,15)"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="353"/>
+		</Node>
+		<Node name="item 35">
+			<Prp name="stacktext" type="S" value="DSI_ProductSelectionPage_SelectProducts('7')"/>
+			<Prp name="unit id" type="I" value="1"/>
+			<Prp name="line no" type="I" value="955"/>
+		</Node>
+		<Node name="item 21">
+			<Prp name="stacktext" type="S" value="Main"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="119"/>
+		</Node>
+		<Node name="item 63">
+			<Prp name="stacktext" type="S" value="Main"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="119"/>
+		</Node>
+		<Node name="item 48">
+			<Prp name="stacktext" type="S" value="Drive('15','3')"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="239"/>
+		</Node>
+		<Node name="item 33">
+			<Prp name="stacktext" type="S" value="Main"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="119"/>
+		</Node>
+		<Node name="item 10">
+			<Prp name="stacktext" type="S" value="Drive('15','3')"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="239"/>
+		</Node>
+		<Node name="message 8">
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="message" type="S" value="step - 4-: Click Next Button"/>
+			<Prp name="owner id" type="I" value="6"/>
+			<Prp name="type" type="I" value="0"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="line no" type="I" value="43"/>
+			<Prp name="id" type="I" value="8"/>
+			<Prp name="remarks" type="S" value=""/>
+			<Prp name="date" type="D" value="42179.5996481481"/>
+			<Prp name="child index" type="I" value="-1"/>
+		</Node>
+		<Node name="item 24">
+			<Prp name="stacktext" type="S" value="GetToTestObjective(1,15)"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="353"/>
+		</Node>
+		<Node name="item 28">
+			<Prp name="stacktext" type="S" value="GetToTestObjective(1,15)"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="353"/>
+		</Node>
+		<Node name="item 64">
+			<Prp name="stacktext" type="S" value="DSI_ProductSelectionPage_SelectProducts('11')"/>
+			<Prp name="unit id" type="I" value="1"/>
+			<Prp name="line no" type="I" value="938"/>
+		</Node>
+		<Node name="message 9">
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="message" type="S" value="Script: DSI_AddProductLicense"/>
+			<Prp name="owner id" type="I" value="1"/>
+			<Prp name="type" type="I" value="0"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="line no" type="I" value="23"/>
+			<Prp name="id" type="I" value="9"/>
+			<Prp name="remarks" type="S" value=""/>
+			<Prp name="date" type="D" value="42179.599774375"/>
+			<Prp name="child index" type="I" value="-1"/>
+		</Node>
+		<Node name="item 31">
+			<Prp name="stacktext" type="S" value="Drive('15','3')"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="239"/>
+		</Node>
+		<Node name="message 34">
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="stack beginning" type="I" value="68"/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="message" type="S" value="step - 15-: Cannot Find the Product: Dell™ SQL Optimizer for Oracle 64-bit"/>
+			<Prp name="owner id" type="I" value="18"/>
+			<Prp name="type" type="I" value="3"/>
+			<Prp name="picture" type="S" value="Picture17.png"/>
+			<Prp name="line no" type="I" value="61"/>
+			<Prp name="stack end" type="I" value="72"/>
+			<Prp name="id" type="I" value="34"/>
+			<Prp name="remarks" type="S" value=""/>
+			<Prp name="date" type="D" value="42179.6019956018"/>
+			<Prp name="child index" type="I" value="-1"/>
+		</Node>
+		<Node name="item 49">
+			<Prp name="stacktext" type="S" value="GetToTestObjective(1,15)"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="353"/>
+		</Node>
+		<Node name="message 27">
+			<Prp name="unit id" type="I" value="1"/>
+			<Prp name="stack beginning" type="I" value="39"/>
+			<Prp name="priority" type="I" value="400"/>
+			<Prp name="as html" type="B" value="-1"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="message" type="S" value="The object does not exist. See Additional Information for details."/>
+			<Prp name="owner id" type="I" value="18"/>
+			<Prp name="type" type="I" value="3"/>
+			<Prp name="picture" type="S" value="Picture10.png"/>
+			<Prp name="line no" type="I" value="913"/>
+			<Prp name="stack end" type="I" value="42"/>
+			<Prp name="id" type="I" value="27"/>
+			<Prp name="remarks" type="S" value="&lt;html&gt;&lt;style&gt;body {font-family : Courier New, Arial; font-size : 10pt; font-weight : normal; padding : 14px 8px 8px 14px; margin : 0 0 0 0;} p {margin : 4px 0 4px 0; padding : 0 0 0 0;} h4 {font-size: 10pt; font-weight : bold; margin : 12px 0 0 16px; padding : 0 0 0 0;} table {margin-left : 16px; border-top: 1px solid grey;} td {font-size : 10pt; font-weight : normal; padding-left : 8px;} &lt;/style&gt;&lt;body&gt;&lt;p&gt;An error occurred while accessing the &quot;Refresh&quot; method or property of the &quot;&lt;a href=&quot;lnamemapping://{D40AD501-505E-4354-8A38-0403CED001CB}.{FB92A380-7F09-4441-8949-1849E0058277}&quot;&gt;SelectProducts&lt;/a&gt;&quot; object.&lt;br/&gt;The object or one of its parent objects was not found.&lt;/p&gt;&lt;h4&gt;Object Whose Method or Property Was Accessed&lt;/h4&gt;&lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; noborder&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Alias:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Aliases.DSI.ProductSelectionPage.SelectProducts&lt;/td&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Name mapping item:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;NameMapping.Sys.Toad_for_Oracle_Installer.DSI.pnlMain.ProductSelectionPage.SelectProducts&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;h4&gt;Object That Was Not Found&lt;/h4&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Alias:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;lnamemapping://{D40AD501-505E-4354-8A38-0403CED001CB}.{3777E2A6-72D1-4749-A88A-47E0ADC08590}&quot;&gt;Aliases.DSI.ProductSelectionPage&lt;/a&gt;&lt;/td&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Name mapping item:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;namemapping://{D40AD501-505E-4354-8A38-0403CED001CB}.{3018CB86-C62A-4395-AAB2-4C9B07D73C82}&quot;&gt;NameMapping.Sys.Toad_for_Oracle_Installer.DSI.pnlMain.ProductSelectionPage&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;p style=&quot;margin-top: 12px;&quot;&gt;Click the link above to view and configure mapping settings for the missing object.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;aqa-help://2201&quot;&gt;Learn about possible causes of the error&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"/>
+			<Prp name="date" type="D" value="42179.601164537"/>
+			<Prp name="child index" type="I" value="-1"/>
+		</Node>
+		<Node name="message 37">
+			<Prp name="unit id" type="I" value="1"/>
+			<Prp name="stack beginning" type="I" value="81"/>
+			<Prp name="priority" type="I" value="400"/>
+			<Prp name="as html" type="B" value="-1"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="message" type="S" value="The object does not exist. See Additional Information for details."/>
+			<Prp name="owner id" type="I" value="18"/>
+			<Prp name="type" type="I" value="3"/>
+			<Prp name="picture" type="S" value="Picture20.png"/>
+			<Prp name="line no" type="I" value="938"/>
+			<Prp name="stack end" type="I" value="84"/>
+			<Prp name="id" type="I" value="37"/>
+			<Prp name="remarks" type="S" value="&lt;html&gt;&lt;style&gt;body {font-family : Courier New, Arial; font-size : 10pt; font-weight : normal; padding : 14px 8px 8px 14px; margin : 0 0 0 0;} p {margin : 4px 0 4px 0; padding : 0 0 0 0;} h4 {font-size: 10pt; font-weight : bold; margin : 12px 0 0 16px; padding : 0 0 0 0;} table {margin-left : 16px; border-top: 1px solid grey;} td {font-size : 10pt; font-weight : normal; padding-left : 8px;} &lt;/style&gt;&lt;body&gt;&lt;p&gt;An error occurred while accessing the &quot;wRowCount&quot; method or property of the &quot;&lt;a href=&quot;lnamemapping://{D40AD501-505E-4354-8A38-0403CED001CB}.{FB92A380-7F09-4441-8949-1849E0058277}&quot;&gt;SelectProducts&lt;/a&gt;&quot; object.&lt;br/&gt;The object or one of its parent objects was not found.&lt;/p&gt;&lt;h4&gt;Object Whose Method or Property Was Accessed&lt;/h4&gt;&lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; noborder&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Alias:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Aliases.DSI.ProductSelectionPage.SelectProducts&lt;/td&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Name mapping item:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;NameMapping.Sys.Toad_for_Oracle_Installer.DSI.pnlMain.ProductSelectionPage.SelectProducts&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;h4&gt;Object That Was Not Found&lt;/h4&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Alias:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;lnamemapping://{D40AD501-505E-4354-8A38-0403CED001CB}.{3777E2A6-72D1-4749-A88A-47E0ADC08590}&quot;&gt;Aliases.DSI.ProductSelectionPage&lt;/a&gt;&lt;/td&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Name mapping item:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;namemapping://{D40AD501-505E-4354-8A38-0403CED001CB}.{3018CB86-C62A-4395-AAB2-4C9B07D73C82}&quot;&gt;NameMapping.Sys.Toad_for_Oracle_Installer.DSI.pnlMain.ProductSelectionPage&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;p style=&quot;margin-top: 12px;&quot;&gt;Click the link above to view and configure mapping settings for the missing object.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;aqa-help://2201&quot;&gt;Learn about possible causes of the error&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"/>
+			<Prp name="date" type="D" value="42179.6024704977"/>
+			<Prp name="child index" type="I" value="-1"/>
+		</Node>
+		<Node name="child data"/>
+		<Node name="item 15">
+			<Prp name="stacktext" type="S" value="GetToTestObjective(1,15)"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="353"/>
+		</Node>
+		<Node name="message 31">
+			<Prp name="unit id" type="I" value="1"/>
+			<Prp name="stack beginning" type="I" value="56"/>
+			<Prp name="priority" type="I" value="400"/>
+			<Prp name="as html" type="B" value="-1"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="message" type="S" value="The object does not exist. See Additional Information for details."/>
+			<Prp name="owner id" type="I" value="18"/>
+			<Prp name="type" type="I" value="3"/>
+			<Prp name="picture" type="S" value="Picture14.png"/>
+			<Prp name="line no" type="I" value="913"/>
+			<Prp name="stack end" type="I" value="59"/>
+			<Prp name="id" type="I" value="31"/>
+			<Prp name="remarks" type="S" value="&lt;html&gt;&lt;style&gt;body {font-family : Courier New, Arial; font-size : 10pt; font-weight : normal; padding : 14px 8px 8px 14px; margin : 0 0 0 0;} p {margin : 4px 0 4px 0; padding : 0 0 0 0;} h4 {font-size: 10pt; font-weight : bold; margin : 12px 0 0 16px; padding : 0 0 0 0;} table {margin-left : 16px; border-top: 1px solid grey;} td {font-size : 10pt; font-weight : normal; padding-left : 8px;} &lt;/style&gt;&lt;body&gt;&lt;p&gt;An error occurred while accessing the &quot;Refresh&quot; method or property of the &quot;&lt;a href=&quot;lnamemapping://{D40AD501-505E-4354-8A38-0403CED001CB}.{FB92A380-7F09-4441-8949-1849E0058277}&quot;&gt;SelectProducts&lt;/a&gt;&quot; object.&lt;br/&gt;The object or one of its parent objects was not found.&lt;/p&gt;&lt;h4&gt;Object Whose Method or Property Was Accessed&lt;/h4&gt;&lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; noborder&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Alias:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Aliases.DSI.ProductSelectionPage.SelectProducts&lt;/td&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Name mapping item:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;NameMapping.Sys.Toad_for_Oracle_Installer.DSI.pnlMain.ProductSelectionPage.SelectProducts&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;h4&gt;Object That Was Not Found&lt;/h4&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Alias:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;lnamemapping://{D40AD501-505E-4354-8A38-0403CED001CB}.{3777E2A6-72D1-4749-A88A-47E0ADC08590}&quot;&gt;Aliases.DSI.ProductSelectionPage&lt;/a&gt;&lt;/td&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Name mapping item:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;namemapping://{D40AD501-505E-4354-8A38-0403CED001CB}.{3018CB86-C62A-4395-AAB2-4C9B07D73C82}&quot;&gt;NameMapping.Sys.Toad_for_Oracle_Installer.DSI.pnlMain.ProductSelectionPage&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;p style=&quot;margin-top: 12px;&quot;&gt;Click the link above to view and configure mapping settings for the missing object.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;aqa-help://2201&quot;&gt;Learn about possible causes of the error&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"/>
+			<Prp name="date" type="D" value="42179.601641331"/>
+			<Prp name="child index" type="I" value="-1"/>
+		</Node>
+		<Node name="message 41">
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="message" type="S" value="step - 18-: Click Cancel Button"/>
+			<Prp name="owner id" type="I" value="39"/>
+			<Prp name="type" type="I" value="0"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="line no" type="I" value="43"/>
+			<Prp name="id" type="I" value="41"/>
+			<Prp name="remarks" type="S" value=""/>
+			<Prp name="date" type="D" value="42179.6024844329"/>
+			<Prp name="child index" type="I" value="-1"/>
+		</Node>
+		<Node name="message 24">
+			<Prp name="unit id" type="I" value="1"/>
+			<Prp name="stack beginning" type="I" value="26"/>
+			<Prp name="priority" type="I" value="400"/>
+			<Prp name="as html" type="B" value="-1"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="message" type="S" value="The object does not exist. See Additional Information for details."/>
+			<Prp name="owner id" type="I" value="18"/>
+			<Prp name="type" type="I" value="3"/>
+			<Prp name="picture" type="S" value="Picture7.png"/>
+			<Prp name="line no" type="I" value="915"/>
+			<Prp name="stack end" type="I" value="29"/>
+			<Prp name="id" type="I" value="24"/>
+			<Prp name="remarks" type="S" value="&lt;html&gt;&lt;style&gt;body {font-family : Courier New, Arial; font-size : 10pt; font-weight : normal; padding : 14px 8px 8px 14px; margin : 0 0 0 0;} p {margin : 4px 0 4px 0; padding : 0 0 0 0;} h4 {font-size: 10pt; font-weight : bold; margin : 12px 0 0 16px; padding : 0 0 0 0;} table {margin-left : 16px; border-top: 1px solid grey;} td {font-size : 10pt; font-weight : normal; padding-left : 8px;} &lt;/style&gt;&lt;body&gt;&lt;p&gt;An error occurred while accessing the &quot;wRowCount&quot; method or property of the &quot;&lt;a href=&quot;lnamemapping://{D40AD501-505E-4354-8A38-0403CED001CB}.{FB92A380-7F09-4441-8949-1849E0058277}&quot;&gt;SelectProducts&lt;/a&gt;&quot; object.&lt;br/&gt;The object or one of its parent objects was not found.&lt;/p&gt;&lt;h4&gt;Object Whose Method or Property Was Accessed&lt;/h4&gt;&lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; noborder&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Alias:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Aliases.DSI.ProductSelectionPage.SelectProducts&lt;/td&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Name mapping item:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;NameMapping.Sys.Toad_for_Oracle_Installer.DSI.pnlMain.ProductSelectionPage.SelectProducts&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;h4&gt;Object That Was Not Found&lt;/h4&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Alias:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;lnamemapping://{D40AD501-505E-4354-8A38-0403CED001CB}.{3777E2A6-72D1-4749-A88A-47E0ADC08590}&quot;&gt;Aliases.DSI.ProductSelectionPage&lt;/a&gt;&lt;/td&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Name mapping item:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;namemapping://{D40AD501-505E-4354-8A38-0403CED001CB}.{3018CB86-C62A-4395-AAB2-4C9B07D73C82}&quot;&gt;NameMapping.Sys.Toad_for_Oracle_Installer.DSI.pnlMain.ProductSelectionPage&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;p style=&quot;margin-top: 12px;&quot;&gt;Click the link above to view and configure mapping settings for the missing object.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;aqa-help://2201&quot;&gt;Learn about possible causes of the error&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"/>
+			<Prp name="date" type="D" value="42179.6009208449"/>
+			<Prp name="child index" type="I" value="-1"/>
+		</Node>
+		<Node name="message 3">
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="stack beginning" type="I" value="0"/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="message" type="S" value="step - 1-: The Build File Toad_for_Oracle_2015_x64_Web.exeDoes Not Existence under Folder: C:\SuiteInstaller\Toad_for_Oracle_2015\"/>
+			<Prp name="owner id" type="I" value="2"/>
+			<Prp name="type" type="I" value="3"/>
+			<Prp name="picture" type="S" value="Picture1.png"/>
+			<Prp name="line no" type="I" value="61"/>
+			<Prp name="stack end" type="I" value="4"/>
+			<Prp name="id" type="I" value="3"/>
+			<Prp name="remarks" type="S" value=""/>
+			<Prp name="date" type="D" value="42179.5994209144"/>
+			<Prp name="child index" type="I" value="-1"/>
+		</Node>
+		<Node name="item 53">
+			<Prp name="stacktext" type="S" value="Drive('15','3')"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="239"/>
+		</Node>
+		<Node name="message 29">
+			<Prp name="unit id" type="I" value="1"/>
+			<Prp name="stack beginning" type="I" value="47"/>
+			<Prp name="priority" type="I" value="400"/>
+			<Prp name="as html" type="B" value="-1"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="message" type="S" value="The object does not exist. See Additional Information for details."/>
+			<Prp name="owner id" type="I" value="18"/>
+			<Prp name="type" type="I" value="3"/>
+			<Prp name="picture" type="S" value="Picture12.png"/>
+			<Prp name="line no" type="I" value="938"/>
+			<Prp name="stack end" type="I" value="50"/>
+			<Prp name="id" type="I" value="29"/>
+			<Prp name="remarks" type="S" value="&lt;html&gt;&lt;style&gt;body {font-family : Courier New, Arial; font-size : 10pt; font-weight : normal; padding : 14px 8px 8px 14px; margin : 0 0 0 0;} p {margin : 4px 0 4px 0; padding : 0 0 0 0;} h4 {font-size: 10pt; font-weight : bold; margin : 12px 0 0 16px; padding : 0 0 0 0;} table {margin-left : 16px; border-top: 1px solid grey;} td {font-size : 10pt; font-weight : normal; padding-left : 8px;} &lt;/style&gt;&lt;body&gt;&lt;p&gt;An error occurred while accessing the &quot;wRowCount&quot; method or property of the &quot;&lt;a href=&quot;lnamemapping://{D40AD501-505E-4354-8A38-0403CED001CB}.{FB92A380-7F09-4441-8949-1849E0058277}&quot;&gt;SelectProducts&lt;/a&gt;&quot; object.&lt;br/&gt;The object or one of its parent objects was not found.&lt;/p&gt;&lt;h4&gt;Object Whose Method or Property Was Accessed&lt;/h4&gt;&lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; noborder&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Alias:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Aliases.DSI.ProductSelectionPage.SelectProducts&lt;/td&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Name mapping item:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;NameMapping.Sys.Toad_for_Oracle_Installer.DSI.pnlMain.ProductSelectionPage.SelectProducts&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;h4&gt;Object That Was Not Found&lt;/h4&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Alias:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;lnamemapping://{D40AD501-505E-4354-8A38-0403CED001CB}.{3777E2A6-72D1-4749-A88A-47E0ADC08590}&quot;&gt;Aliases.DSI.ProductSelectionPage&lt;/a&gt;&lt;/td&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Name mapping item:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;namemapping://{D40AD501-505E-4354-8A38-0403CED001CB}.{3018CB86-C62A-4395-AAB2-4C9B07D73C82}&quot;&gt;NameMapping.Sys.Toad_for_Oracle_Installer.DSI.pnlMain.ProductSelectionPage&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;p style=&quot;margin-top: 12px;&quot;&gt;Click the link above to view and configure mapping settings for the missing object.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;aqa-help://2201&quot;&gt;Learn about possible causes of the error&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"/>
+			<Prp name="date" type="D" value="42179.6015167245"/>
+			<Prp name="child index" type="I" value="-1"/>
+		</Node>
+		<Node name="item 44">
+			<Prp name="stacktext" type="S" value="Drive('15','3')"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="239"/>
+		</Node>
+		<Node name="item 78">
+			<Prp name="stacktext" type="S" value="Drive('15','3')"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="239"/>
+		</Node>
+		<Node name="item 59">
+			<Prp name="stacktext" type="S" value="Main"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="119"/>
+		</Node>
+		<Node name="message 28">
+			<Prp name="unit id" type="I" value="1"/>
+			<Prp name="stack beginning" type="I" value="43"/>
+			<Prp name="priority" type="I" value="400"/>
+			<Prp name="as html" type="B" value="-1"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="message" type="S" value="The object does not exist. See Additional Information for details."/>
+			<Prp name="owner id" type="I" value="18"/>
+			<Prp name="type" type="I" value="3"/>
+			<Prp name="picture" type="S" value="Picture11.png"/>
+			<Prp name="line no" type="I" value="915"/>
+			<Prp name="stack end" type="I" value="46"/>
+			<Prp name="id" type="I" value="28"/>
+			<Prp name="remarks" type="S" value="&lt;html&gt;&lt;style&gt;body {font-family : Courier New, Arial; font-size : 10pt; font-weight : normal; padding : 14px 8px 8px 14px; margin : 0 0 0 0;} p {margin : 4px 0 4px 0; padding : 0 0 0 0;} h4 {font-size: 10pt; font-weight : bold; margin : 12px 0 0 16px; padding : 0 0 0 0;} table {margin-left : 16px; border-top: 1px solid grey;} td {font-size : 10pt; font-weight : normal; padding-left : 8px;} &lt;/style&gt;&lt;body&gt;&lt;p&gt;An error occurred while accessing the &quot;wRowCount&quot; method or property of the &quot;&lt;a href=&quot;lnamemapping://{D40AD501-505E-4354-8A38-0403CED001CB}.{FB92A380-7F09-4441-8949-1849E0058277}&quot;&gt;SelectProducts&lt;/a&gt;&quot; object.&lt;br/&gt;The object or one of its parent objects was not found.&lt;/p&gt;&lt;h4&gt;Object Whose Method or Property Was Accessed&lt;/h4&gt;&lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; noborder&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Alias:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Aliases.DSI.ProductSelectionPage.SelectProducts&lt;/td&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Name mapping item:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;NameMapping.Sys.Toad_for_Oracle_Installer.DSI.pnlMain.ProductSelectionPage.SelectProducts&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;h4&gt;Object That Was Not Found&lt;/h4&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Alias:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;lnamemapping://{D40AD501-505E-4354-8A38-0403CED001CB}.{3777E2A6-72D1-4749-A88A-47E0ADC08590}&quot;&gt;Aliases.DSI.ProductSelectionPage&lt;/a&gt;&lt;/td&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Name mapping item:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;namemapping://{D40AD501-505E-4354-8A38-0403CED001CB}.{3018CB86-C62A-4395-AAB2-4C9B07D73C82}&quot;&gt;NameMapping.Sys.Toad_for_Oracle_Installer.DSI.pnlMain.ProductSelectionPage&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;p style=&quot;margin-top: 12px;&quot;&gt;Click the link above to view and configure mapping settings for the missing object.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;aqa-help://2201&quot;&gt;Learn about possible causes of the error&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"/>
+			<Prp name="date" type="D" value="42179.6013985417"/>
+			<Prp name="child index" type="I" value="-1"/>
+		</Node>
+		<Node name="item 5">
+			<Prp name="stacktext" type="S" value="DSI_ProductSelectionPage_SelectProducts('6')"/>
+			<Prp name="unit id" type="I" value="1"/>
+			<Prp name="line no" type="I" value="913"/>
+		</Node>
+		<Node name="item 86">
+			<Prp name="stacktext" type="S" value="DSI_ProductSelectionPage_SelectProducts('12')"/>
+			<Prp name="unit id" type="I" value="1"/>
+			<Prp name="line no" type="I" value="955"/>
+		</Node>
+		<Node name="message 25">
+			<Prp name="unit id" type="I" value="1"/>
+			<Prp name="stack beginning" type="I" value="30"/>
+			<Prp name="priority" type="I" value="400"/>
+			<Prp name="as html" type="B" value="-1"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="message" type="S" value="The object does not exist. See Additional Information for details."/>
+			<Prp name="owner id" type="I" value="18"/>
+			<Prp name="type" type="I" value="3"/>
+			<Prp name="picture" type="S" value="Picture8.png"/>
+			<Prp name="line no" type="I" value="938"/>
+			<Prp name="stack end" type="I" value="33"/>
+			<Prp name="id" type="I" value="25"/>
+			<Prp name="remarks" type="S" value="&lt;html&gt;&lt;style&gt;body {font-family : Courier New, Arial; font-size : 10pt; font-weight : normal; padding : 14px 8px 8px 14px; margin : 0 0 0 0;} p {margin : 4px 0 4px 0; padding : 0 0 0 0;} h4 {font-size: 10pt; font-weight : bold; margin : 12px 0 0 16px; padding : 0 0 0 0;} table {margin-left : 16px; border-top: 1px solid grey;} td {font-size : 10pt; font-weight : normal; padding-left : 8px;} &lt;/style&gt;&lt;body&gt;&lt;p&gt;An error occurred while accessing the &quot;wRowCount&quot; method or property of the &quot;&lt;a href=&quot;lnamemapping://{D40AD501-505E-4354-8A38-0403CED001CB}.{FB92A380-7F09-4441-8949-1849E0058277}&quot;&gt;SelectProducts&lt;/a&gt;&quot; object.&lt;br/&gt;The object or one of its parent objects was not found.&lt;/p&gt;&lt;h4&gt;Object Whose Method or Property Was Accessed&lt;/h4&gt;&lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; noborder&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Alias:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Aliases.DSI.ProductSelectionPage.SelectProducts&lt;/td&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Name mapping item:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;NameMapping.Sys.Toad_for_Oracle_Installer.DSI.pnlMain.ProductSelectionPage.SelectProducts&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;h4&gt;Object That Was Not Found&lt;/h4&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Alias:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;lnamemapping://{D40AD501-505E-4354-8A38-0403CED001CB}.{3777E2A6-72D1-4749-A88A-47E0ADC08590}&quot;&gt;Aliases.DSI.ProductSelectionPage&lt;/a&gt;&lt;/td&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Name mapping item:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;namemapping://{D40AD501-505E-4354-8A38-0403CED001CB}.{3018CB86-C62A-4395-AAB2-4C9B07D73C82}&quot;&gt;NameMapping.Sys.Toad_for_Oracle_Installer.DSI.pnlMain.ProductSelectionPage&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;p style=&quot;margin-top: 12px;&quot;&gt;Click the link above to view and configure mapping settings for the missing object.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;aqa-help://2201&quot;&gt;Learn about possible causes of the error&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"/>
+			<Prp name="date" type="D" value="42179.6010390278"/>
+			<Prp name="child index" type="I" value="-1"/>
+		</Node>
+		<Node name="item 40">
+			<Prp name="stacktext" type="S" value="Drive('15','3')"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="239"/>
+		</Node>
+		<Node name="item 51">
+			<Prp name="stacktext" type="S" value="Log_StepError('Cannot Find the Product: Toad™ for Oracle 64-bit')"/>
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="line no" type="I" value="61"/>
+		</Node>
+		<Node name="item 65">
+			<Prp name="stacktext" type="S" value="Drive('15','3')"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="239"/>
+		</Node>
+		<Node name="message 12">
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="message" type="S" value="step - 7-: Click Add License Button."/>
+			<Prp name="owner id" type="I" value="9"/>
+			<Prp name="type" type="I" value="0"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="line no" type="I" value="43"/>
+			<Prp name="id" type="I" value="12"/>
+			<Prp name="remarks" type="S" value=""/>
+			<Prp name="date" type="D" value="42179.599796713"/>
+			<Prp name="child index" type="I" value="-1"/>
+		</Node>
+		<Node name="message 38">
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="stack beginning" type="I" value="85"/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="message" type="S" value="step - 16-: Cannot Find the Product: Benchmark Factory™ 64-bit"/>
+			<Prp name="owner id" type="I" value="18"/>
+			<Prp name="type" type="I" value="3"/>
+			<Prp name="picture" type="S" value="Picture21.png"/>
+			<Prp name="line no" type="I" value="61"/>
+			<Prp name="stack end" type="I" value="89"/>
+			<Prp name="id" type="I" value="38"/>
+			<Prp name="remarks" type="S" value=""/>
+			<Prp name="date" type="D" value="42179.6024726736"/>
+			<Prp name="child index" type="I" value="-1"/>
+		</Node>
+		<Node name="item 13">
+			<Prp name="stacktext" type="S" value="DSI_ProductSelectionPage_SelectProducts('6')"/>
+			<Prp name="unit id" type="I" value="1"/>
+			<Prp name="line no" type="I" value="938"/>
+		</Node>
+		<Node name="item 18">
+			<Prp name="stacktext" type="S" value="DSI_ProductSelectionPage_SelectProducts('6')"/>
+			<Prp name="unit id" type="I" value="1"/>
+			<Prp name="line no" type="I" value="955"/>
+		</Node>
+		<Node name="item 30">
+			<Prp name="stacktext" type="S" value="DSI_ProductSelectionPage_SelectProducts('7')"/>
+			<Prp name="unit id" type="I" value="1"/>
+			<Prp name="line no" type="I" value="938"/>
+		</Node>
+		<Node name="message 22">
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="stack beginning" type="I" value="17"/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="message" type="S" value="step - 12-: Cannot Find the Product: Toad™ Data Modeler"/>
+			<Prp name="owner id" type="I" value="18"/>
+			<Prp name="type" type="I" value="3"/>
+			<Prp name="picture" type="S" value="Picture5.png"/>
+			<Prp name="line no" type="I" value="61"/>
+			<Prp name="stack end" type="I" value="21"/>
+			<Prp name="id" type="I" value="22"/>
+			<Prp name="remarks" type="S" value=""/>
+			<Prp name="date" type="D" value="42179.6005643056"/>
+			<Prp name="child index" type="I" value="-1"/>
+		</Node>
+		<Node name="message 39">
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="message" type="S" value="Script: DSI_ClickCancelButton"/>
+			<Prp name="owner id" type="I" value="1"/>
+			<Prp name="type" type="I" value="0"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="line no" type="I" value="23"/>
+			<Prp name="id" type="I" value="39"/>
+			<Prp name="remarks" type="S" value=""/>
+			<Prp name="date" type="D" value="42179.6024813542"/>
+			<Prp name="child index" type="I" value="-1"/>
+		</Node>
+		<Node name="item 70">
+			<Prp name="stacktext" type="S" value="Drive('15','3')"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="239"/>
+		</Node>
+		<Node name="message 2">
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="message" type="S" value="Script: DSI_LaunchSuiteInstaller"/>
+			<Prp name="owner id" type="I" value="1"/>
+			<Prp name="type" type="I" value="3"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="line no" type="I" value="23"/>
+			<Prp name="id" type="I" value="2"/>
+			<Prp name="remarks" type="S" value=""/>
+			<Prp name="date" type="D" value="42179.5994125926"/>
+			<Prp name="child index" type="I" value="-1"/>
+		</Node>
+		<Node name="item 9">
+			<Prp name="stacktext" type="S" value="DSI_ProductSelectionPage_SelectProducts('6')"/>
+			<Prp name="unit id" type="I" value="1"/>
+			<Prp name="line no" type="I" value="915"/>
+		</Node>
+		<Node name="item 57">
+			<Prp name="stacktext" type="S" value="Drive('15','3')"/>
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="239"/>
+		</Node>
+		<Node name="message 16">
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="message" type="S" value="step - 10-: The Next button Exist"/>
+			<Prp name="owner id" type="I" value="15"/>
+			<Prp name="type" type="I" value="0"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="line no" type="I" value="43"/>
+			<Prp name="id" type="I" value="16"/>
+			<Prp name="remarks" type="S" value=""/>
+			<Prp name="date" type="D" value="42179.5999328819"/>
+			<Prp name="child index" type="I" value="-1"/>
+		</Node>
+		<Node name="message 13">
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="message" type="S" value="step - 8-: Enter Licnese key: C603JQY1L2265XH2T3TGZBEPKJ2B8LABCL7FN-123-456-789-2D"/>
+			<Prp name="owner id" type="I" value="9"/>
+			<Prp name="type" type="I" value="0"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="line no" type="I" value="43"/>
+			<Prp name="id" type="I" value="13"/>
+			<Prp name="remarks" type="S" value=""/>
+			<Prp name="date" type="D" value="42179.5998011458"/>
+			<Prp name="child index" type="I" value="-1"/>
+		</Node>
+		<Prp name="status" type="I" value="2"/>
+		<Prp name="perfcounterslength" type="I" value="1"/>
+	</Node>
+</Nodes>
