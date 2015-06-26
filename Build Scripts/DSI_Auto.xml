@@ -126,16 +126,16 @@
 		
 		<echo
 			message="-----------------Basic information------------------------------" />
-		<echo>The mds file path : ${TestVM.TCScripts.dir}\${Automation.ProjectName}\${Automation.ProjectName}.mds</echo>
+		<echo>The mds file path : ${TestVM.TCScripts.dir}\${Automation.ProjectName}.mds</echo>
 		<echo>ProjectName   	: ${Automation.ProjectName}</echo>
-		<echo message="&quot;${TestVM.AntUtilities.dir}\SelectGroup.vbs&quot; &quot;${TestVM.TCScripts.dir}\${Automation.ProjectName}\${Automation.ProjectName}.mds&quot; &quot;${RunGroups}&quot;"/>
+		<echo message="&quot;${TestVM.AntUtilities.dir}\SelectGroup.vbs&quot; &quot;${TestVM.TCScripts.dir}\${Automation.ProjectName}.mds&quot; &quot;${RunGroups}&quot;"/>
 		
 		<condition property="file.exists" else="false">
-			<available file="${TestVM.TCScripts.dir}\${Automation.ProjectName}\${Automation.ProjectName}.mds"/>
+			<available file="${TestVM.TCScripts.dir}\${Automation.ProjectName}.mds"/>
 		</condition>
 		<echo message="Checking the project configuration if exists"/>
 		<if>
-			<available file="${TestVM.TCScripts.dir}\${Automation.ProjectName}\${Automation.ProjectName}.mds"/>
+			<available file="${TestVM.TCScripts.dir}\${Automation.ProjectName}.mds"/>
 			<then>
 				<echo message="If the project configuration file exists : ${file.exists}"/>
 			</then>
@@ -148,7 +148,7 @@
 		<exec executable="cscript" failonerror="true" timeout="18000000"
 			outputproperty="VBRunOutput" errorproperty="VBErrorMsg"
 			resultproperty="VBRunResultCode">
-			<arg line="&quot;${scriptfile}&quot; &quot;${TestVM.TCScripts.dir}\${Automation.ProjectName}\${Automation.ProjectName}.mds&quot; &quot;${RunGroups}&quot;" />
+			<arg line="&quot;${scriptfile}&quot; &quot;${TestVM.TCScripts.dir}\${Automation.ProjectName}.mds&quot; &quot;${RunGroups}&quot;" />
 		</exec>
 		<echo message="===================VBRunOutput==========================" />
 		<echo message="${VBRunOutput}" />
