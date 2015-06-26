@@ -25,7 +25,7 @@
 		<Node name="child list">
 			<Node name="item0000000000">
 				<Node name="item data">
-					<Prp name="relpath" type="S" value="DSI.mds"/>
+					<Prp name="relpath" type="S" value="Oracle\Oracle.mds"/>
 				</Node>
 				<Prp name="index" type="I" value="0"/>
 				<Prp name="key" type="S" value="{AAB3597A-8248-49A8-9BC4-13868B10A859}"/>
@@ -33,10 +33,23 @@
 				<Prp name="type" type="S" value="{362A8EE5-675E-43A9-869D-06ECE80B0CB4}"/>
 				<Prp name="typename" type="S" value="Project"/>
 			</Node>
+			<Node name="item0000000001">
+				<Node name="item data">
+					<Prp name="relpath" type="S" value="DB2\DB2.mds"/>
+				</Node>
+				<Prp name="index" type="I" value="1"/>
+				<Prp name="key" type="S" value="{9285FCA8-D245-4BF9-89A7-259D65725EB1}"/>
+				<Prp name="pluginname" type="S" value=""/>
+				<Prp name="type" type="S" value="{362A8EE5-675E-43A9-869D-06ECE80B0CB4}"/>
+				<Prp name="typename" type="S" value="Project"/>
+			</Node>
 		</Node>
 		<Node name="files">
-			<Node name="dsi.mds">
-				<Prp name="relpath" type="S" value="DSI.mds"/>
+			<Node name="db2\db2.mds">
+				<Prp name="relpath" type="S" value="DB2\DB2.mds"/>
+			</Node>
+			<Node name="oracle\oracle.mds">
+				<Prp name="relpath" type="S" value="Oracle\Oracle.mds"/>
 			</Node>
 		</Node>
 		<Node name="folders">
@@ -58,6 +71,14 @@
 					<Prp name="enabled" type="B" value="-1"/>
 					<Prp name="index" type="I" value="0"/>
 					<Prp name="key" type="S" value="{AAB3597A-8248-49A8-9BC4-13868B10A859}"/>
+					<Prp name="stoponerror" type="B" value="-1"/>
+					<Prp name="timeout" type="I" value="0"/>
+				</Node>
+				<Node name="item0000000001">
+					<Prp name="description" type="S" value=""/>
+					<Prp name="enabled" type="B" value="-1"/>
+					<Prp name="index" type="I" value="1"/>
+					<Prp name="key" type="S" value="{9285FCA8-D245-4BF9-89A7-259D65725EB1}"/>
 					<Prp name="stoponerror" type="B" value="-1"/>
 					<Prp name="timeout" type="I" value="0"/>
 				</Node>
