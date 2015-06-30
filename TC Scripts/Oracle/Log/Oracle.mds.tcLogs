@@ -22,7 +22,28 @@
 		<Node name="folders">
 			<Node name="folders"/>
 		</Node>
-		<Node name="logs"/>
+		<Node name="logs">
+			<Node name="log0">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="42185.6240900116"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="index" type="I" value="0"/>
+				<Prp name="key" type="S" value="{BE8335D1-ECB7-4A55-BB31-547630D7A8E1}"/>
+				<Prp name="nameofroot" type="S" value="Oracle"/>
+				<Prp name="relpath" type="S" value="6_30_2015_2_58 PM_41_377\Description.tcLog"/>
+				<Prp name="status" type="I" value="0"/>
+			</Node>
+			<Node name="log1">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="42185.6525433333"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="index" type="I" value="1"/>
+				<Prp name="key" type="S" value="{FEF1647E-6D72-4C52-B41F-3CE11A34A25C}"/>
+				<Prp name="nameofroot" type="S" value="Script Test Log [DSI\QI_Test]"/>
+				<Prp name="relpath" type="S" value="6_30_2015_3_39 PM_39_744\Description.tcLog"/>
+				<Prp name="status" type="I" value="0"/>
+			</Node>
+		</Node>
 		<Prp name="signature" type="S" value="{681DCC69-A39F-4C4D-8E7D-B2D9362FAF4F}"/>
 		<Prp name="version" type="S" value="7.0"/>
 	</Node>

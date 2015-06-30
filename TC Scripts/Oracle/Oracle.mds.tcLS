@@ -24,7 +24,41 @@
 				<Prp name="key" type="S" value="{8C07594D-08AF-43F3-9C84-66F47EB9F9F5}"/>
 				<Prp name="relpath" type="S" value="Log"/>
 			</Node>
-			<Node name="variables"/>
+			<Node name="variables">
+				<Node name="datav3">
+					<Node name="var0">
+						<Node name="value">
+							<Prp name="intvalue" type="I" value="20"/>
+						</Node>
+						<Prp name="name" type="S" value="StepIndex"/>
+					</Node>
+					<Node name="var1">
+						<Node name="value">
+							<Prp name="strvalue" type="H" value="440065006C006C0020003C002E0040002600220027003E0020002D002000700072006F0064005C0064006A00690061006E006700"/>
+						</Node>
+						<Prp name="name" type="S" value="SiteMessage"/>
+					</Node>
+					<Node name="var2">
+						<Node name="value">
+							<Prp name="strvalue" type="H" value="42003200370054004D004A004600320033004E004B0031003200540031004C005A004200550041005900330059005A005A005600510030003100300042005000560055004800540031002D003100320033002D003400350036002D003700380039002D0036003600"/>
+						</Node>
+						<Prp name="name" type="S" value="LicenseKey"/>
+					</Node>
+					<Node name="var3">
+						<Node name="value">
+							<Prp name="strvalue" type="H" value="43005800590047004100300056004C003600340036005600410046005700380047003500510033004A005200580031005A004D00370051004E005400440030003200380053005A0044004A0047004E002D003100320033002D003400350036002D003700380039002D0041003000"/>
+						</Node>
+						<Prp name="name" type="S" value="TrialLicenseKey"/>
+					</Node>
+					<Node name="var4">
+						<Node name="value">
+							<Prp name="strvalue" type="H" value="54007200690061006C002000560065007200730069006F006E00"/>
+						</Node>
+						<Prp name="name" type="S" value="TrialSiteMessage"/>
+					</Node>
+				</Node>
+				<Prp name="version" type="I" value="3"/>
+			</Node>
 		</Node>
 		<Prp name="signature" type="S" value="{49FC0C30-9EF7-4DBD-97A8-B7A00E79A2AF}"/>
 	</Node>
