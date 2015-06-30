@@ -42,7 +42,7 @@
 			</Node>
 			<Node name="item0000000002">
 				<Node name="item data">
-					<Prp name="relpath" type="S" value="..\..\Oracle\Script\DSI.sd"/>
+					<Prp name="relpath" type="S" value="DSI.sd"/>
 				</Node>
 				<Prp name="index" type="I" value="2"/>
 				<Prp name="key" type="S" value="{AA59F3B9-1DA5-4318-AC54-656F2ADC364D}"/>
