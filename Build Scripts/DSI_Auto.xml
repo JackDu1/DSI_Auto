@@ -78,17 +78,17 @@
 
 	<!-- ================================================ -->
 	<target name="CopySuiteInstallerToTestVM">
-		<echo message="FileServer.Build.Dir   	: ${FileServer.Build.Dir}${VersionNumber}"/>
+		<echo message="FileServer.Build.Dir   	: ${FileServer.Build.Dir}${VersionNumber}\${SuiteName}"/>
 		<echo message="FileServer.Build.Name  	: ${FileServer.Build.Name}"/>
 		<echo message="FileServer.Build.Number  : ${VersionNumber}"/>
 		<echo message="Product Build in Local 	: ${TestVM.SuiteInstaller.dir}"/>
 		
 		<condition property="file.exists" else="false">
-			<available file="${FileServer.Build.Dir}${VersionNumber}\${FileServer.Build.Name}"/>
+			<available file="${FileServer.Build.Dir}${VersionNumber}\${SuiteName}\${FileServer.Build.Name}"/>
 		</condition>
 		<echo message="If file existed in FileServer?:${file.exists}"/>
 		
-		<copy file="${FileServer.Build.Dir}${VersionNumber}\${FileServer.Build.Name}" todir="${TestVM.SuiteInstaller.dir}"  overwrite="true" failonerror="false"/>
+		<copy file="${FileServer.Build.Dir}${VersionNumber}\${SuiteName}\${FileServer.Build.Name}" todir="${TestVM.SuiteInstaller.dir}"  overwrite="true" failonerror="false"/>
 		
 		<echo message="Checking the build copy process if successed"/>
 		<if>
