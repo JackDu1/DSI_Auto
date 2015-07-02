@@ -1091,7 +1091,7 @@
 			<Property34 Cookie="44" PropertyType="0" Value="lblLanguage" Type="5" />
 			<Property35 Cookie="45" PropertyType="0" Value="Browse For Folder" Type="5" />
 			<Property36 Cookie="46" PropertyType="0" Value="SHBrowseForFolder ShellNameSpace Control" Type="5" />
-			<Property37 Cookie="50" PropertyType="0" Value="Toad_for_Oracle_*" Type="5" />
+			<Property37 Cookie="50" PropertyType="0" Value="Toad_for_DB2_*" Type="5" />
 			<Property38 Cookie="51" PropertyType="0" Value="2" Type="0" />
 			<Property39 Cookie="52" PropertyType="0" Value="ProductLicensing" Type="5" />
 			<Property40 Cookie="56" PropertyType="0" Value="lblProductKey" Type="5" />
