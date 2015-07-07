@@ -1174,7 +1174,7 @@
 									<Node name="test parameters"/>
 									<Prp name="count" type="I" value="1"/>
 									<Prp name="description" type="S" value=""/>
-									<Prp name="enabled" type="B" value="-1"/>
+									<Prp name="enabled" type="B" value="0"/>
 									<Prp name="group" type="B" value="0"/>
 									<Prp name="index" type="I" value="0"/>
 									<Prp name="key" type="S" value="{B3D87E7E-9582-4260-87D2-AD87BC1DD478}"/>
