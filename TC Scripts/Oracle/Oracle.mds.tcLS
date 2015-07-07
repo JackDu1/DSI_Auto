@@ -21,14 +21,14 @@
 	<Node name="root">
 		<Node name="data">
 			<Node name="logs">
-				<Prp name="key" type="S" value="{8C07594D-08AF-43F3-9C84-66F47EB9F9F5}"/>
+				<Prp name="key" type="S" value="{0761EB9F-0D36-4173-8E83-16F99032C2AE}"/>
 				<Prp name="relpath" type="S" value="Log"/>
 			</Node>
 			<Node name="variables">
 				<Node name="datav3">
 					<Node name="var0">
 						<Node name="value">
-							<Prp name="intvalue" type="I" value="134"/>
+							<Prp name="intvalue" type="I" value="31"/>
 						</Node>
 						<Prp name="name" type="S" value="StepIndex"/>
 					</Node>
