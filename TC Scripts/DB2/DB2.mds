@@ -97,9 +97,6 @@
 			<Node name="script\script.tcscript">
 				<Prp name="relpath" type="S" value="Script\Script.tcScript"/>
 			</Node>
-			<Node name="script\visualizer\dsi_sd\dsi.sd.tcvis">
-				<Prp name="relpath" type="S" value="Script\Visualizer\DSI_sd\DSI.sd.tcVis"/>
-			</Node>
 			<Node name="script\visualizer\finishproducts_sd\finishproducts.sd.tcvis">
 				<Prp name="relpath" type="S" value="Script\Visualizer\FinishProducts_sd\FinishProducts.sd.tcVis"/>
 			</Node>
@@ -1083,7 +1080,7 @@
 				<Prp name="type" type="I" value="6"/>
 			</Node>
 			<Prp name="key" type="S" value="{C8D68BF2-FAC1-4F51-9EF7-7A452377213C}"/>
-			<Prp name="settingsversion" type="S" value="9.31"/>
+			<Prp name="settingsversion" type="S" value="9.30"/>
 		</Node>
 		<Node name="test data">
 			<Node name="child list">
