@@ -29,6 +29,7 @@ Sub XMLDriver()
 
 	Dim XMLDoc
 	Dim ErrorMsg
+	Dim Position
 	Dim ProjectFile
 	Dim RunGroupName
 	Dim ParentGroup,groupowner,childgroup
@@ -70,7 +71,8 @@ Sub XMLDriver()
 		if GroupNode.haschildnodes then
 			'find the parent group
 			for j = 0 to groupnode.childnodes.length - 1
-				parentgroup=Left(Trim(RunGroupNameArray(i)),2)
+				Position=InStr(RunGroupNameArray(i),"-")
+				parentgroup=Left(Trim(RunGroupNameArray(i)),Position - 2)
 				if ProcessNode(GroupNode,parentgroup)=0 then
 					'wscript.echo("find the parent group")
 					'find the group itself
@@ -78,7 +80,7 @@ Sub XMLDriver()
 					if ProcessNode(GroupNode,groupowner)=0 then
 						'wscript.echo("find the group itself")
 						'find the child group
-						childgroup=Left(Trim(RunGroupNameArray(i)),2) & "TestItem"
+						childgroup=Left(Trim(RunGroupNameArray(i)),Position - 2) & "TestItem"
 						if ProcessNode(GroupNode,childgroup) =0 then
 							'wscript.echo("find the Child group")
 							exit for
