@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE Nodes [
+
+<!ENTITY % NameValue "CDATA">
+<!ENTITY % PropType "(I|S|D|L|H|B)">
+<!ENTITY % VersionValue "CDATA">
+
+<!ELEMENT Prp (#PCDATA)>
+<!ELEMENT Node (Node|Prp)*>
+<!ELEMENT Nodes (Node)+>
+
+<!ATTLIST Nodes version CDATA "1">
+
+<!ATTLIST Node name CDATA #REQUIRED>
+
+<!ATTLIST Prp name CDATA #REQUIRED>
+<!ATTLIST Prp type CDATA #REQUIRED>
+<!ATTLIST Prp value CDATA #REQUIRED>
+]>
+<Nodes version="1">
+	<Node name="root">
+		<Node name="child list">
+			<Node name="item0000000000">
+				<Node name="item data">
+					<Prp name="relpath" type="S" value="..\..\Oracle\Script\Access.sd"/>
+				</Node>
+				<Prp name="index" type="I" value="0"/>
+				<Prp name="key" type="S" value="{7894F0E6-8E99-4C81-BF7F-06F32FEE2FD5}"/>
+				<Prp name="pluginname" type="S" value="Script"/>
+				<Prp name="type" type="S" value="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}"/>
+				<Prp name="typename" type="S" value="Script Unit"/>
+			</Node>
+			<Node name="item0000000001">
+				<Node name="item data">
+					<Prp name="relpath" type="S" value="..\..\Oracle\Script\AJMS.sd"/>
+				</Node>
+				<Prp name="index" type="I" value="1"/>
+				<Prp name="key" type="S" value="{E227D3D5-E586-443E-9DAA-133A22E3D2DE}"/>
+				<Prp name="pluginname" type="S" value="Script"/>
+				<Prp name="type" type="S" value="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}"/>
+				<Prp name="typename" type="S" value="Script Unit"/>
+			</Node>
+			<Node name="item0000000002">
+				<Node name="item data">
+					<Prp name="relpath" type="S" value="..\..\Oracle\Script\CommonFunction.sd"/>
+				</Node>
+				<Prp name="index" type="I" value="2"/>
+				<Prp name="key" type="S" value="{0AD14BA9-8631-4313-BB53-14F2812B96E8}"/>
+				<Prp name="pluginname" type="S" value="Script"/>
+				<Prp name="type" type="S" value="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}"/>
+				<Prp name="typename" type="S" value="Script Unit"/>
+			</Node>
+			<Node name="item0000000003">
+				<Node name="item data">
+					<Prp name="relpath" type="S" value="..\..\Oracle\Script\LogFile.sd"/>
+				</Node>
+				<Prp name="index" type="I" value="3"/>
+				<Prp name="key" type="S" value="{42CED48C-EA38-4EE1-8733-323B9D69CC94}"/>
+				<Prp name="pluginname" type="S" value="Script"/>
+				<Prp name="type" type="S" value="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}"/>
+				<Prp name="typename" type="S" value="Script Unit"/>
+			</Node>
+			<Node name="item0000000004">
+				<Node name="item data">
+					<Prp name="relpath" type="S" value="..\..\Oracle\Script\SQLServer.sd"/>
+				</Node>
+				<Prp name="index" type="I" value="4"/>
+				<Prp name="key" type="S" value="{FF929C41-04C0-4895-AF16-9E6AAFEDE347}"/>
+				<Prp name="pluginname" type="S" value="Script"/>
+				<Prp name="type" type="S" value="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}"/>
+				<Prp name="typename" type="S" value="Script Unit"/>
+			</Node>
+			<Node name="item0000000005">
+				<Node name="item data">
+					<Prp name="relpath" type="S" value="..\..\Oracle\Script\TXTFile.sd"/>
+				</Node>
+				<Prp name="index" type="I" value="5"/>
+				<Prp name="key" type="S" value="{3C0C71E3-F515-4A90-9B4D-2E51C194B0A5}"/>
+				<Prp name="pluginname" type="S" value="Script"/>
+				<Prp name="type" type="S" value="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}"/>
+				<Prp name="typename" type="S" value="Script Unit"/>
+			</Node>
+			<Node name="item0000000006">
+				<Node name="item data">
+					<Prp name="relpath" type="S" value="..\..\Oracle\Script\XMLUnit.sd"/>
+				</Node>
+				<Prp name="index" type="I" value="6"/>
+				<Prp name="key" type="S" value="{93C87E3C-DD03-4826-BCD9-E91BC2C4C46E}"/>
+				<Prp name="pluginname" type="S" value="Script"/>
+				<Prp name="type" type="S" value="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}"/>
+				<Prp name="typename" type="S" value="Script Unit"/>
+			</Node>
+			<Node name="item0000000007">
+				<Node name="item data">
+					<Prp name="relpath" type="S" value="FinishProducts.sd"/>
+				</Node>
+				<Prp name="index" type="I" value="7"/>
+				<Prp name="key" type="S" value="{7B4FF087-BDA3-4BA2-B33F-B38566224358}"/>
+				<Prp name="pluginname" type="S" value="Script"/>
+				<Prp name="type" type="S" value="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}"/>
+				<Prp name="typename" type="S" value="Script Unit"/>
+			</Node>
+			<Node name="item0000000008">
+				<Node name="item data">
+					<Prp name="relpath" type="S" value="MainUtility.sd"/>
+				</Node>
+				<Prp name="index" type="I" value="8"/>
+				<Prp name="key" type="S" value="{065CFAED-9B1A-40F9-A403-C88FC9B24A9A}"/>
+				<Prp name="pluginname" type="S" value="Script"/>
+				<Prp name="type" type="S" value="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}"/>
+				<Prp name="typename" type="S" value="Script Unit"/>
+			</Node>
+			<Node name="item0000000009">
+				<Node name="item data">
+					<Prp name="relpath" type="S" value="DSI.sd"/>
+				</Node>
+				<Prp name="index" type="I" value="9"/>
+				<Prp name="key" type="S" value="{8D9DCEDE-9C8C-4701-990D-B2F728DE6E92}"/>
+				<Prp name="pluginname" type="S" value="Script"/>
+				<Prp name="type" type="S" value="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}"/>
+				<Prp name="typename" type="S" value="Script Unit"/>
+			</Node>
+		</Node>
+		<Node name="folders">
+			<Node name="folders">
+				<Node name="folder0000000000">
+					<Node name="folders"/>
+					<Node name="references">
+						<Node name="ref0000000000">
+							<Prp name="index" type="I" value="0"/>
+							<Prp name="key" type="S" value="{7894F0E6-8E99-4C81-BF7F-06F32FEE2FD5}"/>
+						</Node>
+						<Node name="ref0000000001">
+							<Prp name="index" type="I" value="1"/>
+							<Prp name="key" type="S" value="{E227D3D5-E586-443E-9DAA-133A22E3D2DE}"/>
+						</Node>
+						<Node name="ref0000000002">
+							<Prp name="index" type="I" value="2"/>
+							<Prp name="key" type="S" value="{0AD14BA9-8631-4313-BB53-14F2812B96E8}"/>
+						</Node>
+						<Node name="ref0000000003">
+							<Prp name="index" type="I" value="3"/>
+							<Prp name="key" type="S" value="{42CED48C-EA38-4EE1-8733-323B9D69CC94}"/>
+						</Node>
+						<Node name="ref0000000004">
+							<Prp name="index" type="I" value="4"/>
+							<Prp name="key" type="S" value="{FF929C41-04C0-4895-AF16-9E6AAFEDE347}"/>
+						</Node>
+						<Node name="ref0000000005">
+							<Prp name="index" type="I" value="5"/>
+							<Prp name="key" type="S" value="{3C0C71E3-F515-4A90-9B4D-2E51C194B0A5}"/>
+						</Node>
+						<Node name="ref0000000006">
+							<Prp name="index" type="I" value="6"/>
+							<Prp name="key" type="S" value="{93C87E3C-DD03-4826-BCD9-E91BC2C4C46E}"/>
+						</Node>
+					</Node>
+					<Prp name="caption" type="S" value="Common"/>
+					<Prp name="description" type="S" value="A logical folder that is used to organize project items and elements."/>
+					<Prp name="index" type="I" value="0"/>
+					<Prp name="moniker" type="S" value=""/>
+				</Node>
+			</Node>
+		</Node>
+		<Node name="settings"/>
+		<Prp name="signature" type="S" value="{9252F941-DB23-4FCA-AA50-858B33BB4A19}"/>
+		<Prp name="version" type="S" value="9.0"/>
+	</Node>
+</Nodes>
