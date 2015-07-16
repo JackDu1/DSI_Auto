@@ -23,6 +23,9 @@
 			<Node name="{24b6fa0b-0143-461a-9758-aeb9e9a9428b}">
 				<Prp name="default project" type="S" value="{AAB3597A-8248-49A8-9BC4-13868B10A859}"/>
 			</Node>
+			<Node name="{268a68bb-a5f5-4f0f-8b9f-ceb6540a5e0e}">
+				<Prp name="relpath" type="S" value="SQLServer\SQLServer.mds.tcLS"/>
+			</Node>
 			<Node name="{7842a309-718d-4e08-b953-31aa0aa3df1c}">
 				<Prp name="relpath" type="S" value="SAP\SAP.mds.tcLS"/>
 			</Node>

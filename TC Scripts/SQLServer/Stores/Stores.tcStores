@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE Nodes [
+
+<!ENTITY % NameValue "CDATA">
+<!ENTITY % PropType "(I|S|D|L|H|B)">
+<!ENTITY % VersionValue "CDATA">
+
+<!ELEMENT Prp (#PCDATA)>
+<!ELEMENT Node (Node|Prp)*>
+<!ELEMENT Nodes (Node)+>
+
+<!ATTLIST Nodes version CDATA "1">
+
+<!ATTLIST Node name CDATA #REQUIRED>
+
+<!ATTLIST Prp name CDATA #REQUIRED>
+<!ATTLIST Prp type CDATA #REQUIRED>
+<!ATTLIST Prp value CDATA #REQUIRED>
+]>
+<Nodes version="1">
+	<Node name="root">
+		<Node name="child list">
+			<Node name="item0000000000">
+				<Node name="item data">
+					<Prp name="relpath" type="S" value="..\..\SAP\Stores\Files.tcFiles"/>
+				</Node>
+				<Prp name="index" type="I" value="0"/>
+				<Prp name="key" type="S" value="{3B2EBBD7-1991-4228-940B-D5707E68A002}"/>
+				<Prp name="pluginname" type="S" value="Stores"/>
+				<Prp name="type" type="S" value="{AA2F3067-5C9B-4CCF-89D4-1F93CE1C510F}"/>
+				<Prp name="typename" type="S" value="Files"/>
+			</Node>
+			<Node name="item0000000001">
+				<Node name="item data">
+					<Prp name="relpath" type="S" value="..\..\SAP\Stores\Objects.tcObjects"/>
+				</Node>
+				<Prp name="index" type="I" value="1"/>
+				<Prp name="key" type="S" value="{0C354AF2-A3BF-48A3-8B90-981AC3EC4FB4}"/>
+				<Prp name="pluginname" type="S" value="Stores"/>
+				<Prp name="type" type="S" value="{30501691-969F-4007-923F-BA4459E51E6A}"/>
+				<Prp name="typename" type="S" value="Objects"/>
+			</Node>
+			<Node name="item0000000002">
+				<Node name="item data">
+					<Prp name="relpath" type="S" value="..\..\SAP\Stores\Regions.tcRegions"/>
+				</Node>
+				<Prp name="index" type="I" value="2"/>
+				<Prp name="key" type="S" value="{DE4ABCE1-7C37-45E9-9669-93830CB77AC0}"/>
+				<Prp name="pluginname" type="S" value="Stores"/>
+				<Prp name="type" type="S" value="{DA6D7EF7-5B05-4735-AAF0-A85E47D47989}"/>
+				<Prp name="typename" type="S" value="Regions"/>
+			</Node>
+			<Node name="item0000000003">
+				<Node name="item data">
+					<Prp name="relpath" type="S" value="DBTables\DBTables.tcDB"/>
+				</Node>
+				<Prp name="index" type="I" value="3"/>
+				<Prp name="key" type="S" value="{EE9BDC0E-5257-46B0-B236-68AF8EBE04B6}"/>
+				<Prp name="pluginname" type="S" value="Stores"/>
+				<Prp name="type" type="S" value="{C3BE8E0F-FB1F-487B-9AE3-BCFEB91CBEFF}"/>
+				<Prp name="typename" type="S" value="DB tables"/>
+			</Node>
+			<Node name="item0000000004">
+				<Node name="item data">
+					<Prp name="relpath" type="S" value="XML\XML.tcXmls"/>
+				</Node>
+				<Prp name="index" type="I" value="4"/>
+				<Prp name="key" type="S" value="{27DE7B2A-F207-42B7-8FCF-E6E575A422F4}"/>
+				<Prp name="pluginname" type="S" value="Stores"/>
+				<Prp name="type" type="S" value="{CCCFA5F5-AB3B-408F-95C9-61DE90C5FAD5}"/>
+				<Prp name="typename" type="S" value="XML"/>
+			</Node>
+		</Node>
+		<Node name="folders">
+			<Node name="folders"/>
+		</Node>
+		<Node name="settings"/>
+		<Prp name="signature" type="S" value="{5238AF17-5FE2-48FF-8BCC-9803A975A4F4}"/>
+		<Prp name="version" type="S" value="9.0"/>
+	</Node>
+</Nodes>
