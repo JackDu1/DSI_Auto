@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<Root Signature="{5DCBAC3B-D39C-497C-9BE8-744CBADD37AA}" NameMappingVersion="4" Cookie="215">
+<Root Signature="{5DCBAC3B-D39C-497C-9BE8-744CBADD37AA}" NameMappingVersion="4" Cookie="256">
 	<Nodes Name="NameMapping" Key="{BE401E45-B2D6-4FBA-931A-C2117D5C51AD}">
 		<Properties />
 		<Children>
@@ -585,7 +585,34 @@
 								<Properties>
 									<Property0 Name="NativeClrObject.Name" Cookie="150" />
 								</Properties>
-								<Children />
+								<Children>
+									<Child0 Name="ToadASP_splashControl_1" Key="{AB2386A2-0800-4B93-82AF-6DC80463B9C4}" ParallelWalk="True">
+										<Properties>
+											<Property0 Name="Name" Cookie="248" />
+											<Property1 Name="ClrClassName" Cookie="249" />
+										</Properties>
+										<Children>
+											<Child0 Name="Toad_picture_Panel" Key="{92765906-89DD-4A61-8091-53454DF74D62}" ParallelWalk="True">
+												<Properties>
+													<Property0 Name="Name" Cookie="250" />
+													<Property1 Name="ClrClassName" Cookie="251" />
+												</Properties>
+												<Children>
+													<Child0 Name="Toad_label_ProductVersion" Key="{CF125F7B-5BFD-463E-994E-93754D47DD7D}" ParallelWalk="True">
+														<Properties>
+															<Property0 Name="Name" Cookie="252" />
+															<Property1 Name="ClrClassName" Cookie="253" />
+														</Properties>
+														<Children />
+														<TypeInfo Item0="2" />
+													</Child0>
+												</Children>
+												<TypeInfo Item0="2" />
+											</Child0>
+										</Children>
+										<TypeInfo Item0="2" />
+									</Child0>
+								</Children>
 								<TypeInfo Item0="1" />
 							</Child11>
 							<Child12 Name="ConfirmNoNagDlg" Key="{2128A014-645D-4830-9CD2-B17B47982D7E}" ParallelWalk="True">
@@ -753,6 +780,14 @@
 								<Children />
 								<TypeInfo Item0="14" />
 							</Child3>
+							<Child4 Name="Spotlight_frm_SpotlightUserExperience" Key="{8ACA3C6C-F20E-4838-AE56-C7218A4574ED}" ParallelWalk="True">
+								<Properties>
+									<Property0 Name="ClassName" Cookie="254" />
+									<Property1 Name="Name" Cookie="255" />
+								</Properties>
+								<Children />
+								<TypeInfo Item0="14" />
+							</Child4>
 						</Children>
 						<TypeInfo Item0="0" />
 					</Child5>
@@ -949,6 +984,147 @@
 						</Children>
 						<TypeInfo Item0="0" />
 					</Child9>
+					<Child10 Name="QCSYB" Key="{F8814FDA-14D2-479A-AF0B-ACEEF421DC1C}" ParallelWalk="True">
+						<Properties>
+							<Property0 Name="ProcessName" Cookie="215" />
+							<Property1 Name="Name" Cookie="216" />
+						</Properties>
+						<Children>
+							<Child0 Name="QCSYB_frm_LangDialog" Key="{6DA97310-5C35-447B-9FB5-AF7A4DD362AA}" ParallelWalk="True">
+								<Properties>
+									<Property0 Name="ClassName" Cookie="217" />
+									<Property1 Name="Name" Cookie="218" />
+								</Properties>
+								<Children>
+									<Child0 Name="QCSYB_pnl_Top" Key="{53672629-7378-4D70-8A0F-816EF20B9488}" ParallelWalk="True">
+										<Properties>
+											<Property0 Name="ClassName" Cookie="219" />
+											<Property1 Name="Name" Cookie="220" />
+										</Properties>
+										<Children>
+											<Child0 Name="QCSYB_bitbtn_OK" Key="{C4571053-EB5B-448B-A9F0-995F49035F4B}" ParallelWalk="True">
+												<Properties>
+													<Property0 Name="ClassName" Cookie="221" />
+													<Property1 Name="Name" Cookie="222" />
+												</Properties>
+												<Children />
+												<TypeInfo Item0="20" />
+											</Child0>
+										</Children>
+										<TypeInfo Item0="15" />
+									</Child0>
+								</Children>
+								<TypeInfo Item0="14" />
+							</Child0>
+							<Child1 Name="QCSYB_UserExperienceFeedback" Key="{E1E86FA9-C08C-447A-9F7E-C38BC87320CF}" ParallelWalk="True">
+								<Properties>
+									<Property0 Name="ClassName" Cookie="223" />
+									<Property1 Name="Name" Cookie="224" />
+								</Properties>
+								<Children />
+								<TypeInfo Item0="14" />
+							</Child1>
+							<Child2 Name="QCSYB_frm_UsrLogon" Key="{034AB247-7560-453C-AC06-CB7F67398495}" ParallelWalk="True">
+								<Properties>
+									<Property0 Name="ClassName" Cookie="225" />
+									<Property1 Name="Name" Cookie="226" />
+								</Properties>
+								<Children>
+									<Child0 Name="QCSYB_BitBtn_Close" Key="{29C7B640-E054-464C-BCB0-12BCE5297668}" ParallelWalk="True">
+										<Properties>
+											<Property0 Name="ClassName" Cookie="227" />
+											<Property1 Name="Name" Cookie="228" />
+										</Properties>
+										<Children />
+										<TypeInfo Item0="20" />
+									</Child0>
+								</Children>
+								<TypeInfo Item0="14" />
+							</Child2>
+							<Child3 Name="QCSYB_frm_WelCome" Key="{0A67B3CF-2997-483A-B2D8-DA45626D66E2}" ParallelWalk="True">
+								<Properties>
+									<Property0 Name="ClassName" Cookie="229" />
+									<Property1 Name="Name" Cookie="230" />
+								</Properties>
+								<Children />
+								<TypeInfo Item0="14" />
+							</Child3>
+							<Child4 Name="QCSYB_frm_Main" Key="{056C025D-CAD0-4704-96E3-84921FE524A9}" ParallelWalk="True">
+								<Properties>
+									<Property0 Name="ClassName" Cookie="231" />
+									<Property1 Name="Name" Cookie="232" />
+								</Properties>
+								<Children>
+									<Child0 Name="MDIClient" Key="{C894A097-8B14-4713-AD1F-EA10B751246C}" ParallelWalk="True">
+										<Properties>
+											<Property0 Name="WndClass" Cookie="237" />
+										</Properties>
+										<Children>
+											<Child0 Name="frmSqlSrc" Key="{029E85B3-0093-43C1-90E7-8B462BC61CF1}" ParallelWalk="True">
+												<Properties>
+													<Property0 Name="ClassName" Cookie="238" />
+													<Property1 Name="NativeDelphiObject.Name" Cookie="239" />
+												</Properties>
+												<Children>
+													<Child0 Name="pnlBase" Key="{4CB17DDE-FBAC-4BBF-853F-18299C278D4E}" ParallelWalk="True">
+														<Properties>
+															<Property0 Name="ClassName" Cookie="240" />
+															<Property1 Name="NativeDelphiObject.Name" Cookie="241" />
+														</Properties>
+														<Children>
+															<Child0 Name="pnlHSplit" Key="{3691CF2D-96C1-425C-8EE6-8638BC3C6A97}" ParallelWalk="True">
+																<Properties>
+																	<Property0 Name="ClassName" Cookie="242" />
+																	<Property1 Name="NativeDelphiObject.Name" Cookie="243" />
+																</Properties>
+																<Children>
+																	<Child0 Name="pnlLeft" Key="{E0320046-6737-4AC7-8689-E9496EC6AC39}" ParallelWalk="True">
+																		<Properties>
+																			<Property0 Name="ClassName" Cookie="244" />
+																			<Property1 Name="NativeDelphiObject.Name" Cookie="245" />
+																		</Properties>
+																		<Children>
+																			<Child0 Name="smemSrc" Key="{625AD2F9-1C9E-4EF5-B5CF-61A4DDD50FDD}" ParallelWalk="True">
+																				<Properties>
+																					<Property0 Name="ClassName" Cookie="246" />
+																					<Property1 Name="NativeDelphiObject.Name" Cookie="247" />
+																				</Properties>
+																				<Children />
+																				<TypeInfo Item0="26" />
+																			</Child0>
+																		</Children>
+																	</Child0>
+																</Children>
+															</Child0>
+														</Children>
+													</Child0>
+												</Children>
+											</Child0>
+										</Children>
+									</Child0>
+								</Children>
+								<TypeInfo Item0="14" />
+							</Child4>
+							<Child5 Name="QCSYB_frm_About2" Key="{CA02C6D7-2CC5-4744-993B-49BF885ABC08}" ParallelWalk="True">
+								<Properties>
+									<Property0 Name="ClassName" Cookie="233" />
+									<Property1 Name="Name" Cookie="234" />
+								</Properties>
+								<Children>
+									<Child0 Name="About_lbl_Version" Key="{58090A1B-9AC0-486C-B922-24E8924D3783}" ParallelWalk="True">
+										<Properties>
+											<Property0 Name="ClassName" Cookie="235" />
+											<Property1 Name="Name" Cookie="236" />
+										</Properties>
+										<Children />
+										<TypeInfo Item0="21" />
+									</Child0>
+								</Children>
+								<TypeInfo Item0="14" />
+							</Child5>
+						</Children>
+						<TypeInfo Item0="0" />
+					</Child10>
 				</Children>
 			</Child0>
 		</Children>
@@ -1013,7 +1189,9 @@
 			<Child8 Name="MainForm" Owner="{BE1FA342-68AB-4A47-BE43-B81D07983779}" />
 			<Child9 Name="BaseModalForm" Owner="{40ED2310-7E50-4CF7-8F2B-9BC75C11FF9B}" />
 			<Child10 Name="ConfigurationWizard" Owner="{EFBD5638-BF2C-488A-ABCD-8B8C766B4859}" />
-			<Child11 Name="AboutWindow" Owner="{F6245D32-B824-4541-885B-D71F5FECD9EE}" />
+			<Child11 Name="AboutWindow" Owner="{F6245D32-B824-4541-885B-D71F5FECD9EE}">
+				<Child0 Name="Toad_label_ProductVersion" Owner="{CF125F7B-5BFD-463E-994E-93754D47DD7D}" />
+			</Child11>
 			<Child12 Name="ConfirmNoNagDlg" Owner="{2128A014-645D-4830-9CD2-B17B47982D7E}" />
 			<Child13 Name="DB2_ImproveExperience_Form" Owner="{EF0EE0A8-4843-4C59-90DB-3A7B36D539A1}" />
 		</Child2>
@@ -1041,6 +1219,7 @@
 			<Child1 Name="SpotlightAboutWindow" Owner="{23144994-1EC3-4F6D-BBC2-8371F3DD7FC7}" />
 			<Child2 Name="SpotlightFeedback" Owner="{178B70BA-5593-41E0-A139-D4DF1DAB79B1}" />
 			<Child3 Name="Spotlight_ProjectLucyStartup" Owner="{3FEFF7B9-D74B-4DFA-A217-DE8A09BE22F9}" />
+			<Child4 Name="Spotlight_frm_SpotlightUserExperience" Owner="{8ACA3C6C-F20E-4838-AE56-C7218A4574ED}" />
 		</Child6>
 		<Child7 Name="ToadDataModeler" Owner="{561ED6B4-128C-40B2-A4FB-3BAE8FF89762}">
 			<Child0 Name="FirstRunWindow" Owner="{BD1396DD-9F54-4A26-9C47-07AA27681D2F}">
@@ -1077,6 +1256,32 @@
 			<Child0 Name="btnYes" Owner="{D666792E-BAA6-4B04-835D-B919C5171AFE}" />
 			<Child1 Name="btnNo" Owner="{BC3618CE-7A0F-47E9-8ABB-C78116291AAE}" />
 		</Child11>
+		<Child12 Name="QCSYB" Owner="{F8814FDA-14D2-479A-AF0B-ACEEF421DC1C}">
+			<Child0 Name="QCSYB_frm_LangDialog" Owner="{6DA97310-5C35-447B-9FB5-AF7A4DD362AA}">
+				<Child0 Name="QCSYB_bitbtn_OK" Owner="{C4571053-EB5B-448B-A9F0-995F49035F4B}" />
+			</Child0>
+			<Child1 Name="QCSYB_UserExperienceFeedback" Owner="{E1E86FA9-C08C-447A-9F7E-C38BC87320CF}" />
+			<Child2 Name="QCSYB_frm_UsrLogon" Owner="{034AB247-7560-453C-AC06-CB7F67398495}">
+				<Child0 Name="QCSYB_BitBtn_Close" Owner="{29C7B640-E054-464C-BCB0-12BCE5297668}" />
+			</Child2>
+			<Child3 Name="QCSYB_frm_WelCome" Owner="{0A67B3CF-2997-483A-B2D8-DA45626D66E2}" />
+			<Child4 Name="QCSYB_frm_Main" Owner="{056C025D-CAD0-4704-96E3-84921FE524A9}">
+				<Child0 Name="MDIClient" Owner="{C894A097-8B14-4713-AD1F-EA10B751246C}">
+					<Child0 Name="frmSqlSrc" Owner="{029E85B3-0093-43C1-90E7-8B462BC61CF1}">
+						<Child0 Name="pnlBase" Owner="{4CB17DDE-FBAC-4BBF-853F-18299C278D4E}">
+							<Child0 Name="pnlHSplit" Owner="{3691CF2D-96C1-425C-8EE6-8638BC3C6A97}">
+								<Child0 Name="pnlLeft" Owner="{E0320046-6737-4AC7-8689-E9496EC6AC39}">
+									<Child0 Name="smemSrc" Owner="{625AD2F9-1C9E-4EF5-B5CF-61A4DDD50FDD}" />
+								</Child0>
+							</Child0>
+						</Child0>
+					</Child0>
+				</Child0>
+			</Child4>
+			<Child5 Name="QCSYB_frm_About2" Owner="{CA02C6D7-2CC5-4744-993B-49BF885ABC08}">
+				<Child0 Name="About_lbl_Version" Owner="{58090A1B-9AC0-486C-B922-24E8924D3783}" />
+			</Child5>
+		</Child12>
 	</LogicalNodes>
 	<Storages Current="0">
 		<Child0 Name="Default Configuration">
@@ -1261,6 +1466,47 @@
 			<Property178 Cookie="212" PropertyType="0" Value="VCLObject(&apos;f_Main&apos;)" Type="5" />
 			<Property179 Cookie="213" PropertyType="0" Value="WinFormsObject(&apos;ImproveExperienceForm&apos;)" Type="5" />
 			<Property180 Cookie="214" PropertyType="0" Value="ImproveExperienceForm" Type="5" />
+			<Property181 Cookie="215" PropertyType="0" Value="QCSYB_SQLTuning" Type="5" />
+			<Property182 Cookie="216" PropertyType="0" Value="Process(&apos;QCSYB_SQLTuning&apos;)" Type="5" />
+			<Property183 Cookie="217" PropertyType="0" Value="TfrmLangDialog" Type="5" />
+			<Property184 Cookie="218" PropertyType="0" Value="VCLObject(&apos;frmLangDialog&apos;)" Type="5" />
+			<Property185 Cookie="219" PropertyType="0" Value="TPanel" Type="5" />
+			<Property186 Cookie="220" PropertyType="0" Value="VCLObject(&apos;pnlTop&apos;)" Type="5" />
+			<Property187 Cookie="221" PropertyType="0" Value="TBitBtn" Type="5" />
+			<Property188 Cookie="222" PropertyType="0" Value="VCLObject(&apos;bitbtnOK&apos;)" Type="5" />
+			<Property189 Cookie="223" PropertyType="0" Value="TUserExperienceFeedback" Type="5" />
+			<Property190 Cookie="224" PropertyType="0" Value="VCLObject(&apos;UserExperienceFeedback&apos;)" Type="5" />
+			<Property191 Cookie="225" PropertyType="0" Value="TfrmUsrLogon" Type="5" />
+			<Property192 Cookie="226" PropertyType="0" Value="VCLObject(&apos;frmUsrLogon&apos;)" Type="5" />
+			<Property193 Cookie="227" PropertyType="0" Value="TBitBtn" Type="5" />
+			<Property194 Cookie="228" PropertyType="0" Value="VCLObject(&apos;BitBtnClose&apos;)" Type="5" />
+			<Property195 Cookie="229" PropertyType="0" Value="TfrmWelCome" Type="5" />
+			<Property196 Cookie="230" PropertyType="0" Value="VCLObject(&apos;frmWelCome&apos;)" Type="5" />
+			<Property197 Cookie="231" PropertyType="0" Value="TfrmMain" Type="5" />
+			<Property198 Cookie="232" PropertyType="0" Value="VCLObject(&apos;frmMain&apos;)" Type="5" />
+			<Property199 Cookie="233" PropertyType="0" Value="TfrmAbout2" Type="5" />
+			<Property200 Cookie="234" PropertyType="0" Value="VCLObject(&apos;frmAbout2&apos;)" Type="5" />
+			<Property201 Cookie="235" PropertyType="0" Value="TLabel" Type="5" />
+			<Property202 Cookie="236" PropertyType="0" Value="VCLObject(&apos;lblVersion&apos;)" Type="5" />
+			<Property203 Cookie="237" PropertyType="0" Value="MDIClient" Type="5" />
+			<Property204 Cookie="238" PropertyType="0" Value="TfrmSqlSrc" Type="5" />
+			<Property205 Cookie="239" PropertyType="0" Value="frmSqlSrc" Type="5" />
+			<Property206 Cookie="240" PropertyType="0" Value="TPanel" Type="5" />
+			<Property207 Cookie="241" PropertyType="0" Value="pnlBase" Type="5" />
+			<Property208 Cookie="242" PropertyType="0" Value="TPanel" Type="5" />
+			<Property209 Cookie="243" PropertyType="0" Value="pnlHSplit" Type="5" />
+			<Property210 Cookie="244" PropertyType="0" Value="TPanel" Type="5" />
+			<Property211 Cookie="245" PropertyType="0" Value="pnlLeft" Type="5" />
+			<Property212 Cookie="246" PropertyType="0" Value="TSyntaxMemo" Type="5" />
+			<Property213 Cookie="247" PropertyType="0" Value="smemSrc" Type="5" />
+			<Property214 Cookie="248" PropertyType="0" Value="WinFormsObject(&apos;splashControl1&apos;)" Type="5" />
+			<Property215 Cookie="249" PropertyType="0" Value="SplashControl" Type="5" />
+			<Property216 Cookie="250" PropertyType="0" Value="WinFormsObject(&apos;picturePanel&apos;)" Type="5" />
+			<Property217 Cookie="251" PropertyType="0" Value="Panel" Type="5" />
+			<Property218 Cookie="252" PropertyType="0" Value="WinFormsObject(&apos;labelProductVersion&apos;)" Type="5" />
+			<Property219 Cookie="253" PropertyType="0" Value="LinkLabelControl" Type="5" />
+			<Property220 Cookie="254" PropertyType="0" Value="TfrmSpotlightUserExperience" Type="5" />
+			<Property221 Cookie="255" PropertyType="0" Value="VCLObject(&apos;frmSpotlightUserExperience&apos;)" Type="5" />
 		</Child0>
 	</Storages>
 	<TypeInfo StoreCodeCompletion="1">
@@ -8842,6 +9088,65 @@
 				<VarDescriptions />
 			</Data>
 		</Child25>
+		<Child26 Hash="157446646">
+			<Data Properties="05315E4A3F761A4DAB64393661168A320000000000000000FFFFFFFFFFFFFFFF0000000000000000040000000800000000000000000000000000000000000000000000000000000000000000">
+				<FunctionDescriptions>
+					<Child0 Name="SetFocus" Doc="Sets focus to the specified Window object." IsBasic="True" Data="00000000000000000000000004000000010000000400000000000000000000000000000018000000000000000000000000000000">
+						<ReturnValue Param0="24" />
+					</Child0>
+					<Child1 Name="Click" Doc="Simulates a left-button single click in a window or control as specified (relative position, shift keys)." IsBasic="True" Param0="ClientX" Param1="ClientY" Param2="Shift" Data="00000000000000000000000004000000010000000400000003000000000000000000000018000000000000000000000000000000">
+						<Param0>
+							<TypeDesc Param0="3" />
+							<ParamDesc Flags="49" Value="-1" Type="0" />
+						</Param0>
+						<Param1>
+							<TypeDesc Param0="3" />
+							<ParamDesc Flags="49" Value="-1" Type="0" />
+						</Param1>
+						<Param2>
+							<TypeDesc Param0="29" Type0="3" />
+							<ParamDesc Flags="49" Value="0" Type="0" />
+						</Param2>
+						<ReturnValue Param0="24" />
+					</Child1>
+					<Child2 Name="ClickR" Doc="Simulates a right-button single click in a window or control as specified (relative position, shift keys)." IsBasic="True" Param0="ClientX" Param1="ClientY" Param2="Shift" Data="00000000000000000000000004000000010000000400000003000000000000000000000018000000000000000000000000000000">
+						<Param0>
+							<TypeDesc Param0="3" />
+							<ParamDesc Flags="49" Value="-1" Type="0" />
+						</Param0>
+						<Param1>
+							<TypeDesc Param0="3" />
+							<ParamDesc Flags="49" Value="-1" Type="0" />
+						</Param1>
+						<Param2>
+							<TypeDesc Param0="29" Type0="3" />
+							<ParamDesc Flags="49" Value="0" Type="0" />
+						</Param2>
+						<ReturnValue Param0="24" />
+					</Child2>
+					<Child3 Name="Keys" Doc="Simulates one or several keypresses." IsBasic="True" Param0="Keys" Data="00000000000000000000000004000000010000000400000001000000000000000000000018000000000000000000000000000000">
+						<Param0>
+							<TypeDesc Param0="8" />
+							<ParamDesc Flags="1" />
+						</Param0>
+						<ReturnValue Param0="24" />
+					</Child3>
+					<Child4 Name="Visible" IsBasic="True" Data="0000000000000000000000000400000002000000040000000000000000000000000000000B000000000000000000000000000000">
+						<ReturnValue Param0="11" />
+					</Child4>
+					<Child5 Name="Width" IsBasic="True" Data="00000000000000000000000004000000020000000400000000000000000000000000000013000000000000000000000000000000">
+						<ReturnValue Param0="19" />
+					</Child5>
+					<Child6 Name="Height" IsBasic="True" Data="00000000000000000000000004000000020000000400000000000000000000000000000013000000000000000000000000000000">
+						<ReturnValue Param0="19" />
+					</Child6>
+					<Child7 Name="Enabled" IsBasic="True" Data="0000000000000000000000000400000002000000040000000000000000000000000000000B000000000000000000000000000000">
+						<ReturnValue Param0="11" />
+					</Child7>
+				</FunctionDescriptions>
+				<VarDescriptions />
+			</Data>
+		</Child26>
 		<UserDefinedTypes Child0="GUID" Child1="DISPPARAMS" Child2="EXCEPINFO" Child3="TShiftKey" />
 	</TypeInfo>
 </Root>
