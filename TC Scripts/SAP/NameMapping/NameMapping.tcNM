@@ -9,7 +9,7 @@
 					<Property1 Name="Id" Cookie="1" />
 				</Properties>
 				<Children>
-					<Child0 Name="Toad_for_Oracle_Installer" Key="{3879BE76-5D4E-4A92-9281-9A4A42B858A4}">
+					<Child0 Name="Toad_for_SAP_Installer" Key="{3879BE76-5D4E-4A92-9281-9A4A42B858A4}">
 						<Properties>
 							<Property0 Name="ProcessName" Cookie="50" />
 							<Property1 Name="Index" Cookie="51" />
@@ -1321,7 +1321,7 @@
 			<Property33 Cookie="44" PropertyType="0" Value="lblLanguage" Type="5" />
 			<Property34 Cookie="45" PropertyType="0" Value="Browse For Folder" Type="5" />
 			<Property35 Cookie="46" PropertyType="0" Value="SHBrowseForFolder ShellNameSpace Control" Type="5" />
-			<Property36 Cookie="50" PropertyType="0" Value="Toad_for_Oracle_*" Type="5" />
+			<Property36 Cookie="50" PropertyType="0" Value="Toad_for_SAP_*" Type="5" />
 			<Property37 Cookie="51" PropertyType="0" Value="2" Type="0" />
 			<Property38 Cookie="52" PropertyType="0" Value="ProductLicensing" Type="5" />
 			<Property39 Cookie="56" PropertyType="0" Value="lblProductKey" Type="5" />
