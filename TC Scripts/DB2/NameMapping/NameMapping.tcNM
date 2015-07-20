@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<Root Signature="{5DCBAC3B-D39C-497C-9BE8-744CBADD37AA}" NameMappingVersion="4" Cookie="296">
+<Root Signature="{5DCBAC3B-D39C-497C-9BE8-744CBADD37AA}" NameMappingVersion="4" Cookie="300">
 	<Nodes Name="NameMapping" Key="{BE401E45-B2D6-4FBA-931A-C2117D5C51AD}">
 		<Properties />
 		<Children>
@@ -227,6 +227,23 @@
 												</Children>
 												<TypeInfo Item0="2" />
 											</Child2>
+											<Child3 Name="DB2_Final" Key="{179D8D6B-9F9E-4F59-A719-B1C3B866938E}" ParallelWalk="True">
+												<Properties>
+													<Property0 Name="Name" Cookie="296" />
+													<Property1 Name="ClrClassName" Cookie="297" />
+												</Properties>
+												<Children>
+													<Child0 Name="DB2_FinalPage_MessageBox" Key="{55219176-7E4E-4E90-8C7A-F8E6CE965664}" ParallelWalk="True">
+														<Properties>
+															<Property0 Name="Name" Cookie="298" />
+															<Property1 Name="ClrClassName" Cookie="299" />
+														</Properties>
+														<Children />
+														<TypeInfo Item0="4" />
+													</Child0>
+												</Children>
+												<TypeInfo Item0="2" />
+											</Child3>
 										</Children>
 										<TypeInfo Item0="2" />
 									</Child0>
@@ -1283,6 +1300,7 @@
 				</Child4>
 				<Child5 Name="LicenseValidationError" Owner="{3FAB2525-6692-40C3-8CDE-1A47885AA5D8}" />
 			</Child9>
+			<Child10 Name="DB2_FinalPage_MessageBox" Owner="{55219176-7E4E-4E90-8C7A-F8E6CE965664}" />
 		</Child0>
 		<Child1 Name="Win_frm_Main" Owner="{F7C502EF-87D9-402A-AA53-F4F4BC69D067}">
 			<Child0 Name="SysTreeView" Owner="{6BFFBB80-05BE-401E-9D94-CC87A40E0E66}" />
@@ -1666,6 +1684,10 @@
 			<Property254 Cookie="293" PropertyType="0" Value="MainForm" Type="5" />
 			<Property255 Cookie="294" PropertyType="0" Value="Benchmark Factory*" Type="5" />
 			<Property256 Cookie="295" PropertyType="0" Value="CMainFrame" Type="5" />
+			<Property257 Cookie="296" PropertyType="0" Value="WinFormsObject(&apos;Final&apos;)" Type="5" />
+			<Property258 Cookie="297" PropertyType="0" Value="Final" Type="5" />
+			<Property259 Cookie="298" PropertyType="0" Value="WinFormsObject(&apos;richTextBox1&apos;)" Type="5" />
+			<Property260 Cookie="299" PropertyType="0" Value="RichTextBox" Type="5" />
 		</Child0>
 	</Storages>
 	<TypeInfo StoreCodeCompletion="1">
