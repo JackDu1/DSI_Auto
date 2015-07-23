@@ -97,9 +97,6 @@
 			<Node name="script\script.tcscript">
 				<Prp name="relpath" type="S" value="Script\Script.tcScript"/>
 			</Node>
-			<Node name="script\visualizer\dsi_sd\dsi.sd.tcvis">
-				<Prp name="relpath" type="S" value="Script\Visualizer\DSI_sd\DSI.sd.tcVis"/>
-			</Node>
 			<Node name="script\visualizer\finishproducts_sd\finishproducts.sd.tcvis">
 				<Prp name="relpath" type="S" value="Script\Visualizer\FinishProducts_sd\FinishProducts.sd.tcVis"/>
 			</Node>
@@ -1689,7 +1686,7 @@
 							<Prp name="group" type="B" value="-1"/>
 							<Prp name="index" type="I" value="3"/>
 							<Prp name="key" type="S" value="{BC0B4658-3075-4935-BD6D-0B60D11BBAAE}"/>
-							<Prp name="name" type="S" value="W14 - Trail_Full_z/OS"/>
+							<Prp name="name" type="S" value="W14 - Trial_Full_z/OS"/>
 							<Prp name="stoponerror" type="I" value="2"/>
 							<Prp name="stoponexception" type="I" value="2"/>
 							<Prp name="test moniker" type="S" value=""/>
