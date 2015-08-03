@@ -360,7 +360,7 @@
 			</Node>
 			<Node name="{6ba39d6a-88c9-49b1-a310-a31f46136dfb}">
 				<Prp name="type" type="I" value="1"/>
-				<Prp name="value" type="B" value="0"/>
+				<Prp name="value" type="B" value="-1"/>
 			</Node>
 			<Node name="{6be019a2-a836-4b31-84d9-f9de78869d51}">
 				<Prp name="col0enabled" type="B" value="-1"/>
