@@ -853,7 +853,7 @@
 				<Prp name="colcount" type="I" value="1"/>
 				<Prp name="colindex" type="I" value="0"/>
 				<Prp name="rowcount" type="I" value="16"/>
-				<Prp name="rowindex" type="I" value="15"/>
+				<Prp name="rowindex" type="I" value="2"/>
 				<Prp name="type" type="I" value="6"/>
 				<Prp name="val0x0" type="S" value="NativeSlObject"/>
 				<Prp name="val0x1" type="S" value="NativeWebObject"/>
