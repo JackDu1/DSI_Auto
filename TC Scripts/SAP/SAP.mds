@@ -1982,21 +1982,6 @@
 					<Prp name="test moniker" type="S" value=""/>
 					<Prp name="timeout" type="I" value="0"/>
 				</Node>
-				<Node name="item0000000007">
-					<Node name="child list"/>
-					<Node name="test parameters"/>
-					<Prp name="count" type="I" value="1"/>
-					<Prp name="description" type="S" value=""/>
-					<Prp name="enabled" type="B" value="0"/>
-					<Prp name="group" type="B" value="-1"/>
-					<Prp name="index" type="I" value="7"/>
-					<Prp name="key" type="S" value="{F5373BDC-0FD1-465E-AFCA-6223AE558E21}"/>
-					<Prp name="name" type="S" value="W23"/>
-					<Prp name="stoponerror" type="I" value="2"/>
-					<Prp name="stoponexception" type="I" value="2"/>
-					<Prp name="test moniker" type="S" value=""/>
-					<Prp name="timeout" type="I" value="0"/>
-				</Node>
 			</Node>
 			<Prp name="key" type="S" value="{7D2F55A2-1F88-46B3-B28D-AE57EA13DD3A}"/>
 		</Node>
