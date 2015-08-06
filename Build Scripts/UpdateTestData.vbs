@@ -186,6 +186,156 @@ Function Update_DSI_FinishInstall_SpotlightonOracle(StrProduct,StrVersion)
 
 End Function
 
+'==============================DSI_FinishInstall_ToadDataModeler========================================
+Function Update_DSI_FinishInstall_ToadDataModeler(StrProduct,StrVersion)
+
+	Dim Conn,isSQL
+	on error resume next
+	
+	if IsEmpty(StrProduct) then
+		Update_DSI_FinishInstall_ToadDataModeler=false
+		wscript.quit 100
+	else
+		select case StrProduct
+			case "TOADDATAMODELER_X86_EN"
+				StrProduct="32-bit"
+			case "TOADDATAMODELER_X64_EN"
+				StrProduct="64-bit"
+		end select	
+	end if
+	
+	Set Conn=CreateObject("ADODB.Connection")
+	Conn.Mode=adModeRead
+	Set Recset=CreateObject("ADODB.Recordset")
+	Conn.Open "Driver=SQL Server;Server=10.6.208.62;Database=DSI;uid=sa;pwd=Quest6848;"	
+	
+	Conn.Execute "Update DSI.dbo.DSI_FinishInstall_ToadDataModeler set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TURE' and I_ProductName like 'Toad% Data Modeler'"
+	
+	Conn.Close
+	set Conn=Nothing
+	
+	if Err.Number = 0 then
+		Update_DSI_FinishInstall_ToadDataModeler=True
+	else
+		Update_DSI_FinishInstall_ToadDataModeler=False
+		Err.Clear
+	end if
+
+End Function
+
+'==============================DSI_FinishInstall_QuestCodeTester========================================
+Function Update_DSI_FinishInstall_QuestCodeTester(StrProduct,StrVersion)
+
+	Dim Conn,isSQL
+	on error resume next
+	
+	if IsEmpty(StrProduct) then
+		Update_DSI_FinishInstall_QuestCodeTester=false
+		wscript.quit 100
+	else
+		select case StrProduct
+			case "CODETESTERORACLE_X86_EN"
+				StrProduct="32-bit"
+			case "CODETESTERORACLE_X64_EN"
+				StrProduct="64-bit"
+		end select	
+	end if
+	
+	Set Conn=CreateObject("ADODB.Connection")
+	Conn.Mode=adModeRead
+	Set Recset=CreateObject("ADODB.Recordset")
+	Conn.Open "Driver=SQL Server;Server=10.6.208.62;Database=DSI;uid=sa;pwd=Quest6848;"	
+	
+	Conn.Execute "Update DSI.dbo.DSI_FinishInstall_QuestCodeTester set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TURE' and UPPER(I_ProductName) like 'DELL% CODE TESTER FOR ORACLE'"
+	
+	Conn.Close
+	set Conn=Nothing
+	
+	if Err.Number = 0 then
+		Update_DSI_FinishInstall_QuestCodeTester=True
+	else
+		Update_DSI_FinishInstall_QuestCodeTester=False
+		Err.Clear
+	end if
+
+End Function
+
+'==============================DSI_FinishInstall_BackupReportForOracle========================================
+Function Update_DSI_FinishInstall_BackupReportForOracle(StrProduct,StrVersion)
+
+	Dim Conn,isSQL
+	on error resume next
+	
+	if IsEmpty(StrProduct) then
+		Update_DSI_FinishInstall_BackupReportForOracle=false
+		wscript.quit 100
+	else
+		select case StrProduct
+			case "BACKUPREPORTER_X86_EN"
+				StrProduct="32-bit"
+			case "BACKUPREPORTER_X64_EN"
+				StrProduct="64-bit"
+		end select	
+	end if
+	
+	Set Conn=CreateObject("ADODB.Connection")
+	Conn.Mode=adModeRead
+	Set Recset=CreateObject("ADODB.Recordset")
+	Conn.Open "Driver=SQL Server;Server=10.6.208.62;Database=DSI;uid=sa;pwd=Quest6848;"	
+	
+	Conn.Execute "Update DSI.dbo.DSI_FinishInstall_BackupReportForOracle set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TURE' and UPPER(I_ProductName) like 'DELL% BACKUP REPORTER FOR ORACLE'"
+	
+	Conn.Close
+	set Conn=Nothing
+	
+	if Err.Number = 0 then
+		Update_DSI_FinishInstall_BackupReportForOracle=True
+	else
+		Update_DSI_FinishInstall_BackupReportForOracle=False
+		Err.Clear
+	end if
+
+End Function
+
+
+'==============================DSI_FinishInstall_BackupReportForOracle========================================
+Function Update_DSI_FinishInstall_ToadforMySQLFreeware(StrProduct,StrVersion)
+
+	Dim Conn,isSQL
+	on error resume next
+	
+	if IsEmpty(StrProduct) then
+		Update_DSI_FinishInstall_ToadforMySQLFreeware=false
+		wscript.quit 100
+	else
+		select case StrProduct
+			case "TOADFORMYSQL_FREEWARE_X86_EN"
+				StrProduct="32-bit"
+			case "TOADFORMYSQL_FREEWARE_X64_EN"
+				StrProduct="64-bit"
+		end select	
+	end if
+	
+	Set Conn=CreateObject("ADODB.Connection")
+	Conn.Mode=adModeRead
+	Set Recset=CreateObject("ADODB.Recordset")
+	Conn.Open "Driver=SQL Server;Server=10.6.208.62;Database=DSI;uid=sa;pwd=Quest6848;"	
+	
+	Conn.Execute "Update DSI.dbo.DSI_FinishInstall_ToadforMySQLFreeware set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TURE' and UPPER(I_ProductName) like 'TOAD% FOR MYSQL'"
+	
+	Conn.Close
+	set Conn=Nothing
+	
+	if Err.Number = 0 then
+		Update_DSI_FinishInstall_ToadforMySQLFreeware=True
+	else
+		Update_DSI_FinishInstall_ToadforMySQLFreeware=False
+		Err.Clear
+	end if
+
+End Function
+
+
 '================================================================================
 
 Sub UpdateTestData()
@@ -272,6 +422,26 @@ Sub UpdateTestData()
 				if InStr(ProductName,"SPOTLIGHTONORACLE") = 1 then
 					if Update_DSI_FinishInstall_SpotlightonOracle(ProductName,ProductVersion) then
 						'wscript.echo("Update Update_DSI_FinishInstall_SpotlightonOracle table successful!")
+					end if
+				end if
+				if InStr(ProductName,"TOADDATAMODELER") = 1 then
+					if Update_DSI_FinishInstall_ToadDataModeler(ProductName,ProductVersion) then
+						'wscript.echo("Update Update_DSI_FinishInstall_ToadDataModeler table successful!")
+					end if
+				end if
+				if InStr(UCase(ProductName),UCase("CODETESTERORACLE")) = 1 then
+					if Update_DSI_FinishInstall_QuestCodeTester(ProductName,ProductVersion) then
+						'wscript.echo("Update Update_DSI_FinishInstall_QuestCodeTester table successful!")
+					end if
+				end if
+				if InStr(UCase(ProductName),UCase("BACKUPREPORTER")) = 1 then
+					if Update_DSI_FinishInstall_BackupReportForOracle(ProductName,ProductVersion) then
+						'wscript.echo("Update Update_DSI_FinishInstall_BackupReportForOracle table successful!")
+					end if
+				end if
+				if InStr(UCase(ProductName),UCase("TOADFORMYSQL")) = 1 then
+					if Update_DSI_FinishInstall_ToadforMySQLFreeware(ProductName,ProductVersion) then
+						'wscript.echo("Update Update_DSI_FinishInstall_ToadforMySQLFreeware table successful!")
 					end if
 				end if
 			end if
