@@ -251,22 +251,22 @@ Sub UpdateTestData()
 			if ProductName <> "" and ProductVersion <> "" then
 				if InStr(ProductName,"TOADFORORACLE") = 1 then
 					if Update_DSI_FinishInstall_ToadforOracle(ProductName,ProductVersion) then
-						wscript.echo("Update DSI_FinishInstall_ToadforOracle table successful!")
+						'wscript.echo("Update DSI_FinishInstall_ToadforOracle table successful!")
 					end if
 				end if
 				if InStr(ProductName,"SQLOPTIMIZERFORORACLE") = 1 then
 					if Update_DSI_FinshInstall_OptimizerforOracle(ProductName,ProductVersion) then
-						wscript.echo("Update Update_DSI_FinshInstall_OptimizerforOracle table successful!")
+						'wscript.echo("Update Update_DSI_FinshInstall_OptimizerforOracle table successful!")
 					end if
 				end if
 				if InStr(ProductName,"BENCHMARKFACTORY") = 1 then
 					if Update_DSI_FinishInstall_BMF(ProductName,ProductVersion) then
-						wscript.echo("Update Update_DSI_FinishInstall_BMF table successful!")
+						'wscript.echo("Update Update_DSI_FinishInstall_BMF table successful!")
 					end if
 				end if
 				if InStr(ProductName,"SPOTLIGHTONORACLE") = 1 then
 					if Update_DSI_FinishInstall_SpotlightonOracle(ProductName,ProductVersion) then
-						wscript.echo("Update Update_DSI_FinishInstall_SpotlightonOracle table successful!")
+						'wscript.echo("Update Update_DSI_FinishInstall_SpotlightonOracle table successful!")
 					end if
 				end if
 			end if
