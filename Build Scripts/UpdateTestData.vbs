@@ -6,7 +6,7 @@ Function Update_DSI_FinishInstall_ToadforOracle(StrProduct,StrVersion)
 	
 	if IsEmpty(StrProduct) then
 		Update_DSI_FinishInstall_ToadforOracle=false
-		quit 100
+		wscript.quit 100
 	else
 		select case StrProduct
 			case "TOADFORORACLE_X64_EN"
@@ -40,7 +40,7 @@ Function Update_DSI_FinishInstall_ToadforOracle(StrProduct,StrVersion)
 	Conn.Mode=adModeRead
 	Set Recset=CreateObject("ADODB.Recordset")
 	Conn.Open "Driver=SQL Server;Server=10.6.208.62;Database=DSI;uid=sa;pwd=Quest6848;"
-	wscript.echo("the Product Name is: " + StrProduct + " and the Version is: " + StrVersion)
+	'wscript.echo("the Product Name is: " + StrProduct + " and the Version is: " + StrVersion)
 	isSQL="Update DSI.dbo.DSI_FinishInstall_ToadforOracle set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 1 and I_AutoUpdate = 'Ture' and I_ProductName like 'Toad% for Oracle%" + StrProduct +"'"
 	
 	'wscript.echo(isSQL)
@@ -66,7 +66,7 @@ Function Update_DSI_FinshInstall_OptimizerforOracle(StrProduct,StrVersion)
 	
 	if IsEmpty(StrProduct) then
 		Update_DSI_FinshInstall_OptimizerforOracle=false
-		quit 100
+		wscript.quit 100
 	else
 		select case StrProduct
 			case "SQLOPTIMIZERFORORACLE_X64_MULTILANG"
@@ -84,7 +84,7 @@ Function Update_DSI_FinshInstall_OptimizerforOracle(StrProduct,StrVersion)
 	Conn.Mode=adModeRead
 	Set Recset=CreateObject("ADODB.Recordset")
 	Conn.Open "Driver=SQL Server;Server=10.6.208.62;Database=DSI;uid=sa;pwd=Quest6848;"
-	wscript.echo("the Product Name is: " + StrProduct + " and the Version is: " + StrVersion)
+	'wscript.echo("the Product Name is: " + StrProduct + " and the Version is: " + StrVersion)
 	isSQL="Update DSI.dbo.DSI_FinshInstall_OptimizerforOracle set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 1 and I_AutoUpdate = 'Ture' and I_ProductName like 'Dell% SQL Optimizer for Oracle%" + StrProduct +"'"
 	
 	'wscript.echo(isSQL)
@@ -110,7 +110,7 @@ Function Update_DSI_FinishInstall_BMF(StrProduct,StrVersion)
 	
 	if IsEmpty(StrProduct) then
 		Update_DSI_FinishInstall_BMF=false
-		quit 100
+		wscript.quit 100
 	else
 		select case StrProduct
 			case "BENCHMARKFACTORY_X64_EN"
@@ -128,7 +128,7 @@ Function Update_DSI_FinishInstall_BMF(StrProduct,StrVersion)
 	Conn.Mode=adModeRead
 	Set Recset=CreateObject("ADODB.Recordset")
 	Conn.Open "Driver=SQL Server;Server=10.6.208.62;Database=DSI;uid=sa;pwd=Quest6848;"
-	wscript.echo("the Product Name is: " + StrProduct + " and the Version is: " + StrVersion)
+	'wscript.echo("the Product Name is: " + StrProduct + " and the Version is: " + StrVersion)
 	isSQL="Update DSI.dbo.DSI_FinishInstall_BMF set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 1 and I_AutoUpdate = 'Ture' and I_ProductName like 'Benchmark Factory%" + StrProduct +"'"
 	
 	'wscript.echo(isSQL)
@@ -154,7 +154,7 @@ Function Update_DSI_FinishInstall_SpotlightonOracle(StrProduct,StrVersion)
 	
 	if IsEmpty(StrProduct) then
 		Update_DSI_FinishInstall_SpotlightonOracle=false
-		quit 100
+		wscript.quit 100
 	else
 		select case StrProduct
 			case "SPOTLIGHTONORACLE_X64_MULTILANG"
@@ -168,7 +168,7 @@ Function Update_DSI_FinishInstall_SpotlightonOracle(StrProduct,StrVersion)
 	Conn.Mode=adModeRead
 	Set Recset=CreateObject("ADODB.Recordset")
 	Conn.Open "Driver=SQL Server;Server=10.6.208.62;Database=DSI;uid=sa;pwd=Quest6848;"
-	wscript.echo("the Product Name is: " + StrProduct + " and the Version is: " + StrVersion)
+	'wscript.echo("the Product Name is: " + StrProduct + " and the Version is: " + StrVersion)
 	isSQL="Update DSI.dbo.DSI_FinishInstall_SpotlightonOracle set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 1 and I_AutoUpdate = 'Ture' and I_ProductName like 'Spotlight% on Oracle%" + StrProduct +"'"
 	
 	'wscript.echo(isSQL)
@@ -189,7 +189,7 @@ End Function
 '================================================================================
 
 Sub UpdateTestData()
-	'on error resume next
+	on error resume next
 
 	Dim XMLDoc
 	Dim ErrorMsg
@@ -212,6 +212,11 @@ Sub UpdateTestData()
 
 	XMLDoc.ValidateonParse=True
 	'Open project file
+	Set FSO=CreateObject("Scripting.FileSystemObject")
+	if not FSO.FileExists(ProjectFile) then
+		set FSO=Nothing
+		wscript.quit 404
+	end if
 	Call XMLDoc.load(ProjectFile)
 
 	If XMLDoc.parseError.errorCode <> 0 Then
