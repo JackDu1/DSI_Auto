@@ -646,7 +646,7 @@ Sub UpdateTestData()
 					Select Case Trim(UCase(PreProduct(0)))
 						case "TOADFORORACLE"
 							if NewOracleSuite.Update_DSI_FinishInstall_ToadforOracle(ProductName,ProductVersion) then
-								wscript.echo("Update DSI_FinishInstall_ToadforOracle table successful!")
+								'wscript.echo("Update DSI_FinishInstall_ToadforOracle table successful!")
 							end if
 						case "SQLOPTIMIZERFORORACLE"
 							if NewOracleSuite.Update_DSI_FinshInstall_OptimizerforOracle(ProductName,ProductVersion) then
@@ -682,7 +682,7 @@ Sub UpdateTestData()
 					Select Case Trim(UCase(PreProduct(0)))
 						case "TOADFORDB2"
 							if NewDB2Suite.Update_DSI_FinishInstall_ToadforIBMDB2LUW(ProductName,ProductVersion) then
-								wscript.echo("Update DSI_DSI_FinishInstall_ToadforIBMDB2LUW table successful!")
+								'wscript.echo("Update DSI_DSI_FinishInstall_ToadforIBMDB2LUW table successful!")
 							end if
 						case "SQLOPTIMIZERFORDB2LUW"
 							if NewDB2Suite.Update_DSI_FinishInstall_QuestSQLOptimizerforIBMDB2(ProductName,ProductVersion) then
@@ -710,7 +710,7 @@ Sub UpdateTestData()
 					Select Case Trim(UCase(PreProduct(0)))
 						case "TOADFORSAP"
 							if NewSAPSuite.Update_DSI_FinishInstall_ToadforSybase(ProductName,ProductVersion) then
-								wscript.echo("Update DSI_FinishInstall_ToadforSybase table successful!")
+								'wscript.echo("Update DSI_FinishInstall_ToadforSybase table successful!")
 							end if
 						case "SQLOPTIMIZERFORSAP"
 							if NewSAPSuite.Update_DSI_FinishInstall_QuestSQLOptimizerforSybase(ProductName,ProductVersion) then
