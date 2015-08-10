@@ -996,6 +996,9 @@ Sub UpdateTestData()
 					if NewOracleSuite.Update_DSI_ProductSelectionPage_VerifyProductDetail(ProductName,ProductVersion) then
 						'wscript.echo("Update DSI_ProductSelectionPage_VerifyProductDetail table successful!")
 					end if
+					if NewOracleSuite.Update_DSI_FinishInstall_VerifyRegistry(ProductName,ProductVersion) then
+						'wscript.echo("Update DSI_FinishInstall_VerifyRegistry table successful!")
+					end if
 				case UCase("DB2")
 					Set NewDB2Suite=New UpdateDB2Suite
 					Select Case Trim(UCase(PreProduct(0)))
@@ -1027,6 +1030,9 @@ Sub UpdateTestData()
 					if NewDB2Suite.Update_DSI_ProductSelectionPage_VerifyProductDetails(ProductName,ProductVersion) then
 						'wscript.echo("Update DSI_ProductSelectionPage_VerifyProductDetail table successful!")
 					end if
+					if NewDB2Suite.Update_DSI_FinishInstall_VerifyRegistry(ProductName,ProductVersion) then
+						'wscript.echo("Update DSI_FinishInstall_VerifyRegistry table successful!")
+					end if
 				case UCase("SAP")
 					Set NewSAPSuite=New UpdateSAPSuite
 					Select Case Trim(UCase(PreProduct(0)))
@@ -1053,6 +1059,9 @@ Sub UpdateTestData()
 					End Select
 					if NewSAPSuite.Update_DSI_ProductSelectionPage_VerifyProductDetails(ProductName,ProductVersion) then
 						'wscript.echo("Update DSI_ProductSelectionPage_VerifyProductDetail table successful!")
+					end if
+					if NewSAPSuite.Update_DSI_FinishInstall_VerifyRegistry(ProductName,ProductVersion) then
+						'wscript.echo("Update DSI_FinishInstall_VerifyRegistry table successful!")
 					end if
 				case UCase("SQLSERVER")
 					Set NewSQLServerSuite=New UpdateSQLSERVERSuite
