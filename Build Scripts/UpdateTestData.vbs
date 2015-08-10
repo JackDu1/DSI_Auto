@@ -3,7 +3,7 @@ Dim Conn
 Class UpdateOracleSuite
 
 	'==============================DSI_FinishInstall_ToadforOracle========================================
-	Function Update_DSI_FinishInstall_ToadforOracle(StrProduct,StrVersion)
+	Function Update_DSI_FinishInstall_ToadforOracle(ByVal StrProduct,ByVal StrVersion)
 
 		on error resume next
 		
@@ -36,8 +36,6 @@ Class UpdateOracleSuite
 					StrProduct="64-bit Read-Only"
 				case "TOADFORORACLE_READONLY_X64_ZH"
 					StrProduct="64-bit Read-Only"
-				case else
-					StrProduct=""
 			end select	
 		end if
 
@@ -53,7 +51,7 @@ Class UpdateOracleSuite
 	End Function
 
 	'==============================DSI_FinshInstall_OptimizerforOracle========================================
-	Function Update_DSI_FinshInstall_OptimizerforOracle(StrProduct,StrVersion)
+	Function Update_DSI_FinshInstall_OptimizerforOracle(ByVal StrProduct,ByVal StrVersion)
 
 		on error resume next
 		
@@ -85,7 +83,7 @@ Class UpdateOracleSuite
 	End Function
 
 	'==============================DSI_FinishInstall_BMF========================================
-	Function Update_DSI_FinishInstall_BMF(StrProduct,StrVersion)
+	Function Update_DSI_FinishInstall_BMF(ByVal StrProduct,ByVal StrVersion)
 
 		on error resume next
 		
@@ -117,7 +115,7 @@ Class UpdateOracleSuite
 	End Function
 
 	'==============================DSI_FinishInstall_SpotlightonOracle========================================
-	Function Update_DSI_FinishInstall_SpotlightonOracle(StrProduct,StrVersion)
+	Function Update_DSI_FinishInstall_SpotlightonOracle(ByVal StrProduct,ByVal StrVersion)
 
 		on error resume next
 		
@@ -145,7 +143,7 @@ Class UpdateOracleSuite
 	End Function
 
 	'==============================DSI_FinishInstall_ToadDataModeler========================================
-	Function Update_DSI_FinishInstall_ToadDataModeler(StrProduct,StrVersion)
+	Function Update_DSI_FinishInstall_ToadDataModeler(ByVal StrProduct,ByVal StrVersion)
 
 		on error resume next
 		
@@ -166,7 +164,7 @@ Class UpdateOracleSuite
 	End Function
 
 	'==============================DSI_FinishInstall_QuestCodeTester========================================
-	Function Update_DSI_FinishInstall_QuestCodeTester(StrProduct,StrVersion)
+	Function Update_DSI_FinishInstall_QuestCodeTester(ByVal StrProduct,ByVal StrVersion)
 
 		on error resume next
 		
@@ -187,7 +185,7 @@ Class UpdateOracleSuite
 	End Function
 
 	'==============================DSI_FinishInstall_BackupReportForOracle========================================
-	Function Update_DSI_FinishInstall_BackupReportForOracle(StrProduct,StrVersion)
+	Function Update_DSI_FinishInstall_BackupReportForOracle(ByVal StrProduct,ByVal StrVersion)
 
 		on error resume next
 		
@@ -209,7 +207,7 @@ Class UpdateOracleSuite
 
 
 	'==============================DSI_FinishInstall_BackupReportForOracle========================================
-	Function Update_DSI_FinishInstall_ToadforMySQLFreeware(StrProduct,StrVersion)
+	Function Update_DSI_FinishInstall_ToadforMySQLFreeware(ByVal StrProduct,ByVal StrVersion)
 
 		on error resume next
 		
@@ -228,13 +226,169 @@ Class UpdateOracleSuite
 		end if
 
 	End Function
+	
+	'==============================DSI_ProductSelectionPage_VerifyProductDetail========================================
+	Function Update_DSI_ProductSelectionPage_VerifyProductDetail(ByVal StrProduct,ByVal StrVersion)
+		
+		on error resume next
+		
+		if IsEmpty(StrProduct) then
+			Update_DSI_ProductSelectionPage_VerifyProductDetail=false
+			wscript.quit 100
+		else
+			select case UCase(StrProduct)
+				case "TOADFORORACLE_X64_EN"
+					StrProduct="TOAD%FOR ORACLE 64-BIT"
+				case "TOADFORORACLE_X64_ZH"
+					StrProduct="TOAD%FOR ORACLE 64-BIT"
+				case "TOADFORORACLE_X86_EN"
+					StrProduct="TOAD%FOR ORACLE 32-BIT"
+				case "TOADFORORACLE_X86_ZH"
+					StrProduct="TOAD%FOR ORACLE 32-BIT"
+				case "TOADFORORACLE_TRIAL_X86_EN"
+					StrProduct="TOAD%FOR ORACLE 32-BIT TRIAL"
+				case "TOADFORORACLE_TRIAL_X86_ZH"
+					StrProduct="TOAD%FOR ORACLE 32-BIT TRIAL"
+				case "TOADFORORACLE_TRIAL_X64_EN"
+					StrProduct="TOAD%FOR ORACLE 64-BIT TRIAL"
+				case "TOADFORORACLE_TRIAL_X64_ZH"
+					StrProduct="TOAD%FOR ORACLE 64-BIT TRIAL"
+				case "TOADFORORACLE_READONLY_X86_EN"
+					StrProduct="TOAD%FOR ORACLE 32-BIT READ-ONLY"
+				case "TOADFORORACLE_READONLY_X86_ZH"
+					StrProduct="TOAD%FOR ORACLE 32-BIT READ-ONLY"
+				case "TOADFORORACLE_READONLY_X64_EN"
+					StrProduct="TOAD%FOR ORACLE 64-BIT READ-ONLY"
+				case "TOADFORORACLE_READONLY_X64_ZH"
+					StrProduct="TOAD%FOR ORACLE 64-BIT READ-ONLY"
+				case "TOADFORMYSQL_FREEWARE_X86_EN"
+					StrProduct="TOAD% FOR MYSQL"
+				case "BACKUPREPORTER_X86_EN"
+					StrProduct="DELL% BACKUP REPORTER FOR ORACLE"
+				case "CODETESTERORACLE_X86_EN"
+					StrProduct="DELL% CODE TESTER FOR ORACLE"
+				case "TOADDATAMODELER_X86_EN"
+					StrProduct="TOAD% DATA MODELER"
+				case "SPOTLIGHTONORACLE_X64_MULTILANG"
+					StrProduct="SPOTLIGHT% ON ORACLE 64-BIT"
+				case "SPOTLIGHTONORACLE_X86_MULTILANG"
+					StrProduct="SPOTLIGHT% ON ORACLE 32-BIT"
+				case "BENCHMARKFACTORY_X64_EN"
+					StrProduct="BENCHMARK FACTORY% 64-BIT"
+				case "BENCHMARKFACTORY_X86_EN"
+					StrProduct="BENCHMARK FACTORY% 32-BIT"
+				case "BENCHMARKFACTORY_TRIAL_X86_EN"
+					StrProduct="BENCHMARK FACTORY% 32-BIT Trial"
+				case "BENCHMARKFACTORY_TRIAL_X64_EN"
+					StrProduct="BENCHMARK FACTORY% 64-BIT Trial"
+				case "SQLOPTIMIZERFORORACLE_X64_MULTILANG"
+					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 64-BIT"
+				case "SQLOPTIMIZERFORORACLE_X86_MULTILANG"
+					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 32-BIT"
+				case "SQLOPTIMIZERFORORACLE_TRIAL_X86_MULTILANG"
+					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 32-BIT TRIAL"
+				case "SQLOPTIMIZERFORORACLE_TRIAL_X64_MULTILANG"
+					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 64-BIT TRIAL"
+				case else
+					StrProduct="Null"
+			end select
+		end if
+		
+		Conn.Execute "Update DSI.dbo.DSI_ProductSelectionPage_VerifyProductDetail set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TURE' and UPPER(I_ProductName) like '" + StrProduct + "'"
+		
+		if Err.Number = 0 then
+			Update_DSI_ProductSelectionPage_VerifyProductDetail=True
+		else
+			Update_DSI_ProductSelectionPage_VerifyProductDetail=False
+			Err.Clear
+		end if
+
+	End Function
+	
+	'==============================DSI_DSI_FinishInstall_VerifyRegistry========================================
+	Function Update_DSI_FinishInstall_VerifyRegistry(ByVal StrProduct,ByVal StrVersion)
+		
+		on error resume next
+		
+		if IsEmpty(StrProduct) then
+			Update_DSI_ProductSelectionPage_VerifyProductDetail=false
+			wscript.quit 100
+		else
+			select case UCase(StrProduct)
+				case "TOADFORORACLE_X64_EN"
+					StrProduct="TOAD%FOR ORACLE 64-BIT"
+				case "TOADFORORACLE_X64_ZH"
+					StrProduct="TOAD%FOR ORACLE 64-BIT"
+				case "TOADFORORACLE_X86_EN"
+					StrProduct="TOAD%FOR ORACLE 32-BIT"
+				case "TOADFORORACLE_X86_ZH"
+					StrProduct="TOAD%FOR ORACLE 32-BIT"
+				case "TOADFORORACLE_TRIAL_X86_EN"
+					StrProduct="TOAD%FOR ORACLE 32-BIT TRIAL"
+				case "TOADFORORACLE_TRIAL_X86_ZH"
+					StrProduct="TOAD%FOR ORACLE 32-BIT TRIAL"
+				case "TOADFORORACLE_TRIAL_X64_EN"
+					StrProduct="TOAD%FOR ORACLE 64-BIT TRIAL"
+				case "TOADFORORACLE_TRIAL_X64_ZH"
+					StrProduct="TOAD%FOR ORACLE 64-BIT TRIAL"
+				case "TOADFORORACLE_READONLY_X86_EN"
+					StrProduct="TOAD%FOR ORACLE 32-BIT READ-ONLY"
+				case "TOADFORORACLE_READONLY_X86_ZH"
+					StrProduct="TOAD%FOR ORACLE 32-BIT READ-ONLY"
+				case "TOADFORORACLE_READONLY_X64_EN"
+					StrProduct="TOAD%FOR ORACLE 64-BIT READ-ONLY"
+				case "TOADFORORACLE_READONLY_X64_ZH"
+					StrProduct="TOAD%FOR ORACLE 64-BIT READ-ONLY"
+				case "TOADFORMYSQL_FREEWARE_X86_EN"
+					StrProduct="TOAD% FOR MYSQL"
+				case "BACKUPREPORTER_X86_EN"
+					StrProduct="DELL% BACKUP REPORTER FOR ORACLE"
+				case "CODETESTERORACLE_X86_EN"
+					StrProduct="DELL% CODE TESTER FOR ORACLE"
+				case "TOADDATAMODELER_X86_EN"
+					StrProduct="TOAD% DATA MODELER"
+				case "SPOTLIGHTONORACLE_X64_MULTILANG"
+					StrProduct="SPOTLIGHT% ON ORACLE 64-BIT"
+				case "SPOTLIGHTONORACLE_X86_MULTILANG"
+					StrProduct="SPOTLIGHT% ON ORACLE 32-BIT"
+				case "BENCHMARKFACTORY_X64_EN"
+					StrProduct="BENCHMARK FACTORY% 64-BIT"
+				case "BENCHMARKFACTORY_X86_EN"
+					StrProduct="BENCHMARK FACTORY% 32-BIT"
+				case "BENCHMARKFACTORY_TRIAL_X86_EN"
+					StrProduct="BENCHMARK FACTORY% 32-BIT Trial"
+				case "BENCHMARKFACTORY_TRIAL_X64_EN"
+					StrProduct="BENCHMARK FACTORY% 64-BIT Trial"
+				case "SQLOPTIMIZERFORORACLE_X64_MULTILANG"
+					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 64-BIT"
+				case "SQLOPTIMIZERFORORACLE_X86_MULTILANG"
+					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 32-BIT"
+				case "SQLOPTIMIZERFORORACLE_TRIAL_X86_MULTILANG"
+					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 32-BIT TRIAL"
+				case "SQLOPTIMIZERFORORACLE_TRIAL_X64_MULTILANG"
+					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 64-BIT TRIAL"
+				case else
+					StrProduct="Null"
+			end select
+		end if
+		
+		Conn.Execute "Update DSI.dbo.DSI_Oracle_VerifyRegistry set  I_ProductVersion =" + "'" + StrVersion + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TURE' and UPPER(I_InstallerDisplayProductName) like '" + StrProduct + "'"
+		
+		if Err.Number = 0 then
+			Update_DSI_FinishInstall_VerifyRegistry=True
+		else
+			Update_DSI_FinishInstall_VerifyRegistry=False
+			Err.Clear
+		end if
+
+	End Function
 
 End Class
 
 Class UpdateSAPSuite
 
 	'==============================DSI_FinishInstall_ToadforSybase========================================
-	Function Update_DSI_FinishInstall_ToadforSybase(StrProduct,StrVersion)
+	Function Update_DSI_FinishInstall_ToadforSybase(ByVal StrProduct,ByVal StrVersion)
 
 		on error resume next
 		
@@ -255,7 +409,7 @@ Class UpdateSAPSuite
 	End Function
 
 	'==============================DSI_FinishInstall_QuestSQLOptimizerforSybase========================================
-	Function Update_DSI_FinishInstall_QuestSQLOptimizerforSybase(StrProduct,StrVersion)
+	Function Update_DSI_FinishInstall_QuestSQLOptimizerforSybase(ByVal StrProduct,ByVal StrVersion)
 
 		on error resume next
 		
@@ -276,7 +430,7 @@ Class UpdateSAPSuite
 	End Function
 
 	'==============================DSI_FinishInstall_BMF========================================
-	Function Update_DSI_FinishInstall_BMF(StrProduct,StrVersion)
+	Function Update_DSI_FinishInstall_BMF(ByVal StrProduct,ByVal StrVersion)
 
 		on error resume next
 		
@@ -308,7 +462,7 @@ Class UpdateSAPSuite
 	End Function
 
 	'==============================DSI_FinishInstall_SpotlightonSybase========================================
-	Function Update_DSI_FinishInstall_SpotlightonSybase(StrProduct,StrVersion)
+	Function Update_DSI_FinishInstall_SpotlightonSybase(ByVal StrProduct,ByVal StrVersion)
 
 		on error resume next
 		
@@ -329,7 +483,7 @@ Class UpdateSAPSuite
 	End Function
 
 	'==============================DSI_FinishInstall_ToadDataModeler========================================
-	Function Update_DSI_FinishInstall_ToadDataModeler(StrProduct,StrVersion)
+	Function Update_DSI_FinishInstall_ToadDataModeler(ByVal StrProduct,ByVal StrVersion)
 
 		on error resume next
 		
@@ -348,15 +502,93 @@ Class UpdateSAPSuite
 		end if
 
 	End Function
+	
+	'==============================DSI_ProductSelectionPage_VerifyProductDetails========================================
+	Function Update_DSI_ProductSelectionPage_VerifyProductDetails(ByVal StrProduct,ByVal StrVersion)
+		
+		Dim isSQL
+		
+		on error resume next
+		
+		if IsEmpty(StrProduct) then
+			Update_DSI_ProductSelectionPage_VerifyProductDetails=false
+			wscript.quit 100
+		else
+			select case UCase(StrProduct)
+				case "TOADFORSAP_X86_EN"
+					StrProduct="TOAD_ FOR SAP SOLUTIONS"
+				case "TOADDATAMODELER_X86_EN"
+					StrProduct="TOAD_ DATA MODELER"
+				case "SPOTLIGHTONSAP_X86_EN"
+					StrProduct="SPOTLIGHT_ ON SAP_ ASE"
+				case "BENCHMARKFACTORY_X86_EN"
+					StrProduct="BENCHMARK FACTORY_ FOR DATABASES"
+				case "BENCHMARKFACTORY_TRIAL_X86_EN"
+					StrProduct="BENCHMARK FACTORY_ FOR DATABASES TRIAL"
+				case "SQLOPTIMIZERFORSAP_X86_EN"
+					StrProduct="Dell_ SQL OPTIMIZER FOR SAP_ ASE"
+				case else
+					StrProduct="Null"
+			end select
+		end if
+		
+		Conn.Execute "Update DSI.dbo.DSI_SAP_VerifyProductDetails set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 3 and UPPER(I_AutoUpdate) = 'TURE' and UPPER(I_ProductName) like '" + StrProduct + "'"
+		
+		if Err.Number = 0 then
+			Update_DSI_ProductSelectionPage_VerifyProductDetails=True
+		else
+			Update_DSI_ProductSelectionPage_VerifyProductDetails=False
+			Err.Clear
+		end if
+
+	End Function
+	
+	'==============================DSI_FinishInstall_VerifyRegistry========================================
+	Function Update_DSI_FinishInstall_VerifyRegistry(ByVal StrProduct,ByVal StrVersion)
+		
+		on error resume next
+		
+		if IsEmpty(StrProduct) then
+			Update_DSI_ProductSelectionPage_VerifyProductDetails=false
+			wscript.quit 100
+		else
+			select case UCase(StrProduct)
+				case "TOADFORSAP_X86_EN"
+					StrProduct="TOAD_ FOR SAP SOLUTIONS"
+				case "TOADDATAMODELER_X86_EN"
+					StrProduct="TOAD_ DATA MODELER"
+				case "SPOTLIGHTONSAP_X86_EN"
+					StrProduct="SPOTLIGHT_ ON SAP_ ASE"
+				case "BENCHMARKFACTORY_X86_EN"
+					StrProduct="BENCHMARK FACTORY_ FOR DATABASES"
+				case "BENCHMARKFACTORY_TRIAL_X86_EN"
+					StrProduct="BENCHMARK FACTORY_ FOR DATABASES TRIAL"
+				case "SQLOPTIMIZERFORSAP_X86_EN"
+					StrProduct="Dell_ SQL OPTIMIZER FOR SAP_ ASE"
+				case else
+					StrProduct="Null"
+			end select
+		end if
+		
+		Conn.Execute "Update DSI.dbo.DSI_SAP_VerifyRegistry set  I_ProductVersion =" + "'" + StrVersion + "'" + " where Projectid = 3 and UPPER(I_AutoUpdate) = 'TURE' and UPPER(I_InstallerDisplayProductName) like '" + StrProduct + "'"
+		
+		if Err.Number = 0 then
+			Update_DSI_FinishInstall_VerifyRegistry=True
+		else
+			Update_DSI_FinishInstall_VerifyRegistry=False
+			Err.Clear
+		end if
+
+	End Function
 
 End Class
 
 Class UpdateDB2Suite
 
 	'==============================DSI_FinishInstall_ToadforIBMDB2LUW========================================
-	Function Update_DSI_FinishInstall_ToadforIBMDB2LUW(StrProduct,StrVersion)
+	Function Update_DSI_FinishInstall_ToadforIBMDB2LUW(ByVal StrProduct,ByVal StrVersion)
 
-		'on error resume next
+		on error resume next
 		
 		if IsEmpty(StrProduct) then
 			Update_DSI_FinishInstall_ToadforIBMDB2LUW=false
@@ -382,7 +614,7 @@ Class UpdateDB2Suite
 	End Function
 
 	'==============================DSI_FinishInstall_QuestSQLOptimizerforIBMDB2========================================
-	Function Update_DSI_FinishInstall_QuestSQLOptimizerforIBMDB2(StrProduct,StrVersion)
+	Function Update_DSI_FinishInstall_QuestSQLOptimizerforIBMDB2(ByVal StrProduct,ByVal StrVersion)
 
 		on error resume next
 		
@@ -403,7 +635,7 @@ Class UpdateDB2Suite
 	End Function
 	
 	'==============================DSI_FinishInstall_QuestSQLOptimizerForDB2zOS========================================
-	Function Update_DSI_FinishInstall_QuestSQLOptimizerForDB2zOS(StrProduct,StrVersion)
+	Function Update_DSI_FinishInstall_QuestSQLOptimizerForDB2zOS(ByVal StrProduct,ByVal StrVersion)
 
 		on error resume next
 		
@@ -424,7 +656,7 @@ Class UpdateDB2Suite
 	End Function
 
 	'==============================DSI_DSI_FinishInstall_BMF========================================
-	Function Update_DSI_FinishInstall_BMF(StrProduct,StrVersion)
+	Function Update_DSI_FinishInstall_BMF(ByVal StrProduct,ByVal StrVersion)
 
 		on error resume next
 		
@@ -456,7 +688,7 @@ Class UpdateDB2Suite
 	End Function
 
 	'==============================DSI_FinishInstall_SpotlightonIBMDB2========================================
-	Function Update_DSI_FinishInstall_SpotlightonIBMDB2(StrProduct,StrVersion)
+	Function Update_DSI_FinishInstall_SpotlightonIBMDB2(ByVal StrProduct,ByVal StrVersion)
 
 		on error resume next
 		
@@ -465,7 +697,7 @@ Class UpdateDB2Suite
 			wscript.quit 100	
 		end if
 		
-		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_SpotlightonIBMDB2 set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 2 and UPPER(I_AutoUpdate) = 'TURE' and I_ProductName like 'Spotlight% on IBM% DB2% LUW'"
+		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_SpotlightonIBMDB2 set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 2 and UPPER(I_AutoUpdate) = 'TURE' and I_ProductName like 'Spotlight_ on IBM_ DB2_ LUW'"
 
 		if Err.Number = 0 then
 			Update_DSI_FinishInstall_SpotlightonIBMDB2=True
@@ -477,7 +709,7 @@ Class UpdateDB2Suite
 	End Function
 
 	'==============================DSI_FinishInstall_ToadDataModeler========================================
-	Function Update_DSI_FinishInstall_ToadDataModeler(StrProduct,StrVersion)
+	Function Update_DSI_FinishInstall_ToadDataModeler(ByVal StrProduct,ByVal StrVersion)
 
 		on error resume next
 		
@@ -496,13 +728,97 @@ Class UpdateDB2Suite
 		end if
 
 	End Function
+	
+	'==============================DSI_ProductSelectionPage_VerifyProductDetails========================================
+	Function Update_DSI_ProductSelectionPage_VerifyProductDetails(ByVal StrProduct,ByVal StrVersion)
+		
+		on error resume next
+		
+		if IsEmpty(StrProduct) then
+			Update_DSI_ProductSelectionPage_VerifyProductDetails=false
+			wscript.quit 100
+		else
+			select case UCase(StrProduct)
+				case "TOADFORDB2_X86_EN"
+					StrProduct="TOAD_ FOR IBM_ DB2_"
+				case "TOADFORDB2_TRIAL_X86_EN"
+					StrProduct="TOAD_ FOR IBM_ DB2_ TRIAL"
+				case "TOADDATAMODELER_X86_EN"
+					StrProduct="TOAD_ DATA MODELER"
+				case "SPOTLIGHTONDB2_X86_EN"
+					StrProduct="SPOTLIGHT_ ON IBM_ DB2_ LUW"
+				case "BENCHMARKFACTORY_X86_EN"
+					StrProduct="BENCHMARK FACTORY_ FOR DATABASES"
+				case "BENCHMARKFACTORY_TRIAL_X86_EN"
+					StrProduct="BENCHMARK FACTORY_ FOR DATABASES TRIAL"
+				case "SQLOPTIMIZERFORDB2LUW_X86_EN"
+					StrProduct="Dell_ SQL OPTIMIZER FOR IBM_ DB2% LUW"
+				case "SQLOPTIMIZERFORDB2ZOS_X86_EN"
+					StrProduct="Dell_ SQL OPTIMIZER FOR IBM_ DB2% Z_OS_"
+				case else
+					StrProduct="Null"
+			end select
+		end if
+		
+		Conn.Execute "Update DSI.dbo.DSI_ProductSelectionPage_VerifyProductDetails set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 2 and UPPER(I_AutoUpdate) = 'TURE' and UPPER(I_ProductName) like '" + StrProduct + "'"
+		
+		if Err.Number = 0 then
+			Update_DSI_ProductSelectionPage_VerifyProductDetails=True
+		else
+			Update_DSI_ProductSelectionPage_VerifyProductDetails=False
+			Err.Clear
+		end if
+
+	End Function
+	
+	'==============================DSI_FinishInstall_VerifyRegistry========================================
+	Function Update_DSI_FinishInstall_VerifyRegistry(ByVal StrProduct,ByVal StrVersion)
+		
+		on error resume next
+		
+		if IsEmpty(StrProduct) then
+			Update_DSI_FinishInstall_VerifyRegistry=false
+			wscript.quit 100
+		else
+			select case UCase(StrProduct)
+				case "TOADFORDB2_X86_EN"
+					StrProduct="TOAD_ FOR IBM_ DB2_"
+				case "TOADFORDB2_TRIAL_X86_EN"
+					StrProduct="TOAD_ FOR IBM_ DB2_ TRIAL"
+				case "TOADDATAMODELER_X86_EN"
+					StrProduct="TOAD_ DATA MODELER"
+				case "SPOTLIGHTONDB2_X86_EN"
+					StrProduct="SPOTLIGHT_ ON IBM_ DB2_ LUW"
+				case "BENCHMARKFACTORY_X86_EN"
+					StrProduct="BENCHMARK FACTORY_ FOR DATABASES"
+				case "BENCHMARKFACTORY_TRIAL_X86_EN"
+					StrProduct="BENCHMARK FACTORY_ FOR DATABASES TRIAL"
+				case "SQLOPTIMIZERFORDB2LUW_X86_EN"
+					StrProduct="Dell_ SQL OPTIMIZER FOR IBM_ DB2% LUW"
+				case "SQLOPTIMIZERFORDB2ZOS_X86_EN"
+					StrProduct="Dell_ SQL OPTIMIZER FOR IBM_ DB2% Z_OS_"
+				case else
+					StrProduct="Null"
+			end select
+		end if
+		
+		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_VerifyRegistry set  I_ProductVersion =" + "'" + StrVersion + "'" + " where Projectid = 2 and UPPER(I_AutoUpdate) = 'TURE' and UPPER(I_InstallerDisplayProductName) like '" + StrProduct + "'"
+		
+		if Err.Number = 0 then
+			Update_DSI_FinishInstall_VerifyRegistry=True
+		else
+			Update_DSI_FinishInstall_VerifyRegistry=False
+			Err.Clear
+		end if
+
+	End Function
 
 End Class
 
 Class UpdateSQLServerSuite
 
 	'==============================DSI_DSI_FinishInstall_BMF========================================
-	Function Update_DSI_FinishInstall_BMF(StrProduct,StrVersion)
+	Function Update_DSI_FinishInstall_BMF(ByVal StrProduct,ByVal StrVersion)
 
 		on error resume next
 		
@@ -535,7 +851,7 @@ Class UpdateSQLServerSuite
 
 
 	'==============================DSI_FinishInstall_ToadDataModeler========================================
-	Function Update_DSI_FinishInstall_ToadDataModeler(StrProduct,StrVersion)
+	Function Update_DSI_FinishInstall_ToadDataModeler(ByVal StrProduct,ByVal StrVersion)
 
 		on error resume next
 		
@@ -677,6 +993,12 @@ Sub UpdateTestData()
 								'wscript.echo("Update Update_DSI_FinishInstall_ToadforMySQLFreeware table successful!")
 							end if
 					End Select
+					if NewOracleSuite.Update_DSI_ProductSelectionPage_VerifyProductDetail(ProductName,ProductVersion) then
+						'wscript.echo("Update DSI_ProductSelectionPage_VerifyProductDetail table successful!")
+					end if
+					if NewOracleSuite.Update_DSI_FinishInstall_VerifyRegistry(ProductName,ProductVersion) then
+						'wscript.echo("Update DSI_FinishInstall_VerifyRegistry table successful!")
+					end if
 				case UCase("DB2")
 					Set NewDB2Suite=New UpdateDB2Suite
 					Select Case Trim(UCase(PreProduct(0)))
@@ -705,6 +1027,12 @@ Sub UpdateTestData()
 								'wscript.echo("Update Update_DSI_FinishInstall_ToadDataModeler table successful!")
 							end if
 					End Select
+					if NewDB2Suite.Update_DSI_ProductSelectionPage_VerifyProductDetails(ProductName,ProductVersion) then
+						'wscript.echo("Update DSI_ProductSelectionPage_VerifyProductDetail table successful!")
+					end if
+					if NewDB2Suite.Update_DSI_FinishInstall_VerifyRegistry(ProductName,ProductVersion) then
+						'wscript.echo("Update DSI_FinishInstall_VerifyRegistry table successful!")
+					end if
 				case UCase("SAP")
 					Set NewSAPSuite=New UpdateSAPSuite
 					Select Case Trim(UCase(PreProduct(0)))
@@ -729,6 +1057,12 @@ Sub UpdateTestData()
 								'wscript.echo("Update DSI_FinishInstall_ToadDataModeler table successful!")
 							end if
 					End Select
+					if NewSAPSuite.Update_DSI_ProductSelectionPage_VerifyProductDetails(ProductName,ProductVersion) then
+						'wscript.echo("Update DSI_ProductSelectionPage_VerifyProductDetail table successful!")
+					end if
+					if NewSAPSuite.Update_DSI_FinishInstall_VerifyRegistry(ProductName,ProductVersion) then
+						'wscript.echo("Update DSI_FinishInstall_VerifyRegistry table successful!")
+					end if
 				case UCase("SQLSERVER")
 					Set NewSQLServerSuite=New UpdateSQLSERVERSuite
 					'not implemented
