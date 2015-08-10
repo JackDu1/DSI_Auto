@@ -230,9 +230,7 @@ Class UpdateOracleSuite
 	'==============================DSI_ProductSelectionPage_VerifyProductDetail========================================
 	Function Update_DSI_ProductSelectionPage_VerifyProductDetail(ByVal StrProduct,ByVal StrVersion)
 		
-		Dim isSQL
-		
-		'on error resume next
+		on error resume next
 		
 		if IsEmpty(StrProduct) then
 			Update_DSI_ProductSelectionPage_VerifyProductDetail=false
@@ -302,6 +300,84 @@ Class UpdateOracleSuite
 			Update_DSI_ProductSelectionPage_VerifyProductDetail=True
 		else
 			Update_DSI_ProductSelectionPage_VerifyProductDetail=False
+			Err.Clear
+		end if
+
+	End Function
+	
+	'==============================DSI_DSI_FinishInstall_VerifyRegistry========================================
+	Function Update_DSI_FinishInstall_VerifyRegistry(ByVal StrProduct,ByVal StrVersion)
+		
+		on error resume next
+		
+		if IsEmpty(StrProduct) then
+			Update_DSI_ProductSelectionPage_VerifyProductDetail=false
+			wscript.quit 100
+		else
+			select case UCase(StrProduct)
+				case "TOADFORORACLE_X64_EN"
+					StrProduct="TOAD%FOR ORACLE 64-BIT"
+				case "TOADFORORACLE_X64_ZH"
+					StrProduct="TOAD%FOR ORACLE 64-BIT"
+				case "TOADFORORACLE_X86_EN"
+					StrProduct="TOAD%FOR ORACLE 32-BIT"
+				case "TOADFORORACLE_X86_ZH"
+					StrProduct="TOAD%FOR ORACLE 32-BIT"
+				case "TOADFORORACLE_TRIAL_X86_EN"
+					StrProduct="TOAD%FOR ORACLE 32-BIT TRIAL"
+				case "TOADFORORACLE_TRIAL_X86_ZH"
+					StrProduct="TOAD%FOR ORACLE 32-BIT TRIAL"
+				case "TOADFORORACLE_TRIAL_X64_EN"
+					StrProduct="TOAD%FOR ORACLE 64-BIT TRIAL"
+				case "TOADFORORACLE_TRIAL_X64_ZH"
+					StrProduct="TOAD%FOR ORACLE 64-BIT TRIAL"
+				case "TOADFORORACLE_READONLY_X86_EN"
+					StrProduct="TOAD%FOR ORACLE 32-BIT READ-ONLY"
+				case "TOADFORORACLE_READONLY_X86_ZH"
+					StrProduct="TOAD%FOR ORACLE 32-BIT READ-ONLY"
+				case "TOADFORORACLE_READONLY_X64_EN"
+					StrProduct="TOAD%FOR ORACLE 64-BIT READ-ONLY"
+				case "TOADFORORACLE_READONLY_X64_ZH"
+					StrProduct="TOAD%FOR ORACLE 64-BIT READ-ONLY"
+				case "TOADFORMYSQL_FREEWARE_X86_EN"
+					StrProduct="TOAD% FOR MYSQL"
+				case "BACKUPREPORTER_X86_EN"
+					StrProduct="DELL% BACKUP REPORTER FOR ORACLE"
+				case "CODETESTERORACLE_X86_EN"
+					StrProduct="DELL% CODE TESTER FOR ORACLE"
+				case "TOADDATAMODELER_X86_EN"
+					StrProduct="TOAD% DATA MODELER"
+				case "SPOTLIGHTONORACLE_X64_MULTILANG"
+					StrProduct="SPOTLIGHT% ON ORACLE 64-BIT"
+				case "SPOTLIGHTONORACLE_X86_MULTILANG"
+					StrProduct="SPOTLIGHT% ON ORACLE 32-BIT"
+				case "BENCHMARKFACTORY_X64_EN"
+					StrProduct="BENCHMARK FACTORY% 64-BIT"
+				case "BENCHMARKFACTORY_X86_EN"
+					StrProduct="BENCHMARK FACTORY% 32-BIT"
+				case "BENCHMARKFACTORY_TRIAL_X86_EN"
+					StrProduct="BENCHMARK FACTORY% 32-BIT Trial"
+				case "BENCHMARKFACTORY_TRIAL_X64_EN"
+					StrProduct="BENCHMARK FACTORY% 64-BIT Trial"
+				case "SQLOPTIMIZERFORORACLE_X64_MULTILANG"
+					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 64-BIT"
+				case "SQLOPTIMIZERFORORACLE_X86_MULTILANG"
+					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 32-BIT"
+				case "SQLOPTIMIZERFORORACLE_TRIAL_X86_MULTILANG"
+					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 32-BIT TRIAL"
+				case "SQLOPTIMIZERFORORACLE_TRIAL_X64_MULTILANG"
+					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 64-BIT TRIAL"
+				case else
+					StrProduct="Null"
+			end select
+		end if
+		
+		Conn.Execute "Update DSI.dbo.DSI_Oracle_VerifyRegistry set  I_ProductVersion =" + "'" + StrVersion + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TURE' and UPPER(I_InstallerDisplayProductName) like '" + StrProduct + "'"
+		
+		if Err.Number = 0 then
+			Update_DSI_FinishInstall_VerifyRegistry=True
+		else
+			Update_DSI_FinishInstall_VerifyRegistry=False
 			Err.Clear
 		end if
 
@@ -427,7 +503,7 @@ Class UpdateSAPSuite
 
 	End Function
 	
-		'==============================DSI_ProductSelectionPage_VerifyProductDetails========================================
+	'==============================DSI_ProductSelectionPage_VerifyProductDetails========================================
 	Function Update_DSI_ProductSelectionPage_VerifyProductDetails(ByVal StrProduct,ByVal StrVersion)
 		
 		Dim isSQL
@@ -466,6 +542,44 @@ Class UpdateSAPSuite
 		end if
 
 	End Function
+	
+	'==============================DSI_FinishInstall_VerifyRegistry========================================
+	Function Update_DSI_FinishInstall_VerifyRegistry(ByVal StrProduct,ByVal StrVersion)
+		
+		on error resume next
+		
+		if IsEmpty(StrProduct) then
+			Update_DSI_ProductSelectionPage_VerifyProductDetails=false
+			wscript.quit 100
+		else
+			select case UCase(StrProduct)
+				case "TOADFORSAP_X86_EN"
+					StrProduct="TOAD_ FOR SAP SOLUTIONS"
+				case "TOADDATAMODELER_X86_EN"
+					StrProduct="TOAD_ DATA MODELER"
+				case "SPOTLIGHTONSAP_X86_EN"
+					StrProduct="SPOTLIGHT_ ON SAP_ ASE"
+				case "BENCHMARKFACTORY_X86_EN"
+					StrProduct="BENCHMARK FACTORY_ FOR DATABASES"
+				case "BENCHMARKFACTORY_TRIAL_X86_EN"
+					StrProduct="BENCHMARK FACTORY_ FOR DATABASES TRIAL"
+				case "SQLOPTIMIZERFORSAP_X86_EN"
+					StrProduct="Dell_ SQL OPTIMIZER FOR SAP_ ASE"
+				case else
+					StrProduct="Null"
+			end select
+		end if
+		
+		Conn.Execute "Update DSI.dbo.DSI_SAP_VerifyRegistry set  I_ProductVersion =" + "'" + StrVersion + "'" + " where Projectid = 3 and UPPER(I_AutoUpdate) = 'TURE' and UPPER(I_InstallerDisplayProductName) like '" + StrProduct + "'"
+		
+		if Err.Number = 0 then
+			Update_DSI_FinishInstall_VerifyRegistry=True
+		else
+			Update_DSI_FinishInstall_VerifyRegistry=False
+			Err.Clear
+		end if
+
+	End Function
 
 End Class
 
@@ -474,7 +588,7 @@ Class UpdateDB2Suite
 	'==============================DSI_FinishInstall_ToadforIBMDB2LUW========================================
 	Function Update_DSI_FinishInstall_ToadforIBMDB2LUW(ByVal StrProduct,ByVal StrVersion)
 
-		'on error resume next
+		on error resume next
 		
 		if IsEmpty(StrProduct) then
 			Update_DSI_FinishInstall_ToadforIBMDB2LUW=false
@@ -615,7 +729,7 @@ Class UpdateDB2Suite
 
 	End Function
 	
-		'==============================DSI_ProductSelectionPage_VerifyProductDetails========================================
+	'==============================DSI_ProductSelectionPage_VerifyProductDetails========================================
 	Function Update_DSI_ProductSelectionPage_VerifyProductDetails(ByVal StrProduct,ByVal StrVersion)
 		
 		on error resume next
@@ -652,6 +766,48 @@ Class UpdateDB2Suite
 			Update_DSI_ProductSelectionPage_VerifyProductDetails=True
 		else
 			Update_DSI_ProductSelectionPage_VerifyProductDetails=False
+			Err.Clear
+		end if
+
+	End Function
+	
+	'==============================DSI_FinishInstall_VerifyRegistry========================================
+	Function Update_DSI_FinishInstall_VerifyRegistry(ByVal StrProduct,ByVal StrVersion)
+		
+		on error resume next
+		
+		if IsEmpty(StrProduct) then
+			Update_DSI_FinishInstall_VerifyRegistry=false
+			wscript.quit 100
+		else
+			select case UCase(StrProduct)
+				case "TOADFORDB2_X86_EN"
+					StrProduct="TOAD_ FOR IBM_ DB2_"
+				case "TOADFORDB2_TRIAL_X86_EN"
+					StrProduct="TOAD_ FOR IBM_ DB2_ TRIAL"
+				case "TOADDATAMODELER_X86_EN"
+					StrProduct="TOAD_ DATA MODELER"
+				case "SPOTLIGHTONDB2_X86_EN"
+					StrProduct="SPOTLIGHT_ ON IBM_ DB2_ LUW"
+				case "BENCHMARKFACTORY_X86_EN"
+					StrProduct="BENCHMARK FACTORY_ FOR DATABASES"
+				case "BENCHMARKFACTORY_TRIAL_X86_EN"
+					StrProduct="BENCHMARK FACTORY_ FOR DATABASES TRIAL"
+				case "SQLOPTIMIZERFORDB2LUW_X86_EN"
+					StrProduct="Dell_ SQL OPTIMIZER FOR IBM_ DB2% LUW"
+				case "SQLOPTIMIZERFORDB2ZOS_X86_EN"
+					StrProduct="Dell_ SQL OPTIMIZER FOR IBM_ DB2% Z_OS_"
+				case else
+					StrProduct="Null"
+			end select
+		end if
+		
+		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_VerifyRegistry set  I_ProductVersion =" + "'" + StrVersion + "'" + " where Projectid = 2 and UPPER(I_AutoUpdate) = 'TURE' and UPPER(I_InstallerDisplayProductName) like '" + StrProduct + "'"
+		
+		if Err.Number = 0 then
+			Update_DSI_FinishInstall_VerifyRegistry=True
+		else
+			Update_DSI_FinishInstall_VerifyRegistry=False
 			Err.Clear
 		end if
 
