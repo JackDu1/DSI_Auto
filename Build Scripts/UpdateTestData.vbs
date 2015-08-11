@@ -4,8 +4,11 @@ Class UpdateOracleSuite
 
 	'==============================DSI_FinishInstall_ToadforOracle========================================
 	Function Update_DSI_FinishInstall_ToadforOracle(ByVal StrProduct,ByVal StrVersion)
-
+		
+		Dim StrColFolder,StrMainVer,Query
 		on error resume next
+		
+		Set regEx = New RegExp
 		
 		if IsEmpty(StrProduct) then
 			Update_DSI_FinishInstall_ToadforOracle=false
@@ -38,9 +41,30 @@ Class UpdateOracleSuite
 					StrProduct="64-bit Read-Only"
 			end select	
 		end if
-
-		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_ToadforOracle set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TURE' and I_ProductName like 'Toad% for Oracle%" + StrProduct +"'"
-
+		'Update I_Version Column Record
+		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_ToadforOracle set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Toad% for Oracle%" + StrProduct +"'"
+		'Update I_InstallFolder Column Record
+		'Set Rec			=	CreateObject("ADO.Recordset")
+		'Query			= "Select * from DSI.dbo.DSI_FinishInstall_ToadforOracle where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Toad% for Oracle%" + StrProduct +"'"
+		'Rec.Open Query,Conn,3,4
+		'While not Rec.EOF
+		'	Rec.MoveFirst
+		'	StrColFolder=	Rec.Fields.Item("I_InstallFolder")
+		'	Rec.MoveNext
+		'Wend
+		'wscript.echo(StrColFolder)
+		
+		'StrMainVer 		= 	Split(StrVersion,".")
+		'StrMainVer 		= 	StrMainVer(0) + "." + StrMainVer(1)
+		'regEx.Pattern 	= 	"\d+(\.\d+)+"
+		'regEx.Global	=	True
+		'StrColFolder 	= 	regEx.Replace(StrColFolder,StrMainVer)
+		'wscript.echo(StrColFolder)
+		'Conn.Execute "Update DSI.dbo.DSI_FinishInstall_ToadforOracle set  I_InstallFolder =" + "'" + StrColFolder + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Toad% for Oracle%" + StrProduct +"'"
+		
+		'Rec.Close
+		'Set Rec	= Nothing
+		
 		if Err.Number = 0 then
 			Update_DSI_FinishInstall_ToadforOracle=True
 		else
@@ -71,7 +95,7 @@ Class UpdateOracleSuite
 			end select	
 		end if
 		
-		Conn.Execute "Update DSI.dbo.DSI_FinshInstall_OptimizerforOracle set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 1 and I_AutoUpdate = 'Ture' and I_ProductName like 'Dell% SQL Optimizer for Oracle%" + StrProduct +"'"
+		Conn.Execute "Update DSI.dbo.DSI_FinshInstall_OptimizerforOracle set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Dell% SQL Optimizer for Oracle%" + StrProduct +"'"
 		
 		if Err.Number = 0 then
 			Update_DSI_FinshInstall_OptimizerforOracle=True
@@ -103,7 +127,7 @@ Class UpdateOracleSuite
 			end select	
 		end if
 
-		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_BMF set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 1 and I_AutoUpdate = 'Ture' and I_ProductName like 'Benchmark Factory%" + StrProduct +"'"
+		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_BMF set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Benchmark Factory%" + StrProduct +"'"
 
 		if Err.Number = 0 then
 			Update_DSI_FinishInstall_BMF=True
@@ -131,7 +155,7 @@ Class UpdateOracleSuite
 			end select	
 		end if
 		
-		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_SpotlightonOracle set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 1 and I_AutoUpdate = 'Ture' and I_ProductName like 'Spotlight% on Oracle%" + StrProduct +"'"
+		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_SpotlightonOracle set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Spotlight% on Oracle%" + StrProduct +"'"
 
 		if Err.Number = 0 then
 			Update_DSI_FinishInstall_SpotlightonOracle=True
@@ -152,7 +176,7 @@ Class UpdateOracleSuite
 			wscript.quit 100
 		end if
 		
-		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_ToadDataModeler set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TURE' and I_ProductName like 'Toad% Data Modeler'"
+		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_ToadDataModeler set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Toad% Data Modeler'"
 		
 		if Err.Number = 0 then
 			Update_DSI_FinishInstall_ToadDataModeler=True
@@ -173,7 +197,7 @@ Class UpdateOracleSuite
 			wscript.quit 100
 		end if
 		
-		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_QuestCodeTester set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TURE' and UPPER(I_ProductName) like 'DELL% CODE TESTER FOR ORACLE'"
+		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_QuestCodeTester set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like 'DELL% CODE TESTER FOR ORACLE'"
 		
 		if Err.Number = 0 then
 			Update_DSI_FinishInstall_QuestCodeTester=True
@@ -194,7 +218,7 @@ Class UpdateOracleSuite
 			wscript.quit 100	
 		end if
 		
-		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_BackupReportForOracle set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TURE' and UPPER(I_ProductName) like 'DELL% BACKUP REPORTER FOR ORACLE'"
+		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_BackupReportForOracle set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like 'DELL% BACKUP REPORTER FOR ORACLE'"
 		
 		if Err.Number = 0 then
 			Update_DSI_FinishInstall_BackupReportForOracle=True
@@ -216,7 +240,7 @@ Class UpdateOracleSuite
 			wscript.quit 100	
 		end if
 		
-		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_ToadforMySQLFreeware set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TURE' and UPPER(I_ProductName) like 'TOAD% FOR MYSQL'"
+		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_ToadforMySQLFreeware set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like 'TOAD% FOR MYSQL'"
 		
 		if Err.Number = 0 then
 			Update_DSI_FinishInstall_ToadforMySQLFreeware=True
@@ -294,7 +318,7 @@ Class UpdateOracleSuite
 			end select
 		end if
 		
-		Conn.Execute "Update DSI.dbo.DSI_ProductSelectionPage_VerifyProductDetail set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TURE' and UPPER(I_ProductName) like '" + StrProduct + "'"
+		Conn.Execute "Update DSI.dbo.DSI_ProductSelectionPage_VerifyProductDetail set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
 		
 		if Err.Number = 0 then
 			Update_DSI_ProductSelectionPage_VerifyProductDetail=True
@@ -372,7 +396,7 @@ Class UpdateOracleSuite
 			end select
 		end if
 		
-		Conn.Execute "Update DSI.dbo.DSI_Oracle_VerifyRegistry set  I_ProductVersion =" + "'" + StrVersion + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TURE' and UPPER(I_InstallerDisplayProductName) like '" + StrProduct + "'"
+		Conn.Execute "Update DSI.dbo.DSI_Oracle_VerifyRegistry set  I_ProductVersion =" + "'" + StrVersion + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_InstallerDisplayProductName) like '" + StrProduct + "'"
 		
 		if Err.Number = 0 then
 			Update_DSI_FinishInstall_VerifyRegistry=True
@@ -397,7 +421,7 @@ Class UpdateSAPSuite
 			wscript.quit 100	
 		end if
 
-		Conn.Execute "Update DSI.dbo.DSI_SAP_ToadforSybase set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 3 and UPPER(I_AutoUpdate) = 'TURE' and I_ProductName like 'Toad% for SAP Solutions%'"
+		Conn.Execute "Update DSI.dbo.DSI_SAP_ToadforSybase set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 3 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Toad% for SAP Solutions%'"
 
 		if Err.Number = 0 then
 			Update_DSI_FinishInstall_ToadforSybase=True
@@ -418,7 +442,7 @@ Class UpdateSAPSuite
 			wscript.quit 100
 		end if
 		
-		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_QuestSQLOptimizerforSybase set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 3 and UPPER(I_AutoUpdate) = 'TURE' and UPPER(I_ProductName) like 'DELL% SQL OPTIMIZER FOR SAP% ASE'"
+		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_QuestSQLOptimizerforSybase set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 3 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like 'DELL% SQL OPTIMIZER FOR SAP% ASE'"
 		
 		if Err.Number = 0 then
 			Update_DSI_FinishInstall_QuestSQLOptimizerforSybase=True
@@ -450,7 +474,7 @@ Class UpdateSAPSuite
 			end select
 		end if
 
-		Conn.Execute "Update DSI.dbo.DSI_SAP_BMF set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 3 and UPPER(I_AutoUpdate) = 'TURE' and I_ProductName like 'Benchmark Factory%" + StrProduct + "'"
+		Conn.Execute "Update DSI.dbo.DSI_SAP_BMF set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 3 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Benchmark Factory%" + StrProduct + "'"
 
 		if Err.Number = 0 then
 			Update_DSI_FinishInstall_BMF=True
@@ -471,7 +495,7 @@ Class UpdateSAPSuite
 			wscript.quit 100	
 		end if
 		
-		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_SpotlightonSybase set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 3 and UPPER(I_AutoUpdate) = 'TURE' and I_ProductName like 'Spotlight% on SAP% ASE'"
+		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_SpotlightonSybase set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 3 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Spotlight% on SAP% ASE'"
 
 		if Err.Number = 0 then
 			Update_DSI_FinishInstall_SpotlightonSybase=True
@@ -492,7 +516,7 @@ Class UpdateSAPSuite
 			wscript.quit 100
 		end if
 		
-		Conn.Execute "Update DSI.dbo.DSI_SAP_ToadDataModeler set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 3 and UPPER(I_AutoUpdate) = 'TURE' and I_ProductName like 'Toad% Data Modeler'"
+		Conn.Execute "Update DSI.dbo.DSI_SAP_ToadDataModeler set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 3 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Toad% Data Modeler'"
 		
 		if Err.Number = 0 then
 			Update_DSI_FinishInstall_ToadDataModeler=True
@@ -532,7 +556,7 @@ Class UpdateSAPSuite
 			end select
 		end if
 		
-		Conn.Execute "Update DSI.dbo.DSI_SAP_VerifyProductDetails set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 3 and UPPER(I_AutoUpdate) = 'TURE' and UPPER(I_ProductName) like '" + StrProduct + "'"
+		Conn.Execute "Update DSI.dbo.DSI_SAP_VerifyProductDetails set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 3 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
 		
 		if Err.Number = 0 then
 			Update_DSI_ProductSelectionPage_VerifyProductDetails=True
@@ -570,7 +594,7 @@ Class UpdateSAPSuite
 			end select
 		end if
 		
-		Conn.Execute "Update DSI.dbo.DSI_SAP_VerifyRegistry set  I_ProductVersion =" + "'" + StrVersion + "'" + " where Projectid = 3 and UPPER(I_AutoUpdate) = 'TURE' and UPPER(I_InstallerDisplayProductName) like '" + StrProduct + "'"
+		Conn.Execute "Update DSI.dbo.DSI_SAP_VerifyRegistry set  I_ProductVersion =" + "'" + StrVersion + "'" + " where Projectid = 3 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_InstallerDisplayProductName) like '" + StrProduct + "'"
 		
 		if Err.Number = 0 then
 			Update_DSI_FinishInstall_VerifyRegistry=True
@@ -602,7 +626,7 @@ Class UpdateDB2Suite
 			end select	
 		end if
 
-		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_ToadforIBMDB2LUW set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 2 and UPPER(I_AutoUpdate) = 'TURE' and I_ProductName like 'Toad% for IBM% DB2%" + StrProduct +"'"
+		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_ToadforIBMDB2LUW set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 2 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Toad% for IBM% DB2%" + StrProduct +"'"
 
 		if Err.Number = 0 then
 			Update_DSI_FinishInstall_ToadforIBMDB2LUW=True
@@ -623,7 +647,7 @@ Class UpdateDB2Suite
 			wscript.quit 100	
 		end if
 		
-		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_QuestSQLOptimizerforIBMDB2 set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 2 and I_AutoUpdate = 'Ture' and I_ProductName like 'Dell% SQL Optimizer for IBM% DB2% LUW'"
+		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_QuestSQLOptimizerforIBMDB2 set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 2 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Dell% SQL Optimizer for IBM% DB2% LUW'"
 		
 		if Err.Number = 0 then
 			Update_DSI_FinishInstall_QuestSQLOptimizerforIBMDB2=True
@@ -644,7 +668,7 @@ Class UpdateDB2Suite
 			wscript.quit 100	
 		end if
 		
-		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_QuestSQLOptimizerForDB2zOS set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 2 and I_AutoUpdate = 'Ture' and I_ProductName like 'Dell% SQL Optimizer for IBM% DB2% z/OS%'"
+		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_QuestSQLOptimizerForDB2zOS set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 2 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Dell% SQL Optimizer for IBM% DB2% z/OS%'"
 		
 		if Err.Number = 0 then
 			Update_DSI_FinishInstall_QuestSQLOptimizerForDB2zOS=True
@@ -676,7 +700,7 @@ Class UpdateDB2Suite
 			end select	
 		end if
 
-		Conn.Execute "Update DSI.dbo.DSI_DB2_BMF set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 2 and UPPER(I_AutoUpdate) = 'TURE' and I_ProductName like 'Benchmark Factory%" + StrProduct +"'"
+		Conn.Execute "Update DSI.dbo.DSI_DB2_BMF set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 2 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Benchmark Factory%" + StrProduct +"'"
 
 		if Err.Number = 0 then
 			Update_DSI_FinishInstall_BMF=True
@@ -697,7 +721,7 @@ Class UpdateDB2Suite
 			wscript.quit 100	
 		end if
 		
-		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_SpotlightonIBMDB2 set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 2 and UPPER(I_AutoUpdate) = 'TURE' and I_ProductName like 'Spotlight_ on IBM_ DB2_ LUW'"
+		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_SpotlightonIBMDB2 set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 2 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Spotlight_ on IBM_ DB2_ LUW'"
 
 		if Err.Number = 0 then
 			Update_DSI_FinishInstall_SpotlightonIBMDB2=True
@@ -718,7 +742,7 @@ Class UpdateDB2Suite
 			wscript.quit 100	
 		end if
 		
-		Conn.Execute "Update DSI.dbo.DSI_DB2_ToadDataModeler set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 2 and UPPER(I_AutoUpdate) = 'TURE' and I_ProductName like 'Toad% Data Modeler'"
+		Conn.Execute "Update DSI.dbo.DSI_DB2_ToadDataModeler set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 2 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Toad% Data Modeler'"
 		
 		if Err.Number = 0 then
 			Update_DSI_FinishInstall_ToadDataModeler=True
@@ -760,7 +784,7 @@ Class UpdateDB2Suite
 			end select
 		end if
 		
-		Conn.Execute "Update DSI.dbo.DSI_ProductSelectionPage_VerifyProductDetails set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 2 and UPPER(I_AutoUpdate) = 'TURE' and UPPER(I_ProductName) like '" + StrProduct + "'"
+		Conn.Execute "Update DSI.dbo.DSI_ProductSelectionPage_VerifyProductDetails set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 2 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
 		
 		if Err.Number = 0 then
 			Update_DSI_ProductSelectionPage_VerifyProductDetails=True
@@ -802,7 +826,7 @@ Class UpdateDB2Suite
 			end select
 		end if
 		
-		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_VerifyRegistry set  I_ProductVersion =" + "'" + StrVersion + "'" + " where Projectid = 2 and UPPER(I_AutoUpdate) = 'TURE' and UPPER(I_InstallerDisplayProductName) like '" + StrProduct + "'"
+		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_VerifyRegistry set  I_ProductVersion =" + "'" + StrVersion + "'" + " where Projectid = 2 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_InstallerDisplayProductName) like '" + StrProduct + "'"
 		
 		if Err.Number = 0 then
 			Update_DSI_FinishInstall_VerifyRegistry=True
@@ -838,7 +862,7 @@ Class UpdateSQLServerSuite
 			end select	
 		end if
 
-		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_BMF set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 4 and I_AutoUpdate = 'Ture' and I_ProductName like 'Benchmark Factory%" + StrProduct +"'"
+		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_BMF set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 4 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Benchmark Factory%" + StrProduct +"'"
 
 		if Err.Number = 0 then
 			Update_DSI_FinishInstall_BMF=True
@@ -867,7 +891,7 @@ Class UpdateSQLServerSuite
 			end select	
 		end if
 		
-		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_ToadDataModeler set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 4 and UPPER(I_AutoUpdate) = 'TURE' and I_ProductName like 'Toad% Data Modeler'"
+		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_ToadDataModeler set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 4 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Toad% Data Modeler'"
 		
 		if Err.Number = 0 then
 			Update_DSI_FinishInstall_ToadDataModeler=True
