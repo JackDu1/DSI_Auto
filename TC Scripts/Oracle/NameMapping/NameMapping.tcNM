@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<Root Signature="{5DCBAC3B-D39C-497C-9BE8-744CBADD37AA}" NameMappingVersion="4" Cookie="228">
+<Root Signature="{5DCBAC3B-D39C-497C-9BE8-744CBADD37AA}" NameMappingVersion="4" Cookie="229">
 	<Nodes Name="NameMapping" Key="{BE401E45-B2D6-4FBA-931A-C2117D5C51AD}">
 		<Properties />
 		<Children>
@@ -220,6 +220,13 @@
 														<Children />
 														<TypeInfo Item0="2" />
 													</Child5>
+													<Child6 Name="dgvProperties" Key="{77B66838-312D-42E7-A15A-6E6A98FD35C4}" ParallelWalk="True">
+														<Properties>
+															<Property0 Name="NativeClrObject.Name" Cookie="228" />
+														</Properties>
+														<Children />
+														<TypeInfo Item0="5" />
+													</Child6>
 												</Children>
 												<TypeInfo Item0="2" />
 											</Child2>
@@ -990,6 +997,7 @@
 					</Child0>
 				</Child4>
 				<Child5 Name="LicenseValidationError" Owner="{94C16AB8-B7FC-4AF7-8E38-69639029C931}" />
+				<Child6 Name="LicenseKeyProperties" Owner="{77B66838-312D-42E7-A15A-6E6A98FD35C4}" />
 			</Child9>
 		</Child0>
 		<Child1 Name="Win_frm_Main" Owner="{F7C502EF-87D9-402A-AA53-F4F4BC69D067}">
@@ -1267,6 +1275,7 @@
 			<Property181 Cookie="225" PropertyType="0" Value="#32770" Type="5" />
 			<Property182 Cookie="226" PropertyType="0" Value="About Benchmark Factory™*" Type="5" />
 			<Property183 Cookie="227" PropertyType="0" Value="Window(&apos;#32770&apos;, &apos;About Benchmark Factory™ - Trial&apos;, 1)" Type="5" />
+			<Property184 Cookie="228" PropertyType="0" Value="dgvProperties" Type="5" />
 		</Child0>
 	</Storages>
 	<TypeInfo StoreCodeCompletion="1">
