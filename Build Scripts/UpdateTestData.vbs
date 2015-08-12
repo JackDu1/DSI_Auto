@@ -5,7 +5,7 @@ Dim Conn
 Class UpdateOracleSuite
 
 	'==============================DSI_FinishInstall_ToadforOracle========================================
-	Function Update_DSI_FinishInstall_ToadforOracle(ByVal StrProduct,ByVal StrVersion)
+	Sub Update_DSI_FinishInstall_ToadforOracle(ByVal StrProduct,ByVal StrVersion)
 		
 		Dim StrColFolder,StrMainVer,Query,StrVer
 		on error resume next
@@ -13,7 +13,6 @@ Class UpdateOracleSuite
 		Set regEx = New RegExp
 		
 		if IsEmpty(StrProduct) then
-			Update_DSI_FinishInstall_ToadforOracle=false
 			wscript.quit 100
 		else
 			select case UCase(StrProduct)
@@ -66,17 +65,14 @@ Class UpdateOracleSuite
 		Rec.Close
 		Set Rec	= Nothing
 		
-		if Err.Number = 0 then
-			Update_DSI_FinishInstall_ToadforOracle=True
-		else
-			Update_DSI_FinishInstall_ToadforOracle=False
+		if Err.Number <> 0 then
 			Err.Clear
 		end if
 
-	End Function
+	End Sub
 
 	'==============================DSI_FinshInstall_OptimizerforOracle========================================
-	Function Update_DSI_FinshInstall_OptimizerforOracle(ByVal StrProduct,ByVal StrVersion)
+	Sub Update_DSI_FinshInstall_OptimizerforOracle(ByVal StrProduct,ByVal StrVersion)
 		
 		Dim StrColFolder,StrMainVer,Query,StrVer
 		on error resume next
@@ -84,7 +80,6 @@ Class UpdateOracleSuite
 		Set regEx = New RegExp
 		
 		if IsEmpty(StrProduct) then
-			Update_DSI_FinshInstall_OptimizerforOracle=false
 			wscript.quit 100
 		else
 			select case StrProduct
@@ -121,71 +116,82 @@ Class UpdateOracleSuite
 		Rec.Close
 		Set Rec	= Nothing
 		
-		if Err.Number = 0 then
-			Update_DSI_FinshInstall_OptimizerforOracle=True
-		else
-			Update_DSI_FinshInstall_OptimizerforOracle=False
+		if Err.Number <> 0 then
 			Err.Clear
 		end if
 
-	End Function
+	End Sub
 
 	'==============================DSI_FinishInstall_BMF========================================
-	Function Update_DSI_FinishInstall_BMF(ByVal StrProduct,ByVal StrVersion)
+	Sub Update_DSI_FinishInstall_BMF(ByVal StrProduct,ByVal StrVersion)
 
-		Dim StrColFolder,StrMainVer,Query,StrVer
+		Dim StrColFolder,StrMainVer,Query,StrVer,StrColDisplay
 		on error resume next
 		
 		Set regEx = New RegExp
 		
 		if IsEmpty(StrProduct) then
-			Update_DSI_FinishInstall_BMF=false
 			wscript.quit 100
 		else
 			select case StrProduct
 				case "BENCHMARKFACTORY_X64_EN"
-					StrProduct="64-bit"
+					StrProduct="BENCHMARK FACTORY% 64-BIT"
 				case "BENCHMARKFACTORY_X86_EN"
-					StrProduct="32-bit"
+					StrProduct="BENCHMARK FACTORY% 32-BIT"
 				case "BENCHMARKFACTORY_TRIAL_X86_EN"
-					StrProduct="32-bit Trial"
+					StrProduct="BENCHMARK FACTORY% 32-BIT TRIAL"
 				case "BENCHMARKFACTORY_TRIAL_X64_EN"
-					StrProduct="64-bit Trial"
+					StrProduct="BENCHMARK FACTORY% 64-BIT TRIAL"
 			end select	
 		end if
 		'Update I_Version Column
-		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_BMF set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Benchmark Factory%" + StrProduct +"'"
+		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_BMF set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
 		
 		'Update I_InstallFolder Column Record
 		Set Rec		=	CreateObject("ADODB.Recordset")
-		Query		= 	"Select I_InstallFolder from DSI.dbo.DSI_FinishInstall_BMF where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Benchmark Factory%" + StrProduct +"'"
+		Query		= 	"Select I_InstallFolder from DSI.dbo.DSI_FinishInstall_BMF where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
 		Set Rec		=	Conn.Execute(Query)
 		While not Rec.EOF
 			StrColFolder=Rec.Fields("I_InstallFolder").Value
 			Rec.MoveNext
 		Wend
-		
 		StrMainVer 	= 	Split(StrVersion,".")
 		StrVer 		= 	StrMainVer(0) + "." + StrMainVer(1) + "." + StrMainVer(2)
 		regEx.Pattern 	= 	"\d+(\.\d+)+"
 		regEx.Global	=	True
 		StrColFolder 	= 	regEx.Replace(StrColFolder,StrVer)
+		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_BMF set  I_InstallFolder =" + "'" + StrColFolder + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
 		
-		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_BMF set  I_InstallFolder =" + "'" + StrColFolder + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Benchmark Factory%" + StrProduct +"'"
+		'Update I_DisplayVersion Column Record
+		Query		= 	"Select I_DisplayVersion from DSI.dbo.DSI_FinishInstall_BMF where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
+		Set Rec		=	Conn.Execute(Query)
+		While not Rec.EOF
+			StrColDisplay	=	Rec.Fields("I_DisplayVersion").Value
+			Rec.MoveNext
+		Wend
+		StrMainVer 	= 	Split(StrVersion,".")
+		StrVer 		= 	StrMainVer(0) + "." + StrMainVer(1) + "." + StrMainVer(3)
+		if InStr(StrColDisplay,"32-bit") >= 3 then
+			StrColDisplay	=	StrMainVer(0) + "." + StrMainVer(1) + " (32-bit)" + "." + StrMainVer(3)
+		elseif InStr(StrColDisplay,"64-bit") >= 3  then
+			StrColDisplay	=	StrMainVer(0) + "." + StrMainVer(1) + " (64-bit)" + "." + StrMainVer(3)
+		else
+			StrColDisplay 	= 	StrMainVer(0) + "." + StrMainVer(1) + "." + StrMainVer(3)
+		end if
+		
+		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_BMF set  I_DisplayVersion =" + "'" + StrColDisplay + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
 		
 		Rec.Close
 		Set Rec	= Nothing
-		if Err.Number = 0 then
-			Update_DSI_FinishInstall_BMF=True
-		else
-			Update_DSI_FinishInstall_BMF=False
+		
+		if Err.Number <> 0 then
 			Err.Clear
 		end if
 
-	End Function
+	End Sub
 
 	'==============================DSI_FinishInstall_SpotlightonOracle========================================
-	Function Update_DSI_FinishInstall_SpotlightonOracle(ByVal StrProduct,ByVal StrVersion)
+	Sub Update_DSI_FinishInstall_SpotlightonOracle(ByVal StrProduct,ByVal StrVersion)
 
 		Dim StrColFolder,StrMainVer,Query,StrVer
 		on error resume next
@@ -193,7 +199,6 @@ Class UpdateOracleSuite
 		Set regEx = New RegExp
 		
 		if IsEmpty(StrProduct) then
-			Update_DSI_FinishInstall_SpotlightonOracle=false
 			wscript.quit 100
 		else
 			select case StrProduct
@@ -226,17 +231,14 @@ Class UpdateOracleSuite
 		Rec.Close
 		Set Rec	= Nothing
 		
-		if Err.Number = 0 then
-			Update_DSI_FinishInstall_SpotlightonOracle=True
-		else
-			Update_DSI_FinishInstall_SpotlightonOracle=False
+		if Err.Number <> 0 then
 			Err.Clear
 		end if
 
-	End Function
+	End Sub
 
 	'==============================DSI_FinishInstall_ToadDataModeler========================================
-	Function Update_DSI_FinishInstall_ToadDataModeler(ByVal StrProduct,ByVal StrVersion)
+	Sub Update_DSI_FinishInstall_ToadDataModeler(ByVal StrProduct,ByVal StrVersion)
 
 		Dim StrColFolder,StrMainVer,Query,StrVer
 		on error resume next
@@ -244,7 +246,6 @@ Class UpdateOracleSuite
 		Set regEx = New RegExp
 		
 		if IsEmpty(StrProduct) then
-			Update_DSI_FinishInstall_ToadDataModeler=false
 			wscript.quit 100
 		end if
 		'Update I_Version Column
@@ -269,17 +270,14 @@ Class UpdateOracleSuite
 		Rec.Close
 		Set Rec	= Nothing
 		
-		if Err.Number = 0 then
-			Update_DSI_FinishInstall_ToadDataModeler=True
-		else
-			Update_DSI_FinishInstall_ToadDataModeler=False
+		if Err.Number <> 0 then
 			Err.Clear
 		end if
 
-	End Function
+	End Sub
 
 	'==============================DSI_FinishInstall_QuestCodeTester========================================
-	Function Update_DSI_FinishInstall_QuestCodeTester(ByVal StrProduct,ByVal StrVersion)
+	Sub Update_DSI_FinishInstall_QuestCodeTester(ByVal StrProduct,ByVal StrVersion)
 
 		Dim StrColFolder,StrMainVer,Query,StrVer
 		on error resume next
@@ -287,7 +285,6 @@ Class UpdateOracleSuite
 		Set regEx = New RegExp
 		
 		if IsEmpty(StrProduct) then
-			Update_DSI_FinishInstall_QuestCodeTester=false
 			wscript.quit 100
 		end if
 		
@@ -314,17 +311,14 @@ Class UpdateOracleSuite
 		Rec.Close
 		Set Rec	= Nothing
 		
-		if Err.Number = 0 then
-			Update_DSI_FinishInstall_QuestCodeTester=True
-		else
-			Update_DSI_FinishInstall_QuestCodeTester=False
+		if Err.Number <> 0 then
 			Err.Clear
 		end if
 
-	End Function
+	End Sub
 
 	'==============================DSI_FinishInstall_BackupReportForOracle========================================
-	Function Update_DSI_FinishInstall_BackupReportForOracle(ByVal StrProduct,ByVal StrVersion)
+	Sub Update_DSI_FinishInstall_BackupReportForOracle(ByVal StrProduct,ByVal StrVersion)
 
 		Dim StrColFolder,StrMainVer,Query,StrVer
 		on error resume next
@@ -332,7 +326,6 @@ Class UpdateOracleSuite
 		Set regEx = New RegExp
 		
 		if IsEmpty(StrProduct) then
-			Update_DSI_FinishInstall_BackupReportForOracle=false
 			wscript.quit 100	
 		end if
 		
@@ -359,18 +352,15 @@ Class UpdateOracleSuite
 		Rec.Close
 		Set Rec	= Nothing
 		
-		if Err.Number = 0 then
-			Update_DSI_FinishInstall_BackupReportForOracle=True
-		else
-			Update_DSI_FinishInstall_BackupReportForOracle=False
+		if Err.Number <> 0 then
 			Err.Clear
 		end if
 
-	End Function
+	End Sub
 
 
 	'==============================DSI_FinishInstall_BackupReportForOracle========================================
-	Function Update_DSI_FinishInstall_ToadforMySQLFreeware(ByVal StrProduct,ByVal StrVersion)
+	Sub Update_DSI_FinishInstall_ToadforMySQLFreeware(ByVal StrProduct,ByVal StrVersion)
 
 		Dim StrColFolder,StrMainVer,Query,StrVer
 		on error resume next
@@ -378,7 +368,6 @@ Class UpdateOracleSuite
 		Set regEx = New RegExp
 		
 		if IsEmpty(StrProduct) then
-			Update_DSI_FinishInstall_ToadforMySQLFreeware=false
 			wscript.quit 100	
 		end if
 		
@@ -405,22 +394,18 @@ Class UpdateOracleSuite
 		Rec.Close
 		Set Rec	= Nothing
 		
-		if Err.Number = 0 then
-			Update_DSI_FinishInstall_ToadforMySQLFreeware=True
-		else
-			Update_DSI_FinishInstall_ToadforMySQLFreeware=False
+		if Err.Number <> 0 then
 			Err.Clear
 		end if
 
-	End Function
+	End Sub
 	
 	'==============================DSI_ProductSelectionPage_VerifyProductDetail========================================
-	Function Update_DSI_ProductSelectionPage_VerifyProductDetail(ByVal StrProduct,ByVal StrVersion)
+	Sub Update_DSI_ProductSelectionPage_VerifyProductDetail(ByVal StrProduct,ByVal StrVersion)
 		
 		on error resume next
 		
 		if IsEmpty(StrProduct) then
-			Update_DSI_ProductSelectionPage_VerifyProductDetail=false
 			wscript.quit 100
 		else
 			select case UCase(StrProduct)
@@ -483,22 +468,18 @@ Class UpdateOracleSuite
 		
 		Conn.Execute "Update DSI.dbo.DSI_ProductSelectionPage_VerifyProductDetail set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
 		
-		if Err.Number = 0 then
-			Update_DSI_ProductSelectionPage_VerifyProductDetail=True
-		else
-			Update_DSI_ProductSelectionPage_VerifyProductDetail=False
+		if Err.Number <> 0 then
 			Err.Clear
 		end if
 
-	End Function
+	End Sub
 	
 	'==============================DSI_DSI_FinishInstall_VerifyRegistry========================================
-	Function Update_DSI_FinishInstall_VerifyRegistry(ByVal StrProduct,ByVal StrVersion)
+	Sub Update_DSI_FinishInstall_VerifyRegistry(ByVal StrProduct,ByVal StrVersion)
 		
 		on error resume next
 		
 		if IsEmpty(StrProduct) then
-			Update_DSI_ProductSelectionPage_VerifyProductDetail=false
 			wscript.quit 100
 		else
 			select case UCase(StrProduct)
@@ -561,21 +542,18 @@ Class UpdateOracleSuite
 		
 		Conn.Execute "Update DSI.dbo.DSI_Oracle_VerifyRegistry set  I_ProductVersion =" + "'" + StrVersion + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_InstallerDisplayProductName) like '" + StrProduct + "'"
 		
-		if Err.Number = 0 then
-			Update_DSI_FinishInstall_VerifyRegistry=True
-		else
-			Update_DSI_FinishInstall_VerifyRegistry=False
+		if Err.Number <> 0 then
 			Err.Clear
 		end if
 
-	End Function
+	End Sub
 
 End Class
 
 Class UpdateSAPSuite
 
 	'==============================DSI_FinishInstall_ToadforSybase========================================
-	Function Update_DSI_FinishInstall_ToadforSybase(ByVal StrProduct,ByVal StrVersion)
+	Sub Update_DSI_FinishInstall_ToadforSybase(ByVal StrProduct,ByVal StrVersion)
 
 		Dim StrColFolder,StrMainVer,Query,StrVer
 		on error resume next
@@ -583,7 +561,6 @@ Class UpdateSAPSuite
 		Set regEx = New RegExp
 		
 		if IsEmpty(StrProduct) then
-			Update_DSI_FinishInstall_ToadforSybase=false
 			wscript.quit 100	
 		end if
 		'Update I_Version Column
@@ -609,17 +586,14 @@ Class UpdateSAPSuite
 		Rec.Close
 		Set Rec	= Nothing
 		
-		if Err.Number = 0 then
-			Update_DSI_FinishInstall_ToadforSybase=True
-		else
-			Update_DSI_FinishInstall_ToadforSybase=False
+		if Err.Number <> 0 then
 			Err.Clear
 		end if
 
-	End Function
+	End Sub
 
 	'==============================DSI_FinishInstall_QuestSQLOptimizerforSybase========================================
-	Function Update_DSI_FinishInstall_QuestSQLOptimizerforSybase(ByVal StrProduct,ByVal StrVersion)
+	Sub Update_DSI_FinishInstall_QuestSQLOptimizerforSybase(ByVal StrProduct,ByVal StrVersion)
 
 		Dim StrColFolder,StrMainVer,Query,StrVer
 		on error resume next
@@ -627,7 +601,6 @@ Class UpdateSAPSuite
 		Set regEx = New RegExp
 		
 		if IsEmpty(StrProduct) then
-			Update_DSI_FinshInstall_OptimizerforOracle=false
 			wscript.quit 100
 		end if
 		'Update I_Version Column
@@ -653,44 +626,40 @@ Class UpdateSAPSuite
 		Rec.Close
 		Set Rec	= Nothing
 		
-		if Err.Number = 0 then
-			Update_DSI_FinishInstall_QuestSQLOptimizerforSybase=True
-		else
-			Update_DSI_FinishInstall_QuestSQLOptimizerforSybase=False
+		if Err.Number <> 0 then
 			Err.Clear
 		end if
 
-	End Function
+	End Sub
 
 	'==============================DSI_FinishInstall_BMF========================================
-	Function Update_DSI_FinishInstall_BMF(ByVal StrProduct,ByVal StrVersion)
+	Sub Update_DSI_FinishInstall_BMF(ByVal StrProduct,ByVal StrVersion)
 
-		Dim StrColFolder,StrMainVer,Query,StrVer
+		Dim StrColFolder,StrMainVer,Query,StrVer,StrColDisplay
 		on error resume next
 		
 		Set regEx = New RegExp
 		
 		if IsEmpty(StrProduct) then
-			Update_DSI_FinishInstall_BMF=false
 			wscript.quit 100	
 		else
 			select case StrProduct
 				case "BENCHMARKFACTORY_X64_EN"
-					StrProduct="for Databases"
+					StrProduct="Benchmark Factory% for Databases"
 				case "BENCHMARKFACTORY_X86_EN"
-					StrProduct="for Databases"
+					StrProduct="Benchmark Factory% for Databases"
 				case "BENCHMARKFACTORY_TRIAL_X86_EN"
-					StrProduct="for Databases Trial"
+					StrProduct="Benchmark Factory% for Databases Trial"
 				case "BENCHMARKFACTORY_TRIAL_X64_EN"
-					StrProduct="for Databases Trial"
+					StrProduct="Benchmark Factory% for Databases Trial"
 			end select
 		end if
 		'Update I_Version Column
-		Conn.Execute "Update DSI.dbo.DSI_SAP_BMF set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 3 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Benchmark Factory%" + StrProduct + "'"
+		Conn.Execute "Update DSI.dbo.DSI_SAP_BMF set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 3 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like '" + StrProduct + "'"
 		
 		'Update I_InstallFolder Column Record
 		Set Rec		=	CreateObject("ADODB.Recordset")
-		Query		= 	"Select I_InstallFolder from DSI.dbo.DSI_SAP_BMF where Projectid = 3 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Benchmark Factory%'"
+		Query		= 	"Select I_InstallFolder from DSI.dbo.DSI_SAP_BMF where Projectid = 3 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like '" + StrProduct + "'"
 		Set Rec		=	Conn.Execute(Query)
 		While not Rec.EOF
 			StrColFolder=Rec.Fields("I_InstallFolder").Value
@@ -703,22 +672,38 @@ Class UpdateSAPSuite
 		regEx.Global	=	True
 		StrColFolder 	= 	regEx.Replace(StrColFolder,StrVer)
 		
-		Conn.Execute "Update DSI.dbo.DSI_SAP_BMF set  I_InstallFolder =" + "'" + StrColFolder + "'" + " where Projectid = 3 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Benchmark Factory%'"
+		Conn.Execute "Update DSI.dbo.DSI_SAP_BMF set  I_InstallFolder =" + "'" + StrColFolder + "'" + " where Projectid = 3 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like '" + StrProduct + "'"
+		
+		'Update I_DisplayVersion Column Record
+		Query		= 	"Select I_DisplayVersion from DSI.dbo.DSI_SAP_BMF where Projectid = 3 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
+		Set Rec		=	Conn.Execute(Query)
+		While not Rec.EOF
+			StrColDisplay	=	Rec.Fields("I_DisplayVersion").Value
+			Rec.MoveNext
+		Wend
+		StrMainVer 	= 	Split(StrVersion,".")
+		StrVer 		= 	StrMainVer(0) + "." + StrMainVer(1) + "." + StrMainVer(3)
+		if InStr(StrColDisplay,"32-bit") >= 3 then
+			StrColDisplay	=	StrMainVer(0) + "." + StrMainVer(1) + " (32-bit)" + "." + StrMainVer(3)
+		elseif InStr(StrColDisplay,"64-bit") >= 3  then
+			StrColDisplay	=	StrMainVer(0) + "." + StrMainVer(1) + " (64-bit)" + "." + StrMainVer(3)
+		else
+			StrColDisplay 	= 	StrMainVer(0) + "." + StrMainVer(1) + "." + StrMainVer(3)
+		end if
+		
+		Conn.Execute "Update DSI.dbo.DSI_SAP_BMF set  I_DisplayVersion =" + "'" + StrColDisplay + "'" + " where Projectid = 3 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
 		
 		Rec.Close
 		Set Rec	= Nothing
 		
-		if Err.Number = 0 then
-			Update_DSI_FinishInstall_BMF=True
-		else
-			Update_DSI_FinishInstall_BMF=False
+		if Err.Number <> 0 then
 			Err.Clear
 		end if
 
-	End Function
+	End Sub
 
 	'==============================DSI_FinishInstall_SpotlightonSybase========================================
-	Function Update_DSI_FinishInstall_SpotlightonSybase(ByVal StrProduct,ByVal StrVersion)
+	Sub Update_DSI_FinishInstall_SpotlightonSybase(ByVal StrProduct,ByVal StrVersion)
 
 		Dim StrColFolder,StrMainVer,Query,StrVer
 		on error resume next
@@ -726,7 +711,6 @@ Class UpdateSAPSuite
 		Set regEx = New RegExp
 		
 		if IsEmpty(StrProduct) then
-			Update_DSI_FinishInstall_SpotlightonSybase=false
 			wscript.quit 100	
 		end if
 		'Update I_Version Column
@@ -752,17 +736,14 @@ Class UpdateSAPSuite
 		Rec.Close
 		Set Rec	= Nothing
 		
-		if Err.Number = 0 then
-			Update_DSI_FinishInstall_SpotlightonSybase=True
-		else
-			Update_DSI_FinishInstall_SpotlightonSybase=False
+		if Err.Number <> 0 then
 			Err.Clear
 		end if
 
-	End Function
+	End Sub
 
 	'==============================DSI_FinishInstall_ToadDataModeler========================================
-	Function Update_DSI_FinishInstall_ToadDataModeler(ByVal StrProduct,ByVal StrVersion)
+	Sub Update_DSI_FinishInstall_ToadDataModeler(ByVal StrProduct,ByVal StrVersion)
 
 		Dim StrColFolder,StrMainVer,Query,StrVer
 		on error resume next
@@ -770,7 +751,6 @@ Class UpdateSAPSuite
 		Set regEx = New RegExp
 		
 		if IsEmpty(StrProduct) then
-			Update_DSI_FinishInstall_ToadDataModeler=false
 			wscript.quit 100
 		end if
 		'Update I_Version Column
@@ -796,22 +776,18 @@ Class UpdateSAPSuite
 		Rec.Close
 		Set Rec	= Nothing
 		
-		if Err.Number = 0 then
-			Update_DSI_FinishInstall_ToadDataModeler=True
-		else
-			Update_DSI_FinishInstall_ToadDataModeler=False
+		if Err.Number <> 0 then
 			Err.Clear
 		end if
 
-	End Function
+	End Sub
 	
 	'==============================DSI_ProductSelectionPage_VerifyProductDetails========================================
-	Function Update_DSI_ProductSelectionPage_VerifyProductDetails(ByVal StrProduct,ByVal StrVersion)
+	Sub Update_DSI_ProductSelectionPage_VerifyProductDetails(ByVal StrProduct,ByVal StrVersion)
 				
 		on error resume next
 		
 		if IsEmpty(StrProduct) then
-			Update_DSI_ProductSelectionPage_VerifyProductDetails=false
 			wscript.quit 100
 		else
 			select case UCase(StrProduct)
@@ -834,22 +810,18 @@ Class UpdateSAPSuite
 		
 		Conn.Execute "Update DSI.dbo.DSI_SAP_VerifyProductDetails set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 3 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
 		
-		if Err.Number = 0 then
-			Update_DSI_ProductSelectionPage_VerifyProductDetails=True
-		else
-			Update_DSI_ProductSelectionPage_VerifyProductDetails=False
+		if Err.Number <> 0 then
 			Err.Clear
 		end if
 
-	End Function
+	End Sub
 	
 	'==============================DSI_FinishInstall_VerifyRegistry========================================
-	Function Update_DSI_FinishInstall_VerifyRegistry(ByVal StrProduct,ByVal StrVersion)
+	Sub Update_DSI_FinishInstall_VerifyRegistry(ByVal StrProduct,ByVal StrVersion)
 		
 		on error resume next
 		
 		if IsEmpty(StrProduct) then
-			Update_DSI_ProductSelectionPage_VerifyProductDetails=false
 			wscript.quit 100
 		else
 			select case UCase(StrProduct)
@@ -872,21 +844,18 @@ Class UpdateSAPSuite
 		
 		Conn.Execute "Update DSI.dbo.DSI_SAP_VerifyRegistry set  I_ProductVersion =" + "'" + StrVersion + "'" + " where Projectid = 3 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_InstallerDisplayProductName) like '" + StrProduct + "'"
 		
-		if Err.Number = 0 then
-			Update_DSI_FinishInstall_VerifyRegistry=True
-		else
-			Update_DSI_FinishInstall_VerifyRegistry=False
+		if Err.Number <> 0 then
 			Err.Clear
 		end if
 
-	End Function
+	End Sub
 
 End Class
 
 Class UpdateDB2Suite
 
 	'==============================DSI_FinishInstall_ToadforIBMDB2LUW========================================
-	Function Update_DSI_FinishInstall_ToadforIBMDB2LUW(ByVal StrProduct,ByVal StrVersion)
+	Sub Update_DSI_FinishInstall_ToadforIBMDB2LUW(ByVal StrProduct,ByVal StrVersion)
 
 		Dim StrColFolder,StrMainVer,Query,StrVer
 		on error resume next
@@ -894,7 +863,6 @@ Class UpdateDB2Suite
 		Set regEx = New RegExp
 		
 		if IsEmpty(StrProduct) then
-			Update_DSI_FinishInstall_ToadforIBMDB2LUW=false
 			wscript.quit 100
 		else
 			select case UCase(StrProduct)
@@ -904,7 +872,7 @@ Class UpdateDB2Suite
 					StrProduct="Toad% for IBM% DB2% Trial"
 			end select	
 		end if
-		wscript.echo(StrProduct)
+		
 		'Update I_Version Column
 		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_ToadforIBMDB2LUW set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 2 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like '" + StrProduct +"'"
 		
@@ -928,17 +896,14 @@ Class UpdateDB2Suite
 		Rec.Close
 		Set Rec	= Nothing
 		
-		if Err.Number = 0 then
-			Update_DSI_FinishInstall_ToadforIBMDB2LUW=True
-		else
-			Update_DSI_FinishInstall_ToadforIBMDB2LUW=False
+		if Err.Number <> 0 then
 			Err.Clear
 		end if
 
-	End Function
+	End Sub
 
 	'==============================DSI_FinishInstall_QuestSQLOptimizerforIBMDB2========================================
-	Function Update_DSI_FinishInstall_QuestSQLOptimizerforIBMDB2(ByVal StrProduct,ByVal StrVersion)
+	Sub Update_DSI_FinishInstall_QuestSQLOptimizerforIBMDB2(ByVal StrProduct,ByVal StrVersion)
 
 		Dim StrColFolder,StrMainVer,Query,StrVer
 		on error resume next
@@ -946,7 +911,6 @@ Class UpdateDB2Suite
 		Set regEx = New RegExp
 		
 		if IsEmpty(StrProduct) then
-			Update_DSI_FinishInstall_QuestSQLOptimizerforIBMDB2=false
 			wscript.quit 100
 		else
 			select case UCase(StrProduct)
@@ -981,17 +945,14 @@ Class UpdateDB2Suite
 		Rec.Close
 		Set Rec	= Nothing
 		
-		if Err.Number = 0 then
-			Update_DSI_FinishInstall_QuestSQLOptimizerforIBMDB2=True
-		else
-			Update_DSI_FinishInstall_QuestSQLOptimizerforIBMDB2=False
+		if Err.Number <> 0 then
 			Err.Clear
 		end if
 
-	End Function
+	End Sub
 	
 	'==============================DSI_FinishInstall_QuestSQLOptimizerForDB2zOS========================================
-	Function Update_DSI_FinishInstall_QuestSQLOptimizerForDB2zOS(ByVal StrProduct,ByVal StrVersion)
+	Sub Update_DSI_FinishInstall_QuestSQLOptimizerForDB2zOS(ByVal StrProduct,ByVal StrVersion)
 
 		Dim StrColFolder,StrMainVer,Query,StrVer
 		on error resume next
@@ -999,7 +960,6 @@ Class UpdateDB2Suite
 		Set regEx = New RegExp
 		
 		if IsEmpty(StrProduct) then
-			Update_DSI_FinishInstall_QuestSQLOptimizerForDB2zOS=false
 			wscript.quit 100	
 		else
 			select case UCase(StrProduct)
@@ -1032,44 +992,39 @@ Class UpdateDB2Suite
 		Rec.Close
 		Set Rec	= Nothing
 		
-		if Err.Number = 0 then
-			Update_DSI_FinishInstall_QuestSQLOptimizerForDB2zOS=True
-		else
-			Update_DSI_FinishInstall_QuestSQLOptimizerForDB2zOS=False
+		if Err.Number <> 0 then
 			Err.Clear
 		end if
 
-	End Function
+	End Sub
 
 	'==============================DSI_FinishInstall_BMF========================================
-	Function Update_DSI_FinishInstall_BMF(ByVal StrProduct,ByVal StrVersion)
+	Sub Update_DSI_FinishInstall_BMF(ByVal StrProduct,ByVal StrVersion)
 
-		Dim StrColFolder,StrMainVer,Query,StrVer
+		Dim StrColFolder,StrMainVer,Query,StrVer,StrColDisplay
 		on error resume next
 		
 		Set regEx = New RegExp
-		
 		if IsEmpty(StrProduct) then
-			Update_DSI_FinishInstall_BMF=false
 			wscript.quit 100
 		else
 			select case StrProduct
 				case "BENCHMARKFACTORY_X86_EN"
-					StrProduct="for Databases"
+					StrProduct="Benchmark Factory% for Databases%"
 				case "BENCHMARKFACTORY_X64_EN"
-					StrProduct="for Databases"
+					StrProduct="Benchmark Factory% for Databases%"
 				case "BENCHMARKFACTORY_TRIAL_X86_EN"
-					StrProduct="for Databases Trial"
+					StrProduct="Benchmark Factory% for Databases Trial%"
 				case "BENCHMARKFACTORY_TRIAL_X64_EN"
-					StrProduct="for Databases Trial"
+					StrProduct="Benchmark Factory% for Databases Trial%"
 			end select	
 		end if
 		'Update I_Version Column
-		Conn.Execute "Update DSI.dbo.DSI_DB2_BMF set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 2 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Benchmark Factory%" + StrProduct + "'"
+		Conn.Execute "Update DSI.dbo.DSI_DB2_BMF set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 2 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like '" + StrProduct + "'"
 		
 		'Update I_InstallFolder Column Record
 		Set Rec		=	CreateObject("ADODB.Recordset")
-		Query		= 	"Select I_InstallFolder from DSI.dbo.DSI_DB2_BMF where Projectid = 2 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Benchmark Factory%" + StrProduct + "'"
+		Query		= 	"Select I_InstallFolder from DSI.dbo.DSI_DB2_BMF where Projectid = 2 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like '" + StrProduct + "'"
 		Set Rec		=	Conn.Execute(Query)
 		While not Rec.EOF
 			StrColFolder=Rec.Fields("I_InstallFolder").Value
@@ -1082,22 +1037,38 @@ Class UpdateDB2Suite
 		regEx.Global	=	True
 		StrColFolder 	= 	regEx.Replace(StrColFolder,StrVer)
 		
-		Conn.Execute "Update DSI.dbo.DSI_DB2_BMF set  I_InstallFolder =" + "'" + StrColFolder + "'" + " where Projectid = 2 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Benchmark Factory%" + StrProduct + "'"
+		Conn.Execute "Update DSI.dbo.DSI_DB2_BMF set  I_InstallFolder =" + "'" + StrColFolder + "'" + " where Projectid = 2 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like '" + StrProduct + "'"
+		
+		'Update I_DisplayVersion Column Record
+		Query		= 	"Select I_DisplayVersion from DSI.dbo.DSI_DB2_BMF where Projectid = 2 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
+		Set Rec		=	Conn.Execute(Query)
+		While not Rec.EOF
+			StrColDisplay	=	Rec.Fields("I_DisplayVersion").Value
+			Rec.MoveNext
+		Wend
+		StrMainVer 	= 	Split(StrVersion,".")
+		StrVer 		= 	StrMainVer(0) + "." + StrMainVer(1) + "." + StrMainVer(3)
+		if InStr(StrColDisplay,"32-bit") >= 3 then
+			StrColDisplay	=	StrMainVer(0) + "." + StrMainVer(1) + " (32-bit)" + "." + StrMainVer(3)
+		elseif InStr(StrColDisplay,"64-bit") >= 3  then
+			StrColDisplay	=	StrMainVer(0) + "." + StrMainVer(1) + " (64-bit)" + "." + StrMainVer(3)
+		else
+			StrColDisplay 	= 	StrMainVer(0) + "." + StrMainVer(1) + "." + StrMainVer(3)
+		end if
+		
+		Conn.Execute "Update DSI.dbo.DSI_DB2_BMF set  I_DisplayVersion =" + "'" + StrColDisplay + "'" + " where Projectid = 2 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
 		
 		Rec.Close
 		Set Rec	= Nothing
 		
-		if Err.Number = 0 then
-			Update_DSI_FinishInstall_BMF=True
-		else
-			Update_DSI_FinishInstall_BMF=False
+		if Err.Number <> 0 then
 			Err.Clear
 		end if
 
-	End Function
+	End Sub
 
 	'==============================DSI_FinishInstall_SpotlightonIBMDB2========================================
-	Function Update_DSI_FinishInstall_SpotlightonIBMDB2(ByVal StrProduct,ByVal StrVersion)
+	Sub Update_DSI_FinishInstall_SpotlightonIBMDB2(ByVal StrProduct,ByVal StrVersion)
 
 		Dim StrColFolder,StrMainVer,Query,StrVer
 		on error resume next
@@ -1105,19 +1076,25 @@ Class UpdateDB2Suite
 		Set regEx = New RegExp
 		
 		if IsEmpty(StrProduct) then
-			Update_DSI_FinishInstall_SpotlightonIBMDB2=false
-			wscript.quit 100	
+			wscript.quit 100
+		else
+			select case StrProduct
+				case "SPOTLIGHTONDB2_X86_EN"
+					StrProduct	=	"Spotlight_ on IBM_ DB2_ LUW"
+				case "SPOTLIGHTONDB2_X64_EN"
+					StrProduct	=	"Spotlight_ on IBM_ DB2_ LUW"
+			end select	
 		end if
 		
 		'Update I_Version Column
-		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_SpotlightonIBMDB2 set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 2 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Spotlight_ on IBM_ DB2_ LUW'"
+		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_SpotlightonIBMDB2 set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 2 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like '" + StrProduct + "'"
 		
-		'Update I_InstallFolder Column Record
+		'Update I_SubFolder Column Record
 		Set Rec		=	CreateObject("ADODB.Recordset")
-		Query		= 	"Select I_InstallFolder from DSI.dbo.DSI_FinishInstall_SpotlightonIBMDB2 where Projectid = 2 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Spotlight_ on IBM_ DB2_ LUW'"
+		Query		= 	"Select I_SubFolder from DSI.dbo.DSI_FinishInstall_SpotlightonIBMDB2 where Projectid = 2 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like '" + StrProduct + "'"
 		Set Rec		=	Conn.Execute(Query)
 		While not Rec.EOF
-			StrColFolder=Rec.Fields("I_InstallFolder").Value
+			StrColFolder=Rec.Fields("I_SubFolder").Value
 			Rec.MoveNext
 		Wend
 		
@@ -1127,22 +1104,19 @@ Class UpdateDB2Suite
 		regEx.Global	=	True
 		StrColFolder 	= 	regEx.Replace(StrColFolder,StrVer)
 		
-		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_SpotlightonIBMDB2 set  I_InstallFolder =" + "'" + StrColFolder + "'" + " where Projectid = 2 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Spotlight_ on IBM_ DB2_ LUW'"
+		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_SpotlightonIBMDB2 set  I_SubFolder =" + "'" + StrColFolder + "'" + " where Projectid = 2 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like '" + StrProduct + "'"
 		
 		Rec.Close
 		Set Rec	= Nothing
 		
-		if Err.Number = 0 then
-			Update_DSI_FinishInstall_SpotlightonIBMDB2=True
-		else
-			Update_DSI_FinishInstall_SpotlightonIBMDB2=False
+		if Err.Number <> 0 then
 			Err.Clear
 		end if
 
-	End Function
+	End Sub
 
 	'==============================DSI_FinishInstall_ToadDataModeler========================================
-	Function Update_DSI_FinishInstall_ToadDataModeler(ByVal StrProduct,ByVal StrVersion)
+	Sub Update_DSI_FinishInstall_ToadDataModeler(ByVal StrProduct,ByVal StrVersion)
 
 		Dim StrColFolder,StrMainVer,Query,StrVer
 		on error resume next
@@ -1150,7 +1124,6 @@ Class UpdateDB2Suite
 		Set regEx = New RegExp
 		
 		if IsEmpty(StrProduct) then
-			Update_DSI_FinishInstall_ToadDataModeler=false
 			wscript.quit 100	
 		end if
 		
@@ -1177,22 +1150,18 @@ Class UpdateDB2Suite
 		Rec.Close
 		Set Rec	= Nothing
 		
-		if Err.Number = 0 then
-			Update_DSI_FinishInstall_ToadDataModeler=True
-		else
-			Update_DSI_FinishInstall_ToadDataModeler=False
+		if Err.Number <> 0 then
 			Err.Clear
 		end if
 
-	End Function
+	End Sub
 	
 	'==============================DSI_ProductSelectionPage_VerifyProductDetails========================================
-	Function Update_DSI_ProductSelectionPage_VerifyProductDetails(ByVal StrProduct,ByVal StrVersion)
+	Sub Update_DSI_ProductSelectionPage_VerifyProductDetails(ByVal StrProduct,ByVal StrVersion)
 		
 		on error resume next
 		
 		if IsEmpty(StrProduct) then
-			Update_DSI_ProductSelectionPage_VerifyProductDetails=false
 			wscript.quit 100
 		else
 			select case UCase(StrProduct)
@@ -1219,22 +1188,18 @@ Class UpdateDB2Suite
 		
 		Conn.Execute "Update DSI.dbo.DSI_ProductSelectionPage_VerifyProductDetails set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 2 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
 		
-		if Err.Number = 0 then
-			Update_DSI_ProductSelectionPage_VerifyProductDetails=True
-		else
-			Update_DSI_ProductSelectionPage_VerifyProductDetails=False
+		if Err.Number <> 0 then
 			Err.Clear
 		end if
 
-	End Function
+	End Sub
 	
 	'==============================DSI_FinishInstall_VerifyRegistry========================================
-	Function Update_DSI_FinishInstall_VerifyRegistry(ByVal StrProduct,ByVal StrVersion)
+	Sub Update_DSI_FinishInstall_VerifyRegistry(ByVal StrProduct,ByVal StrVersion)
 		
 		on error resume next
 		
 		if IsEmpty(StrProduct) then
-			Update_DSI_FinishInstall_VerifyRegistry=false
 			wscript.quit 100
 		else
 			select case UCase(StrProduct)
@@ -1261,21 +1226,18 @@ Class UpdateDB2Suite
 		
 		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_VerifyRegistry set  I_ProductVersion =" + "'" + StrVersion + "'" + " where Projectid = 2 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_InstallerDisplayProductName) like '" + StrProduct + "'"
 		
-		if Err.Number = 0 then
-			Update_DSI_FinishInstall_VerifyRegistry=True
-		else
-			Update_DSI_FinishInstall_VerifyRegistry=False
+		if Err.Number <> 0 then
 			Err.Clear
 		end if
 
-	End Function
+	End Sub
 
 End Class
 
 Class UpdateSQLServerSuite
 
 	'==============================DSI_DSI_FinishInstall_BMF========================================
-	Function Update_DSI_FinishInstall_BMF(ByVal StrProduct,ByVal StrVersion)
+	Sub Update_DSI_FinishInstall_BMF(ByVal StrProduct,ByVal StrVersion)
 
 		Dim StrColFolder,StrMainVer,Query,StrVer
 		on error resume next
@@ -1283,7 +1245,6 @@ Class UpdateSQLServerSuite
 		Set regEx = New RegExp
 		
 		if IsEmpty(StrProduct) then
-			Update_DSI_FinishInstall_BMF=false
 			wscript.quit 100
 		else
 			select case StrProduct
@@ -1320,18 +1281,15 @@ Class UpdateSQLServerSuite
 		Rec.Close
 		Set Rec	= Nothing
 		
-		if Err.Number = 0 then
-			Update_DSI_FinishInstall_BMF=True
-		else
-			Update_DSI_FinishInstall_BMF=False
+		if Err.Number <> 0 then
 			Err.Clear
 		end if
 
-	End Function
+	End Sub
 
 
 	'==============================DSI_FinishInstall_ToadDataModeler========================================
-	Function Update_DSI_FinishInstall_ToadDataModeler(ByVal StrProduct,ByVal StrVersion)
+	Sub Update_DSI_FinishInstall_ToadDataModeler(ByVal StrProduct,ByVal StrVersion)
 
 		Dim StrColFolder,StrMainVer,Query,StrVer
 		on error resume next
@@ -1339,7 +1297,6 @@ Class UpdateSQLServerSuite
 		Set regEx = New RegExp
 		
 		if IsEmpty(StrProduct) then
-			Update_DSI_FinishInstall_ToadDataModeler=false
 			wscript.quit 100
 		else
 			select case StrProduct
@@ -1372,20 +1329,18 @@ Class UpdateSQLServerSuite
 		Rec.Close
 		Set Rec	= Nothing
 		
-		if Err.Number = 0 then
-			Update_DSI_FinishInstall_ToadDataModeler=True
-		else
-			Update_DSI_FinishInstall_ToadDataModeler=False
+		if Err.Number <> 0 then
 			Err.Clear
 		end if
 
-	End Function
+	End Sub
 
 End Class
 
 '================================================================================
 
 Sub UpdateTestData()
+
 	on error resume next
 
 	Dim XMLDoc,FSO,regEx
@@ -1435,8 +1390,6 @@ Sub UpdateTestData()
 	'Find a particular element using XPath:
 	Set ProductNode=XMLDOC.selectNodes("//Include")
 	
-	'wscript.echo("there are total: " + cstr(RootNode.childnodes.length) + " Products in this build")
-	
 	Set Conn	=	CreateObject("ADODB.Connection")
 	Conn.Open "Driver=SQL Server;Server=10.6.208.62;Database=DSI;uid=sa;pwd=Quest6848;"	
 	
@@ -1445,7 +1398,7 @@ Sub UpdateTestData()
 	
 	For i = 0 to RootNode.childnodes.length - 1
 		
-		NodeName	=	productnode.childnodes.item(i).text
+		NodeName	=	Productnode.childnodes.item(i).text
 		NodeName	=	Split(NodeName,"=")
 			
 		regEx.Pattern 	= 	"\d+(\.\d+)+"
@@ -1456,8 +1409,6 @@ Sub UpdateTestData()
 			ProductVersion	=	match.value
 		next
 		ProductName	=	Mid(NodeName(0),1,Len(NodeName(0)) - 15)
-		'ProductName=Split(NodeName(0),"PACKAGE")
-		
 		if ProductName <> "" and ProductVersion <> "" then
 			PreProduct=Split(ProductName,"_")
 			Select Case UCase(StrProduct)
@@ -1465,106 +1416,58 @@ Sub UpdateTestData()
 					Set NewOracleSuite	=	New UpdateOracleSuite
 					Select Case Trim(UCase(PreProduct(0)))
 						case "TOADFORORACLE"
-							if NewOracleSuite.Update_DSI_FinishInstall_ToadforOracle(ProductName,ProductVersion) then
-								'wscript.echo("Update DSI_FinishInstall_ToadforOracle table successful!")
-							end if
+							Call NewOracleSuite.Update_DSI_FinishInstall_ToadforOracle(ProductName,ProductVersion)
 						case "SQLOPTIMIZERFORORACLE"
-							if NewOracleSuite.Update_DSI_FinshInstall_OptimizerforOracle(ProductName,ProductVersion) then
-								'wscript.echo("Update Update_DSI_FinshInstall_OptimizerforOracle table successful!")
-							end if
+							Call NewOracleSuite.Update_DSI_FinshInstall_OptimizerforOracle(ProductName,ProductVersion)
 						case "BENCHMARKFACTORY"
-							if NewOracleSuite.Update_DSI_FinishInstall_BMF(ProductName,ProductVersion) then
-								'wscript.echo("Update Update_DSI_FinishInstall_BMF table successful!")
-							end if
+							Call NewOracleSuite.Update_DSI_FinishInstall_BMF(ProductName,ProductVersion)
 						case "SPOTLIGHTONORACLE"
-							if NewOracleSuite.Update_DSI_FinishInstall_SpotlightonOracle(ProductName,ProductVersion) then
-								'wscript.echo("Update Update_DSI_FinishInstall_SpotlightonOracle table successful!")
-							end if
+							Call NewOracleSuite.Update_DSI_FinishInstall_SpotlightonOracle(ProductName,ProductVersion)
 						case "TOADDATAMODELER"
-							if NewOracleSuite.Update_DSI_FinishInstall_ToadDataModeler(ProductName,ProductVersion) then
-								'wscript.echo("Update Update_DSI_FinishInstall_ToadDataModeler table successful!")
-							end if
+							Call NewOracleSuite.Update_DSI_FinishInstall_ToadDataModeler(ProductName,ProductVersion)
 						case "CODETESTERORACLE"
-							if NewOracleSuite.Update_DSI_FinishInstall_QuestCodeTester(ProductName,ProductVersion) then
-								'wscript.echo("Update Update_DSI_FinishInstall_QuestCodeTester table successful!")
-							end if
+							Call NewOracleSuite.Update_DSI_FinishInstall_QuestCodeTester(ProductName,ProductVersion) 
 						case "BACKUPREPORTER"
-							if NewOracleSuite.Update_DSI_FinishInstall_BackupReportForOracle(ProductName,ProductVersion) then
-								'wscript.echo("Update Update_DSI_FinishInstall_BackupReportForOracle table successful!")
-							end if
+							Call NewOracleSuite.Update_DSI_FinishInstall_BackupReportForOracle(ProductName,ProductVersion) 
 						case "TOADFORMYSQL"
-							if NewOracleSuite.Update_DSI_FinishInstall_ToadforMySQLFreeware(ProductName,ProductVersion) then
-								'wscript.echo("Update Update_DSI_FinishInstall_ToadforMySQLFreeware table successful!")
-							end if
+							Call NewOracleSuite.Update_DSI_FinishInstall_ToadforMySQLFreeware(ProductName,ProductVersion) 
 					End Select
-					if NewOracleSuite.Update_DSI_ProductSelectionPage_VerifyProductDetail(ProductName,ProductVersion) then
-						'wscript.echo("Update DSI_ProductSelectionPage_VerifyProductDetail table successful!")
-					end if
-					if NewOracleSuite.Update_DSI_FinishInstall_VerifyRegistry(ProductName,ProductVersion) then
-						'wscript.echo("Update DSI_FinishInstall_VerifyRegistry table successful!")
-					end if
+					Call NewOracleSuite.Update_DSI_ProductSelectionPage_VerifyProductDetail(ProductName,ProductVersion)
+					Call NewOracleSuite.Update_DSI_FinishInstall_VerifyRegistry(ProductName,ProductVersion) 
 				case UCase("DB2")
 					Set NewDB2Suite	=	New UpdateDB2Suite
 					Select Case Trim(UCase(PreProduct(0)))
 						case "TOADFORDB2"
-							Call NewDB2Suite.Update_DSI_FinishInstall_ToadforIBMDB2LUW(ProductName,ProductVersion)
+							Call NewDB2Suite.Update_DSI_FinishInstall_ToadforIBMDB2LUW(ProductName,ProductVersion)	
 						case "SQLOPTIMIZERFORDB2LUW"
-							if NewDB2Suite.Update_DSI_FinishInstall_QuestSQLOptimizerforIBMDB2(ProductName,ProductVersion) then
-								'wscript.echo("Update Update_DSI_FinishInstall_QuestSQLOptimizerforIBMDB2 table successful!")
-							end if
+							Call NewDB2Suite.Update_DSI_FinishInstall_QuestSQLOptimizerforIBMDB2(ProductName,ProductVersion)
 						case "SQLOPTIMIZERFORDB2ZOS"
-							if NewDB2Suite.Update_DSI_FinishInstall_QuestSQLOptimizerForDB2zOS(ProductName,ProductVersion) then
-								'wscript.echo("Update Update_DSI_FinishInstall_QuestSQLOptimizerForDB2zOS table successful!")
-							end if
+							Call NewDB2Suite.Update_DSI_FinishInstall_QuestSQLOptimizerForDB2zOS(ProductName,ProductVersion)
 						case "BENCHMARKFACTORY"
-							if NewDB2Suite.Update_DSI_FinishInstall_BMF(ProductName,ProductVersion) then
-								'wscript.echo("Update Update_DSI_FinishInstall_BMF table successful!")
-							end if
+							Call NewDB2Suite.Update_DSI_FinishInstall_BMF(ProductName,ProductVersion)
 						case "SPOTLIGHTONDB2"
-							if NewDB2Suite.Update_DSI_FinishInstall_SpotlightonIBMDB2(ProductName,ProductVersion) then
-								'wscript.echo("Update Update_DSI_FinishInstall_SpotlightonIBMDB2 table successful!")
-							end if
+							Call NewDB2Suite.Update_DSI_FinishInstall_SpotlightonIBMDB2(ProductName,ProductVersion)
 						case "TOADDATAMODELER"
-							if NewDB2Suite.Update_DSI_FinishInstall_ToadDataModeler(ProductName,ProductVersion) then
-								'wscript.echo("Update Update_DSI_FinishInstall_ToadDataModeler table successful!")
-							end if
+							Call NewDB2Suite.Update_DSI_FinishInstall_ToadDataModeler(ProductName,ProductVersion)
 					End Select
-					if NewDB2Suite.Update_DSI_ProductSelectionPage_VerifyProductDetails(ProductName,ProductVersion) then
-						'wscript.echo("Update DSI_ProductSelectionPage_VerifyProductDetail table successful!")
-					end if
-					if NewDB2Suite.Update_DSI_FinishInstall_VerifyRegistry(ProductName,ProductVersion) then
-						'wscript.echo("Update DSI_FinishInstall_VerifyRegistry table successful!")
-					end if
+					Call NewDB2Suite.Update_DSI_ProductSelectionPage_VerifyProductDetails(ProductName,ProductVersion) 
+					Call NewDB2Suite.Update_DSI_FinishInstall_VerifyRegistry(ProductName,ProductVersion)
 				case UCase("SAP")
 					Set NewSAPSuite	=	New UpdateSAPSuite
 					Select Case Trim(UCase(PreProduct(0)))
 						case "TOADFORSAP"
-							if NewSAPSuite.Update_DSI_FinishInstall_ToadforSybase(ProductName,ProductVersion) then
-								'wscript.echo("Update DSI_FinishInstall_ToadforSybase table successful!")
-							end if
+							Call NewSAPSuite.Update_DSI_FinishInstall_ToadforSybase(ProductName,ProductVersion) 
 						case "SQLOPTIMIZERFORSAP"
-							if NewSAPSuite.Update_DSI_FinishInstall_QuestSQLOptimizerforSybase(ProductName,ProductVersion) then
-								'wscript.echo("Update DSI_FinishInstall_QuestSQLOptimizerforSybase table successful!")
-							end if
+							Call NewSAPSuite.Update_DSI_FinishInstall_QuestSQLOptimizerforSybase(ProductName,ProductVersion)
 						case "BENCHMARKFACTORY"
-							if NewSAPSuite.Update_DSI_FinishInstall_BMF(ProductName,ProductVersion) then
-								'wscript.echo("Update DSI_FinishInstall_BMF table successful!")
-							end if
+							Call NewSAPSuite.Update_DSI_FinishInstall_BMF(ProductName,ProductVersion)
 						case "SPOTLIGHTONSAP"
-							if NewSAPSuite.Update_DSI_FinishInstall_SpotlightonSybase(ProductName,ProductVersion) then
-								'wscript.echo("Update DSI_FinishInstall_SpotlightonSybase table successful!")
-							end if
+							Call NewSAPSuite.Update_DSI_FinishInstall_SpotlightonSybase(ProductName,ProductVersion)
 						case "TOADDATAMODELER"
-							if NewSAPSuite.Update_DSI_FinishInstall_ToadDataModeler(ProductName,ProductVersion) then
-								'wscript.echo("Update DSI_FinishInstall_ToadDataModeler table successful!")
-							end if
+							Call NewSAPSuite.Update_DSI_FinishInstall_ToadDataModeler(ProductName,ProductVersion)
 					End Select
-					if NewSAPSuite.Update_DSI_ProductSelectionPage_VerifyProductDetails(ProductName,ProductVersion) then
-						'wscript.echo("Update DSI_ProductSelectionPage_VerifyProductDetail table successful!")
-					end if
-					if NewSAPSuite.Update_DSI_FinishInstall_VerifyRegistry(ProductName,ProductVersion) then
-						'wscript.echo("Update DSI_FinishInstall_VerifyRegistry table successful!")
-					end if
+					Call NewSAPSuite.Update_DSI_ProductSelectionPage_VerifyProductDetails(ProductName,ProductVersion)
+					Call NewSAPSuite.Update_DSI_FinishInstall_VerifyRegistry(ProductName,ProductVersion)
 				case UCase("SQLSERVER")
 					Set NewSQLServerSuite	=	New UpdateSQLSERVERSuite
 					'not implemented
