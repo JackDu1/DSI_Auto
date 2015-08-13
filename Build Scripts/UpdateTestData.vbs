@@ -477,7 +477,12 @@ Class UpdateOracleSuite
 	'==============================DSI_DSI_FinishInstall_VerifyRegistry========================================
 	Sub Update_DSI_FinishInstall_VerifyRegistry(ByVal StrProduct,ByVal StrVersion)
 		
+		Dim StrColName,StrMainVer,Query,StrVer
+		Dim Matches,match,RetStr
+		
 		on error resume next
+		
+		Set regEx = New RegExp
 		
 		if IsEmpty(StrProduct) then
 			wscript.quit 100
@@ -539,8 +544,40 @@ Class UpdateOracleSuite
 					StrProduct="Null"
 			end select
 		end if
-		
+		'Update I_ProductVersion Column
 		Conn.Execute "Update DSI.dbo.DSI_Oracle_VerifyRegistry set  I_ProductVersion =" + "'" + StrVersion + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_InstallerDisplayProductName) like '" + StrProduct + "'"
+		
+		'Update I_ProductName Column
+		Set Rec		=	CreateObject("ADODB.Recordset")
+		Query		= 	"Select I_ProductName from DSI.dbo.DSI_Oracle_VerifyRegistry where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_InstallerDisplayProductName) like '" + StrProduct + "'"
+		Set Rec		=	Conn.Execute(Query)
+		While not Rec.EOF
+			StrColName=Rec.Fields("I_ProductName").Value
+			Rec.MoveNext
+		Wend
+		
+		StrMainVer 	= 	Split(StrVersion,".")
+		if InStr(StrColName,"Dell Backup Reporter for Oracle") >=	1 then
+			StrVer 	= 	StrMainVer(0) + "." + StrMainVer(1) + "." + StrMainVer(2)
+		elseif InStr(StrColName,"Benchmark Factory") >=	1 then
+			StrVer 	= 	StrMainVer(0) + "." + StrMainVer(1) + "." + StrMainVer(2)
+		else
+			StrVer 	= 	StrMainVer(0) + "." + StrMainVer(1)
+		end if
+		
+		regEx.Pattern 	= 	"\d+(\.\d+)+"
+		regEx.Global	=	True
+		Set Matches		=	RegEx.Execute(StrColName)
+		For each match in matches
+			RetStr		=	Match.Value
+		Next
+		if RetStr <> "" then
+			StrColName 	= 	regEx.Replace(StrColName,StrVer)
+			Conn.Execute "Update DSI.dbo.DSI_Oracle_VerifyRegistry set  I_ProductName =" + "'" + StrColName + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_InstallerDisplayProductName) like '" + StrProduct + "'"
+		end if
+		
+		Rec.Close
+		Set Rec	= Nothing
 		
 		if Err.Number <> 0 then
 			Err.Clear
@@ -784,6 +821,8 @@ Class UpdateSAPSuite
 	
 	'==============================DSI_ProductSelectionPage_VerifyProductDetails========================================
 	Sub Update_DSI_ProductSelectionPage_VerifyProductDetails(ByVal StrProduct,ByVal StrVersion)
+	
+		
 				
 		on error resume next
 		
@@ -807,7 +846,7 @@ Class UpdateSAPSuite
 					StrProduct="Null"
 			end select
 		end if
-		
+		'Update I_Version Column
 		Conn.Execute "Update DSI.dbo.DSI_SAP_VerifyProductDetails set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 3 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
 		
 		if Err.Number <> 0 then
@@ -819,7 +858,12 @@ Class UpdateSAPSuite
 	'==============================DSI_FinishInstall_VerifyRegistry========================================
 	Sub Update_DSI_FinishInstall_VerifyRegistry(ByVal StrProduct,ByVal StrVersion)
 		
+		Dim StrColName,StrMainVer,Query,StrVer
+		Dim Matches,match,RetStr
+		
 		on error resume next
+		
+		Set regEx = New RegExp
 		
 		if IsEmpty(StrProduct) then
 			wscript.quit 100
@@ -841,8 +885,36 @@ Class UpdateSAPSuite
 					StrProduct="Null"
 			end select
 		end if
-		
+		'Update I_Version Column
 		Conn.Execute "Update DSI.dbo.DSI_SAP_VerifyRegistry set  I_ProductVersion =" + "'" + StrVersion + "'" + " where Projectid = 3 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_InstallerDisplayProductName) like '" + StrProduct + "'"
+		'Update I_ProductName Column
+		Set Rec		=	CreateObject("ADODB.Recordset")
+		Query		= 	"Select I_ProductName from DSI.dbo.DSI_SAP_VerifyRegistry where Projectid = 3 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_InstallerDisplayProductName) like '" + StrProduct + "'"
+		Set Rec		=	Conn.Execute(Query)
+		While not Rec.EOF
+			StrColName=Rec.Fields("I_ProductName").Value
+			Rec.MoveNext
+		Wend
+		StrMainVer 	= 	Split(StrVersion,".")
+		if InStr(StrColName,"Benchmark Factory") >=	1 then
+			StrVer 	= 	StrMainVer(0) + "." + StrMainVer(1) + "." + StrMainVer(2)
+		else
+			StrVer 	= 	StrMainVer(0) + "." + StrMainVer(1)
+		end if
+		
+		regEx.Pattern 	= 	"\d+(\.\d+)+"
+		regEx.Global	=	True
+		Set Matches		=	RegEx.Execute(StrColName)
+		For each match in matches
+			RetStr		=	Match.Value
+		Next
+		if RetStr <> "" then
+			StrColName 	= 	regEx.Replace(StrColName,StrVer)
+			Conn.Execute "Update DSI.dbo.DSI_SAP_VerifyRegistry set  I_ProductName =" + "'" + StrColName + "'" + " where Projectid = 3 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_InstallerDisplayProductName) like '" + StrProduct + "'"
+		end if
+		
+		Rec.Close
+		Set Rec	= Nothing
 		
 		if Err.Number <> 0 then
 			Err.Clear
@@ -1005,6 +1077,7 @@ Class UpdateDB2Suite
 		on error resume next
 		
 		Set regEx = New RegExp
+		
 		if IsEmpty(StrProduct) then
 			wscript.quit 100
 		else
@@ -1197,7 +1270,12 @@ Class UpdateDB2Suite
 	'==============================DSI_FinishInstall_VerifyRegistry========================================
 	Sub Update_DSI_FinishInstall_VerifyRegistry(ByVal StrProduct,ByVal StrVersion)
 		
-		on error resume next
+		Dim StrColName,StrMainVer,Query,StrVer
+		Dim Matches,match,RetStr
+		
+		'On error resume next
+		
+		Set regEx = New RegExp
 		
 		if IsEmpty(StrProduct) then
 			wscript.quit 100
@@ -1223,8 +1301,37 @@ Class UpdateDB2Suite
 					StrProduct="Null"
 			end select
 		end if
-		
+		'Update I_Version Column
 		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_VerifyRegistry set  I_ProductVersion =" + "'" + StrVersion + "'" + " where Projectid = 2 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_InstallerDisplayProductName) like '" + StrProduct + "'"
+		
+		'Update I_ProductName Column
+		Set Rec		=	CreateObject("ADODB.Recordset")
+		Query		= 	"Select I_ProductName from DSI.dbo.DSI_FinishInstall_VerifyRegistry where Projectid = 2 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_InstallerDisplayProductName) like '" + StrProduct + "'"
+		Set Rec		=	Conn.Execute(Query)
+		While not Rec.EOF
+			StrColName=Rec.Fields("I_ProductName").Value
+			Rec.MoveNext
+		Wend
+		StrMainVer 	= 	Split(StrVersion,".")
+		if InStr(StrColName,"Benchmark Factory") >=	1 then
+			StrVer 	= 	StrMainVer(0) + "." + StrMainVer(1) + "." + StrMainVer(2)
+		else
+			StrVer 	= 	StrMainVer(0) + "." + StrMainVer(1)
+		end if
+		
+		regEx.Pattern 	= 	"\d+(\.\d+)+"
+		regEx.Global	=	True
+		Set Matches		=	RegEx.Execute(StrColName)
+		For each match in matches
+			RetStr		=	Match.Value
+		Next
+		if RetStr <> "" then
+			StrColName 	= 	regEx.Replace(StrColName,StrVer)
+			Conn.Execute "Update DSI.dbo.DSI_FinishInstall_VerifyRegistry set  I_ProductName =" + "'" + StrColName + "'" + " where Projectid = 2 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_InstallerDisplayProductName) like '" + StrProduct + "'"
+		end if
+		
+		Rec.Close
+		Set Rec	= Nothing
 		
 		if Err.Number <> 0 then
 			Err.Clear
