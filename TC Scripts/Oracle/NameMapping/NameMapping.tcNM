@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<Root Signature="{5DCBAC3B-D39C-497C-9BE8-744CBADD37AA}" NameMappingVersion="4" Cookie="229">
+<Root Signature="{5DCBAC3B-D39C-497C-9BE8-744CBADD37AA}" NameMappingVersion="4" Cookie="231">
 	<Nodes Name="NameMapping" Key="{BE401E45-B2D6-4FBA-931A-C2117D5C51AD}">
 		<Properties />
 		<Children>
@@ -634,6 +634,13 @@
 								<Children />
 								<TypeInfo Item0="1" />
 							</Child1>
+							<Child2 Name="QSOO_MigrationVersionSelector" Key="{2CBE5126-AB25-4699-A01C-10BFCD240819}" ParallelWalk="True">
+								<Properties>
+									<Property0 Name="Name" Cookie="229" />
+								</Properties>
+								<Children />
+								<TypeInfo Item0="1" />
+							</Child2>
 						</Children>
 						<TypeInfo Item0="0" />
 					</Child2>
@@ -700,6 +707,13 @@
 								</Children>
 								<TypeInfo Item0="22" />
 							</Child4>
+							<Child5 Name="BMF_CopyUserSettings" Key="{B9BA6DB8-9170-4C56-9082-CECE9A15CD74}" ParallelWalk="True">
+								<Properties>
+									<Property0 Name="Name" Cookie="230" />
+								</Properties>
+								<Children />
+								<TypeInfo Item0="22" />
+							</Child5>
 						</Children>
 						<TypeInfo Item0="0" />
 					</Child3>
@@ -1031,6 +1045,7 @@
 		<Child3 Name="SQL_Optimizer_for_Oracle" Owner="{9A7E3EE3-E28B-4A7B-8949-B7BE900CB5EA}">
 			<Child0 Name="UserExperienceWindow" Owner="{5F688D9A-2F36-4833-89BC-5D84879D67B4}" />
 			<Child1 Name="QSOO_frm_WelcomeWindow" Owner="{6BFD5133-5CBA-44F4-8D87-450510C94571}" />
+			<Child2 Name="QSOO_MigrationVersionSelector" Owner="{2CBE5126-AB25-4699-A01C-10BFCD240819}" />
 		</Child3>
 		<Child4 Name="BMF" Owner="{ADE93B67-8FA3-4E1A-8D43-8BC2F5264C32}">
 			<Child0 Name="BMF_dlg_AboutBenchmarkFactory" Owner="{49BC91C8-8204-435D-BD52-07A9ED3D3616}" />
@@ -1041,6 +1056,7 @@
 				<Child0 Name="BMF_Static_Version" Owner="{82D6D9E4-2BFF-4456-9C48-32D5553CB1AF}" />
 				<Child1 Name="BMF_text_Build" Owner="{5CE6AC9A-9796-4761-BA15-27087E19ECB0}" />
 			</Child4>
+			<Child5 Name="BMF_CopyUserSettings" Owner="{B9BA6DB8-9170-4C56-9082-CECE9A15CD74}" />
 		</Child4>
 		<Child5 Name="BMFRepositoryManager" Owner="{0409151F-892F-4AC2-9FE1-4BFE41C70603}">
 			<Child0 Name="BMF_RepositoryManager" Owner="{4058CACC-E260-42AA-BCCF-FF7659AE8F28}">
@@ -1276,6 +1292,8 @@
 			<Property182 Cookie="226" PropertyType="0" Value="About Benchmark Factory™*" Type="5" />
 			<Property183 Cookie="227" PropertyType="0" Value="Window(&apos;#32770&apos;, &apos;About Benchmark Factory™ - Trial&apos;, 1)" Type="5" />
 			<Property184 Cookie="228" PropertyType="0" Value="dgvProperties" Type="5" />
+			<Property185 Cookie="229" PropertyType="0" Value="WinFormsObject(&apos;frmMigrationVersionSelector&apos;)" Type="5" />
+			<Property186 Cookie="230" PropertyType="0" Value="Window(&apos;#32770&apos;, &apos;Copy User Settings&apos;, 1)" Type="5" />
 		</Child0>
 	</Storages>
 	<TypeInfo StoreCodeCompletion="1">
