@@ -175,25 +175,26 @@
 		<exec executable="${SuiteInstaller}" spawn="true"/>	
 		<echo message="Suite Installer have started......" />
 	</target>
-  
+	======================================================-->
+	
 	<!-- ===============Components Begin================= -->
 	<target name="TestExecute">
 		<if>
 			<equals arg1="${SkytapSwarmNode}" arg2="cleanauto764_te9" />
 			<then>
-				TestExecute.dir		=	TestExecute930
-				TestExecute.config  = 	setup930.iss
+				<property name="TestExecute.dir" 	value="TestExecute930" />
+				<property name="TestExecute.config" value="setup930.iss" />
 			</then>
 			<elseif>
 				<equals arg1="${SkytapSwarmNode}" arg2="cleanauto732_te9" />
 				<then>
-					TestExecute.dir		=	TestExecute930
-					TestExecute.config  = 	setup930.iss
+				<property name="TestExecute.dir" 	value="TestExecute930" />
+				<property name="TestExecute.config" value="setup930.iss" />
 				</then>
 			</elseif>
 			<else>
-				TestExecute.dir		=	TestExecute1040
-				TestExecute.config  = 	setup1040.iss
+				<property name="TestExecute.dir" 	value="TestExecute1040" />
+				<property name="TestExecute.config" value="setup1040.iss" />
 			</else>
 		</if>
 		<copy todir="C:/Components/TestExecute">
