@@ -980,7 +980,7 @@ begin
      
 end;
 
-procedure DSI_VerifyProductDescription();
+procedure DSI_VerifyProductDescription(aDataID);
 
 const ProductTxtPath = 'C:\ProductDescription.txt';
 const ForReading = 1;
@@ -994,11 +994,9 @@ begin
     try
     begin
          
-        // StrProductName: = GetCellValue('DSI_VerifyProductDescription',aDataID,'I_ProductName');
-       //  StrPath: = GetCellValue('DSI_VerifyProductDescription',aDataID,'I_FilePath');
-         StrProductName: ='wew2222';
-         StrPath: ='C:\DSI_AUTO\DSI_Auto\TC Scripts\TestEnviornment\Product Description\Toad Suite for Oracle\SQL Optimizer for oracle.txt';
-         
+         StrProductName: = GetCellValue('DSI_VerifyProductDescription',aDataID,'I_ProductName');
+         StrPath: = GetCellValue('DSI_VerifyProductDescription',aDataID,'I_FilePath');
+               
          StrCurProductDescription:='';
          Aliases.DSI.ProductSelectionPage.ProductDescription.Refresh;
          Aliases.DSI.ProductSelectionPage.ProductDescription.RefreshMappingInfo;
@@ -1271,46 +1269,44 @@ end;
 procedure DSI_ProductSelectionPage_HighlightProducts(aDataID: string);
 
 var
-    StrProductPanel,DetailBandGroupObj,ProductObj;
+    StrProductPanel,DetailBandGroupObj,ProductObj,ProductExit,StrProductName;
     i:int;
 var
     aStrName: string;
-
+     
 begin
     
-    aStrName: = GetCellValue('QI_ProductSelectionPage_HighlightProducts',aDataID,'I_ProductName');
+     aStrName: = GetCellValue('DSI_ProductSelectionPage_SelectProducts',aDataID,'I_ProductName');
     
-    Aliases.DSI.RefreshMappingInfo;  
+     Aliases.DSI.RefreshMappingInfo;  
             
-    //StrSelectAllObj: = Aliases.QI.QI_frm_Main.QI_Tframe_NewProducts.QI_cb_SelectAll;
-    StrProductPanel: = Aliases.DSI.ProductSelectionPage.SelectProducts;
-    
-    
-   Aliases.DSI.ProductSelectionPage.SelectProducts.Refresh;
-   Aliases.DSI.ProductSelectionPage.SelectProducts.RefreshMappingInfo;
-   if StrProductPanel.wRowCount = 0 then begin
-        Log_StepError('There is no Products Listed in Products Panel!');
-        StopWorkflow: = true;
-        exit;
-   end;
+
+     StrProductPanel: = Aliases.DSI.ProductSelectionPage.SelectProducts;
+     
+     Aliases.DSI.ProductSelectionPage.SelectProducts.Refresh;
+     Aliases.DSI.ProductSelectionPage.SelectProducts.RefreshMappingInfo;
+     if StrProductPanel.wRowCount = 0 then begin
+          Log_StepError('There is no Products Listed in Products Panel!');
+          StopWorkflow: = true;
+          exit;
+     end;
   
-   ProductExit:=false;
-   for i: = 0 to StrProductPanel.wRowCount - 1 do
-    begin
-       // StrSelectProducts.Keys('[Down]');
-        StrProductName: = StrProductPanel.wValue(i, 2).OleValue;
-        if StrProductName=aStrName then
-        begin
-           ProductExit:=true;           
-           StrProductPanel.ClickCell(i, 'Product Name');
-           Log_StepMsg('Hightlight Product '+StrProductName);
+     ProductExit:=false;
+     for i: = 0 to StrProductPanel.wRowCount - 1 do
+      begin
+          StrProductName: = StrProductPanel.wValue(i, 2).OleValue;
+          if StrProductName=aStrName then
+          begin
+             ProductExit:=true;           
+             StrProductPanel.ClickCell(i, 'Product Name');
+             Log_StepMsg('Hightlight Product '+StrProductName);
            
-        end                       
-    end; 
-    if ProductExit=false then
-    begin
-       Log_StepError('Cannot Find the Product: '+aStrName);
-    end;                                  
+          end                       
+      end; 
+      if ProductExit=false then
+      begin
+         Log_StepError('Cannot Find the Product: '+aStrName);
+      end;                                  
 end;
 
 procedure DSI_ProductSelectionPage_ValidateCheckedStatus(aDataID: string);
@@ -2907,6 +2903,7 @@ begin
     DPassword:     = 'Quest6848';
     DProject:      = 'DSI_Oracle';
     DProjectID:    = GetProjectID;
-   DSI_VerifyLicenseProperties('13')
+   DSI_ProductSelectionPage_HighlightProducts('7')
+   
 end;
 
