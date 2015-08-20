@@ -980,13 +980,13 @@ begin
      
 end;
 
-procedure DSI_VerifyProductDescription(aDataID);
+procedure DSI_VerifyProductDescription();
 
 const ProductTxtPath = 'C:\ProductDescription.txt';
 const ForReading = 1;
     
 var
-    DescpMap,DescpEdit,StrProductDescription,StrCurProductDescription;
+    DescpMap,DescpEdit,StrProductDescription,StrDescription,StrCurProductDescription,StrCurDescription;
 var StrProductName,StrPath;
     
 begin
@@ -994,8 +994,10 @@ begin
     try
     begin
          
-         StrProductName: = GetCellValue('DSI_VerifyProductDescription',aDataID,'I_ProductName');
-         StrPath: = GetCellValue('DSI_VerifyProductDescription',aDataID,'I_FilePath');
+        // StrProductName: = GetCellValue('DSI_VerifyProductDescription',aDataID,'I_ProductName');
+       //  StrPath: = GetCellValue('DSI_VerifyProductDescription',aDataID,'I_FilePath');
+         StrProductName: ='wew2222';
+         StrPath: ='C:\DSI_AUTO\DSI_Auto\TC Scripts\TestEnviornment\Product Description\Toad Suite for Oracle\SQL Optimizer for oracle.txt';
          
          StrCurProductDescription:='';
          Aliases.DSI.ProductSelectionPage.ProductDescription.Refresh;
@@ -1013,12 +1015,20 @@ begin
           else
              Log_StepError('No description found.');
          
-         StrProductDescription: = aqFile.ReadWholeTextFile(StrPath,21);       
-         if aqString.Compare(StrProductDescription, StrCurProductDescription,0) then
-             Log_StepMsg('The Product: ' + StrProductName + ' Product Description Displayed Correct!' + Chr(13) + 'Displayed: ' + Chr(13) + StrCurProductDescription + Chr(13) + 'Expected: ' + Chr(13) + StrProductDescription)
+         StrProductDescription: = aqFile.ReadWholeTextFile(StrPath,21); 
+         StrDescription: = aqString.Replace(StrProductDescription,chr(13),'');
+         StrDescription: = aqString.Replace(StrProductDescription,chr(10),'');
+         StrDescription: = aqString.Replace(StrProductDescription,chr(32),'');  
+          
+         StrCurDescription: = aqString.Replace(StrCurProductDescription,chr(13),'');
+         StrCurDescription: = aqString.Replace(StrCurProductDescription,chr(10),'');
+         StrCurDescription: = aqString.Replace(StrCurProductDescription,chr(32),'');
+         
+         if aqString.Compare(StrDescription, StrCurDescription,0)=0 then
+             Log_StepMsg('The Product: ' + StrProductName + ' Product Description Displayed Correct!' + 'Displayed: ' + StrCurProductDescription +'Expected: ' + StrProductDescription)
          else
          begin
-             Log_StepError('The Product: ' + StrProductName + ' Product Description Display Incorrect!' + Chr(13) + 'Displayed: ' + Chr(13) + StrCurProductDescription + Chr(13) + 'Expected: ' + Chr(13) + StrProductDescription);      
+             Log_StepError('The Product: ' + StrProductName + ' Product Description Display Incorrect!'  + 'Displayed: ' + StrCurProductDescription + 'Expected: '+ StrProductDescription);      
          end;
          
     end;        
