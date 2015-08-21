@@ -1101,6 +1101,62 @@ begin
 
 end;
 
+procedure DSI_VerifyHowInstallLink();
+var StrDisplayLanguage,StrLinkCaption,linkIEObj,WebsiteTitle;
+begin
+    try
+      // StrDsiplayLanguage: = GetCellValue('DSI_VerifyHowInstallLink',aDataID,'I_Language');
+     //  StrInstallLinkCaption: = GetCellValue('DSI_VerifyHowInstallLink',aDataID,'I_InstallLinkCaption');
+       
+       StrDisplayLanguage:='English';
+       StrLinkCaption:='How to install Toad for Oracle';
+       WebsiteTitle:='产品支持 - Toad for Oracle';
+       if Aliases.DSI.Exists then
+       begin
+          if Aliases.DSI.ChangeLanguage.wText=StrDisplayLanguage then
+          begin
+
+             if Aliases.DSI.DSI_LicenseAgreement.HowToInstallLink.WndCaption=StrLinkCaption then
+             begin
+             Log_StepMsg('How to Install Toad for Oracle Link Caption is correct as: '+StrLinkCaption);
+                Aliases.DSI.DSI_LicenseAgreement.HowToInstallLink.Click;
+                Log_StepMsg('Click How to Install Toad for Oracle Hypelink.');
+                
+                Sys.Refresh;
+               // Delay(60000);
+                linkIEObj: = Sys.Process('iexplore').FindChild('ObjectIdentifier','产品支持 - Toad for Oracle',8);
+                Sys.Refresh;
+                if linkIEObj.Exists then 
+                begin
+                    Log_StepMsg('The How to Install Toad for Oracle Hypelink Websites Opened and Web Title Display Correct!'+' Expected: '+WebsiteTitle);
+                end
+                else
+                begin
+                    linkIEObj: = Sys.Process('iexplore').FindChild('ObjectIdentifier',WebsiteTitle,8);         
+                    Sys.Refresh;
+                    if linkIEObj.Exists then 
+                    begin
+                        Log_StepMsg('The How to Install Toad for Oracle Hypelink Websites Opened and Web Title Display Correct!'+' Expected: '+WebsiteTitle);
+                    end
+                    else 
+                        Log_StepError('The How to Install Toad for Oracle Hypelink Websites Opened and Web Title Display InCorrect!'+' Expected: '+WebsiteTitle);
+                end;
+                linkIEObj.Close;
+                Sys.Process('iexplore').Terminate;   
+             end;
+          end;
+       
+       end else
+       begin
+          Log_StepError('Cannot Find the Main Form.');
+          StopWorkflow: = true;
+       end;
+    except
+       Log_StepError('Unexception Error: ' + exceptionmessage);
+       StopWorkflow: = true;
+    end;
+end;
+
 procedure DSI_AddLicenseValidationError(aDataID);
 var ValidationErrorMsg,MsgExistStatus;
 begin
@@ -2903,7 +2959,6 @@ begin
     DPassword:     = 'Quest6848';
     DProject:      = 'DSI_Oracle';
     DProjectID:    = GetProjectID;
-   DSI_ProductSelectionPage_HighlightProducts('7')
    
 end;
 
