@@ -314,7 +314,7 @@
 				<Prp name="rowcount" type="I" value="12"/>
 				<Prp name="rowindex" type="I" value="0"/>
 				<Prp name="type" type="I" value="6"/>
-				<Prp name="val0x0" type="B" value="-1"/>
+				<Prp name="val0x0" type="B" value="0"/>
 				<Prp name="val0x1" type="B" value="-1"/>
 				<Prp name="val0x10" type="B" value="-1"/>
 				<Prp name="val0x11" type="B" value="-1"/>
