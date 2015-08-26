@@ -2218,6 +2218,53 @@
 					<Prp name="test moniker" type="S" value=""/>
 					<Prp name="timeout" type="I" value="0"/>
 				</Node>
+				<Node name="item0000000005">
+					<Node name="child list">
+						<Node name="item0000000000">
+							<Node name="child list">
+								<Node name="item0000000000">
+									<Node name="child list"/>
+									<Node name="test parameters"/>
+									<Prp name="count" type="I" value="1"/>
+									<Prp name="description" type="S" value=""/>
+									<Prp name="enabled" type="B" value="0"/>
+									<Prp name="group" type="B" value="0"/>
+									<Prp name="index" type="I" value="0"/>
+									<Prp name="key" type="S" value="{89B4E09A-6DAF-4BB5-A60D-73E80AA1A511}"/>
+									<Prp name="name" type="S" value="W29TestItem"/>
+									<Prp name="stoponerror" type="I" value="2"/>
+									<Prp name="stoponexception" type="I" value="2"/>
+									<Prp name="test moniker" type="S" value="{C5981A12-8316-4DAA-ACE8-1EAE50A498F7}Main"/>
+									<Prp name="timeout" type="I" value="0"/>
+								</Node>
+							</Node>
+							<Node name="test parameters"/>
+							<Prp name="count" type="I" value="1"/>
+							<Prp name="description" type="S" value=""/>
+							<Prp name="enabled" type="B" value="0"/>
+							<Prp name="group" type="B" value="-1"/>
+							<Prp name="index" type="I" value="0"/>
+							<Prp name="key" type="S" value="{B5829E3F-869B-4FAC-AE81-2C77D6C24BEF}"/>
+							<Prp name="name" type="S" value="W29 - x86_Full_LUW"/>
+							<Prp name="stoponerror" type="I" value="2"/>
+							<Prp name="stoponexception" type="I" value="2"/>
+							<Prp name="test moniker" type="S" value=""/>
+							<Prp name="timeout" type="I" value="0"/>
+						</Node>
+					</Node>
+					<Node name="test parameters"/>
+					<Prp name="count" type="I" value="1"/>
+					<Prp name="description" type="S" value=""/>
+					<Prp name="enabled" type="B" value="0"/>
+					<Prp name="group" type="B" value="-1"/>
+					<Prp name="index" type="I" value="5"/>
+					<Prp name="key" type="S" value="{863E4648-7E08-434B-A687-D7E0A15BA481}"/>
+					<Prp name="name" type="S" value="W29"/>
+					<Prp name="stoponerror" type="I" value="2"/>
+					<Prp name="stoponexception" type="I" value="2"/>
+					<Prp name="test moniker" type="S" value=""/>
+					<Prp name="timeout" type="I" value="0"/>
+				</Node>
 			</Node>
 			<Prp name="key" type="S" value="{39259525-A3F8-4C66-9600-372D762F74E3}"/>
 		</Node>
