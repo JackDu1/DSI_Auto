@@ -763,7 +763,7 @@ Class UpdateSAPSuite
 		Wend
 		
 		StrMainVer 	= 	Split(StrVersion,".")
-		StrVer 		= 	StrMainVer(0) + "." + StrMainVer(1) + "." + StrMainVer(2)
+		StrVer 		= 	StrMainVer(0) + "." + StrMainVer(1)
 		regEx.Pattern 	= 	"\d+(\.\d+)+"
 		regEx.Global	=	True
 		StrColFolder 	= 	regEx.Replace(StrColFolder,StrVer)
@@ -803,7 +803,7 @@ Class UpdateSAPSuite
 		Wend
 		
 		StrMainVer 	= 	Split(StrVersion,".")
-		StrVer 		= 	StrMainVer(0) + "." + StrMainVer(1) + "." + StrMainVer(2)
+		StrVer 		= 	StrMainVer(0) + "." + StrMainVer(1)
 		regEx.Pattern 	= 	"\d+(\.\d+)+"
 		regEx.Global	=	True
 		StrColFolder 	= 	regEx.Replace(StrColFolder,StrVer)
@@ -939,9 +939,9 @@ Class UpdateDB2Suite
 		else
 			select case UCase(StrProduct)
 				case "TOADFORDB2_X86_EN"
-					StrProduct="Toad% for IBM% DB2%"
+					StrProduct="Toad_ for IBM_ DB2_"
 				case "TOADFORDB2_TRIAL_X86_EN"
-					StrProduct="Toad% for IBM% DB2% Trial"
+					StrProduct="Toad_ for IBM_ DB2_ Trial"
 			end select	
 		end if
 		
