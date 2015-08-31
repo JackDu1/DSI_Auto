@@ -763,7 +763,7 @@ Class UpdateSAPSuite
 		Wend
 		
 		StrMainVer 	= 	Split(StrVersion,".")
-		StrVer 		= 	StrMainVer(0) + "." + StrMainVer(1) + "." + StrMainVer(2)
+		StrVer 		= 	StrMainVer(0) + "." + StrMainVer(1)
 		regEx.Pattern 	= 	"\d+(\.\d+)+"
 		regEx.Global	=	True
 		StrColFolder 	= 	regEx.Replace(StrColFolder,StrVer)
@@ -803,7 +803,7 @@ Class UpdateSAPSuite
 		Wend
 		
 		StrMainVer 	= 	Split(StrVersion,".")
-		StrVer 		= 	StrMainVer(0) + "." + StrMainVer(1) + "." + StrMainVer(2)
+		StrVer 		= 	StrMainVer(0) + "." + StrMainVer(1)
 		regEx.Pattern 	= 	"\d+(\.\d+)+"
 		regEx.Global	=	True
 		StrColFolder 	= 	regEx.Replace(StrColFolder,StrVer)
