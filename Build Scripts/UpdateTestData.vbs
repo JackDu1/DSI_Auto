@@ -939,9 +939,9 @@ Class UpdateDB2Suite
 		else
 			select case UCase(StrProduct)
 				case "TOADFORDB2_X86_EN"
-					StrProduct="Toad% for IBM% DB2%"
+					StrProduct="Toad_ for IBM_ DB2_"
 				case "TOADFORDB2_TRIAL_X86_EN"
-					StrProduct="Toad% for IBM% DB2% Trial"
+					StrProduct="Toad_ for IBM_ DB2_ Trial"
 			end select	
 		end if
 		
@@ -1083,13 +1083,13 @@ Class UpdateDB2Suite
 		else
 			select case StrProduct
 				case "BENCHMARKFACTORY_X86_EN"
-					StrProduct="Benchmark Factory% for Databases%"
+					StrProduct="Benchmark Factory_ for Databases"
 				case "BENCHMARKFACTORY_X64_EN"
-					StrProduct="Benchmark Factory% for Databases%"
+					StrProduct="Benchmark Factory_ for Databases"
 				case "BENCHMARKFACTORY_TRIAL_X86_EN"
-					StrProduct="Benchmark Factory% for Databases Trial%"
+					StrProduct="Benchmark Factory_ for Databases Trial"
 				case "BENCHMARKFACTORY_TRIAL_X64_EN"
-					StrProduct="Benchmark Factory% for Databases Trial%"
+					StrProduct="Benchmark Factory_ for Databases Trial"
 			end select	
 		end if
 		'Update I_Version Column
