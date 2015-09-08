@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<Root Signature="{5DCBAC3B-D39C-497C-9BE8-744CBADD37AA}" NameMappingVersion="4" Cookie="251">
+<Root Signature="{5DCBAC3B-D39C-497C-9BE8-744CBADD37AA}" NameMappingVersion="4" Cookie="253">
 	<Nodes Name="NameMapping" Key="{BE401E45-B2D6-4FBA-931A-C2117D5C51AD}">
 		<Properties />
 		<Children>
@@ -292,7 +292,8 @@
 															</Child2>
 															<Child3 Name="InstallProcessBar" Key="{4A7B68EA-22AA-4BF4-9F30-B2B88425F5F8}" ParallelWalk="True">
 																<Properties>
-																	<Property0 Name="ObjectType" Cookie="250" />
+																	<Property0 Name="ObjectType" Cookie="251" />
+																	<Property1 Name="Visible" Cookie="252" />
 																</Properties>
 																<Children />
 																<TypeInfo Item0="30" />
@@ -1404,7 +1405,8 @@
 			<Property202 Cookie="246" PropertyType="0" Value="pnlBody" Type="5" />
 			<Property203 Cookie="247" PropertyType="0" Value="lblStatus" Type="5" />
 			<Property204 Cookie="248" PropertyType="0" Value="lblProduct" Type="5" />
-			<Property205 Cookie="250" PropertyType="0" Value="ProgressBar" Type="5" />
+			<Property205 Cookie="251" PropertyType="0" Value="ProgressBar" Type="5" />
+			<Property206 Cookie="252" PropertyType="0" Value="True" Type="6" />
 		</Child0>
 	</Storages>
 	<TypeInfo StoreCodeCompletion="1">
