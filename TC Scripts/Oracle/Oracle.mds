@@ -1481,7 +1481,7 @@
 							<Prp name="group" type="B" value="-1"/>
 							<Prp name="index" type="I" value="0"/>
 							<Prp name="key" type="S" value="{72E4FD4F-3F39-4059-A4A0-2BD3857C4C83}"/>
-							<Prp name="name" type="S" value="W4 - x64_Fulls"/>
+							<Prp name="name" type="S" value="W4 - x64_Full"/>
 							<Prp name="stoponerror" type="I" value="2"/>
 							<Prp name="stoponexception" type="I" value="2"/>
 							<Prp name="test moniker" type="S" value=""/>
