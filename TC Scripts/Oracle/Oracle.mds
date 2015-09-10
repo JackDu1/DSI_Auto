@@ -201,7 +201,7 @@
 				<Prp name="rowcount" type="I" value="1"/>
 				<Prp name="rowindex" type="I" value="0"/>
 				<Prp name="type" type="I" value="6"/>
-				<Prp name="val0x0" type="B" value="0"/>
+				<Prp name="val0x0" type="B" value="-1"/>
 				<Prp name="val1x0" type="S" value="*"/>
 			</Node>
 			<Node name="{24db98d6-5ef8-47bf-977e-c2fd2c5f5fb3}">
@@ -300,7 +300,7 @@
 				<Prp name="rowcount" type="I" value="12"/>
 				<Prp name="rowindex" type="I" value="6"/>
 				<Prp name="type" type="I" value="6"/>
-				<Prp name="val0x0" type="B" value="0"/>
+				<Prp name="val0x0" type="B" value="-1"/>
 				<Prp name="val0x1" type="B" value="-1"/>
 				<Prp name="val0x10" type="B" value="-1"/>
 				<Prp name="val0x11" type="B" value="-1"/>
@@ -308,7 +308,7 @@
 				<Prp name="val0x3" type="B" value="-1"/>
 				<Prp name="val0x4" type="B" value="-1"/>
 				<Prp name="val0x5" type="B" value="-1"/>
-				<Prp name="val0x6" type="B" value="0"/>
+				<Prp name="val0x6" type="B" value="-1"/>
 				<Prp name="val0x7" type="B" value="-1"/>
 				<Prp name="val0x8" type="B" value="-1"/>
 				<Prp name="val0x9" type="B" value="-1"/>
@@ -1261,7 +1261,7 @@
 									<Node name="test parameters"/>
 									<Prp name="count" type="I" value="1"/>
 									<Prp name="description" type="S" value=""/>
-									<Prp name="enabled" type="B" value="0"/>
+									<Prp name="enabled" type="B" value="-1"/>
 									<Prp name="group" type="B" value="0"/>
 									<Prp name="index" type="I" value="0"/>
 									<Prp name="key" type="S" value="{D78FB4F5-AE28-4AD8-8DB8-E7ABDB13EA5E}"/>
@@ -1275,7 +1275,7 @@
 							<Node name="test parameters"/>
 							<Prp name="count" type="I" value="1"/>
 							<Prp name="description" type="S" value=""/>
-							<Prp name="enabled" type="B" value="0"/>
+							<Prp name="enabled" type="B" value="-1"/>
 							<Prp name="group" type="B" value="-1"/>
 							<Prp name="index" type="I" value="4"/>
 							<Prp name="key" type="S" value="{BBF64C19-DEAE-4B9A-BC63-DBE13FC6C850}"/>
@@ -1444,7 +1444,7 @@
 					<Node name="test parameters"/>
 					<Prp name="count" type="I" value="1"/>
 					<Prp name="description" type="S" value=""/>
-					<Prp name="enabled" type="B" value="0"/>
+					<Prp name="enabled" type="B" value="-1"/>
 					<Prp name="group" type="B" value="-1"/>
 					<Prp name="index" type="I" value="1"/>
 					<Prp name="key" type="S" value="{DEDB605F-D805-4B63-84CB-4B4D77921F58}"/>
