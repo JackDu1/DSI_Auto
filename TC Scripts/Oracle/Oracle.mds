@@ -267,7 +267,7 @@
 				<Prp name="colcount" type="I" value="1"/>
 				<Prp name="colindex" type="I" value="0"/>
 				<Prp name="rowcount" type="I" value="4"/>
-				<Prp name="rowindex" type="I" value="0"/>
+				<Prp name="rowindex" type="I" value="3"/>
 				<Prp name="type" type="I" value="6"/>
 				<Prp name="val0x0" type="S" value="UTF-16"/>
 				<Prp name="val0x1" type="S" value="UTF-8"/>
@@ -298,7 +298,7 @@
 				<Prp name="colcount" type="I" value="2"/>
 				<Prp name="colindex" type="I" value="0"/>
 				<Prp name="rowcount" type="I" value="12"/>
-				<Prp name="rowindex" type="I" value="0"/>
+				<Prp name="rowindex" type="I" value="6"/>
 				<Prp name="type" type="I" value="6"/>
 				<Prp name="val0x0" type="B" value="-1"/>
 				<Prp name="val0x1" type="B" value="-1"/>
@@ -524,7 +524,7 @@
 			</Node>
 			<Node name="{d5773345-4407-4a8a-ace6-0f0a9c8787c8}">
 				<Prp name="type" type="I" value="1"/>
-				<Prp name="value" type="B" value="-1"/>
+				<Prp name="value" type="B" value="0"/>
 			</Node>
 			<Node name="{d80391d4-892f-4cec-865e-b7facb3fac84}">
 				<Prp name="type" type="I" value="2"/>
@@ -1108,7 +1108,7 @@
 							<Prp name="group" type="B" value="-1"/>
 							<Prp name="index" type="I" value="0"/>
 							<Prp name="key" type="S" value="{09230EF0-DA2F-456B-BC74-601DAEC7DBEB}"/>
-							<Prp name="name" type="S" value="W1 - CancelInstallation"/>
+							<Prp name="name" type="S" value="W1 - x64_Full"/>
 							<Prp name="stoponerror" type="I" value="2"/>
 							<Prp name="stoponexception" type="I" value="2"/>
 							<Prp name="test moniker" type="S" value=""/>
