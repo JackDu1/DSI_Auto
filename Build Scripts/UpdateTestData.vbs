@@ -672,7 +672,7 @@ Class UpdateOracleSuite
 			RetStr		=	Match.Value
 		Next
 		if RetStr <> "" then
-			StrColName 	= 	regEx.Replace(StrColName,StrVer)
+			StrColName 	= 	regEx.Replace(StrColName,StrVersion)
 			Conn.Execute "Update DSI.dbo.SilentInstallMsiBuild set  I_FilePath =" + "'" + StrColName + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
 		end if
 		
@@ -1067,7 +1067,7 @@ Class UpdateSAPSuite
 			RetStr		=	Match.Value
 		Next
 		if RetStr <> "" then
-			StrColName 	= 	regEx.Replace(StrColName,StrVer)
+			StrColName 	= 	regEx.Replace(StrColName,StrVersion)
 			Conn.Execute "Update DSI.dbo.DSI_SAP_SilentInstallMsiBuild set  I_FilePath =" + "'" + StrColName + "'" + " where Projectid = 3 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
 		end if
 		
@@ -1548,7 +1548,7 @@ Class UpdateDB2Suite
 			RetStr		=	Match.Value
 		Next
 		if RetStr <> "" then
-			StrColName 	= 	regEx.Replace(StrColName,StrVer)
+			StrColName 	= 	regEx.Replace(StrColName,StrVersion)
 			Conn.Execute "Update DSI.dbo.DB2_SilentInstallMsiBuild set  I_FilePath =" + "'" + StrColName + "'" + " where Projectid = 2 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
 		end if
 		
