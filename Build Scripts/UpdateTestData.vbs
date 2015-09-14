@@ -474,7 +474,7 @@ Class UpdateOracleSuite
 
 	End Sub
 	
-	'==============================DSI_DSI_FinishInstall_VerifyRegistry========================================
+	'==============================DSI_FinishInstall_VerifyRegistry========================================
 	Sub Update_DSI_FinishInstall_VerifyRegistry(ByVal StrProduct,ByVal StrVersion)
 		
 		Dim StrColName,StrMainVer,Query,StrVer
@@ -584,6 +584,106 @@ Class UpdateOracleSuite
 		end if
 
 	End Sub
+	
+	'==============================DSI_SilentInstallMsiBuild========================================
+	Sub Update_SilentInstallMsiBuild(ByVal StrProduct,ByVal StrVersion)
+		
+		Dim StrColName,Query,StrVer
+		Dim Matches,match,RetStr
+		
+		on error resume next
+		
+		Set regEx = New RegExp
+		
+		if IsEmpty(StrProduct) then
+			wscript.quit 100
+		else
+			select case UCase(StrProduct)
+				case "TOADFORORACLE_X64_EN"
+					StrProduct="TOAD%FOR ORACLE 64-BIT"
+				case "TOADFORORACLE_X64_ZH"
+					StrProduct="TOAD%FOR ORACLE 64-BIT"
+				case "TOADFORORACLE_X86_EN"
+					StrProduct="TOAD%FOR ORACLE 32-BIT"
+				case "TOADFORORACLE_X86_ZH"
+					StrProduct="TOAD%FOR ORACLE 32-BIT"
+				case "TOADFORORACLE_TRIAL_X86_EN"
+					StrProduct="TOAD%FOR ORACLE 32-BIT TRIAL"
+				case "TOADFORORACLE_TRIAL_X86_ZH"
+					StrProduct="TOAD%FOR ORACLE 32-BIT TRIAL"
+				case "TOADFORORACLE_TRIAL_X64_EN"
+					StrProduct="TOAD%FOR ORACLE 64-BIT TRIAL"
+				case "TOADFORORACLE_TRIAL_X64_ZH"
+					StrProduct="TOAD%FOR ORACLE 64-BIT TRIAL"
+				case "TOADFORORACLE_READONLY_X86_EN"
+					StrProduct="TOAD%FOR ORACLE 32-BIT READ-ONLY"
+				case "TOADFORORACLE_READONLY_X86_ZH"
+					StrProduct="TOAD%FOR ORACLE 32-BIT READ-ONLY"
+				case "TOADFORORACLE_READONLY_X64_EN"
+					StrProduct="TOAD%FOR ORACLE 64-BIT READ-ONLY"
+				case "TOADFORORACLE_READONLY_X64_ZH"
+					StrProduct="TOAD%FOR ORACLE 64-BIT READ-ONLY"
+				case "TOADFORMYSQL_FREEWARE_X86_EN"
+					StrProduct="TOAD% FOR MYSQL"
+				case "BACKUPREPORTER_X86_EN"
+					StrProduct="DELL% BACKUP REPORTER FOR ORACLE"
+				case "CODETESTERORACLE_X86_EN"
+					StrProduct="DELL% CODE TESTER FOR ORACLE"
+				case "TOADDATAMODELER_X86_EN"
+					StrProduct="TOAD% DATA MODELER"
+				case "SPOTLIGHTONORACLE_X64_MULTILANG"
+					StrProduct="SPOTLIGHT% ON ORACLE 64-BIT"
+				case "SPOTLIGHTONORACLE_X86_MULTILANG"
+					StrProduct="SPOTLIGHT% ON ORACLE 32-BIT"
+				case "BENCHMARKFACTORY_X64_EN"
+					StrProduct="BENCHMARK FACTORY% 64-BIT"
+				case "BENCHMARKFACTORY_X86_EN"
+					StrProduct="BENCHMARK FACTORY% 32-BIT"
+				case "BENCHMARKFACTORY_TRIAL_X86_EN"
+					StrProduct="BENCHMARK FACTORY% 32-BIT Trial"
+				case "BENCHMARKFACTORY_TRIAL_X64_EN"
+					StrProduct="BENCHMARK FACTORY% 64-BIT Trial"
+				case "SQLOPTIMIZERFORORACLE_X64_MULTILANG"
+					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 64-BIT"
+				case "SQLOPTIMIZERFORORACLE_X86_MULTILANG"
+					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 32-BIT"
+				case "SQLOPTIMIZERFORORACLE_TRIAL_X86_MULTILANG"
+					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 32-BIT TRIAL"
+				case "SQLOPTIMIZERFORORACLE_TRIAL_X64_MULTILANG"
+					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 64-BIT TRIAL"
+				case else
+					StrProduct="Null"
+			end select
+		end if
+		
+		'Update I_FilePath Column
+		Set Rec		=	CreateObject("ADODB.Recordset")
+		Query		= 	"Select I_FilePath from DSI.dbo.SilentInstallMsiBuild where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
+		Set Rec		=	Conn.Execute(Query)
+		While not Rec.EOF
+			StrColName=Rec.Fields("I_FilePath").Value
+			Rec.MoveNext
+		Wend
+		
+		regEx.Pattern 	= 	"\d+(\.\d+)+"
+		regEx.Global	=	True
+		Set Matches		=	RegEx.Execute(StrColName)
+		For each match in matches
+			RetStr		=	Match.Value
+		Next
+		if RetStr <> "" then
+			StrColName 	= 	regEx.Replace(StrColName,StrVer)
+			Conn.Execute "Update DSI.dbo.SilentInstallMsiBuild set  I_FilePath =" + "'" + StrColName + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
+		end if
+		
+		Rec.Close
+		Set Rec	= Nothing
+		
+		if Err.Number <> 0 then
+			Err.Clear
+		end if
+
+	End Sub
 
 End Class
 
@@ -674,9 +774,7 @@ Class UpdateSAPSuite
 
 		Dim StrColFolder,StrMainVer,Query,StrVer,StrColDisplay
 		on error resume next
-		
 		Set regEx = New RegExp
-		
 		if IsEmpty(StrProduct) then
 			wscript.quit 100	
 		else
@@ -911,6 +1009,66 @@ Class UpdateSAPSuite
 		if RetStr <> "" then
 			StrColName 	= 	regEx.Replace(StrColName,StrVer)
 			Conn.Execute "Update DSI.dbo.DSI_SAP_VerifyRegistry set  I_ProductName =" + "'" + StrColName + "'" + " where Projectid = 3 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_InstallerDisplayProductName) like '" + StrProduct + "'"
+		end if
+		
+		Rec.Close
+		Set Rec	= Nothing
+		
+		if Err.Number <> 0 then
+			Err.Clear
+		end if
+
+	End Sub
+	
+	'==============================DSI_SilentInstallMsiBuild========================================
+	Sub Update_SilentInstallMsiBuild(ByVal StrProduct,ByVal StrVersion)
+		
+		Dim StrColName,Query,StrVer
+		Dim Matches,match,RetStr
+		
+		on error resume next
+		
+		Set regEx = New RegExp
+		
+		if IsEmpty(StrProduct) then
+			wscript.quit 100
+		else
+			select case UCase(StrProduct)
+				case "TOADFORSAP_X86_EN"
+					StrProduct="TOAD_ FOR SAP SOLUTIONS"
+				case "TOADDATAMODELER_X86_EN"
+					StrProduct="TOAD_ DATA MODELER"
+				case "SPOTLIGHTONSAP_X86_EN"
+					StrProduct="SPOTLIGHT_ ON SAP_ ASE"
+				case "BENCHMARKFACTORY_X86_EN"
+					StrProduct="BENCHMARK FACTORY_ FOR DATABASES"
+				case "BENCHMARKFACTORY_TRIAL_X86_EN"
+					StrProduct="BENCHMARK FACTORY_ FOR DATABASES TRIAL"
+				case "SQLOPTIMIZERFORSAP_X86_EN"
+					StrProduct="Dell_ SQL OPTIMIZER FOR SAP_ ASE"
+				case else
+					StrProduct="Null"
+			end select
+		end if
+		
+		'Update I_FilePath Column
+		Set Rec		=	CreateObject("ADODB.Recordset")
+		Query		= 	"Select I_FilePath from DSI.dbo.DSI_SAP_SilentInstallMsiBuild where Projectid = 3 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
+		Set Rec		=	Conn.Execute(Query)
+		While not Rec.EOF
+			StrColName=Rec.Fields("I_FilePath").Value
+			Rec.MoveNext
+		Wend
+		
+		regEx.Pattern 	= 	"\d+(\.\d+)+"
+		regEx.Global	=	True
+		Set Matches		=	RegEx.Execute(StrColName)
+		For each match in matches
+			RetStr		=	Match.Value
+		Next
+		if RetStr <> "" then
+			StrColName 	= 	regEx.Replace(StrColName,StrVer)
+			Conn.Execute "Update DSI.dbo.DSI_SAP_SilentInstallMsiBuild set  I_FilePath =" + "'" + StrColName + "'" + " where Projectid = 3 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
 		end if
 		
 		Rec.Close
@@ -1338,6 +1496,70 @@ Class UpdateDB2Suite
 		end if
 
 	End Sub
+	
+	'==============================DSI_SilentInstallMsiBuild========================================
+	Sub Update_SilentInstallMsiBuild(ByVal StrProduct,ByVal StrVersion)
+		
+		Dim StrColName,Query,StrVer
+		Dim Matches,match,RetStr
+		
+		on error resume next
+		
+		Set regEx = New RegExp
+		
+		if IsEmpty(StrProduct) then
+			wscript.quit 100
+		else
+			select case UCase(StrProduct)
+				case "TOADFORDB2_X86_EN"
+					StrProduct="TOAD_ FOR IBM_ DB2_"
+				case "TOADFORDB2_TRIAL_X86_EN"
+					StrProduct="TOAD_ FOR IBM_ DB2_ TRIAL"
+				case "TOADDATAMODELER_X86_EN"
+					StrProduct="TOAD_ DATA MODELER"
+				case "SPOTLIGHTONDB2_X86_EN"
+					StrProduct="SPOTLIGHT_ ON IBM_ DB2_ LUW"
+				case "BENCHMARKFACTORY_X86_EN"
+					StrProduct="BENCHMARK FACTORY_ FOR DATABASES"
+				case "BENCHMARKFACTORY_TRIAL_X86_EN"
+					StrProduct="BENCHMARK FACTORY_ FOR DATABASES TRIAL"
+				case "SQLOPTIMIZERFORDB2LUW_X86_EN"
+					StrProduct="Dell_ SQL OPTIMIZER FOR IBM_ DB2% LUW"
+				case "SQLOPTIMIZERFORDB2ZOS_X86_EN"
+					StrProduct="Dell_ SQL OPTIMIZER FOR IBM_ DB2% Z_OS_"
+				case else
+					StrProduct="Null"
+			end select
+		end if
+		
+		'Update I_FilePath Column
+		Set Rec		=	CreateObject("ADODB.Recordset")
+		Query		= 	"Select I_FilePath from DSI.dbo.DB2_SilentInstallMsiBuild where Projectid = 2 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
+		Set Rec		=	Conn.Execute(Query)
+		While not Rec.EOF
+			StrColName=Rec.Fields("I_FilePath").Value
+			Rec.MoveNext
+		Wend
+		
+		regEx.Pattern 	= 	"\d+(\.\d+)+"
+		regEx.Global	=	True
+		Set Matches		=	RegEx.Execute(StrColName)
+		For each match in matches
+			RetStr		=	Match.Value
+		Next
+		if RetStr <> "" then
+			StrColName 	= 	regEx.Replace(StrColName,StrVer)
+			Conn.Execute "Update DSI.dbo.DB2_SilentInstallMsiBuild set  I_FilePath =" + "'" + StrColName + "'" + " where Projectid = 2 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
+		end if
+		
+		Rec.Close
+		Set Rec	= Nothing
+		
+		if Err.Number <> 0 then
+			Err.Clear
+		end if
+
+	End Sub
 
 End Class
 
@@ -1521,6 +1743,7 @@ Sub UpdateTestData()
 			Select Case UCase(StrProduct)
 				case UCase("ORACLE")
 					Set NewOracleSuite	=	New UpdateOracleSuite
+					'Update all finish installation data
 					Select Case Trim(UCase(PreProduct(0)))
 						case "TOADFORORACLE"
 							Call NewOracleSuite.Update_DSI_FinishInstall_ToadforOracle(ProductName,ProductVersion)
@@ -1539,10 +1762,15 @@ Sub UpdateTestData()
 						case "TOADFORMYSQL"
 							Call NewOracleSuite.Update_DSI_FinishInstall_ToadforMySQLFreeware(ProductName,ProductVersion) 
 					End Select
+					'Update Product Details table data
 					Call NewOracleSuite.Update_DSI_ProductSelectionPage_VerifyProductDetail(ProductName,ProductVersion)
+					'Update Verify Reistry table data
 					Call NewOracleSuite.Update_DSI_FinishInstall_VerifyRegistry(ProductName,ProductVersion) 
+					'Update Silent Install table data
+					Call NewOracleSuite.Update_SilentInstallMsiBuild(ProductName,ProductVersion)
 				case UCase("DB2")
 					Set NewDB2Suite	=	New UpdateDB2Suite
+					'Update all finish installation data
 					Select Case Trim(UCase(PreProduct(0)))
 						case "TOADFORDB2"
 							Call NewDB2Suite.Update_DSI_FinishInstall_ToadforIBMDB2LUW(ProductName,ProductVersion)	
@@ -1557,10 +1785,15 @@ Sub UpdateTestData()
 						case "TOADDATAMODELER"
 							Call NewDB2Suite.Update_DSI_FinishInstall_ToadDataModeler(ProductName,ProductVersion)
 					End Select
+					'Update Product Details table data
 					Call NewDB2Suite.Update_DSI_ProductSelectionPage_VerifyProductDetails(ProductName,ProductVersion) 
+					'Update Verify Reistry table data
 					Call NewDB2Suite.Update_DSI_FinishInstall_VerifyRegistry(ProductName,ProductVersion)
+					'Update Silent Install table data
+					Call NewDB2Suite.Update_SilentInstallMsiBuild(ProductName,ProductVersion)
 				case UCase("SAP")
 					Set NewSAPSuite	=	New UpdateSAPSuite
+					'Update all finish installation data
 					Select Case Trim(UCase(PreProduct(0)))
 						case "TOADFORSAP"
 							Call NewSAPSuite.Update_DSI_FinishInstall_ToadforSybase(ProductName,ProductVersion) 
@@ -1573,8 +1806,12 @@ Sub UpdateTestData()
 						case "TOADDATAMODELER"
 							Call NewSAPSuite.Update_DSI_FinishInstall_ToadDataModeler(ProductName,ProductVersion)
 					End Select
+					'Update Product Details table data
 					Call NewSAPSuite.Update_DSI_ProductSelectionPage_VerifyProductDetails(ProductName,ProductVersion)
+					'Update Verify Reistry table data
 					Call NewSAPSuite.Update_DSI_FinishInstall_VerifyRegistry(ProductName,ProductVersion)
+					'Update Silent Install table data
+					Call NewSAPSuite.Update_SilentInstallMsiBuild(ProductName,ProductVersion)
 				case UCase("SQLSERVER")
 					Set NewSQLServerSuite	=	New UpdateSQLSERVERSuite
 					'not implemented
