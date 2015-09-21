@@ -4229,7 +4229,7 @@
 							<Prp name="group" type="B" value="-1"/>
 							<Prp name="index" type="I" value="2"/>
 							<Prp name="key" type="S" value="{7D91EDC2-C0A0-4022-8EA7-309D3C504661}"/>
-							<Prp name="name" type="S" value="W26 - x64_Trial_Full"/>
+							<Prp name="name" type="S" value="W26 - x64_Full_Zh"/>
 							<Prp name="stoponerror" type="I" value="2"/>
 							<Prp name="stoponexception" type="I" value="2"/>
 							<Prp name="test moniker" type="S" value=""/>
