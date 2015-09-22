@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<Root Signature="{5DCBAC3B-D39C-497C-9BE8-744CBADD37AA}" NameMappingVersion="4" Cookie="272">
+<Root Signature="{5DCBAC3B-D39C-497C-9BE8-744CBADD37AA}" NameMappingVersion="4" Cookie="274">
 	<Nodes Name="NameMapping" Key="{BE401E45-B2D6-4FBA-931A-C2117D5C51AD}">
 		<Properties />
 		<Children>
@@ -331,14 +331,7 @@
 													<Property0 Name="NativeClrObject.Name" Cookie="265" />
 												</Properties>
 												<Children>
-													<Child0 Name="InstallingPageBody" Key="{3B77D705-D016-4B1E-97EB-4955E1ADA47F}" ParallelWalk="True">
-														<Properties>
-															<Property0 Name="NativeClrObject.Name" Cookie="266" />
-														</Properties>
-														<Children />
-														<TypeInfo Item0="30" />
-													</Child0>
-													<Child1 Name="pnlBottom" Key="{AD5D1532-D7B3-44A6-8E0F-9BCD128E4FB2}" ParallelWalk="True">
+													<Child0 Name="pnlBottom" Key="{AD5D1532-D7B3-44A6-8E0F-9BCD128E4FB2}" ParallelWalk="True">
 														<Properties>
 															<Property0 Name="NativeClrObject.Name" Cookie="267" />
 														</Properties>
@@ -371,6 +364,21 @@
 																<Children />
 																<TypeInfo Item0="30" />
 															</Child3>
+														</Children>
+														<TypeInfo Item0="30" />
+													</Child0>
+													<Child1 Name="pnlBody" Key="{44DEABDE-D631-4519-ADD0-F4C3ECBEC537}" ParallelWalk="True">
+														<Properties>
+															<Property0 Name="NativeClrObject.Name" Cookie="272" />
+														</Properties>
+														<Children>
+															<Child0 Name="InstallingPageBody" Key="{6642A283-FBB4-44DB-AF72-FDC5BE5B3C70}" ParallelWalk="True">
+																<Properties>
+																	<Property0 Name="NativeClrObject.Name" Cookie="273" />
+																</Properties>
+																<Children />
+																<TypeInfo Item0="30" />
+															</Child0>
 														</Children>
 														<TypeInfo Item0="30" />
 													</Child1>
@@ -1192,11 +1200,11 @@
 				<Child4 Name="InstallProcessBar" Owner="{4A7B68EA-22AA-4BF4-9F30-B2B88425F5F8}" />
 			</Child11>
 			<Child12 Name="ProductUninstallation" Owner="{D07EE9B7-BAE2-4FAA-8068-060CA4C56708}">
-				<Child0 Name="InstallingPageBody" Owner="{3B77D705-D016-4B1E-97EB-4955E1ADA47F}" />
-				<Child1 Name="InstallingProduct" Owner="{9E51E87F-9706-4B0B-A39A-C9AE9AF97278}" />
-				<Child2 Name="InstallingStatus" Owner="{9DB1B9E5-A08F-4A67-A1AC-08702D7CD627}" />
-				<Child3 Name="InstallProcessBar" Owner="{029AD9C6-8B32-4A1A-9128-5689191F1C70}" />
-				<Child4 Name="InstallTotalProgress" Owner="{8D021D5C-0AF3-421C-8BA2-AA9F5BC1149A}" />
+				<Child0 Name="InstallingProduct" Owner="{9E51E87F-9706-4B0B-A39A-C9AE9AF97278}" />
+				<Child1 Name="InstallingStatus" Owner="{9DB1B9E5-A08F-4A67-A1AC-08702D7CD627}" />
+				<Child2 Name="InstallProcessBar" Owner="{029AD9C6-8B32-4A1A-9128-5689191F1C70}" />
+				<Child3 Name="InstallTotalProgress" Owner="{8D021D5C-0AF3-421C-8BA2-AA9F5BC1149A}" />
+				<Child4 Name="InstallingPageBody" Owner="{6642A283-FBB4-44DB-AF72-FDC5BE5B3C70}" />
 			</Child12>
 		</Child0>
 		<Child1 Name="Win_frm_Main" Owner="{F7C502EF-87D9-402A-AA53-F4F4BC69D067}">
@@ -1516,6 +1524,8 @@
 			<Property219 Cookie="269" PropertyType="0" Value="lblStatus" Type="5" />
 			<Property220 Cookie="270" PropertyType="0" Value="pbrOverallExecute" Type="5" />
 			<Property221 Cookie="271" PropertyType="0" Value="lblTotalProgress" Type="5" />
+			<Property222 Cookie="272" PropertyType="0" Value="pnlBody" Type="5" />
+			<Property223 Cookie="273" PropertyType="0" Value="pbxAd" Type="5" />
 		</Child0>
 	</Storages>
 	<TypeInfo StoreCodeCompletion="1">
