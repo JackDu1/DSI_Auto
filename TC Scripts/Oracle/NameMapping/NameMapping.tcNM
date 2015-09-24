@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<Root Signature="{5DCBAC3B-D39C-497C-9BE8-744CBADD37AA}" NameMappingVersion="4" Cookie="278">
+<Root Signature="{5DCBAC3B-D39C-497C-9BE8-744CBADD37AA}" NameMappingVersion="4" Cookie="282">
 	<Nodes Name="NameMapping" Key="{BE401E45-B2D6-4FBA-931A-C2117D5C51AD}">
 		<Properties />
 		<Children>
@@ -11,8 +11,8 @@
 				<Children>
 					<Child0 Name="Toad_for_Oracle_Installer" Key="{3879BE76-5D4E-4A92-9281-9A4A42B858A4}">
 						<Properties>
-							<Property0 Name="ProcessName" Cookie="50" />
-							<Property1 Name="Index" Cookie="51" />
+							<Property0 Name="ProcessName" Cookie="280" />
+							<Property1 Name="Name" Cookie="281" />
 						</Properties>
 						<Children>
 							<Child0 Name="DSI" Key="{15BD777C-44AC-49EE-AC1C-A178EF9867DD}">
@@ -1339,197 +1339,197 @@
 			<Property32 Cookie="44" PropertyType="0" Value="lblLanguage" Type="5" />
 			<Property33 Cookie="45" PropertyType="0" Value="Browse For Folder" Type="5" />
 			<Property34 Cookie="46" PropertyType="0" Value="SHBrowseForFolder ShellNameSpace Control" Type="5" />
-			<Property35 Cookie="50" PropertyType="0" Value="Toad_for_Oracle_*" Type="5" />
-			<Property36 Cookie="51" PropertyType="0" Value="2" Type="0" />
-			<Property37 Cookie="52" PropertyType="0" Value="ProductLicensing" Type="5" />
-			<Property38 Cookie="56" PropertyType="0" Value="lblProductKey" Type="5" />
-			<Property39 Cookie="58" PropertyType="0" Value="llblLicenseAssistance" Type="5" />
-			<Property40 Cookie="59" PropertyType="0" Value="Toad" Type="5" />
-			<Property41 Cookie="60" PropertyType="0" Value="TToadLicensingForm" Type="5" />
-			<Property42 Cookie="61" PropertyType="0" Value="ToadLicensingForm" Type="5" />
-			<Property43 Cookie="62" PropertyType="0" Value="TPanel" Type="5" />
-			<Property44 Cookie="63" PropertyType="0" Value="pnlClient" Type="5" />
-			<Property45 Cookie="64" PropertyType="0" Value="TPageControl" Type="5" />
-			<Property46 Cookie="65" PropertyType="0" Value="pgLicenses" Type="5" />
-			<Property47 Cookie="66" PropertyType="0" Value="TTabSheet" Type="5" />
-			<Property48 Cookie="67" PropertyType="0" Value="tsActiveLicense" Type="5" />
-			<Property49 Cookie="68" PropertyType="0" Value="TToadLicensingFrame" Type="5" />
-			<Property50 Cookie="69" PropertyType="0" Value="ToadLicensingFrame0" Type="5" />
-			<Property51 Cookie="70" PropertyType="0" Value="TPanel" Type="5" />
-			<Property52 Cookie="71" PropertyType="0" Value="pnlClientMain" Type="5" />
-			<Property53 Cookie="74" PropertyType="0" Value="TPanel" Type="5" />
-			<Property54 Cookie="75" PropertyType="0" Value="pnlLicenseSummary" Type="5" />
-			<Property55 Cookie="76" PropertyType="0" Value="TcxVerticalGrid" Type="5" />
-			<Property56 Cookie="77" PropertyType="0" Value="vgLicenseSummary" Type="5" />
-			<Property57 Cookie="78" PropertyType="0" Value="TcxTextEdit" Type="5" />
-			<Property58 Cookie="79" PropertyType="0" Value="1" Type="0" />
-			<Property59 Cookie="80" PropertyType="0" Value="TButton" Type="5" />
-			<Property60 Cookie="81" PropertyType="0" Value="btnLicenseApply" Type="5" />
-			<Property61 Cookie="82" PropertyType="0" Value="TPanel" Type="5" />
-			<Property62 Cookie="83" PropertyType="0" Value="pnlFooter" Type="5" />
-			<Property63 Cookie="84" PropertyType="0" Value="TButton" Type="5" />
-			<Property64 Cookie="85" PropertyType="0" Value="btnClose" Type="5" />
-			<Property65 Cookie="86" PropertyType="0" Value="TToadLicensingErrorForm" Type="5" />
-			<Property66 Cookie="89" PropertyType="0" Value="TfrmLogin" Type="5" />
-			<Property67 Cookie="90" PropertyType="0" Value="frmLogin" Type="5" />
-			<Property68 Cookie="91" PropertyType="0" Value="TfrmMain" Type="5" />
-			<Property69 Cookie="92" PropertyType="0" Value="frmMain" Type="5" />
-			<Property70 Cookie="93" PropertyType="0" Value="TAboutBox" Type="5" />
-			<Property71 Cookie="94" PropertyType="0" Value="AboutBox" Type="5" />
-			<Property72 Cookie="95" PropertyType="0" Value="TToadLabel" Type="5" />
-			<Property73 Cookie="96" PropertyType="0" Value="lblTitle" Type="5" />
-			<Property74 Cookie="97" PropertyType="0" Value="Quest SQL Optimizer for Oracle" Type="5" />
-			<Property75 Cookie="100" PropertyType="0" Value="BFactory" Type="5" />
-			<Property76 Cookie="103" PropertyType="0" Value="BMFRepositoryManager" Type="5" />
-			<Property77 Cookie="104" PropertyType="0" Value="#32770" Type="5" />
-			<Property78 Cookie="105" PropertyType="0" Value="Repository Manager" Type="5" />
-			<Property79 Cookie="106" PropertyType="0" Value="Button" Type="5" />
-			<Property80 Cookie="107" PropertyType="0" Value="OK" Type="5" />
-			<Property81 Cookie="110" PropertyType="0" Value="#32770" Type="5" />
-			<Property82 Cookie="111" PropertyType="0" Value="New Job Wizard" Type="5" />
-			<Property83 Cookie="116" PropertyType="0" Value="Static" Type="5" />
-			<Property84 Cookie="117" PropertyType="0" Value="2" Type="0" />
-			<Property85 Cookie="118" PropertyType="0" Value="Static" Type="5" />
-			<Property86 Cookie="119" PropertyType="0" Value="5" Type="0" />
-			<Property87 Cookie="120" PropertyType="0" Value="Spotlight" Type="5" />
-			<Property88 Cookie="121" PropertyType="0" Value="TfrmSpotlightShell" Type="5" />
-			<Property89 Cookie="122" PropertyType="0" Value="frmSpotlightShell" Type="5" />
-			<Property90 Cookie="123" PropertyType="0" Value="TfrmSpotlightAbout" Type="5" />
-			<Property91 Cookie="124" PropertyType="0" Value="frmSpotlightAbout" Type="5" />
-			<Property92 Cookie="125" PropertyType="0" Value="TDM" Type="5" />
-			<Property93 Cookie="126" PropertyType="0" Value="TFFirstRun1" Type="5" />
-			<Property94 Cookie="127" PropertyType="0" Value="TTntPanel" Type="5" />
-			<Property95 Cookie="128" PropertyType="0" Value="PaButton" Type="5" />
-			<Property96 Cookie="129" PropertyType="0" Value="TTntButton" Type="5" />
-			<Property97 Cookie="130" PropertyType="0" Value="BuOK" Type="5" />
-			<Property98 Cookie="131" PropertyType="0" Value="TFFirstRun2" Type="5" />
-			<Property99 Cookie="132" PropertyType="0" Value="TTntPanel" Type="5" />
-			<Property100 Cookie="133" PropertyType="0" Value="PaButtons" Type="5" />
-			<Property101 Cookie="134" PropertyType="0" Value="TTntButton" Type="5" />
-			<Property102 Cookie="135" PropertyType="0" Value="BtnOK" Type="5" />
-			<Property103 Cookie="136" PropertyType="0" Value="TFUsageDataOptions" Type="5" />
-			<Property104 Cookie="137" PropertyType="0" Value="FUsageDataOptions" Type="5" />
-			<Property105 Cookie="138" PropertyType="0" Value="User Experience Feedback" Type="5" />
-			<Property106 Cookie="141" PropertyType="0" Value="TFAbout" Type="5" />
-			<Property107 Cookie="142" PropertyType="0" Value="FAbout" Type="5" />
-			<Property108 Cookie="143" PropertyType="0" Value="TTntLabel" Type="5" />
-			<Property109 Cookie="144" PropertyType="0" Value="LaVersion" Type="5" />
-			<Property110 Cookie="145" PropertyType="0" Value="UpdateAvailableConfirmationForm" Type="5" />
-			<Property111 Cookie="146" PropertyType="0" Value="ConnectionForm" Type="5" />
-			<Property112 Cookie="147" PropertyType="0" Value="MainForm" Type="5" />
-			<Property113 Cookie="148" PropertyType="0" Value="BaseModalForm" Type="5" />
-			<Property114 Cookie="149" PropertyType="0" Value="ConfigurationWizard" Type="5" />
-			<Property115 Cookie="150" PropertyType="0" Value="AboutForm" Type="5" />
-			<Property116 Cookie="151" PropertyType="0" Value="Quest.BRT" Type="5" />
-			<Property117 Cookie="152" PropertyType="0" Value="MainForm" Type="5" />
-			<Property118 Cookie="153" PropertyType="0" Value="AboutDialog" Type="5" />
-			<Property119 Cookie="154" PropertyType="0" Value="buildLabel" Type="5" />
-			<Property120 Cookie="155" PropertyType="0" Value="btnAdd" Type="5" />
-			<Property121 Cookie="156" PropertyType="0" Value="btnModify" Type="5" />
-			<Property122 Cookie="157" PropertyType="0" Value="dgvKeys" Type="5" />
-			<Property123 Cookie="161" PropertyType="0" Value="System.Windows.Forms.Panel" Type="5" />
-			<Property124 Cookie="162" PropertyType="0" Value="" Type="5" />
-			<Property125 Cookie="163" PropertyType="0" Value="System.Windows.Forms.DataGridViewTextBoxEditingControl" Type="5" />
-			<Property126 Cookie="166" PropertyType="0" Value="ConsoleWindowClass" Type="5" />
-			<Property127 Cookie="167" PropertyType="0" Value="*" Type="5" />
-			<Property128 Cookie="168" PropertyType="0" Value="txtDirectory" Type="5" />
-			<Property129 Cookie="169" PropertyType="0" Value="MainForm" Type="5" />
-			<Property130 Cookie="170" PropertyType="0" Value="WinFormsObject(&apos;MainForm&apos;)" Type="5" />
-			<Property131 Cookie="171" PropertyType="0" Value="pnlNavigation" Type="5" />
-			<Property132 Cookie="172" PropertyType="0" Value="WinFormsObject(&apos;pnlNavigation&apos;)" Type="5" />
-			<Property133 Cookie="173" PropertyType="0" Value="btnCancel" Type="5" />
-			<Property134 Cookie="174" PropertyType="0" Value="WinFormsObject(&apos;btnCancel&apos;)" Type="5" />
-			<Property135 Cookie="175" PropertyType="0" Value="btnBack" Type="5" />
-			<Property136 Cookie="176" PropertyType="0" Value="WinFormsObject(&apos;btnBack&apos;)" Type="5" />
-			<Property137 Cookie="177" PropertyType="0" Value="btnNext" Type="5" />
-			<Property138 Cookie="178" PropertyType="0" Value="WinFormsObject(&apos;btnNext&apos;)" Type="5" />
-			<Property139 Cookie="179" PropertyType="0" Value="cmd" Type="5" />
-			<Property140 Cookie="180" PropertyType="0" Value="btnFolderBrowse" Type="5" />
-			<Property141 Cookie="181" PropertyType="0" Value="Button" Type="5" />
-			<Property142 Cookie="182" PropertyType="0" Value="OK" Type="5" />
-			<Property143 Cookie="183" PropertyType="0" Value="DellCodeTesterOracle" Type="5" />
-			<Property144 Cookie="184" PropertyType="0" Value="TfrmTestManager2" Type="5" />
-			<Property145 Cookie="185" PropertyType="0" Value="frmTestManager2" Type="5" />
-			<Property146 Cookie="186" PropertyType="0" Value="TfrmAbout" Type="5" />
-			<Property147 Cookie="187" PropertyType="0" Value="TcxLabel" Type="5" />
-			<Property148 Cookie="188" PropertyType="0" Value="lblFEVersion" Type="5" />
-			<Property149 Cookie="189" PropertyType="0" Value="TfrmUserExperienceFeedback" Type="5" />
-			<Property150 Cookie="190" PropertyType="0" Value="TfrmSpotlightFeedback" Type="5" />
-			<Property151 Cookie="191" PropertyType="0" Value="SysTreeView32" Type="5" />
-			<Property152 Cookie="192" PropertyType="0" Value="Cancel and Lose Selections?" Type="5" />
-			<Property153 Cookie="193" PropertyType="0" Value="Button" Type="5" />
-			<Property154 Cookie="194" PropertyType="0" Value="&amp;Yes" Type="5" />
-			<Property155 Cookie="195" PropertyType="0" Value="Button" Type="5" />
-			<Property156 Cookie="196" PropertyType="0" Value="&amp;No" Type="5" />
-			<Property157 Cookie="197" PropertyType="0" Value="TProjectLucyStartup" Type="5" />
-			<Property158 Cookie="198" PropertyType="0" Value="TFmLicenseTrialNotification" Type="5" />
-			<Property159 Cookie="199" PropertyType="0" Value="FmLicenseTrialNotification" Type="5" />
-			<Property160 Cookie="200" PropertyType="0" Value="Error" Type="5" />
-			<Property161 Cookie="201" PropertyType="0" Value="TConfirmNoNagDlg" Type="5" />
-			<Property162 Cookie="202" PropertyType="0" Value="lblValidationError" Type="5" />
-			<Property163 Cookie="203" PropertyType="0" Value="TTntMessageForm.UnicodeClass" Type="5" />
-			<Property164 Cookie="204" PropertyType="0" Value="Toad Data Modeler" Type="5" />
-			<Property165 Cookie="211" PropertyType="0" Value="Tf_Main" Type="5" />
-			<Property166 Cookie="212" PropertyType="0" Value="VCLObject(&apos;f_Main&apos;)" Type="5" />
-			<Property167 Cookie="213" PropertyType="0" Value="WinFormsObject(&apos;ImproveExperienceForm&apos;)" Type="5" />
-			<Property168 Cookie="214" PropertyType="0" Value="ImproveExperienceForm" Type="5" />
-			<Property169 Cookie="215" PropertyType="0" Value="WinFormsObject(&apos;frmUserExperience&apos;)" Type="5" />
-			<Property170 Cookie="216" PropertyType="0" Value="frmUserExperience" Type="5" />
-			<Property171 Cookie="217" PropertyType="0" Value="WinFormsObject(&apos;frmWelcomeWindow&apos;)" Type="5" />
-			<Property172 Cookie="218" PropertyType="0" Value="frmWelcomeWindow" Type="5" />
-			<Property173 Cookie="219" PropertyType="0" Value="VisualControlCenterClass" Type="5" />
-			<Property174 Cookie="220" PropertyType="0" Value="Benchmark Factory™*" Type="5" />
-			<Property175 Cookie="223" PropertyType="0" Value="#32770" Type="5" />
-			<Property176 Cookie="224" PropertyType="0" Value="About Benchmark Factory™*" Type="5" />
-			<Property177 Cookie="225" PropertyType="0" Value="#32770" Type="5" />
-			<Property178 Cookie="226" PropertyType="0" Value="About Benchmark Factory™*" Type="5" />
-			<Property179 Cookie="227" PropertyType="0" Value="Window(&apos;#32770&apos;, &apos;About Benchmark Factory™ - Trial&apos;, 1)" Type="5" />
-			<Property180 Cookie="228" PropertyType="0" Value="dgvProperties" Type="5" />
-			<Property181 Cookie="229" PropertyType="0" Value="WinFormsObject(&apos;frmMigrationVersionSelector&apos;)" Type="5" />
-			<Property182 Cookie="230" PropertyType="0" Value="Window(&apos;#32770&apos;, &apos;Copy User Settings&apos;, 1)" Type="5" />
-			<Property183 Cookie="231" PropertyType="0" Value="wbrDescription" Type="5" />
-			<Property184 Cookie="232" PropertyType="0" Value="WinFormsObject(&apos;llblHowTo&apos;)" Type="5" />
-			<Property185 Cookie="233" PropertyType="0" Value="lblCopyright1" Type="5" />
-			<Property186 Cookie="234" PropertyType="0" Value="lblCopyright2" Type="5" />
-			<Property187 Cookie="235" PropertyType="0" Value="ALL RIGHTS RESERVED" Type="5" />
-			<Property188 Cookie="236" PropertyType="0" Value="rtbAgreement" Type="5" />
-			<Property189 Cookie="237" PropertyType="0" Value="wbrIntro" Type="5" />
-			<Property190 Cookie="238" PropertyType="0" Value="CCopyUserSettingsDialog" Type="5" />
-			<Property191 Cookie="239" PropertyType="0" Value="Copy_User_Settings" Type="5" />
-			<Property192 Cookie="240" PropertyType="0" Value="Copy User Settings" Type="5" />
-			<Property193 Cookie="241" PropertyType="0" Value="Final" Type="5" />
-			<Property194 Cookie="242" PropertyType="0" Value="WinFormsObject(&apos;Final&apos;)" Type="5" />
-			<Property195 Cookie="243" PropertyType="0" Value="ProductInstallation" Type="5" />
-			<Property196 Cookie="244" PropertyType="0" Value="pnlBottom" Type="5" />
-			<Property197 Cookie="245" PropertyType="0" Value="lblTotalProgress" Type="5" />
-			<Property198 Cookie="246" PropertyType="0" Value="pnlBody" Type="5" />
-			<Property199 Cookie="247" PropertyType="0" Value="lblStatus" Type="5" />
-			<Property200 Cookie="248" PropertyType="0" Value="lblProduct" Type="5" />
-			<Property201 Cookie="251" PropertyType="0" Value="ProgressBar" Type="5" />
-			<Property202 Cookie="252" PropertyType="0" Value="True" Type="6" />
-			<Property203 Cookie="253" PropertyType="0" Value="WinFormsObject(&apos;lblRootDir&apos;)" Type="5" />
-			<Property204 Cookie="254" PropertyType="0" Value="TLabel" Type="5" />
-			<Property205 Cookie="255" PropertyType="0" Value="lblVersion" Type="5" />
-			<Property206 Cookie="258" PropertyType="0" Value="TfrmRWfromISConfirm" Type="5" />
-			<Property207 Cookie="259" PropertyType="0" Value="frmRWfromISConfirm" Type="5" />
-			<Property208 Cookie="260" PropertyType="0" Value="#32770" Type="5" />
-			<Property209 Cookie="261" PropertyType="0" Value="CUserExperienceDialog" Type="5" />
-			<Property210 Cookie="262" PropertyType="0" Value="TToadLabel" Type="5" />
-			<Property211 Cookie="263" PropertyType="0" Value="lblTitle" Type="5" />
-			<Property212 Cookie="264" PropertyType="0" Value="richTextBox1" Type="5" />
-			<Property213 Cookie="265" PropertyType="0" Value="ProductUninstallation" Type="5" />
-			<Property214 Cookie="266" PropertyType="0" Value="pnlBody" Type="5" />
-			<Property215 Cookie="267" PropertyType="0" Value="pnlBottom" Type="5" />
-			<Property216 Cookie="268" PropertyType="0" Value="lblProduct" Type="5" />
-			<Property217 Cookie="269" PropertyType="0" Value="lblStatus" Type="5" />
-			<Property218 Cookie="270" PropertyType="0" Value="pbrOverallExecute" Type="5" />
-			<Property219 Cookie="271" PropertyType="0" Value="lblTotalProgress" Type="5" />
-			<Property220 Cookie="272" PropertyType="0" Value="pnlBody" Type="5" />
-			<Property221 Cookie="273" PropertyType="0" Value="pbxAd" Type="5" />
-			<Property222 Cookie="274" PropertyType="0" Value="LicenseAgreement" Type="5" />
-			<Property223 Cookie="275" PropertyType="0" Value="WinFormsObject(&apos;LicenseAgreement&apos;)" Type="5" />
-			<Property224 Cookie="276" PropertyType="0" Value="RadioButton" Type="5" />
-			<Property225 Cookie="277" PropertyType="0" Value="WinFormsObject(&apos;radAccept&apos;)" Type="5" />
+			<Property35 Cookie="52" PropertyType="0" Value="ProductLicensing" Type="5" />
+			<Property36 Cookie="56" PropertyType="0" Value="lblProductKey" Type="5" />
+			<Property37 Cookie="58" PropertyType="0" Value="llblLicenseAssistance" Type="5" />
+			<Property38 Cookie="59" PropertyType="0" Value="Toad" Type="5" />
+			<Property39 Cookie="60" PropertyType="0" Value="TToadLicensingForm" Type="5" />
+			<Property40 Cookie="61" PropertyType="0" Value="ToadLicensingForm" Type="5" />
+			<Property41 Cookie="62" PropertyType="0" Value="TPanel" Type="5" />
+			<Property42 Cookie="63" PropertyType="0" Value="pnlClient" Type="5" />
+			<Property43 Cookie="64" PropertyType="0" Value="TPageControl" Type="5" />
+			<Property44 Cookie="65" PropertyType="0" Value="pgLicenses" Type="5" />
+			<Property45 Cookie="66" PropertyType="0" Value="TTabSheet" Type="5" />
+			<Property46 Cookie="67" PropertyType="0" Value="tsActiveLicense" Type="5" />
+			<Property47 Cookie="68" PropertyType="0" Value="TToadLicensingFrame" Type="5" />
+			<Property48 Cookie="69" PropertyType="0" Value="ToadLicensingFrame0" Type="5" />
+			<Property49 Cookie="70" PropertyType="0" Value="TPanel" Type="5" />
+			<Property50 Cookie="71" PropertyType="0" Value="pnlClientMain" Type="5" />
+			<Property51 Cookie="74" PropertyType="0" Value="TPanel" Type="5" />
+			<Property52 Cookie="75" PropertyType="0" Value="pnlLicenseSummary" Type="5" />
+			<Property53 Cookie="76" PropertyType="0" Value="TcxVerticalGrid" Type="5" />
+			<Property54 Cookie="77" PropertyType="0" Value="vgLicenseSummary" Type="5" />
+			<Property55 Cookie="78" PropertyType="0" Value="TcxTextEdit" Type="5" />
+			<Property56 Cookie="79" PropertyType="0" Value="1" Type="0" />
+			<Property57 Cookie="80" PropertyType="0" Value="TButton" Type="5" />
+			<Property58 Cookie="81" PropertyType="0" Value="btnLicenseApply" Type="5" />
+			<Property59 Cookie="82" PropertyType="0" Value="TPanel" Type="5" />
+			<Property60 Cookie="83" PropertyType="0" Value="pnlFooter" Type="5" />
+			<Property61 Cookie="84" PropertyType="0" Value="TButton" Type="5" />
+			<Property62 Cookie="85" PropertyType="0" Value="btnClose" Type="5" />
+			<Property63 Cookie="86" PropertyType="0" Value="TToadLicensingErrorForm" Type="5" />
+			<Property64 Cookie="89" PropertyType="0" Value="TfrmLogin" Type="5" />
+			<Property65 Cookie="90" PropertyType="0" Value="frmLogin" Type="5" />
+			<Property66 Cookie="91" PropertyType="0" Value="TfrmMain" Type="5" />
+			<Property67 Cookie="92" PropertyType="0" Value="frmMain" Type="5" />
+			<Property68 Cookie="93" PropertyType="0" Value="TAboutBox" Type="5" />
+			<Property69 Cookie="94" PropertyType="0" Value="AboutBox" Type="5" />
+			<Property70 Cookie="95" PropertyType="0" Value="TToadLabel" Type="5" />
+			<Property71 Cookie="96" PropertyType="0" Value="lblTitle" Type="5" />
+			<Property72 Cookie="97" PropertyType="0" Value="Quest SQL Optimizer for Oracle" Type="5" />
+			<Property73 Cookie="100" PropertyType="0" Value="BFactory" Type="5" />
+			<Property74 Cookie="103" PropertyType="0" Value="BMFRepositoryManager" Type="5" />
+			<Property75 Cookie="104" PropertyType="0" Value="#32770" Type="5" />
+			<Property76 Cookie="105" PropertyType="0" Value="Repository Manager" Type="5" />
+			<Property77 Cookie="106" PropertyType="0" Value="Button" Type="5" />
+			<Property78 Cookie="107" PropertyType="0" Value="OK" Type="5" />
+			<Property79 Cookie="110" PropertyType="0" Value="#32770" Type="5" />
+			<Property80 Cookie="111" PropertyType="0" Value="New Job Wizard" Type="5" />
+			<Property81 Cookie="116" PropertyType="0" Value="Static" Type="5" />
+			<Property82 Cookie="117" PropertyType="0" Value="2" Type="0" />
+			<Property83 Cookie="118" PropertyType="0" Value="Static" Type="5" />
+			<Property84 Cookie="119" PropertyType="0" Value="5" Type="0" />
+			<Property85 Cookie="120" PropertyType="0" Value="Spotlight" Type="5" />
+			<Property86 Cookie="121" PropertyType="0" Value="TfrmSpotlightShell" Type="5" />
+			<Property87 Cookie="122" PropertyType="0" Value="frmSpotlightShell" Type="5" />
+			<Property88 Cookie="123" PropertyType="0" Value="TfrmSpotlightAbout" Type="5" />
+			<Property89 Cookie="124" PropertyType="0" Value="frmSpotlightAbout" Type="5" />
+			<Property90 Cookie="125" PropertyType="0" Value="TDM" Type="5" />
+			<Property91 Cookie="126" PropertyType="0" Value="TFFirstRun1" Type="5" />
+			<Property92 Cookie="127" PropertyType="0" Value="TTntPanel" Type="5" />
+			<Property93 Cookie="128" PropertyType="0" Value="PaButton" Type="5" />
+			<Property94 Cookie="129" PropertyType="0" Value="TTntButton" Type="5" />
+			<Property95 Cookie="130" PropertyType="0" Value="BuOK" Type="5" />
+			<Property96 Cookie="131" PropertyType="0" Value="TFFirstRun2" Type="5" />
+			<Property97 Cookie="132" PropertyType="0" Value="TTntPanel" Type="5" />
+			<Property98 Cookie="133" PropertyType="0" Value="PaButtons" Type="5" />
+			<Property99 Cookie="134" PropertyType="0" Value="TTntButton" Type="5" />
+			<Property100 Cookie="135" PropertyType="0" Value="BtnOK" Type="5" />
+			<Property101 Cookie="136" PropertyType="0" Value="TFUsageDataOptions" Type="5" />
+			<Property102 Cookie="137" PropertyType="0" Value="FUsageDataOptions" Type="5" />
+			<Property103 Cookie="138" PropertyType="0" Value="User Experience Feedback" Type="5" />
+			<Property104 Cookie="141" PropertyType="0" Value="TFAbout" Type="5" />
+			<Property105 Cookie="142" PropertyType="0" Value="FAbout" Type="5" />
+			<Property106 Cookie="143" PropertyType="0" Value="TTntLabel" Type="5" />
+			<Property107 Cookie="144" PropertyType="0" Value="LaVersion" Type="5" />
+			<Property108 Cookie="145" PropertyType="0" Value="UpdateAvailableConfirmationForm" Type="5" />
+			<Property109 Cookie="146" PropertyType="0" Value="ConnectionForm" Type="5" />
+			<Property110 Cookie="147" PropertyType="0" Value="MainForm" Type="5" />
+			<Property111 Cookie="148" PropertyType="0" Value="BaseModalForm" Type="5" />
+			<Property112 Cookie="149" PropertyType="0" Value="ConfigurationWizard" Type="5" />
+			<Property113 Cookie="150" PropertyType="0" Value="AboutForm" Type="5" />
+			<Property114 Cookie="151" PropertyType="0" Value="Quest.BRT" Type="5" />
+			<Property115 Cookie="152" PropertyType="0" Value="MainForm" Type="5" />
+			<Property116 Cookie="153" PropertyType="0" Value="AboutDialog" Type="5" />
+			<Property117 Cookie="154" PropertyType="0" Value="buildLabel" Type="5" />
+			<Property118 Cookie="155" PropertyType="0" Value="btnAdd" Type="5" />
+			<Property119 Cookie="156" PropertyType="0" Value="btnModify" Type="5" />
+			<Property120 Cookie="157" PropertyType="0" Value="dgvKeys" Type="5" />
+			<Property121 Cookie="161" PropertyType="0" Value="System.Windows.Forms.Panel" Type="5" />
+			<Property122 Cookie="162" PropertyType="0" Value="" Type="5" />
+			<Property123 Cookie="163" PropertyType="0" Value="System.Windows.Forms.DataGridViewTextBoxEditingControl" Type="5" />
+			<Property124 Cookie="166" PropertyType="0" Value="ConsoleWindowClass" Type="5" />
+			<Property125 Cookie="167" PropertyType="0" Value="*" Type="5" />
+			<Property126 Cookie="168" PropertyType="0" Value="txtDirectory" Type="5" />
+			<Property127 Cookie="169" PropertyType="0" Value="MainForm" Type="5" />
+			<Property128 Cookie="170" PropertyType="0" Value="WinFormsObject(&apos;MainForm&apos;)" Type="5" />
+			<Property129 Cookie="171" PropertyType="0" Value="pnlNavigation" Type="5" />
+			<Property130 Cookie="172" PropertyType="0" Value="WinFormsObject(&apos;pnlNavigation&apos;)" Type="5" />
+			<Property131 Cookie="173" PropertyType="0" Value="btnCancel" Type="5" />
+			<Property132 Cookie="174" PropertyType="0" Value="WinFormsObject(&apos;btnCancel&apos;)" Type="5" />
+			<Property133 Cookie="175" PropertyType="0" Value="btnBack" Type="5" />
+			<Property134 Cookie="176" PropertyType="0" Value="WinFormsObject(&apos;btnBack&apos;)" Type="5" />
+			<Property135 Cookie="177" PropertyType="0" Value="btnNext" Type="5" />
+			<Property136 Cookie="178" PropertyType="0" Value="WinFormsObject(&apos;btnNext&apos;)" Type="5" />
+			<Property137 Cookie="179" PropertyType="0" Value="cmd" Type="5" />
+			<Property138 Cookie="180" PropertyType="0" Value="btnFolderBrowse" Type="5" />
+			<Property139 Cookie="181" PropertyType="0" Value="Button" Type="5" />
+			<Property140 Cookie="182" PropertyType="0" Value="OK" Type="5" />
+			<Property141 Cookie="183" PropertyType="0" Value="DellCodeTesterOracle" Type="5" />
+			<Property142 Cookie="184" PropertyType="0" Value="TfrmTestManager2" Type="5" />
+			<Property143 Cookie="185" PropertyType="0" Value="frmTestManager2" Type="5" />
+			<Property144 Cookie="186" PropertyType="0" Value="TfrmAbout" Type="5" />
+			<Property145 Cookie="187" PropertyType="0" Value="TcxLabel" Type="5" />
+			<Property146 Cookie="188" PropertyType="0" Value="lblFEVersion" Type="5" />
+			<Property147 Cookie="189" PropertyType="0" Value="TfrmUserExperienceFeedback" Type="5" />
+			<Property148 Cookie="190" PropertyType="0" Value="TfrmSpotlightFeedback" Type="5" />
+			<Property149 Cookie="191" PropertyType="0" Value="SysTreeView32" Type="5" />
+			<Property150 Cookie="192" PropertyType="0" Value="Cancel and Lose Selections?" Type="5" />
+			<Property151 Cookie="193" PropertyType="0" Value="Button" Type="5" />
+			<Property152 Cookie="194" PropertyType="0" Value="&amp;Yes" Type="5" />
+			<Property153 Cookie="195" PropertyType="0" Value="Button" Type="5" />
+			<Property154 Cookie="196" PropertyType="0" Value="&amp;No" Type="5" />
+			<Property155 Cookie="197" PropertyType="0" Value="TProjectLucyStartup" Type="5" />
+			<Property156 Cookie="198" PropertyType="0" Value="TFmLicenseTrialNotification" Type="5" />
+			<Property157 Cookie="199" PropertyType="0" Value="FmLicenseTrialNotification" Type="5" />
+			<Property158 Cookie="200" PropertyType="0" Value="Error" Type="5" />
+			<Property159 Cookie="201" PropertyType="0" Value="TConfirmNoNagDlg" Type="5" />
+			<Property160 Cookie="202" PropertyType="0" Value="lblValidationError" Type="5" />
+			<Property161 Cookie="203" PropertyType="0" Value="TTntMessageForm.UnicodeClass" Type="5" />
+			<Property162 Cookie="204" PropertyType="0" Value="Toad Data Modeler" Type="5" />
+			<Property163 Cookie="211" PropertyType="0" Value="Tf_Main" Type="5" />
+			<Property164 Cookie="212" PropertyType="0" Value="VCLObject(&apos;f_Main&apos;)" Type="5" />
+			<Property165 Cookie="213" PropertyType="0" Value="WinFormsObject(&apos;ImproveExperienceForm&apos;)" Type="5" />
+			<Property166 Cookie="214" PropertyType="0" Value="ImproveExperienceForm" Type="5" />
+			<Property167 Cookie="215" PropertyType="0" Value="WinFormsObject(&apos;frmUserExperience&apos;)" Type="5" />
+			<Property168 Cookie="216" PropertyType="0" Value="frmUserExperience" Type="5" />
+			<Property169 Cookie="217" PropertyType="0" Value="WinFormsObject(&apos;frmWelcomeWindow&apos;)" Type="5" />
+			<Property170 Cookie="218" PropertyType="0" Value="frmWelcomeWindow" Type="5" />
+			<Property171 Cookie="219" PropertyType="0" Value="VisualControlCenterClass" Type="5" />
+			<Property172 Cookie="220" PropertyType="0" Value="Benchmark Factory™*" Type="5" />
+			<Property173 Cookie="223" PropertyType="0" Value="#32770" Type="5" />
+			<Property174 Cookie="224" PropertyType="0" Value="About Benchmark Factory™*" Type="5" />
+			<Property175 Cookie="225" PropertyType="0" Value="#32770" Type="5" />
+			<Property176 Cookie="226" PropertyType="0" Value="About Benchmark Factory™*" Type="5" />
+			<Property177 Cookie="227" PropertyType="0" Value="Window(&apos;#32770&apos;, &apos;About Benchmark Factory™ - Trial&apos;, 1)" Type="5" />
+			<Property178 Cookie="228" PropertyType="0" Value="dgvProperties" Type="5" />
+			<Property179 Cookie="229" PropertyType="0" Value="WinFormsObject(&apos;frmMigrationVersionSelector&apos;)" Type="5" />
+			<Property180 Cookie="230" PropertyType="0" Value="Window(&apos;#32770&apos;, &apos;Copy User Settings&apos;, 1)" Type="5" />
+			<Property181 Cookie="231" PropertyType="0" Value="wbrDescription" Type="5" />
+			<Property182 Cookie="232" PropertyType="0" Value="WinFormsObject(&apos;llblHowTo&apos;)" Type="5" />
+			<Property183 Cookie="233" PropertyType="0" Value="lblCopyright1" Type="5" />
+			<Property184 Cookie="234" PropertyType="0" Value="lblCopyright2" Type="5" />
+			<Property185 Cookie="235" PropertyType="0" Value="ALL RIGHTS RESERVED" Type="5" />
+			<Property186 Cookie="236" PropertyType="0" Value="rtbAgreement" Type="5" />
+			<Property187 Cookie="237" PropertyType="0" Value="wbrIntro" Type="5" />
+			<Property188 Cookie="238" PropertyType="0" Value="CCopyUserSettingsDialog" Type="5" />
+			<Property189 Cookie="239" PropertyType="0" Value="Copy_User_Settings" Type="5" />
+			<Property190 Cookie="240" PropertyType="0" Value="Copy User Settings" Type="5" />
+			<Property191 Cookie="241" PropertyType="0" Value="Final" Type="5" />
+			<Property192 Cookie="242" PropertyType="0" Value="WinFormsObject(&apos;Final&apos;)" Type="5" />
+			<Property193 Cookie="243" PropertyType="0" Value="ProductInstallation" Type="5" />
+			<Property194 Cookie="244" PropertyType="0" Value="pnlBottom" Type="5" />
+			<Property195 Cookie="245" PropertyType="0" Value="lblTotalProgress" Type="5" />
+			<Property196 Cookie="246" PropertyType="0" Value="pnlBody" Type="5" />
+			<Property197 Cookie="247" PropertyType="0" Value="lblStatus" Type="5" />
+			<Property198 Cookie="248" PropertyType="0" Value="lblProduct" Type="5" />
+			<Property199 Cookie="251" PropertyType="0" Value="ProgressBar" Type="5" />
+			<Property200 Cookie="252" PropertyType="0" Value="True" Type="6" />
+			<Property201 Cookie="253" PropertyType="0" Value="WinFormsObject(&apos;lblRootDir&apos;)" Type="5" />
+			<Property202 Cookie="254" PropertyType="0" Value="TLabel" Type="5" />
+			<Property203 Cookie="255" PropertyType="0" Value="lblVersion" Type="5" />
+			<Property204 Cookie="258" PropertyType="0" Value="TfrmRWfromISConfirm" Type="5" />
+			<Property205 Cookie="259" PropertyType="0" Value="frmRWfromISConfirm" Type="5" />
+			<Property206 Cookie="260" PropertyType="0" Value="#32770" Type="5" />
+			<Property207 Cookie="261" PropertyType="0" Value="CUserExperienceDialog" Type="5" />
+			<Property208 Cookie="262" PropertyType="0" Value="TToadLabel" Type="5" />
+			<Property209 Cookie="263" PropertyType="0" Value="lblTitle" Type="5" />
+			<Property210 Cookie="264" PropertyType="0" Value="richTextBox1" Type="5" />
+			<Property211 Cookie="265" PropertyType="0" Value="ProductUninstallation" Type="5" />
+			<Property212 Cookie="266" PropertyType="0" Value="pnlBody" Type="5" />
+			<Property213 Cookie="267" PropertyType="0" Value="pnlBottom" Type="5" />
+			<Property214 Cookie="268" PropertyType="0" Value="lblProduct" Type="5" />
+			<Property215 Cookie="269" PropertyType="0" Value="lblStatus" Type="5" />
+			<Property216 Cookie="270" PropertyType="0" Value="pbrOverallExecute" Type="5" />
+			<Property217 Cookie="271" PropertyType="0" Value="lblTotalProgress" Type="5" />
+			<Property218 Cookie="272" PropertyType="0" Value="pnlBody" Type="5" />
+			<Property219 Cookie="273" PropertyType="0" Value="pbxAd" Type="5" />
+			<Property220 Cookie="274" PropertyType="0" Value="LicenseAgreement" Type="5" />
+			<Property221 Cookie="275" PropertyType="0" Value="WinFormsObject(&apos;LicenseAgreement&apos;)" Type="5" />
+			<Property222 Cookie="276" PropertyType="0" Value="RadioButton" Type="5" />
+			<Property223 Cookie="277" PropertyType="0" Value="WinFormsObject(&apos;radAccept&apos;)" Type="5" />
+			<Property224 Cookie="280" PropertyType="0" Value="Toad_for_Oracle_*" Type="5" />
+			<Property225 Cookie="281" PropertyType="0" Value="Process(&apos;Toad_for_Oracle_2015_*&apos;, 2)" Type="5" />
 		</Child0>
 	</Storages>
 	<TypeInfo StoreCodeCompletion="1">
