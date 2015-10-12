@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<Root Signature="{5DCBAC3B-D39C-497C-9BE8-744CBADD37AA}" NameMappingVersion="4" Cookie="326">
+<Root Signature="{5DCBAC3B-D39C-497C-9BE8-744CBADD37AA}" NameMappingVersion="4" Cookie="328">
 	<Nodes Name="NameMapping" Key="{BE401E45-B2D6-4FBA-931A-C2117D5C51AD}">
 		<Properties />
 		<Children>
@@ -677,8 +677,8 @@
 							</Child1>
 							<Child2 Name="ToadClientNotFoundError" Key="{506FD460-798E-40C1-B0ED-2F6D102C187E}">
 								<Properties>
-									<Property0 Name="WndClass" Cookie="311" />
-									<Property1 Name="ObjectType" Cookie="312" />
+									<Property0 Name="ObjectType" Cookie="326" />
+									<Property1 Name="Index" Cookie="327" />
 								</Properties>
 								<Children />
 								<TypeInfo Item0="14" />
@@ -1727,21 +1727,21 @@
 			<Property241 Cookie="308" PropertyType="0" Value="WinFormsObject(&apos;buildLabel&apos;)" Type="5" />
 			<Property242 Cookie="309" PropertyType="0" Value="LabelControl" Type="5" />
 			<Property243 Cookie="310" PropertyType="0" Value="frmCheckForUpdates" Type="5" />
-			<Property244 Cookie="311" PropertyType="0" Value="#32770" Type="5" />
-			<Property245 Cookie="312" PropertyType="0" Value="Dialog" Type="5" />
-			<Property246 Cookie="313" PropertyType="0" Value="frmMain" Type="5" />
-			<Property247 Cookie="314" PropertyType="0" Value="ucMainAllModules1" Type="5" />
-			<Property248 Cookie="315" PropertyType="0" Value="ucMainTabsT" Type="5" />
-			<Property249 Cookie="316" PropertyType="0" Value="pnlTop" Type="5" />
-			<Property250 Cookie="317" PropertyType="0" Value="tlpBar" Type="5" />
-			<Property251 Cookie="318" PropertyType="0" Value="btnHelp" Type="5" />
-			<Property252 Cookie="319" PropertyType="0" Value="ucMainModulesT" Type="5" />
-			<Property253 Cookie="320" PropertyType="0" Value="panelSQLLab" Type="5" />
-			<Property254 Cookie="321" PropertyType="0" Value="ucLabBaseUI" Type="5" />
-			<Property255 Cookie="322" PropertyType="0" Value="FSQLLabMainMidUI" Type="5" />
-			<Property256 Cookie="323" PropertyType="0" Value="ucTunOptDefaultMidUI1" Type="5" />
-			<Property257 Cookie="324" PropertyType="0" Value="ucSQLLabDesc1" Type="5" />
-			<Property258 Cookie="325" PropertyType="0" Value="baseTableLayoutPanel2" Type="5" />
+			<Property244 Cookie="313" PropertyType="0" Value="frmMain" Type="5" />
+			<Property245 Cookie="314" PropertyType="0" Value="ucMainAllModules1" Type="5" />
+			<Property246 Cookie="315" PropertyType="0" Value="ucMainTabsT" Type="5" />
+			<Property247 Cookie="316" PropertyType="0" Value="pnlTop" Type="5" />
+			<Property248 Cookie="317" PropertyType="0" Value="tlpBar" Type="5" />
+			<Property249 Cookie="318" PropertyType="0" Value="btnHelp" Type="5" />
+			<Property250 Cookie="319" PropertyType="0" Value="ucMainModulesT" Type="5" />
+			<Property251 Cookie="320" PropertyType="0" Value="panelSQLLab" Type="5" />
+			<Property252 Cookie="321" PropertyType="0" Value="ucLabBaseUI" Type="5" />
+			<Property253 Cookie="322" PropertyType="0" Value="FSQLLabMainMidUI" Type="5" />
+			<Property254 Cookie="323" PropertyType="0" Value="ucTunOptDefaultMidUI1" Type="5" />
+			<Property255 Cookie="324" PropertyType="0" Value="ucSQLLabDesc1" Type="5" />
+			<Property256 Cookie="325" PropertyType="0" Value="baseTableLayoutPanel2" Type="5" />
+			<Property257 Cookie="326" PropertyType="0" Value="Dialog" Type="5" />
+			<Property258 Cookie="327" PropertyType="0" Value="1" Type="0" />
 		</Child0>
 	</Storages>
 	<TypeInfo StoreCodeCompletion="1">
