@@ -222,7 +222,34 @@
 		<echo message="TEConfigResultCode: ${TEConfigResultCode}" />
 		<echo message="===================TEConfigOutput==========================" />
 	</target>
+	
+	<target name="SilentInstallTestExecute">
+	
+		<property name="TestExecute.dir" 	value="TestExecute1040" />
+		<copy todir="C:/Components/TestExecute">
+			<fileset dir="${EnvComponents.dir}\TestExecute\${TestExecute.dir}"/>
+		</copy>
 		
+		<exec executable="${TestVM.AntUtilities.dir}/SilentInstallTestExecute.bat"
+					failonerror="true" timeout="3600000" outputproperty="TEOutput" errorproperty="TEErrorMsg"
+			resultproperty="TEResultCode">
+		</exec>
+		<echo message="===================TEOutput==========================" />
+		<echo message="${TEOutput}" />
+		<echo message="${TEErrorMsg}" />
+		<echo message="TEResultCode: ${TEResultCode}" />
+		<echo message="===================TEOutput==========================" />
+		<exec executable="${TestVM.AntUtilities.dir}/HASPConfig.bat" 
+					failonerror="true" timeout="3600000" outputproperty="TEConfigOutput" errorproperty="TEConfigErrorMsg"
+			resultproperty="TEConfigResultCode">
+		</exec>
+		<echo message="===================TEConfigOutput==========================" />
+		<echo message="${TEConfigOutput}" />
+		<echo message="${TEConfigErrorMsg}" />
+		<echo message="TEConfigResultCode: ${TEConfigResultCode}" />
+		<echo message="===================TEConfigOutput==========================" />
+	</target>
+	
 	<!-- ================Components End================== -->
 	
 </project>
