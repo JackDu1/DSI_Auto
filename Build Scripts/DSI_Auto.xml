@@ -225,7 +225,7 @@
 	
 	<target name="SilentInstallTestExecute">
 	
-		<property name="TestExecute.dir" 	value="TestExecute1040" />
+		<!--<property name="TestExecute.dir" 	value="TestExecute931" />-->
 		<copy todir="C:/Components/TestExecute">
 			<fileset dir="${EnvComponents.dir}\TestExecute\${TestExecute.dir}"/>
 		</copy>
