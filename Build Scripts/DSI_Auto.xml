@@ -179,53 +179,7 @@
 	
 	<!-- ===============Components Begin================= -->
 	<target name="TestExecute">
-		<if>
-			<equals arg1="${SkytapSwarmNode}" arg2="cleanauto764_te9" />
-			<then>
-				<property name="TestExecute.dir" 	value="TestExecute930" />
-				<property name="TestExecute.config" value="setup930.iss" />
-			</then>
-			<elseif>
-				<equals arg1="${SkytapSwarmNode}" arg2="cleanauto732_te9" />
-				<then>
-				<property name="TestExecute.dir" 	value="TestExecute930" />
-				<property name="TestExecute.config" value="setup930.iss" />
-				</then>
-			</elseif>
-			<else>
-				<property name="TestExecute.dir" 	value="TestExecute1040" />
-				<property name="TestExecute.config" value="setup1040.iss" />
-			</else>
-		</if>
-		<copy todir="C:/Components/TestExecute">
-			<fileset dir="${EnvComponents.dir}\TestExecute\${TestExecute.dir}"/>
-		</copy>
-		<copy file="${TestVM.AntUtilities.dir}/${TestExecute.config}" tofile="C:/Components/TestExecute/setup.iss"/>
-		
-		
-		<exec executable="${TestVM.AntUtilities.dir}/InstallTestExecute.bat"
-					failonerror="true" timeout="3600000" outputproperty="TEOutput" errorproperty="TEErrorMsg"
-			resultproperty="TEResultCode">
-		</exec>
-		<echo message="===================TEOutput==========================" />
-		<echo message="${TEOutput}" />
-		<echo message="${TEErrorMsg}" />
-		<echo message="TEResultCode: ${TEResultCode}" />
-		<echo message="===================TEOutput==========================" />
-		<exec executable="${TestVM.AntUtilities.dir}/HASPConfig.bat" 
-					failonerror="true" timeout="3600000" outputproperty="TEConfigOutput" errorproperty="TEConfigErrorMsg"
-			resultproperty="TEConfigResultCode">
-		</exec>
-		<echo message="===================TEConfigOutput==========================" />
-		<echo message="${TEConfigOutput}" />
-		<echo message="${TEConfigErrorMsg}" />
-		<echo message="TEConfigResultCode: ${TEConfigResultCode}" />
-		<echo message="===================TEConfigOutput==========================" />
-	</target>
 	
-	<target name="SilentInstallTestExecute">
-	
-		<!--<property name="TestExecute.dir" 	value="TestExecute931" />-->
 		<copy todir="C:/Components/TestExecute">
 			<fileset dir="${EnvComponents.dir}\TestExecute\${TestExecute.dir}"/>
 		</copy>
