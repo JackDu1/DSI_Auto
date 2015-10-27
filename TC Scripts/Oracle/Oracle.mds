@@ -97,9 +97,6 @@
 			<Node name="script\visualizer\dsi_sd\dsi.sd.tcvis">
 				<Prp name="relpath" type="S" value="Script\Visualizer\DSI_sd\DSI.sd.tcVis"/>
 			</Node>
-			<Node name="script\visualizer\finishproducts_sd\finishproducts.sd.tcvis">
-				<Prp name="relpath" type="S" value="Script\Visualizer\FinishProducts_sd\FinishProducts.sd.tcVis"/>
-			</Node>
 			<Node name="script\xmlunit.sd">
 				<Prp name="relpath" type="S" value="Script\XMLUnit.sd"/>
 			</Node>
