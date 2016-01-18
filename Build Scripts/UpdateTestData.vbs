@@ -1578,9 +1578,9 @@ Class UpdateSQLServerSuite
 		else
 			select case StrProduct
 				case "BENCHMARKFACTORY_X86_EN"
-					StrProduct="Benchmark Factory_ for Databases"
+					StrProduct="Benchmark Factory_ for Databases%"
 				case "BENCHMARKFACTORY_TRIAL_X86_EN"
-					StrProduct="Benchmark Factory_ for Databases Trial"
+					StrProduct="Benchmark Factory_ for Databases Trial%"
 			end select	
 		end if
 		'Update I_Version Column
@@ -1601,7 +1601,7 @@ Class UpdateSQLServerSuite
 		regEx.Global	=	True
 		StrColFolder 	= 	regEx.Replace(StrColFolder,StrVer)
 		
-		Conn.Execute "Update DSI.dbo.DSI_SQLServer_FinishInstall_BMF set  I_InstallFolder =" + "'" + StrColFolder + "'" + " where Projectid = 2 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like '" + StrProduct + "'"
+		Conn.Execute "Update DSI.dbo.DSI_SQLServer_FinishInstall_BMF set  I_InstallFolder =" + "'" + StrColFolder + "'" + " where Projectid = 4 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like '" + StrProduct + "'"
 		
 		'Update I_DisplayVersion Column Record
 		Query		= 	"Select I_DisplayVersion from DSI.dbo.DSI_SQLServer_FinishInstall_BMF where Projectid = 4 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
