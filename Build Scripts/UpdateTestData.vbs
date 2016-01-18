@@ -1845,6 +1845,7 @@ Class UpdateSQLServerSuite
 			end select
 		end if
 		'Update I_Version Column
+		wscript.echo("The product name [" + StrProduct + "], the version [" + StrVersion + "]")
 		Conn.Execute "Update DSI.dbo.DSI_SQLServer_VerifyRegistry set  I_ProductVersion =" + "'" + StrVersion + "'" + " where Projectid = 4 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_InstallerDisplayProductName) like '" + StrProduct + "'"
 		
 		'Update I_ProductName Column
@@ -1883,7 +1884,7 @@ Class UpdateSQLServerSuite
 	End Sub
 	
 	'==============================DSI_SQLServer_VerifyProductDetails========================================
-	Sub Update_DSI_SQLServer_ProductSelectionPage_VerifyProductDetails(ByVal StrProduct,ByVal StrVersion)
+	Sub Update_DSI_SQLServer_VerifyProductDetails(ByVal StrProduct,ByVal StrVersion)
 		
 		on error resume next
 		
@@ -1912,7 +1913,7 @@ Class UpdateSQLServerSuite
 			end select
 		end if
 		
-		Conn.Execute "Update DSI.dbo.DSI_SQLServer_VerifyProductDetails set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 4 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
+		Conn.Execute "Update DSI.dbo.DSI_SQLServer_VerifyProductDetail set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 4 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
 		
 		if Err.Number <> 0 then
 			Err.Clear
@@ -1990,7 +1991,7 @@ End Class
 
 Sub UpdateTestData()
 
-	on error resume next
+	'on error resume next
 
 	Dim XMLDoc,FSO,regEx
 	Dim ErrorMsg,i
@@ -2148,9 +2149,9 @@ Sub UpdateTestData()
 							Call NewSQLServerSuite.Update_DSI_SQLServer_FinishInstall_ToadDataModeler(ProductName,ProductVersion)
 					End Select
 					'Update Product Details table data
-					Call NewSQLServerSuite.Update_DSI_SQLServer_ProductSelectionPage_VerifyProductDetails(ProductName,ProductVersion)
-					'Update Verify Reistry table data
 					Call NewSQLServerSuite.Update_DSI_SQLServer_VerifyProductDetails(ProductName,ProductVersion)
+					'Update Verify Reistry table data
+					Call NewSQLServerSuite.Update_DSI_SQLServer_VerifyRegistry(ProductName,ProductVersion)
 					'Update Silent Install table data
 					Call NewSQLServerSuite.Update_SQLServer_SilentInstallMsiBuild(ProductName,ProductVersion)
 			end Select
