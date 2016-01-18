@@ -1845,7 +1845,7 @@ Class UpdateSQLServerSuite
 			end select
 		end if
 		'Update I_Version Column
-		wscript.echo("The product name [" + StrProduct + "], the version [" + StrVersion + "]")
+		'wscript.echo("The product name [" + StrProduct + "], the version [" + StrVersion + "]")
 		Conn.Execute "Update DSI.dbo.DSI_SQLServer_VerifyRegistry set  I_ProductVersion =" + "'" + StrVersion + "'" + " where Projectid = 4 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_InstallerDisplayProductName) like '" + StrProduct + "'"
 		
 		'Update I_ProductName Column
@@ -1991,7 +1991,7 @@ End Class
 
 Sub UpdateTestData()
 
-	'on error resume next
+	on error resume next
 
 	Dim XMLDoc,FSO,regEx
 	Dim ErrorMsg,i
