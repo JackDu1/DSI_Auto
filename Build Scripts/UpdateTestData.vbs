@@ -1578,18 +1578,18 @@ Class UpdateSQLServerSuite
 		else
 			select case StrProduct
 				case "BENCHMARKFACTORY_X86_EN"
-					StrProduct="Benchmark Factory_ for Databases"
+					StrProduct="BENCHMARK FACTORY_ FOR DATABASES"
 				case "BENCHMARKFACTORY_TRIAL_X86_EN"
-					StrProduct="Benchmark Factory_ for Databases Trial"
+					StrProduct="BENCHMARK FACTORY_ FOR DATABASES TRIAL"
 			end select	
 		end if
 		
 		'Update I_Version Column
-		Conn.Execute "Update DSI.dbo.DSI_SQLServer_FinishInstall_BMF set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 4 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like '" + StrProduct + "'"
+		Conn.Execute "Update DSI.dbo.DSI_SQLServer_FinishInstall_BMF set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 4 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
 		
 		'Update I_InstallFolder Column Record
 		Set Rec		=	CreateObject("ADODB.Recordset")
-		Query		= 	"Select I_InstallFolder from DSI.dbo.DSI_SQLServer_FinishInstall_BMF where Projectid = 4 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like '" + StrProduct + "'"
+		Query		= 	"Select I_InstallFolder from DSI.dbo.DSI_SQLServer_FinishInstall_BMF where Projectid = 4 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
 		Set Rec		=	Conn.Execute(Query)
 		While not Rec.EOF
 			StrColFolder=Rec.Fields("I_InstallFolder").Value
