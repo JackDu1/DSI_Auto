@@ -1565,8 +1565,8 @@ End Class
 
 Class UpdateSQLServerSuite
 
-	'==============================DSI_DSI_FinishInstall_BMF========================================
-	Sub Update_DSI_FinishInstall_BMF(ByVal StrProduct,ByVal StrVersion)
+	'==============================DSI_SQLServer _FinishInstall_BMF========================================
+	Sub Update_DSI_SQLServer_FinishInstall_BMF(ByVal StrProduct,ByVal StrVersion)
 
 		Dim StrColFolder,StrMainVer,Query,StrVer
 		on error resume next
@@ -1577,22 +1577,18 @@ Class UpdateSQLServerSuite
 			wscript.quit 100
 		else
 			select case StrProduct
-				case "BENCHMARKFACTORY_X64_EN"
-					StrProduct="64-bit"
 				case "BENCHMARKFACTORY_X86_EN"
-					StrProduct="32-bit"
+					StrProduct="Benchmark Factory_ for Databases%"
 				case "BENCHMARKFACTORY_TRIAL_X86_EN"
-					StrProduct="32-bit Trial"
-				case "BENCHMARKFACTORY_TRIAL_X64_EN"
-					StrProduct="64-bit Trial"
+					StrProduct="Benchmark Factory_ for Databases Trial%"
 			end select	
 		end if
 		'Update I_Version Column
-		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_BMF set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 4 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Benchmark Factory%" + StrProduct +"'"
+		Conn.Execute "Update DSI.dbo.DSI_SQLServer_FinishInstall_BMF set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 4 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like '" + StrProduct + "'"
 		
 		'Update I_InstallFolder Column Record
 		Set Rec		=	CreateObject("ADODB.Recordset")
-		Query		= 	"Select I_InstallFolder from DSI.dbo.DSI_DB2_ToadDataModeler where Projectid = 2 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Toad% Data Modeler'"
+		Query		= 	"Select I_InstallFolder from DSI.dbo.DSI_SQLServer_FinishInstall_BMF where Projectid = 4 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like '" + StrProduct + "'"
 		Set Rec		=	Conn.Execute(Query)
 		While not Rec.EOF
 			StrColFolder=Rec.Fields("I_InstallFolder").Value
@@ -1600,12 +1596,31 @@ Class UpdateSQLServerSuite
 		Wend
 		
 		StrMainVer 	= 	Split(StrVersion,".")
-		StrVer 		= 	StrMainVer(0) + "." + StrMainVer(1)
+		StrVer 		= 	StrMainVer(0) + "." + StrMainVer(1) + "." + StrMainVer(2)
 		regEx.Pattern 	= 	"\d+(\.\d+)+"
 		regEx.Global	=	True
 		StrColFolder 	= 	regEx.Replace(StrColFolder,StrVer)
 		
-		Conn.Execute "Update DSI.dbo.DSI_DB2_ToadDataModeler set  I_InstallFolder =" + "'" + StrColFolder + "'" + " where Projectid = 2 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Toad% Data Modeler'"
+		Conn.Execute "Update DSI.dbo.DSI_SQLServer_FinishInstall_BMF set  I_InstallFolder =" + "'" + StrColFolder + "'" + " where Projectid = 4 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like '" + StrProduct + "'"
+		
+		'Update I_DisplayVersion Column Record
+		Query		= 	"Select I_DisplayVersion from DSI.dbo.DSI_SQLServer_FinishInstall_BMF where Projectid = 4 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
+		Set Rec		=	Conn.Execute(Query)
+		While not Rec.EOF
+			StrColDisplay	=	Rec.Fields("I_DisplayVersion").Value
+			Rec.MoveNext
+		Wend
+		StrMainVer 	= 	Split(StrVersion,".")
+		StrVer 		= 	StrMainVer(0) + "." + StrMainVer(1) + "." + StrMainVer(3)
+		if InStr(StrColDisplay,"32-bit") >= 3 then
+			StrColDisplay	=	StrMainVer(0) + "." + StrMainVer(1) + " (32-bit)" + "." + StrMainVer(3)
+		elseif InStr(StrColDisplay,"64-bit") >= 3  then
+			StrColDisplay	=	StrMainVer(0) + "." + StrMainVer(1) + " (64-bit)" + "." + StrMainVer(3)
+		else
+			StrColDisplay 	= 	StrMainVer(0) + "." + StrMainVer(1) + "." + StrMainVer(3)
+		end if
+		
+		Conn.Execute "Update DSI.dbo.DSI_SQLServer_FinishInstall_BMF set  I_DisplayVersion =" + "'" + StrColDisplay + "'" + " where Projectid = 4 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
 		
 		Rec.Close
 		Set Rec	= Nothing
@@ -1617,8 +1632,8 @@ Class UpdateSQLServerSuite
 	End Sub
 
 
-	'==============================DSI_FinishInstall_ToadDataModeler========================================
-	Sub Update_DSI_FinishInstall_ToadDataModeler(ByVal StrProduct,ByVal StrVersion)
+	'==============================DSI_SQLServer_FinishInstall_ToadDataModeler========================================
+	Sub Update_DSI_SQLServer_FinishInstall_ToadDataModeler(ByVal StrProduct,ByVal StrVersion)
 
 		Dim StrColFolder,StrMainVer,Query,StrVer
 		on error resume next
@@ -1627,20 +1642,14 @@ Class UpdateSQLServerSuite
 		
 		if IsEmpty(StrProduct) then
 			wscript.quit 100
-		else
-			select case StrProduct
-				case "TOADDATAMODELER_X86_EN"
-					StrProduct="32-bit"
-				case "TOADDATAMODELER_X64_EN"
-					StrProduct="64-bit"
-			end select	
 		end if
+		
 		'Update I_Version Column
-		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_ToadDataModeler set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 4 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Toad% Data Modeler'"
+		Conn.Execute "Update DSI.dbo.DSI_SQLServer_FinishInstall_ToadDataModeler set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 4 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Toad% Data Modeler'"
 		
 		'Update I_InstallFolder Column Record
 		Set Rec		=	CreateObject("ADODB.Recordset")
-		Query		= 	"Select I_InstallFolder from DSI.dbo.DSI_DB2_ToadDataModeler where Projectid = 2 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Toad% Data Modeler'"
+		Query		= 	"Select I_InstallFolder from DSI.dbo.DSI_SQLServer_FinishInstall_ToadDataModeler where Projectid = 4 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Toad% Data Modeler'"
 		Set Rec		=	Conn.Execute(Query)
 		While not Rec.EOF
 			StrColFolder=Rec.Fields("I_InstallFolder").Value
@@ -1653,7 +1662,319 @@ Class UpdateSQLServerSuite
 		regEx.Global	=	True
 		StrColFolder 	= 	regEx.Replace(StrColFolder,StrVer)
 		
-		Conn.Execute "Update DSI.dbo.DSI_DB2_ToadDataModeler set  I_InstallFolder =" + "'" + StrColFolder + "'" + " where Projectid = 2 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Toad% Data Modeler'"
+		Conn.Execute "Update DSI.dbo.DSI_SQLServer_FinishInstall_ToadDataModeler set  I_InstallFolder =" + "'" + StrColFolder + "'" + " where Projectid = 4 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Toad% Data Modeler'"
+		
+		Rec.Close
+		Set Rec	= Nothing
+		
+		if Err.Number <> 0 then
+			Err.Clear
+		end if
+
+	End Sub
+	
+	'==============================DSI_FinishInstall_SoSSE========================================
+	Sub Update_DSI_FinishInstall_SoSSE(ByVal StrProduct,ByVal StrVersion)
+
+		Dim StrColFolder,StrMainVer,Query,StrVer
+		on error resume next
+		
+		Set regEx = New RegExp
+		
+		if IsEmpty(StrProduct) then
+			wscript.quit 100
+		end if
+		
+		'Update I_Version Column
+		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_SoSSE set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 4 and UPPER(I_AutoUpdate) = 'TRUE' and Upper(I_ProductName) like 'SPOTLIGHT_ ON SQL SERVER STANDARD'"
+		
+		'Update I_SubFolder Column Record
+		Set Rec		=	CreateObject("ADODB.Recordset")
+		Query		= 	"Select I_InstallFolder from DSI.dbo.DSI_FinishInstall_SoSSE where Projectid = 4 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like 'SPOTLIGHT_ ON SQL SERVER STANDARD'"
+		Set Rec		=	Conn.Execute(Query)
+		While not Rec.EOF
+			StrColFolder=Rec.Fields("I_InstallFolder").Value
+			Rec.MoveNext
+		Wend
+		
+		StrMainVer 	= 	Split(StrVersion,".")
+		StrVer 		= 	StrMainVer(0) + "." + StrMainVer(1)
+		regEx.Pattern 	= 	"\d+(\.\d+)+"
+		regEx.Global	=	True
+		StrColFolder 	= 	regEx.Replace(StrColFolder,StrVer)
+		
+		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_SoSSE set  I_InstallFolder =" + "'" + StrColFolder + "'" + " where Projectid = 4 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like 'SPOTLIGHT_ ON SQL SERVER STANDARD'"
+		
+		Rec.Close
+		Set Rec	= Nothing
+		
+		if Err.Number <> 0 then
+			Err.Clear
+		end if
+
+	End Sub
+	
+	'==============================DSI_FinishInstall_QSOSS========================================
+	Sub Update_DSI_FinishInstall_QSOSS(ByVal StrProduct,ByVal StrVersion)
+
+		Dim StrColFolder,StrMainVer,Query,StrVer
+		on error resume next
+		
+		Set regEx = New RegExp
+		
+		if IsEmpty(StrProduct) then
+			wscript.quit 100	
+		else
+			select case UCase(StrProduct)
+				case "SQLOPTIMIZERFORSQLSERVER_X86_EN"
+					StrProduct="DELL% SQL OPTIMIZER FOR SQL SERVER"
+				case "SQLOPTIMIZERFORSQLSERVER_TRIAL_X86_EN"
+					StrProduct="DELL% SQL OPTIMIZER FOR SQL SERVER TRIAL"
+			end select
+		end if
+		
+		'Update I_Version Column
+		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_QSOSS set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 4 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
+		
+		'Update I_SubFolder Column Record
+		Set Rec		=	CreateObject("ADODB.Recordset")
+		Query		= 	"Select I_InstallFolder from DSI.dbo.DSI_FinishInstall_QSOSS where Projectid = 4 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
+		Set Rec		=	Conn.Execute(Query)
+		While not Rec.EOF
+			StrColFolder=Rec.Fields("I_InstallFolder").Value
+			Rec.MoveNext
+		Wend
+		
+		StrMainVer 	= 	Split(StrVersion,".")
+		StrVer 		= 	StrMainVer(0) + "." + StrMainVer(1) + "." + StrMainVer(2)
+		regEx.Pattern 	= 	"\d+(\.\d+)+"
+		regEx.Global	=	True
+		StrColFolder 	= 	regEx.Replace(StrColFolder,StrVer)
+		
+		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_QSOSS set  I_InstallFolder =" + "'" + StrColFolder + "'" + " where Projectid = 4 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
+		
+		Rec.Close
+		Set Rec	= Nothing
+		
+		if Err.Number <> 0 then
+			Err.Clear
+		end if
+
+	End Sub
+	
+	'==============================DSI_FinishInstall_ToadforSQLServer========================================
+	Sub Update_DSI_FinishInstall_ToadforSQLServer(ByVal StrProduct,ByVal StrVersion)
+
+		Dim StrColFolder,StrMainVer,Query,StrVer
+		on error resume next
+		
+		Set regEx = New RegExp
+		
+		if IsEmpty(StrProduct) then
+			wscript.quit 100
+		else
+			select case UCase(StrProduct)
+				case "TOADFORSQLSERVER_X86_EN"
+					StrProduct="TOAD_ FOR SQL SERVER"
+				case "TOADFORSQLSERVER_TRIAL_X86_EN"
+					StrProduct="TOAD_ FOR SQL SERVER TRIAL"
+			end select	
+		end if
+		
+		'Update I_Version Column
+		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_ToadforSQLServer set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 4 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct +"'"
+		
+		'Update I_InstallFolder Column Record
+		Set Rec		=	CreateObject("ADODB.Recordset")
+		Query		= 	"Select I_InstallFolder from DSI.dbo.DSI_FinishInstall_ToadforSQLServer where Projectid = 4 and UPPER(I_AutoUpdate) = 'TRUE' and Upper(I_ProductName) like '" + StrProduct + "'"
+		Set Rec		=	Conn.Execute(Query)
+		While not Rec.EOF
+			StrColFolder=Rec.Fields("I_InstallFolder").Value
+			Rec.MoveNext
+		Wend
+		
+		StrMainVer 	= 	Split(StrVersion,".")
+		StrVer 		= 	StrMainVer(0) + "." + StrMainVer(1)
+		regEx.Pattern 	= 	"\d+(\.\d+)+"
+		regEx.Global	=	True
+		StrColFolder 	= 	regEx.Replace(StrColFolder,StrVer)
+		
+		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_ToadforSQLServer set  I_InstallFolder =" + "'" + StrColFolder + "'" + " where Projectid = 4 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" +  StrProduct + "'"
+		
+		Rec.Close
+		Set Rec	= Nothing
+		
+		if Err.Number <> 0 then
+			Err.Clear
+		end if
+
+	End Sub
+	
+	'==============================DSI_SQLServer_VerifyRegistry========================================
+	Sub Update_DSI_SQLServer_VerifyRegistry(ByVal StrProduct,ByVal StrVersion)
+		
+		Dim StrColName,StrMainVer,Query,StrVer
+		Dim Matches,match,RetStr
+		
+		On error resume next
+		
+		Set regEx = New RegExp
+		
+		if IsEmpty(StrProduct) then
+			wscript.quit 100
+		else
+			select case UCase(StrProduct)
+				case "TOADFORSQLSERVER_X86_EN"
+					StrProduct="TOAD_ FOR SQL SERVER"
+				case "TOADFORSQLSERVER_TRIAL_X86_EN"
+					StrProduct="TOAD_ FOR SQL SERVER TRIAL"
+				case "TOADDATAMODELER_X86_EN"
+					StrProduct="TOAD_ DATA MODELER"
+				case "SPOTLIGHTONSQLSERVER_STANDARD_X86_EN"
+					StrProduct="SPOTLIGHT_ ON SQL SERVER STANDARD"
+				case "BENCHMARKFACTORY_X86_EN"
+					StrProduct="BENCHMARK FACTORY_ FOR DATABASES"
+				case "BENCHMARKFACTORY_TRIAL_X86_EN"
+					StrProduct="BENCHMARK FACTORY_ FOR DATABASES TRIAL"
+				case "SQLOPTIMIZERFORSQLSERVER_X86_EN"
+					StrProduct="Dell_ SQL OPTIMIZER FOR SQL SERVER"
+				case "SQLOPTIMIZERFORSQLSERVER_TRIAL_X86_EN"
+					StrProduct="Dell_ SQL OPTIMIZER FOR SQL SERVER TRIAL"
+				case else
+					StrProduct="Null"
+			end select
+		end if
+		'Update I_Version Column
+		'wscript.echo("The product name [" + StrProduct + "], the version [" + StrVersion + "]")
+		Conn.Execute "Update DSI.dbo.DSI_SQLServer_VerifyRegistry set  I_ProductVersion =" + "'" + StrVersion + "'" + " where Projectid = 4 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_InstallerDisplayProductName) like '" + StrProduct + "'"
+		
+		'Update I_ProductName Column
+		Set Rec		=	CreateObject("ADODB.Recordset")
+		Query		= 	"Select I_ProductName from DSI.dbo.DSI_SQLServer_VerifyRegistry where Projectid = 4 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_InstallerDisplayProductName) like '" + StrProduct + "'"
+		Set Rec		=	Conn.Execute(Query)
+		While not Rec.EOF
+			StrColName=Rec.Fields("I_ProductName").Value
+			Rec.MoveNext
+		Wend
+		StrMainVer 	= 	Split(StrVersion,".")
+		if InStr(StrColName,"Benchmark Factory") >=	1 then
+			StrVer 	= 	StrMainVer(0) + "." + StrMainVer(1) + "." + StrMainVer(2)
+		else
+			StrVer 	= 	StrMainVer(0) + "." + StrMainVer(1)
+		end if
+		
+		regEx.Pattern 	= 	"\d+(\.\d+)+"
+		regEx.Global	=	True
+		Set Matches		=	RegEx.Execute(StrColName)
+		For each match in matches
+			RetStr		=	Match.Value
+		Next
+		if RetStr <> "" then
+			StrColName 	= 	regEx.Replace(StrColName,StrVer)
+			Conn.Execute "Update DSI.dbo.DSI_SQLServer_VerifyRegistry set  I_ProductName =" + "'" + StrColName + "'" + " where Projectid = 4 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_InstallerDisplayProductName) like '" + StrProduct + "'"
+		end if
+		
+		Rec.Close
+		Set Rec	= Nothing
+		
+		if Err.Number <> 0 then
+			Err.Clear
+		end if
+
+	End Sub
+	
+	'==============================DSI_SQLServer_VerifyProductDetails========================================
+	Sub Update_DSI_SQLServer_VerifyProductDetails(ByVal StrProduct,ByVal StrVersion)
+		
+		on error resume next
+		
+		if IsEmpty(StrProduct) then
+			wscript.quit 100
+		else
+			select case UCase(StrProduct)
+				case "TOADFORSQLSERVER_X86_EN"
+					StrProduct="TOAD_ FOR SQL SERVER"
+				case "TOADFORSQLSERVER_TRIAL_X86_EN"
+					StrProduct="TOAD_ FOR SQL SERVER TRIAL"
+				case "TOADDATAMODELER_X86_EN"
+					StrProduct="TOAD_ DATA MODELER"
+				case "SPOTLIGHTONSQLSERVER_STANDARD_X86_EN"
+					StrProduct="SPOTLIGHT_ ON SQL SERVER STANDARD"
+				case "BENCHMARKFACTORY_X86_EN"
+					StrProduct="BENCHMARK FACTORY_ FOR DATABASES"
+				case "BENCHMARKFACTORY_TRIAL_X86_EN"
+					StrProduct="BENCHMARK FACTORY_ FOR DATABASES TRIAL"
+				case "SQLOPTIMIZERFORSQLSERVER_X86_EN"
+					StrProduct="Dell_ SQL OPTIMIZER FOR SQL SERVER"
+				case "SQLOPTIMIZERFORSQLSERVER_TRIAL_X86_EN"
+					StrProduct="Dell_ SQL OPTIMIZER FOR SQL SERVER TRIAL"
+				case else
+					StrProduct="Null"
+			end select
+		end if
+		
+		Conn.Execute "Update DSI.dbo.DSI_SQLServer_VerifyProductDetail set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 4 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
+		
+		if Err.Number <> 0 then
+			Err.Clear
+		end if
+
+	End Sub
+	
+	'==============================SQLServer_SilentInstallMsiBuild========================================
+	Sub Update_SQLServer_SilentInstallMsiBuild(ByVal StrProduct,ByVal StrVersion)
+		
+		Dim StrColName,Query,StrVer
+		Dim Matches,match,RetStr
+		
+		on error resume next
+		
+		Set regEx = New RegExp
+		
+		if IsEmpty(StrProduct) then
+			wscript.quit 100
+		else
+			select case UCase(StrProduct)
+				case "TOADFORSQLSERVER_X86_EN"
+					StrProduct="TOAD_ FOR SQL SERVER"
+				case "TOADFORSQLSERVER_TRIAL_X86_EN"
+					StrProduct="TOAD_ FOR SQL SERVER TRIAL"
+				case "TOADDATAMODELER_X86_EN"
+					StrProduct="TOAD_ DATA MODELER"
+				case "SPOTLIGHTONSQLSERVER_STANDARD_X86_EN"
+					StrProduct="SPOTLIGHT_ ON SQL SERVER STANDARD"
+				case "BENCHMARKFACTORY_X86_EN"
+					StrProduct="BENCHMARK FACTORY_ FOR DATABASES"
+				case "BENCHMARKFACTORY_TRIAL_X86_EN"
+					StrProduct="BENCHMARK FACTORY_ FOR DATABASES TRIAL"
+				case "SQLOPTIMIZERFORSQLSERVER_X86_EN"
+					StrProduct="Dell_ SQL OPTIMIZER FOR SQL SERVER"
+				case "SQLOPTIMIZERFORSQLSERVER_TRIAL_X86_EN"
+					StrProduct="Dell_ SQL OPTIMIZER FOR SQL SERVER TRIAL"
+				case else
+					StrProduct="Null"
+			end select
+		end if
+		
+		'Update I_FilePath Column
+		Set Rec		=	CreateObject("ADODB.Recordset")
+		Query		= 	"Select I_FilePath from DSI.dbo.SQLServer_SilentInstallMsiBuild where Projectid = 4 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
+		Set Rec		=	Conn.Execute(Query)
+		While not Rec.EOF
+			StrColName=Rec.Fields("I_FilePath").Value
+			Rec.MoveNext
+		Wend
+		
+		regEx.Pattern 	= 	"\d+(\.\d+)+"
+		regEx.Global	=	True
+		Set Matches		=	RegEx.Execute(StrColName)
+		For each match in matches
+			RetStr		=	Match.Value
+		Next
+		if RetStr <> "" then
+			StrColName 	= 	regEx.Replace(StrColName,StrVersion)
+			Conn.Execute "Update DSI.dbo.SQLServer_SilentInstallMsiBuild set  I_FilePath =" + "'" + StrColName + "'" + " where Projectid = 4 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
+		end if
 		
 		Rec.Close
 		Set Rec	= Nothing
@@ -1814,7 +2135,25 @@ Sub UpdateTestData()
 					Call NewSAPSuite.Update_SilentInstallMsiBuild(ProductName,ProductVersion)
 				case UCase("SQLSERVER")
 					Set NewSQLServerSuite	=	New UpdateSQLSERVERSuite
-					'not implemented
+					'Update all finish installation data
+					Select Case Trim(UCase(PreProduct(0)))
+						case "TOADFORSQLSERVER"
+							Call NewSQLServerSuite.Update_DSI_FinishInstall_ToadforSQLServer(ProductName,ProductVersion) 
+						case "SQLOPTIMIZERFORSQLSERVER"
+							Call NewSQLServerSuite.Update_DSI_FinishInstall_QSOSS(ProductName,ProductVersion)
+						case "BENCHMARKFACTORY"
+							Call NewSQLServerSuite.Update_DSI_SQLServer_FinishInstall_BMF(ProductName,ProductVersion)
+						case "SPOTLIGHTONSQLSERVER"
+							Call NewSQLServerSuite.Update_DSI_FinishInstall_SoSSE(ProductName,ProductVersion)
+						case "TOADDATAMODELER"
+							Call NewSQLServerSuite.Update_DSI_SQLServer_FinishInstall_ToadDataModeler(ProductName,ProductVersion)
+					End Select
+					'Update Product Details table data
+					Call NewSQLServerSuite.Update_DSI_SQLServer_VerifyProductDetails(ProductName,ProductVersion)
+					'Update Verify Reistry table data
+					Call NewSQLServerSuite.Update_DSI_SQLServer_VerifyRegistry(ProductName,ProductVersion)
+					'Update Silent Install table data
+					Call NewSQLServerSuite.Update_SQLServer_SilentInstallMsiBuild(ProductName,ProductVersion)
 			end Select
 		end if
 	Next
