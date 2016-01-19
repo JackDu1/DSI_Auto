@@ -267,7 +267,7 @@
 			</Node>
 			<Node name="{3ae91bbd-f37d-40e6-b49d-d2f1ef68e285}">
 				<Prp name="type" type="I" value="1"/>
-				<Prp name="value" type="B" value="-1"/>
+				<Prp name="value" type="B" value="0"/>
 			</Node>
 			<Node name="{3b76535b-58ad-456c-837e-091a5c480f6c}">
 				<Prp name="type" type="I" value="1"/>
@@ -318,7 +318,7 @@
 				<Prp name="colcount" type="I" value="2"/>
 				<Prp name="colindex" type="I" value="0"/>
 				<Prp name="rowcount" type="I" value="12"/>
-				<Prp name="rowindex" type="I" value="6"/>
+				<Prp name="rowindex" type="I" value="0"/>
 				<Prp name="type" type="I" value="6"/>
 				<Prp name="val0x0" type="B" value="-1"/>
 				<Prp name="val0x1" type="B" value="-1"/>
