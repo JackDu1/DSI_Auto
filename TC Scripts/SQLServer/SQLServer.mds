@@ -1110,7 +1110,7 @@
 									<Node name="test parameters"/>
 									<Prp name="count" type="I" value="1"/>
 									<Prp name="description" type="S" value=""/>
-									<Prp name="enabled" type="B" value="-1"/>
+									<Prp name="enabled" type="B" value="0"/>
 									<Prp name="group" type="B" value="0"/>
 									<Prp name="index" type="I" value="0"/>
 									<Prp name="key" type="S" value="{BC9608DD-000E-40A5-8119-D8DC3B2EFB6C}"/>
@@ -1124,7 +1124,7 @@
 							<Node name="test parameters"/>
 							<Prp name="count" type="I" value="1"/>
 							<Prp name="description" type="S" value=""/>
-							<Prp name="enabled" type="B" value="-1"/>
+							<Prp name="enabled" type="B" value="0"/>
 							<Prp name="group" type="B" value="-1"/>
 							<Prp name="index" type="I" value="0"/>
 							<Prp name="key" type="S" value="{289DC44D-D48B-4BF4-A186-0F38504E22C4}"/>
@@ -1231,7 +1231,7 @@
 					<Node name="test parameters"/>
 					<Prp name="count" type="I" value="1"/>
 					<Prp name="description" type="S" value=""/>
-					<Prp name="enabled" type="B" value="-1"/>
+					<Prp name="enabled" type="B" value="0"/>
 					<Prp name="group" type="B" value="-1"/>
 					<Prp name="index" type="I" value="0"/>
 					<Prp name="key" type="S" value="{55D3FACC-6C16-460F-85DC-39E8877D2474}"/>
@@ -1254,7 +1254,7 @@
 									<Prp name="group" type="B" value="0"/>
 									<Prp name="index" type="I" value="0"/>
 									<Prp name="key" type="S" value="{67247CA8-36A0-44AF-8A73-3F4FE2EA68F1}"/>
-									<Prp name="name" type="S" value="W43TestItem"/>
+									<Prp name="name" type="S" value="W34TestItem"/>
 									<Prp name="stoponerror" type="I" value="2"/>
 									<Prp name="stoponexception" type="I" value="2"/>
 									<Prp name="test moniker" type="S" value="{EB6122A2-1DE8-481B-8C66-F3CFC036F23D}Main"/>
@@ -1285,7 +1285,7 @@
 									<Prp name="group" type="B" value="0"/>
 									<Prp name="index" type="I" value="0"/>
 									<Prp name="key" type="S" value="{81E2DB75-9D99-47D0-BFA8-DF9E81F5EDF3}"/>
-									<Prp name="name" type="S" value="W43TestItem"/>
+									<Prp name="name" type="S" value="W34TestItem"/>
 									<Prp name="stoponerror" type="I" value="2"/>
 									<Prp name="stoponexception" type="I" value="2"/>
 									<Prp name="test moniker" type="S" value="{EB6122A2-1DE8-481B-8C66-F3CFC036F23D}Main"/>
@@ -1316,7 +1316,7 @@
 									<Prp name="group" type="B" value="0"/>
 									<Prp name="index" type="I" value="0"/>
 									<Prp name="key" type="S" value="{3AD9CE58-E6EA-4744-8DD2-5FE13CCA8F9B}"/>
-									<Prp name="name" type="S" value="W43TestItem"/>
+									<Prp name="name" type="S" value="W34TestItem"/>
 									<Prp name="stoponerror" type="I" value="2"/>
 									<Prp name="stoponexception" type="I" value="2"/>
 									<Prp name="test moniker" type="S" value="{EB6122A2-1DE8-481B-8C66-F3CFC036F23D}Main"/>
@@ -1347,7 +1347,7 @@
 									<Prp name="group" type="B" value="0"/>
 									<Prp name="index" type="I" value="0"/>
 									<Prp name="key" type="S" value="{CCFA0241-2178-40D0-B814-782CFEB8DE6E}"/>
-									<Prp name="name" type="S" value="W43TestItem"/>
+									<Prp name="name" type="S" value="W34TestItem"/>
 									<Prp name="stoponerror" type="I" value="2"/>
 									<Prp name="stoponexception" type="I" value="2"/>
 									<Prp name="test moniker" type="S" value="{EB6122A2-1DE8-481B-8C66-F3CFC036F23D}Main"/>
