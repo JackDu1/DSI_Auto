@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<Root Signature="{5DCBAC3B-D39C-497C-9BE8-744CBADD37AA}" NameMappingVersion="4" Cookie="298">
+<Root Signature="{5DCBAC3B-D39C-497C-9BE8-744CBADD37AA}" NameMappingVersion="4" Cookie="318">
 	<Nodes Name="NameMapping" Key="{BE401E45-B2D6-4FBA-931A-C2117D5C51AD}">
 		<Properties />
 		<Children>
@@ -273,6 +273,131 @@
 												</Children>
 												<TypeInfo Item0="2" />
 											</Child2>
+											<Child3 Name="DSI_ProductInstallationPage" Key="{BDC4728B-8859-4792-B192-0716546B0996}" ParallelWalk="True">
+												<Properties>
+													<Property0 Name="NativeClrObject.Name" Cookie="298" />
+												</Properties>
+												<Children>
+													<Child0 Name="pnlBottom" Key="{1C8E7073-CF16-4DF2-A96F-664F60E33F6D}" ParallelWalk="True">
+														<Properties>
+															<Property0 Name="NativeClrObject.Name" Cookie="299" />
+														</Properties>
+														<Children>
+															<Child0 Name="InstallingProduct" Key="{D7E0CF4A-1AB6-430B-AC03-D88759BAE209}" ParallelWalk="True">
+																<Properties>
+																	<Property0 Name="NativeClrObject.Name" Cookie="300" />
+																</Properties>
+																<Children />
+																<TypeInfo Item0="65" />
+															</Child0>
+															<Child1 Name="InstallingStatus" Key="{0DF8EF5A-2BD1-4E18-A814-2B43CC29BE1C}" ParallelWalk="True">
+																<Properties>
+																	<Property0 Name="NativeClrObject.Name" Cookie="301" />
+																</Properties>
+																<Children />
+																<TypeInfo Item0="65" />
+															</Child1>
+															<Child2 Name="InstallProcessBar" Key="{48B653C6-29B3-4CAA-9D90-3E4B66AEB3A1}" ParallelWalk="True">
+																<Properties>
+																	<Property0 Name="NativeClrObject.Name" Cookie="311" />
+																</Properties>
+																<Children />
+																<TypeInfo Item0="65" />
+															</Child2>
+															<Child3 Name="InstallTotalProgress" Key="{B88FEB76-B468-443D-B7CD-0CB37C4DC9C7}" ParallelWalk="True">
+																<Properties>
+																	<Property0 Name="NativeClrObject.Name" Cookie="312" />
+																</Properties>
+																<Children />
+																<TypeInfo Item0="65" />
+															</Child3>
+														</Children>
+														<TypeInfo Item0="65" />
+													</Child0>
+													<Child1 Name="pnlBody" Key="{FD4E03E9-E07B-426D-BA7A-5555D9D4B01C}" ParallelWalk="True">
+														<Properties>
+															<Property0 Name="NativeClrObject.Name" Cookie="314" />
+														</Properties>
+														<Children>
+															<Child0 Name="InstallingPageBody" Key="{0627717A-F6CF-4546-9F83-1D0133BA7AAF}" ParallelWalk="True">
+																<Properties>
+																	<Property0 Name="NativeClrObject.Name" Cookie="315" />
+																</Properties>
+																<Children />
+																<TypeInfo Item0="65" />
+															</Child0>
+														</Children>
+														<TypeInfo Item0="65" />
+													</Child1>
+												</Children>
+												<TypeInfo Item0="65" />
+											</Child3>
+											<Child4 Name="ProductUninstallation" Key="{6DB42020-041A-458B-9477-9F293B229A63}" ParallelWalk="True">
+												<Properties>
+													<Property0 Name="NativeClrObject.Name" Cookie="302" />
+												</Properties>
+												<Children>
+													<Child0 Name="pnlBottom" Key="{AF3B3796-0720-4CC1-82C7-8858E4C5EF3E}" ParallelWalk="True">
+														<Properties>
+															<Property0 Name="NativeClrObject.Name" Cookie="303" />
+														</Properties>
+														<Children>
+															<Child0 Name="InstallProcessBar" Key="{D18ACC5C-3A0D-4D8F-907D-9637C5AED14B}" ParallelWalk="True">
+																<Properties>
+																	<Property0 Name="NativeClrObject.Name" Cookie="306" />
+																</Properties>
+																<Children />
+																<TypeInfo Item0="65" />
+															</Child0>
+															<Child1 Name="InstallingStatus" Key="{BC80BADF-B2DA-4557-A726-CBC853C7FCF4}" ParallelWalk="True">
+																<Properties>
+																	<Property0 Name="NativeClrObject.Name" Cookie="307" />
+																</Properties>
+																<Children />
+																<TypeInfo Item0="65" />
+															</Child1>
+															<Child2 Name="InstallTotalProgress" Key="{1ADEBD26-EFFB-461A-9890-9637DEEE0B2D}" ParallelWalk="True">
+																<Properties>
+																	<Property0 Name="NativeClrObject.Name" Cookie="308" />
+																</Properties>
+																<Children />
+																<TypeInfo Item0="65" />
+															</Child2>
+															<Child3 Name="InstallingProduct" Key="{25F6A6CC-464D-4B1B-A26F-B1DAA4476520}" ParallelWalk="True">
+																<Properties>
+																	<Property0 Name="NativeClrObject.Name" Cookie="317" />
+																</Properties>
+																<Children />
+																<TypeInfo Item0="65" />
+															</Child3>
+														</Children>
+														<TypeInfo Item0="65" />
+													</Child0>
+													<Child1 Name="pnlBody" Key="{850595B1-89C0-4EFD-8939-8827C86D39C1}" ParallelWalk="True">
+														<Properties>
+															<Property0 Name="NativeClrObject.Name" Cookie="309" />
+														</Properties>
+														<Children>
+															<Child0 Name="InstallingPageBody" Key="{8C5164F9-84D0-412F-8D63-899E8BD49483}" ParallelWalk="True">
+																<Properties>
+																	<Property0 Name="NativeClrObject.Name" Cookie="310" />
+																</Properties>
+																<Children />
+																<TypeInfo Item0="65" />
+															</Child0>
+														</Children>
+														<TypeInfo Item0="65" />
+													</Child1>
+												</Children>
+												<TypeInfo Item0="65" />
+											</Child4>
+											<Child5 Name="DSI_FinishPage" Key="{60BC36D6-EDBA-4DBE-8974-A53C624ECE0D}" ParallelWalk="True">
+												<Properties>
+													<Property0 Name="NativeClrObject.Name" Cookie="316" />
+												</Properties>
+												<Children />
+												<TypeInfo Item0="65" />
+											</Child5>
 										</Children>
 										<TypeInfo Item0="2" />
 									</Child0>
@@ -1231,6 +1356,21 @@
 				<Child5 Name="LicenseValidationError" Owner="{94C16AB8-B7FC-4AF7-8E38-69639029C931}" />
 				<Child6 Name="LicenseKeyProperties" Owner="{6BF96577-E1B1-488D-94C2-E311E5977878}" />
 			</Child9>
+			<Child10 Name="DSI_ProductInstallationPage" Owner="{BDC4728B-8859-4792-B192-0716546B0996}">
+				<Child0 Name="InstallingProduct" Owner="{D7E0CF4A-1AB6-430B-AC03-D88759BAE209}" />
+				<Child1 Name="InstallingStatus" Owner="{0DF8EF5A-2BD1-4E18-A814-2B43CC29BE1C}" />
+				<Child2 Name="InstallProcessBar" Owner="{48B653C6-29B3-4CAA-9D90-3E4B66AEB3A1}" />
+				<Child3 Name="InstallTotalProgress" Owner="{B88FEB76-B468-443D-B7CD-0CB37C4DC9C7}" />
+				<Child4 Name="InstallingPageBody" Owner="{0627717A-F6CF-4546-9F83-1D0133BA7AAF}" />
+			</Child10>
+			<Child11 Name="ProductUninstallation" Owner="{6DB42020-041A-458B-9477-9F293B229A63}">
+				<Child0 Name="InstallProcessBar" Owner="{D18ACC5C-3A0D-4D8F-907D-9637C5AED14B}" />
+				<Child1 Name="InstallingStatus" Owner="{BC80BADF-B2DA-4557-A726-CBC853C7FCF4}" />
+				<Child2 Name="InstallTotalProgress" Owner="{1ADEBD26-EFFB-461A-9890-9637DEEE0B2D}" />
+				<Child3 Name="InstallingPageBody" Owner="{8C5164F9-84D0-412F-8D63-899E8BD49483}" />
+				<Child4 Name="InstallingProduct" Owner="{25F6A6CC-464D-4B1B-A26F-B1DAA4476520}" />
+			</Child11>
+			<Child12 Name="DSI_FinishPage" Owner="{60BC36D6-EDBA-4DBE-8974-A53C624ECE0D}" />
 		</Child0>
 		<Child1 Name="Win_frm_Main" Owner="{F7C502EF-87D9-402A-AA53-F4F4BC69D067}">
 			<Child0 Name="SysTreeView" Owner="{6BFFBB80-05BE-401E-9D94-CC87A40E0E66}" />
@@ -1599,6 +1739,26 @@
 			<Property256 Cookie="295" PropertyType="0" Value="ConnectionForm" Type="5" />
 			<Property257 Cookie="296" PropertyType="0" Value="WinFormsObject(&apos;ConnectionForm&apos;)" Type="5" />
 			<Property258 Cookie="297" PropertyType="0" Value="Toad" Type="5" />
+			<Property259 Cookie="298" PropertyType="0" Value="ProductInstallation" Type="5" />
+			<Property260 Cookie="299" PropertyType="0" Value="pnlBottom" Type="5" />
+			<Property261 Cookie="300" PropertyType="0" Value="lblProduct" Type="5" />
+			<Property262 Cookie="301" PropertyType="0" Value="lblStatus" Type="5" />
+			<Property263 Cookie="302" PropertyType="0" Value="ProductUninstallation" Type="5" />
+			<Property264 Cookie="303" PropertyType="0" Value="pnlBottom" Type="5" />
+			<Property265 Cookie="304" PropertyType="0" Value="WindowsForms10.STATIC.app.0.be074_r39_ad2" Type="5" />
+			<Property266 Cookie="305" PropertyType="0" Value="Product: Toad™ for SQL Server" Type="5" />
+			<Property267 Cookie="306" PropertyType="0" Value="pbrOverallExecute" Type="5" />
+			<Property268 Cookie="307" PropertyType="0" Value="lblStatus" Type="5" />
+			<Property269 Cookie="308" PropertyType="0" Value="lblTotalProgress" Type="5" />
+			<Property270 Cookie="309" PropertyType="0" Value="pnlBody" Type="5" />
+			<Property271 Cookie="310" PropertyType="0" Value="pbxAd" Type="5" />
+			<Property272 Cookie="311" PropertyType="0" Value="pbrOverallExecute" Type="5" />
+			<Property273 Cookie="312" PropertyType="0" Value="lblTotalProgress" Type="5" />
+			<Property274 Cookie="313" PropertyType="0" Value="pnlBody" Type="5" />
+			<Property275 Cookie="314" PropertyType="0" Value="pnlBody" Type="5" />
+			<Property276 Cookie="315" PropertyType="0" Value="pbxAd" Type="5" />
+			<Property277 Cookie="316" PropertyType="0" Value="Final" Type="5" />
+			<Property278 Cookie="317" PropertyType="0" Value="lblProduct" Type="5" />
 		</Child0>
 	</Storages>
 	<TypeInfo StoreCodeCompletion="1">
