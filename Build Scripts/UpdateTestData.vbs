@@ -1859,6 +1859,8 @@ Class UpdateSQLServerSuite
 		StrMainVer 	= 	Split(StrVersion,".")
 		if InStr(StrColName,"Benchmark Factory") >=	1 then
 			StrVer 	= 	StrMainVer(0) + "." + StrMainVer(1) + "." + StrMainVer(2)
+		elseif(InStr(StrColName,"Dell SQL Optimizer for SQL Server") >=	1 then
+			StrVer 	= 	StrMainVer(0) + "." + StrMainVer(1) + "." + StrMainVer(2)
 		else
 			StrVer 	= 	StrMainVer(0) + "." + StrMainVer(1)
 		end if
