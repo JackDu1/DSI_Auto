@@ -1578,9 +1578,9 @@ Class UpdateSQLServerSuite
 		else
 			select case StrProduct
 				case "BENCHMARKFACTORY_X86_EN"
-					StrProduct="Benchmark Factory_ for Databases%"
+					StrProduct="Benchmark Factory_ for Databases"
 				case "BENCHMARKFACTORY_TRIAL_X86_EN"
-					StrProduct="Benchmark Factory_ for Databases Trial%"
+					StrProduct="Benchmark Factory_ for Databases Trial"
 			end select	
 		end if
 		'Update I_Version Column
@@ -1746,7 +1746,7 @@ Class UpdateSQLServerSuite
 		Wend
 		
 		StrMainVer 	= 	Split(StrVersion,".")
-		StrVer 		= 	StrMainVer(0) + "." + StrMainVer(1) + "." + StrMainVer(2)
+		StrVer 		= 	StrMainVer(0) + "." + StrMainVer(1)
 		regEx.Pattern 	= 	"\d+(\.\d+)+"
 		regEx.Global	=	True
 		StrColFolder 	= 	regEx.Replace(StrColFolder,StrVer)
