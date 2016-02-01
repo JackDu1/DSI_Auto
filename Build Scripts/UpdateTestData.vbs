@@ -1837,9 +1837,9 @@ Class UpdateSQLServerSuite
 				case "BENCHMARKFACTORY_TRIAL_X86_EN"
 					StrProduct="BENCHMARK FACTORY_ FOR DATABASES TRIAL"
 				case "SQLOPTIMIZERFORSQLSERVER_X86_EN"
-					StrProduct="Dell_ SQL OPTIMIZER FOR SQL SERVER"
+					StrProduct="DELL_ SQL OPTIMIZER FOR SQL SERVER"
 				case "SQLOPTIMIZERFORSQLSERVER_TRIAL_X86_EN"
-					StrProduct="Dell_ SQL OPTIMIZER FOR SQL SERVER TRIAL"
+					StrProduct="DELL_ SQL OPTIMIZER FOR SQL SERVER TRIAL"
 				case else
 					StrProduct="Null"
 			end select
@@ -1859,7 +1859,7 @@ Class UpdateSQLServerSuite
 		StrMainVer 	= 	Split(StrVersion,".")
 		if InStr(StrColName,"Benchmark Factory") >=	1 then
 			StrVer 	= 	StrMainVer(0) + "." + StrMainVer(1) + "." + StrMainVer(2)
-		elseif(InStr(StrColName,"Dell SQL Optimizer for SQL Server") >=	1 then
+		elseif InStr(StrColName,"Dell SQL Optimizer for SQL Server") >=	1 then
 			StrVer 	= 	StrMainVer(0) + "." + StrMainVer(1) + "." + StrMainVer(2)
 		else
 			StrVer 	= 	StrMainVer(0) + "." + StrMainVer(1)
