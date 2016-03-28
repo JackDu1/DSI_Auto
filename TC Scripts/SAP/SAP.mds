@@ -2695,7 +2695,7 @@
 									<Prp name="group" type="B" value="0"/>
 									<Prp name="index" type="I" value="0"/>
 									<Prp name="key" type="S" value="{585BF1F5-AA73-4183-AC66-225D3173408E}"/>
-									<Prp name="name" type="S" value="W50TestItem"/>
+									<Prp name="name" type="S" value="W51TestItem"/>
 									<Prp name="stoponerror" type="I" value="2"/>
 									<Prp name="stoponexception" type="I" value="2"/>
 									<Prp name="test moniker" type="S" value="{065CFAED-9B1A-40F9-A403-C88FC9B24A9A}Main"/>
@@ -2726,7 +2726,7 @@
 									<Prp name="group" type="B" value="0"/>
 									<Prp name="index" type="I" value="0"/>
 									<Prp name="key" type="S" value="{F45DDA52-184E-476C-8710-62C2F41C985E}"/>
-									<Prp name="name" type="S" value="W50TestItem"/>
+									<Prp name="name" type="S" value="W51TestItem"/>
 									<Prp name="stoponerror" type="I" value="2"/>
 									<Prp name="stoponexception" type="I" value="2"/>
 									<Prp name="test moniker" type="S" value="{065CFAED-9B1A-40F9-A403-C88FC9B24A9A}Main"/>
@@ -2757,7 +2757,7 @@
 									<Prp name="group" type="B" value="0"/>
 									<Prp name="index" type="I" value="0"/>
 									<Prp name="key" type="S" value="{12AB6D0B-46BD-44E1-9312-CCACFC9FB9F8}"/>
-									<Prp name="name" type="S" value="W50TestItem"/>
+									<Prp name="name" type="S" value="W51TestItem"/>
 									<Prp name="stoponerror" type="I" value="2"/>
 									<Prp name="stoponexception" type="I" value="2"/>
 									<Prp name="test moniker" type="S" value="{065CFAED-9B1A-40F9-A403-C88FC9B24A9A}Main"/>
@@ -2788,7 +2788,7 @@
 									<Prp name="group" type="B" value="0"/>
 									<Prp name="index" type="I" value="0"/>
 									<Prp name="key" type="S" value="{1F0C01B0-F114-4FC5-903B-3DD0F73C7706}"/>
-									<Prp name="name" type="S" value="W50TestItem"/>
+									<Prp name="name" type="S" value="W51TestItem"/>
 									<Prp name="stoponerror" type="I" value="2"/>
 									<Prp name="stoponexception" type="I" value="2"/>
 									<Prp name="test moniker" type="S" value="{065CFAED-9B1A-40F9-A403-C88FC9B24A9A}Main"/>
