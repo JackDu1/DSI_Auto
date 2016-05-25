@@ -4600,7 +4600,7 @@
 									<Node name="test parameters"/>
 									<Prp name="count" type="I" value="1"/>
 									<Prp name="description" type="S" value=""/>
-									<Prp name="enabled" type="B" value="-1"/>
+									<Prp name="enabled" type="B" value="0"/>
 									<Prp name="group" type="B" value="0"/>
 									<Prp name="index" type="I" value="0"/>
 									<Prp name="key" type="S" value="{EA02D2F7-6BEC-413D-8494-2740D7B77CFD}"/>
@@ -4614,7 +4614,7 @@
 							<Node name="test parameters"/>
 							<Prp name="count" type="I" value="1"/>
 							<Prp name="description" type="S" value=""/>
-							<Prp name="enabled" type="B" value="-1"/>
+							<Prp name="enabled" type="B" value="0"/>
 							<Prp name="group" type="B" value="-1"/>
 							<Prp name="index" type="I" value="4"/>
 							<Prp name="key" type="S" value="{EAC6A3BB-B426-4AB1-9133-3EEB7E436E44}"/>
@@ -4783,7 +4783,7 @@
 					<Node name="test parameters"/>
 					<Prp name="count" type="I" value="1"/>
 					<Prp name="description" type="S" value=""/>
-					<Prp name="enabled" type="B" value="-1"/>
+					<Prp name="enabled" type="B" value="0"/>
 					<Prp name="group" type="B" value="-1"/>
 					<Prp name="index" type="I" value="14"/>
 					<Prp name="key" type="S" value="{7011CD2B-566E-4944-BB0C-DAC599AB8318}"/>
