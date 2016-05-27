@@ -886,14 +886,21 @@ Class UpdateSAPSuite
 		Set regEx = New RegExp
 		
 		if IsEmpty(StrProduct) then
-			wscript.quit 100
+			wscript.quit 100	
+		else
+			select case StrProduct
+				case "ToadDataModeler_x86_EN"
+					StrProduct="Toad% Data Modeleer 32-bit"
+				case "ToadDataModeler_x64_EN"
+					StrProduct="Toad% Data Modeleer 64-bit"
+			end select
 		end if
 		'Update I_Version Column
-		Conn.Execute "Update DSI.dbo.DSI_SAP_ToadDataModeler set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 3 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Toad% Data Modeler'"
+		Conn.Execute "Update DSI.dbo.DSI_SAP_ToadDataModeler set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 3 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like '" + StrProduct + "'"
 		
 		'Update I_InstallFolder Column Record
 		Set Rec		=	CreateObject("ADODB.Recordset")
-		Query		= 	"Select I_InstallFolder from DSI.dbo.DSI_SAP_ToadDataModeler where Projectid = 3 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Toad% Data Modeler'"
+		Query		= 	"Select I_InstallFolder from DSI.dbo.DSI_SAP_ToadDataModeler where Projectid = 3 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like '" + StrProduct + "'"
 		Set Rec		=	Conn.Execute(Query)
 		While not Rec.EOF
 			StrColFolder=Rec.Fields("I_InstallFolder").Value
@@ -906,7 +913,7 @@ Class UpdateSAPSuite
 		regEx.Global	=	True
 		StrColFolder 	= 	regEx.Replace(StrColFolder,StrVer)
 		
-		Conn.Execute "Update DSI.dbo.DSI_SAP_ToadDataModeler set  I_InstallFolder =" + "'" + StrColFolder + "'" + " where Projectid = 3 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Toad% Data Modeler'"
+		Conn.Execute "Update DSI.dbo.DSI_SAP_ToadDataModeler set  I_InstallFolder =" + "'" + StrColFolder + "'" + " where Projectid = 3 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like '" + StrProduct + "'"
 		
 		Rec.Close
 		Set Rec	= Nothing
