@@ -1155,7 +1155,7 @@
 							<Prp name="group" type="B" value="-1"/>
 							<Prp name="index" type="I" value="0"/>
 							<Prp name="key" type="S" value="{DD6D50C6-342B-4039-89CF-3D29319AF4C6}"/>
-							<Prp name="name" type="S" value="W2 - x86_Full"/>
+							<Prp name="name" type="S" value="W2 - x32_Full"/>
 							<Prp name="stoponerror" type="I" value="2"/>
 							<Prp name="stoponexception" type="I" value="2"/>
 							<Prp name="test moniker" type="S" value=""/>
@@ -1186,7 +1186,7 @@
 							<Prp name="group" type="B" value="-1"/>
 							<Prp name="index" type="I" value="1"/>
 							<Prp name="key" type="S" value="{48630AD6-3E29-406C-93C2-5A943E2D9C5D}"/>
-							<Prp name="name" type="S" value="W2 - x86_Trial_Full"/>
+							<Prp name="name" type="S" value="W2 - x32_Trial_Full"/>
 							<Prp name="stoponerror" type="I" value="2"/>
 							<Prp name="stoponexception" type="I" value="2"/>
 							<Prp name="test moniker" type="S" value=""/>
@@ -1217,7 +1217,7 @@
 							<Prp name="group" type="B" value="-1"/>
 							<Prp name="index" type="I" value="2"/>
 							<Prp name="key" type="S" value="{DF171369-1C39-4B67-9549-C75CB01982DC}"/>
-							<Prp name="name" type="S" value="W2 - x86_ReadOnly"/>
+							<Prp name="name" type="S" value="W2 - x32_ReadOnly"/>
 							<Prp name="stoponerror" type="I" value="2"/>
 							<Prp name="stoponexception" type="I" value="2"/>
 							<Prp name="test moniker" type="S" value=""/>
@@ -1341,7 +1341,7 @@
 							<Prp name="group" type="B" value="-1"/>
 							<Prp name="index" type="I" value="6"/>
 							<Prp name="key" type="S" value="{4A79C9F4-BC9A-429B-BE85-A440EF4BC59B}"/>
-							<Prp name="name" type="S" value="W2 - x86_Trial_Web"/>
+							<Prp name="name" type="S" value="W2 - x32_Trial_Web"/>
 							<Prp name="stoponerror" type="I" value="2"/>
 							<Prp name="stoponexception" type="I" value="2"/>
 							<Prp name="test moniker" type="S" value=""/>
@@ -1403,7 +1403,7 @@
 							<Prp name="group" type="B" value="-1"/>
 							<Prp name="index" type="I" value="8"/>
 							<Prp name="key" type="S" value="{EC97EDA8-8060-4195-A5DE-EBF3ED7F0429}"/>
-							<Prp name="name" type="S" value="W2 - x86_Web"/>
+							<Prp name="name" type="S" value="W2 - x32_Web"/>
 							<Prp name="stoponerror" type="I" value="2"/>
 							<Prp name="stoponexception" type="I" value="2"/>
 							<Prp name="test moniker" type="S" value=""/>
@@ -1636,7 +1636,7 @@
 							<Prp name="group" type="B" value="-1"/>
 							<Prp name="index" type="I" value="5"/>
 							<Prp name="key" type="S" value="{553C80D2-DBE2-465D-97F1-22429CBEC36D}"/>
-							<Prp name="name" type="S" value="W4 - x86_Full"/>
+							<Prp name="name" type="S" value="W4 - x32_Full"/>
 							<Prp name="stoponerror" type="I" value="2"/>
 							<Prp name="stoponexception" type="I" value="2"/>
 							<Prp name="test moniker" type="S" value=""/>
@@ -1667,7 +1667,7 @@
 							<Prp name="group" type="B" value="-1"/>
 							<Prp name="index" type="I" value="6"/>
 							<Prp name="key" type="S" value="{B4AEE8C1-6BFC-49D3-9A73-ED8E36D05760}"/>
-							<Prp name="name" type="S" value="W4 - x86_ReadOnly"/>
+							<Prp name="name" type="S" value="W4 - x32_ReadOnly"/>
 							<Prp name="stoponerror" type="I" value="2"/>
 							<Prp name="stoponexception" type="I" value="2"/>
 							<Prp name="test moniker" type="S" value=""/>
@@ -1698,7 +1698,7 @@
 							<Prp name="group" type="B" value="-1"/>
 							<Prp name="index" type="I" value="7"/>
 							<Prp name="key" type="S" value="{C7C8762C-275A-4453-9398-612BC3FC2F4F}"/>
-							<Prp name="name" type="S" value="W4 - x86_Trial_Full"/>
+							<Prp name="name" type="S" value="W4 - x32_Trial_Full"/>
 							<Prp name="stoponerror" type="I" value="2"/>
 							<Prp name="stoponexception" type="I" value="2"/>
 							<Prp name="test moniker" type="S" value=""/>
@@ -1729,7 +1729,7 @@
 							<Prp name="group" type="B" value="-1"/>
 							<Prp name="index" type="I" value="8"/>
 							<Prp name="key" type="S" value="{F5FEF998-2F7C-4990-A129-EBC52C977811}"/>
-							<Prp name="name" type="S" value="W4 - x86_Trial_Web"/>
+							<Prp name="name" type="S" value="W4 - x32_Trial_Web"/>
 							<Prp name="stoponerror" type="I" value="2"/>
 							<Prp name="stoponexception" type="I" value="2"/>
 							<Prp name="test moniker" type="S" value=""/>
@@ -1760,7 +1760,7 @@
 							<Prp name="group" type="B" value="-1"/>
 							<Prp name="index" type="I" value="9"/>
 							<Prp name="key" type="S" value="{528E6E43-B437-4577-9824-A3838B9DB217}"/>
-							<Prp name="name" type="S" value="W4 - x86_Web"/>
+							<Prp name="name" type="S" value="W4 - x32_Web"/>
 							<Prp name="stoponerror" type="I" value="2"/>
 							<Prp name="stoponexception" type="I" value="2"/>
 							<Prp name="test moniker" type="S" value=""/>
