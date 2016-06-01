@@ -248,18 +248,18 @@ Class UpdateOracleSuite
 		if IsEmpty(StrProduct) then
 			wscript.quit 100	
 		else
-			select case StrProduct
-				case "ToadDataModeler_x86_En"
-					StrProduct="Toad% Data Modeler% 32-bit"
-				case "ToadDataModeler_x64_En"
-					StrProduct="Toad% Data Modeler% 64-bit"
+			select case UCase(StrProduct)
+				case "TOADDATAMODELER_x86_EN"
+					StrProduct="32-bit"
+				case "TOADDATAMODELER_x64_EN"
+					StrProduct="64-bit"
 			end select
 		end if
 		'Update I_Version Column
-		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_ToadDataModeler set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like '" + StrProduct + "'"
+		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_ToadDataModeler set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Toad% Data Modeler%" + StrProduct +"'"
 		'Update I_InstallFolder Column Record
 		Set Rec		=	CreateObject("ADODB.Recordset")
-		Query		= 	"Select I_InstallFolder from DSI.dbo.DSI_FinishInstall_ToadDataModeler where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like '" + StrProduct + "'"
+		Query		= 	"Select I_InstallFolder from DSI.dbo.DSI_FinishInstall_ToadDataModeler where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Toad% Data Modeler%" + StrProduct +"'"
 		Set Rec		=	Conn.Execute(Query)
 		While not Rec.EOF
 			StrColFolder=Rec.Fields("I_InstallFolder").Value
@@ -272,7 +272,7 @@ Class UpdateOracleSuite
 		regEx.Global	=	True
 		StrColFolder 	= 	regEx.Replace(StrColFolder,StrVer)
 		
-		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_ToadDataModeler set  I_InstallFolder =" + "'" + StrColFolder + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like '" + StrProduct + "'"
+		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_ToadDataModeler set  I_InstallFolder =" + "'" + StrColFolder + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Toad% Data Modeler%" + StrProduct +"'"
 		
 		Rec.Close
 		Set Rec	= Nothing
