@@ -528,7 +528,9 @@ Class UpdateOracleSuite
 				case "CODETESTERORACLE_X86_EN"
 					StrProduct="DELL% CODE TESTER FOR ORACLE"
 				case "TOADDATAMODELER_X86_EN"
-					StrProduct="TOAD% DATA MODELER"
+					StrProduct="TOAD% DATA MODELER 32-BIT"
+                                case "TOADDATAMODELER_X64_EN"
+					StrProduct="TOAD% DATA MODELER 64-BIT"
 				case "SPOTLIGHTONORACLE_X64_MULTILANG"
 					StrProduct="SPOTLIGHT% ON ORACLE 64-BIT"
 				case "SPOTLIGHTONORACLE_X86_MULTILANG"
@@ -639,7 +641,9 @@ Class UpdateOracleSuite
 				case "CODETESTERORACLE_X86_EN"
 					StrProduct="DELL% CODE TESTER FOR ORACLE"
 				case "TOADDATAMODELER_X86_EN"
-					StrProduct="TOAD% DATA MODELER"
+					StrProduct="TOAD% DATA MODELER 32-BIT"
+                                case "TOADDATAMODELER_X64_EN"
+					StrProduct="TOAD% DATA MODELER 64-BIT"
 				case "SPOTLIGHTONORACLE_X64_MULTILANG"
 					StrProduct="SPOTLIGHT% ON ORACLE 64-BIT"
 				case "SPOTLIGHTONORACLE_X86_MULTILANG"
@@ -897,11 +901,11 @@ Class UpdateSAPSuite
 		if IsEmpty(StrProduct) then
 			wscript.quit 100	
 		else
-			select case StrProduct
-				case "ToadDataModeler_x86_EN"
-					StrProduct="Toad% Data Modeleer 32-bit"
-				case "ToadDataModeler_x64_EN"
-					StrProduct="Toad% Data Modeleer 64-bit"
+			select case UCase(StrProduct)
+				case "TOADDATAMODELER_X86_EN"
+					StrProduct="TOAD% DATA MODELER 32-BIT"
+                                case "TOADDATAMODELER_X64_EN"
+					StrProduct="TOAD% DATA MODELER 64-BIT"
 			end select
 		end if
 		'Update I_Version Column
@@ -947,7 +951,9 @@ Class UpdateSAPSuite
 				case "TOADFORSAP_X86_EN"
 					StrProduct="TOAD_ FOR SAP SOLUTIONS"
 				case "TOADDATAMODELER_X86_EN"
-					StrProduct="TOAD_ DATA MODELER"
+					StrProduct="TOAD% DATA MODELER 32-BIT"
+                                case "TOADDATAMODELER_X64_EN"
+					StrProduct="TOAD% DATA MODELER 64-BIT"
 				case "SPOTLIGHTONSAP_X86_EN"
 					StrProduct="SPOTLIGHT_ ON SAP_ ASE"
 				case "BENCHMARKFACTORY_X86_EN"
@@ -986,7 +992,9 @@ Class UpdateSAPSuite
 				case "TOADFORSAP_X86_EN"
 					StrProduct="TOAD_ FOR SAP SOLUTIONS"
 				case "TOADDATAMODELER_X86_EN"
-					StrProduct="TOAD_ DATA MODELER"
+					StrProduct="TOAD% DATA MODELER 32-BIT"
+                                case "TOADDATAMODELER_X64_EN"
+					StrProduct="TOAD% DATA MODELER 64-BIT"
 				case "SPOTLIGHTONSAP_X86_EN"
 					StrProduct="SPOTLIGHT_ ON SAP_ ASE"
 				case "BENCHMARKFACTORY_X86_EN"
@@ -1053,7 +1061,9 @@ Class UpdateSAPSuite
 				case "TOADFORSAP_X86_EN"
 					StrProduct="TOAD_ FOR SAP SOLUTIONS"
 				case "TOADDATAMODELER_X86_EN"
-					StrProduct="TOAD_ DATA MODELER"
+					StrProduct="TOAD% DATA MODELER 32-BIT"
+                                case "TOADDATAMODELER_X64_EN"
+					StrProduct="TOAD% DATA MODELER 64-BIT"
 				case "SPOTLIGHTONSAP_X86_EN"
 					StrProduct="SPOTLIGHT_ ON SAP_ ASE"
 				case "BENCHMARKFACTORY_X86_EN"
@@ -1372,14 +1382,21 @@ Class UpdateDB2Suite
 		
 		if IsEmpty(StrProduct) then
 			wscript.quit 100	
+		else
+			select case UCase(StrProduct)
+				case "TOADDATAMODELER_X86_EN"
+					StrProduct="TOAD% DATA MODELER 32-BIT"
+                                case "TOADDATAMODELER_X64_EN"
+					StrProduct="TOAD% DATA MODELER 64-BIT"
+			end select
 		end if
 		
 		'Update I_Version Column
-		Conn.Execute "Update DSI.dbo.DSI_DB2_ToadDataModeler set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 2 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Toad% Data Modeler'"
+		Conn.Execute "Update DSI.dbo.DSI_DB2_ToadDataModeler set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 2 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like '" + StrProduct + "'"
 		
 		'Update I_InstallFolder Column Record
 		Set Rec		=	CreateObject("ADODB.Recordset")
-		Query		= 	"Select I_InstallFolder from DSI.dbo.DSI_DB2_ToadDataModeler where Projectid = 2 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Toad% Data Modeler'"
+		Query		= 	"Select I_InstallFolder from DSI.dbo.DSI_DB2_ToadDataModeler where Projectid = 2 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like '" + StrProduct + "'"
 		Set Rec		=	Conn.Execute(Query)
 		While not Rec.EOF
 			StrColFolder=Rec.Fields("I_InstallFolder").Value
@@ -1392,7 +1409,7 @@ Class UpdateDB2Suite
 		regEx.Global	=	True
 		StrColFolder 	= 	regEx.Replace(StrColFolder,StrVer)
 		
-		Conn.Execute "Update DSI.dbo.DSI_DB2_ToadDataModeler set  I_InstallFolder =" + "'" + StrColFolder + "'" + " where Projectid = 2 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Toad% Data Modeler'"
+		Conn.Execute "Update DSI.dbo.DSI_DB2_ToadDataModeler set  I_InstallFolder =" + "'" + StrColFolder + "'" + " where Projectid = 2 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like '" + StrProduct + "'"
 		
 		Rec.Close
 		Set Rec	= Nothing
@@ -1417,7 +1434,9 @@ Class UpdateDB2Suite
 				case "TOADFORDB2_TRIAL_X86_EN"
 					StrProduct="TOAD_ FOR IBM_ DB2_ TRIAL"
 				case "TOADDATAMODELER_X86_EN"
-					StrProduct="TOAD_ DATA MODELER"
+					StrProduct="TOAD% DATA MODELER 32-BIT"
+                                case "TOADDATAMODELER_X64_EN"
+					StrProduct="TOAD% DATA MODELER 64-BIT"
 				case "SPOTLIGHTONDB2_X86_EN"
 					StrProduct="SPOTLIGHT_ ON IBM_ DB2_ LUW"
 				case "BENCHMARKFACTORY_X86_EN"
@@ -1460,7 +1479,9 @@ Class UpdateDB2Suite
 				case "TOADFORDB2_TRIAL_X86_EN"
 					StrProduct="TOAD_ FOR IBM_ DB2_ TRIAL"
 				case "TOADDATAMODELER_X86_EN"
-					StrProduct="TOAD_ DATA MODELER"
+					StrProduct="TOAD% DATA MODELER 32-BIT"
+                                case "TOADDATAMODELER_X64_EN"
+					StrProduct="TOAD% DATA MODELER 64-BIT"
 				case "SPOTLIGHTONDB2_X86_EN"
 					StrProduct="SPOTLIGHT_ ON IBM_ DB2_ LUW"
 				case "BENCHMARKFACTORY_X86_EN"
@@ -1532,7 +1553,9 @@ Class UpdateDB2Suite
 				case "TOADFORDB2_TRIAL_X86_EN"
 					StrProduct="TOAD_ FOR IBM_ DB2_ TRIAL"
 				case "TOADDATAMODELER_X86_EN"
-					StrProduct="TOAD_ DATA MODELER"
+					StrProduct="TOAD% DATA MODELER 32-BIT"
+                                case "TOADDATAMODELER_X64_EN"
+					StrProduct="TOAD% DATA MODELER 64-BIT"
 				case "SPOTLIGHTONDB2_X86_EN"
 					StrProduct="SPOTLIGHT_ ON IBM_ DB2_ LUW"
 				case "BENCHMARKFACTORY_X86_EN"
@@ -1657,15 +1680,22 @@ Class UpdateSQLServerSuite
 		Set regEx = New RegExp
 		
 		if IsEmpty(StrProduct) then
-			wscript.quit 100
+			wscript.quit 100	
+		else
+			select case UCase(StrProduct)
+				case "TOADDATAMODELER_X86_EN"
+					StrProduct="TOAD% DATA MODELER 32-BIT"
+                                case "TOADDATAMODELER_X64_EN"
+					StrProduct="TOAD% DATA MODELER 64-BIT"
+			end select
 		end if
 		
 		'Update I_Version Column
-		Conn.Execute "Update DSI.dbo.DSI_SQLServer_FinishInstall_ToadDataModeler set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 4 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Toad% Data Modeler'"
+		Conn.Execute "Update DSI.dbo.DSI_SQLServer_FinishInstall_ToadDataModeler set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 4 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like '" + StrProduct + "'"
 		
 		'Update I_InstallFolder Column Record
 		Set Rec		=	CreateObject("ADODB.Recordset")
-		Query		= 	"Select I_InstallFolder from DSI.dbo.DSI_SQLServer_FinishInstall_ToadDataModeler where Projectid = 4 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Toad% Data Modeler'"
+		Query		= 	"Select I_InstallFolder from DSI.dbo.DSI_SQLServer_FinishInstall_ToadDataModeler where Projectid = 4 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like '" + StrProduct + "'"
 		Set Rec		=	Conn.Execute(Query)
 		While not Rec.EOF
 			StrColFolder=Rec.Fields("I_InstallFolder").Value
@@ -1678,7 +1708,7 @@ Class UpdateSQLServerSuite
 		regEx.Global	=	True
 		StrColFolder 	= 	regEx.Replace(StrColFolder,StrVer)
 		
-		Conn.Execute "Update DSI.dbo.DSI_SQLServer_FinishInstall_ToadDataModeler set  I_InstallFolder =" + "'" + StrColFolder + "'" + " where Projectid = 4 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Toad% Data Modeler'"
+		Conn.Execute "Update DSI.dbo.DSI_SQLServer_FinishInstall_ToadDataModeler set  I_InstallFolder =" + "'" + StrColFolder + "'" + " where Projectid = 4 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like '" + StrProduct + "'"
 		
 		Rec.Close
 		Set Rec	= Nothing
@@ -1845,7 +1875,9 @@ Class UpdateSQLServerSuite
 				case "TOADFORSQLSERVER_TRIAL_X86_EN"
 					StrProduct="TOAD_ FOR SQL SERVER TRIAL"
 				case "TOADDATAMODELER_X86_EN"
-					StrProduct="TOAD_ DATA MODELER"
+					StrProduct="TOAD% DATA MODELER 32-BIT"
+                                case "TOADDATAMODELER_X64_EN"
+					StrProduct="TOAD% DATA MODELER 64-BIT"
 				case "SPOTLIGHTONSQLSERVER_STANDARD_X86_EN"
 					StrProduct="SPOTLIGHT_ ON SQL SERVER STANDARD"
 				case "BENCHMARKFACTORY_X86_EN"
@@ -1915,7 +1947,9 @@ Class UpdateSQLServerSuite
 				case "TOADFORSQLSERVER_TRIAL_X86_EN"
 					StrProduct="TOAD_ FOR SQL SERVER TRIAL"
 				case "TOADDATAMODELER_X86_EN"
-					StrProduct="TOAD_ DATA MODELER"
+					StrProduct="TOAD% DATA MODELER 32-BIT"
+                                case "TOADDATAMODELER_X64_EN"
+					StrProduct="TOAD% DATA MODELER 64-BIT"
 				case "SPOTLIGHTONSQLSERVER_STANDARD_X86_EN"
 					StrProduct="SPOTLIGHT_ ON SQL SERVER STANDARD"
 				case "BENCHMARKFACTORY_X86_EN"
@@ -1958,7 +1992,9 @@ Class UpdateSQLServerSuite
 				case "TOADFORSQLSERVER_TRIAL_X86_EN"
 					StrProduct="TOAD_ FOR SQL SERVER TRIAL"
 				case "TOADDATAMODELER_X86_EN"
-					StrProduct="TOAD_ DATA MODELER"
+					StrProduct="TOAD% DATA MODELER 32-BIT"
+                                case "TOADDATAMODELER_X64_EN"
+					StrProduct="TOAD% DATA MODELER 64-BIT"
 				case "SPOTLIGHTONSQLSERVER_STANDARD_X86_EN"
 					StrProduct="SPOTLIGHT_ ON SQL SERVER STANDARD"
 				case "BENCHMARKFACTORY_X86_EN"
