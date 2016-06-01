@@ -250,9 +250,9 @@ Class UpdateOracleSuite
 		else
 			select case StrProduct
 				case "TOADDATAMODELER_x86_EN"
-					StrProduct="Toad% Data Modeleer 32-BIT"
+					StrProduct="Toad% Data Modeler 32-BIT"
 				case "TOADDATAMODELER_x64_EN"
-					StrProduct="Toad% Data Modeleer 64-BIT"
+					StrProduct="Toad% Data Modeler 64-BIT"
 			end select
 		end if
 		'Update I_Version Column
