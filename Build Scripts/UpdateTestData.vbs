@@ -1207,6 +1207,74 @@ Class UpdateSAPSuite
 		end if
 
 	End Sub
+'==============================DSI_ValidateShortcutAndKeyFile========================================
+	Sub Update_DSI_FinishInstall_ValidateShortcut(ByVal StrProduct,ByVal StrVersion)
+		
+		Dim StrColName,StrMainVer,Query,StrVer
+		Dim Matches,match,RetStr
+		
+		on error resume next
+		
+		Set regEx = New RegExp
+		
+		if IsEmpty(StrProduct) then
+			wscript.quit 100
+		else
+			select case UCase(StrProduct)
+				case "TOADFORSAP_X86_EN"
+					StrProduct="TOAD_ FOR SAP SOLUTIONS%"
+				case "TOADDATAMODELER_X86_EN"
+					StrProduct="TOAD DATA MODELER%"
+                                case "TOADDATAMODELER_X64_EN"
+					StrProduct="TOAD DATA MODELER%"
+				case "SPOTLIGHTONSAP_X86_EN"
+					StrProduct="SPOTLIGHT%"
+				case "BENCHMARKFACTORY_X86_EN"
+					StrProduct="BENCHMARK FACTORY%"
+				case "BENCHMARKFACTORY_TRIAL_X86_EN"
+					StrProduct="BENCHMARK FACTORY%"
+				case else
+					StrProduct="Null"
+			end select
+		end if
+
+		
+		'Update I_ProductName Column
+		Set Rec		=	CreateObject("ADODB.Recordset")
+		Query		= 	"Select I_ProductName from DSI.dbo.DSI_FinishInstall_ValidateShortcut where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
+		Set Rec		=	Conn.Execute(Query)
+		While not Rec.EOF
+			StrColName=Rec.Fields("I_ProductName").Value
+			Rec.MoveNext
+		Wend
+		
+		StrMainVer 	= 	Split(StrVersion,".")
+
+		if InStr(StrColName,"Benchmark Factory") >=	1 then
+			StrVer 	= 	StrMainVer(0) + "." + StrMainVer(1) + "." + StrMainVer(2)
+		else
+			StrVer 	= 	StrMainVer(0) + "." + StrMainVer(1)
+		end if
+		
+		regEx.Pattern 	= 	"\d+(\.\d+)+"
+		regEx.Global	=	True
+		Set Matches		=	RegEx.Execute(StrColName)
+		For each match in matches
+			RetStr		=	Match.Value
+		Next
+		if RetStr <> "" then
+			StrColName 	= 	regEx.Replace(StrColName,StrVer)
+			Conn.Execute "Update DSI.dbo.DSI_FinishInstall_ValidateShortcut set  I_ProductName =" + "'" + StrColName + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
+		end if
+		
+		Rec.Close
+		Set Rec	= Nothing
+		
+		if Err.Number <> 0 then
+			Err.Clear
+		end if
+
+	End Sub
 
 End Class
 
@@ -1701,6 +1769,78 @@ Class UpdateDB2Suite
 		end if
 
 	End Sub
+'==============================DSI_ValidateShortcutAndKeyFile========================================
+	Sub Update_DSI_DB2_ValidateShortcutAndKeyFile(ByVal StrProduct,ByVal StrVersion)
+		
+		Dim StrColName,StrMainVer,Query,StrVer
+		Dim Matches,match,RetStr
+		
+		on error resume next
+		
+		Set regEx = New RegExp
+		
+		if IsEmpty(StrProduct) then
+			wscript.quit 100
+		else
+			select case UCase(StrProduct)
+				case "TOADFORDB2_X86_EN"
+					StrProduct="TOAD FOR IBM%"
+				case "TOADFORDB2_TRIAL_X86_EN"
+					StrProduct="TOAD FOR IBM%"
+				case "TOADDATAMODELER_X86_EN"
+					StrProduct="TOAD DATA MODELER%"
+                                case "TOADDATAMODELER_X64_EN"
+					StrProduct="TOAD DATA MODELER%"
+				case "SPOTLIGHTONDB2_X86_EN"
+					StrProduct="SPOTLIGHT ON IBM DB2 LUW%"
+				case "BENCHMARKFACTORY_X86_EN"
+					StrProduct="BENCHMARK FACTORY FOR%"
+				case "BENCHMARKFACTORY_TRIAL_X86_EN"
+					StrProduct="BENCHMARK FACTORY FOR%"
+				case else
+					StrProduct="Null"
+			end select
+		end if
+
+		
+		'Update I_ProductName Column
+		Set Rec		=	CreateObject("ADODB.Recordset")
+		Query		= 	"Select I_ProductName from DSI.dbo.DSI_DB2_ValidateShortcutAndKeyFile where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
+		Set Rec		=	Conn.Execute(Query)
+		While not Rec.EOF
+			StrColName=Rec.Fields("I_ProductName").Value
+			Rec.MoveNext
+		Wend
+		
+		StrMainVer 	= 	Split(StrVersion,".")
+
+		if InStr(StrColName,"Spotlight on IBM DB2 LUW") >=	1 then
+			StrVer 	= 	StrMainVer(0) + "." + StrMainVer(1) + "." + StrMainVer(2)
+		else if InStr(StrColName,"Benchmark Factory") >=	1 then
+                        StrVer 	= 	StrMainVer(0) + "." + StrMainVer(1) + "." + StrMainVer(2)
+                else
+			StrVer 	= 	StrMainVer(0) + "." + StrMainVer(1)
+		end if
+		
+		regEx.Pattern 	= 	"\d+(\.\d+)+"
+		regEx.Global	=	True
+		Set Matches		=	RegEx.Execute(StrColName)
+		For each match in matches
+			RetStr		=	Match.Value
+		Next
+		if RetStr <> "" then
+			StrColName 	= 	regEx.Replace(StrColName,StrVer)
+			Conn.Execute "Update DSI.dbo.DSI_DB2_ValidateShortcutAndKeyFile set  I_ProductName =" + "'" + StrColName + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
+		end if
+		
+		Rec.Close
+		Set Rec	= Nothing
+		
+		if Err.Number <> 0 then
+			Err.Clear
+		end if
+
+	End Sub
 
 End Class
 
@@ -2140,6 +2280,76 @@ Class UpdateSQLServerSuite
 		end if
 
 	End Sub
+'==============================DSI_ValidateShortcutAndKeyFile========================================
+	Sub Update_DSI_SQLServer_ValidateShortcutAndKeyFile(ByVal StrProduct,ByVal StrVersion)
+		
+		Dim StrColName,StrMainVer,Query,StrVer
+		Dim Matches,match,RetStr
+		
+		on error resume next
+		
+		Set regEx = New RegExp
+		
+		if IsEmpty(StrProduct) then
+			wscript.quit 100
+		else
+			select case UCase(StrProduct)
+				case "TOADFORSQLSERVER_X86_EN"
+					StrProduct="TOAD FOR SQL SERVER%"
+				case "TOADFORSQLSERVER_TRIAL_X86_EN"
+					StrProduct="TOAD FOR SQL SERVER%"
+				case "TOADDATAMODELER_X86_EN"
+					StrProduct="TOAD DATA MODELER%"
+                                case "TOADDATAMODELER_X64_EN"
+					StrProduct="TOAD DATA MODELER%"
+				case "SPOTLIGHTONSQLSERVER_STANDARD_X86_EN"
+					StrProduct="SPOTLIGHT ON SQL SERVER%"
+				case "BENCHMARKFACTORY_X86_EN"
+					StrProduct="BENCHMARK FACTORY%"
+				case "BENCHMARKFACTORY_TRIAL_X86_EN"
+					StrProduct="BENCHMARK FACTORY%"
+				case else
+					StrProduct="Null"
+			end select
+		end if
+
+		
+		'Update I_ProductName Column
+		Set Rec		=	CreateObject("ADODB.Recordset")
+		Query		= 	"Select I_ProductName from DSI.dbo.DSI_SQLServer_ValidateShortcutAndKeyFile where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
+		Set Rec		=	Conn.Execute(Query)
+		While not Rec.EOF
+			StrColName=Rec.Fields("I_ProductName").Value
+			Rec.MoveNext
+		Wend
+		
+		StrMainVer 	= 	Split(StrVersion,".")
+
+		if InStr(StrColName,"Benchmark Factory") >=	1 then
+                        StrVer 	= 	StrMainVer(0) + "." + StrMainVer(1) + "." + StrMainVer(2)
+                else
+			StrVer 	= 	StrMainVer(0) + "." + StrMainVer(1)
+		end if
+		
+		regEx.Pattern 	= 	"\d+(\.\d+)+"
+		regEx.Global	=	True
+		Set Matches		=	RegEx.Execute(StrColName)
+		For each match in matches
+			RetStr		=	Match.Value
+		Next
+		if RetStr <> "" then
+			StrColName 	= 	regEx.Replace(StrColName,StrVer)
+			Conn.Execute "Update DSI.dbo.DSI_SQLServer_ValidateShortcutAndKeyFile set  I_ProductName =" + "'" + StrColName + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
+		end if
+		
+		Rec.Close
+		Set Rec	= Nothing
+		
+		if Err.Number <> 0 then
+			Err.Clear
+		end if
+
+	End Sub
 
 End Class
 
@@ -2271,6 +2481,8 @@ Sub UpdateTestData()
 					Call NewDB2Suite.Update_DSI_FinishInstall_VerifyRegistry(ProductName,ProductVersion)
 					'Update Silent Install table data
 					Call NewDB2Suite.Update_SilentInstallMsiBuild(ProductName,ProductVersion)
+					'Update Shotcut table data
+					Call NewDB2Suite.Update_DSI_DB2_ValidateShortcutAndKeyFile(ProductName,ProductVersion)
 				case UCase("SAP")
 					Set NewSAPSuite	=	New UpdateSAPSuite
 					'Update all finish installation data
@@ -2292,6 +2504,8 @@ Sub UpdateTestData()
 					Call NewSAPSuite.Update_DSI_FinishInstall_VerifyRegistry(ProductName,ProductVersion)
 					'Update Silent Install table data
 					Call NewSAPSuite.Update_SilentInstallMsiBuild(ProductName,ProductVersion)
+                                        'Update Shortcut table data
+					Call NewSAPSuite.Update_DSI_FinishInstall_ValidateShortcut(ProductName,ProductVersion)
 				case UCase("SQLSERVER")
 					Set NewSQLServerSuite	=	New UpdateSQLSERVERSuite
 					'Update all finish installation data
@@ -2313,6 +2527,8 @@ Sub UpdateTestData()
 					Call NewSQLServerSuite.Update_DSI_SQLServer_VerifyRegistry(ProductName,ProductVersion)
 					'Update Silent Install table data
 					Call NewSQLServerSuite.Update_SQLServer_SilentInstallMsiBuild(ProductName,ProductVersion)
+                                        'Update Shortcut table data
+					Call NewSQLServerSuite.Update_DSI_SQLServer_ValidateShortcutAndKeyFile(ProductName,ProductVersion)
 			end Select
 		end if
 	Next
