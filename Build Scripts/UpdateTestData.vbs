@@ -697,6 +697,108 @@ Class UpdateOracleSuite
 		end if
 
 	End Sub
+'==============================DSI_ValidateShortcutAndKeyFile========================================
+	Sub Update_DSI_ValidateShortcutAndKeyFile(ByVal StrProduct,ByVal StrVersion)
+		
+		Dim StrColName,StrMainVer,Query,StrVer
+		Dim Matches,match,RetStr
+		
+		on error resume next
+		
+		Set regEx = New RegExp
+		
+		if IsEmpty(StrProduct) then
+			wscript.quit 100
+		else
+			select case UCase(StrProduct)
+				case "TOADFORORACLE_X64_EN"
+					StrProduct="TOAD FOR ORACLE%"
+				case "TOADFORORACLE_X64_ZH"
+					StrProduct="TOAD FOR ORACLE%"
+				case "TOADFORORACLE_X86_EN"
+					StrProduct="TOAD FOR ORACLE%"
+				case "TOADFORORACLE_X86_ZH"
+					StrProduct="TOAD FOR ORACLE%"
+				case "TOADFORORACLE_TRIAL_X86_EN"
+					StrProduct="TOAD FOR ORACLE%"
+				case "TOADFORORACLE_TRIAL_X86_ZH"
+					StrProduct="TOAD FOR ORACLE%"
+				case "TOADFORORACLE_TRIAL_X64_EN"
+					StrProduct="TOAD FOR ORACLE%"
+				case "TOADFORORACLE_TRIAL_X64_ZH"
+					StrProduct="TOAD FOR ORACLE%"
+				case "TOADFORORACLE_READONLY_X86_EN"
+					StrProduct="TOAD FOR ORACLE%"
+				case "TOADFORORACLE_READONLY_X86_ZH"
+					StrProduct="TOAD FOR ORACLE%"
+				case "TOADFORORACLE_READONLY_X64_EN"
+					StrProduct="TOAD FOR ORACLE%"
+				case "TOADFORORACLE_READONLY_X64_ZH"
+					StrProduct="TOAD FOR ORACLE%"
+				case "TOADFORMYSQL_FREEWARE_X86_EN"
+					StrProduct="TOAD FOR MYSQL%"
+				case "CODETESTERORACLE_X86_EN"
+					StrProduct="DELL CODE TESTER FOR ORACLE%"
+				case "TOADDATAMODELER_X86_EN"
+					StrProduct="TOAD DATA MODELER%"
+                                case "TOADDATAMODELER_X64_EN"
+					StrProduct="TOAD% DATA MODELER%"
+				case "SPOTLIGHTONORACLE_X64_MULTILANG"
+					StrProduct="SPOTLIGHT ON ORACLE%"
+				case "SPOTLIGHTONORACLE_X86_MULTILANG"
+					StrProduct="SPOTLIGHT ON ORACLE%"
+				case "BENCHMARKFACTORY_X64_EN"
+					StrProduct="BENCHMARK FACTORY%"
+				case "BENCHMARKFACTORY_X86_EN"
+					StrProduct="BENCHMARK FACTORY%"
+				case "BENCHMARKFACTORY_TRIAL_X86_EN"
+					StrProduct="BENCHMARK FACTORY%"
+				case "BENCHMARKFACTORY_TRIAL_X64_EN"
+					StrProduct="BENCHMARK FACTORY%"
+				case "SQLOPTIMIZERFORORACLE_X64_MULTILANG"
+					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 64-BIT"
+				case else
+					StrProduct="Null"
+			end select
+		end if
+
+		
+		'Update I_ProductName Column
+		Set Rec		=	CreateObject("ADODB.Recordset")
+		Query		= 	"Select I_ProductName from DSI.dbo.DSI_ValidateShortcutAndKeyFile where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
+		Set Rec		=	Conn.Execute(Query)
+		While not Rec.EOF
+			StrColName=Rec.Fields("I_ProductName").Value
+			Rec.MoveNext
+		Wend
+		
+		StrMainVer 	= 	Split(StrVersion,".")
+
+		if InStr(StrColName,"Benchmark Factory") >=	1 then
+			StrVer 	= 	StrMainVer(0) + "." + StrMainVer(1) + "." + StrMainVer(2)
+		else
+			StrVer 	= 	StrMainVer(0) + "." + StrMainVer(1)
+		end if
+		
+		regEx.Pattern 	= 	"\d+(\.\d+)+"
+		regEx.Global	=	True
+		Set Matches		=	RegEx.Execute(StrColName)
+		For each match in matches
+			RetStr		=	Match.Value
+		Next
+		if RetStr <> "" then
+			StrColName 	= 	regEx.Replace(StrColName,StrVer)
+			Conn.Execute "Update DSI.dbo.DSI_ValidateShortcutAndKeyFile set  I_ProductName =" + "'" + StrColName + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
+		end if
+		
+		Rec.Close
+		Set Rec	= Nothing
+		
+		if Err.Number <> 0 then
+			Err.Clear
+		end if
+
+	End Sub
 
 End Class
 
@@ -2143,6 +2245,9 @@ Sub UpdateTestData()
 					Call NewOracleSuite.Update_DSI_FinishInstall_VerifyRegistry(ProductName,ProductVersion) 
 					'Update Silent Install table data
 					Call NewOracleSuite.Update_SilentInstallMsiBuild(ProductName,ProductVersion)
+                                        'Update ShortCut table data
+					Call NewOracleSuite.Update_DSI_ValidateShortcutAndKeyFile(ProductName,ProductVersion)
+
 				case UCase("DB2")
 					Set NewDB2Suite	=	New UpdateDB2Suite
 					'Update all finish installation data
