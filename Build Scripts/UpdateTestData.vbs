@@ -1769,7 +1769,7 @@ Class UpdateDB2Suite
 		end if
 
 	End Sub
-'==============================DSI_ValidateShortcutAndKeyFile========================================
+        '==============================DSI_ValidateShortcutAndKeyFile========================================
 	Sub Update_DSI_DB2_ValidateShortcutAndKeyFile(ByVal StrProduct,ByVal StrVersion)
 		
 		Dim StrColName,StrMainVer,Query,StrVer
@@ -1816,7 +1816,7 @@ Class UpdateDB2Suite
 
 		if InStr(StrColName,"Spotlight on IBM DB2 LUW") >=	1 then
 			StrVer 	= 	StrMainVer(0) + "." + StrMainVer(1) + "." + StrMainVer(2)
-		else if InStr(StrColName,"Benchmark Factory") >=	1 then
+		elseif InStr(StrColName,"Benchmark Factory") >=	1 then
                         StrVer 	= 	StrMainVer(0) + "." + StrMainVer(1) + "." + StrMainVer(2)
                 else
 			StrVer 	= 	StrMainVer(0) + "." + StrMainVer(1)
