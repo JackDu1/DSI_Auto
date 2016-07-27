@@ -720,13 +720,13 @@ Class UpdateOracleSuite
 				case "TOADFORORACLE_X86_ZH"
 					StrProduct="TOAD FOR ORACLE%"
 				case "TOADFORORACLE_TRIAL_X86_EN"
-					StrProduct="TOAD FOR ORACLE% TRIAL"
+					StrProduct="TOAD FOR ORACLE%TRIAL%"
 				case "TOADFORORACLE_TRIAL_X86_ZH"
-					StrProduct="TOAD FOR ORACLE% TRIAL"
+					StrProduct="TOAD FOR ORACLE%TRIAL%"
 				case "TOADFORORACLE_TRIAL_X64_EN"
-					StrProduct="TOAD FOR ORACLE% TRIAL"
+					StrProduct="TOAD FOR ORACLE%TRIAL%"
 				case "TOADFORORACLE_TRIAL_X64_ZH"
-					StrProduct="TOAD FOR ORACLE% TRIAL"
+					StrProduct="TOAD FOR ORACLE%TRIAL%"
 				case "TOADFORORACLE_READONLY_X86_EN"
 					StrProduct="TOAD FOR ORACLE%"
 				case "TOADFORORACLE_READONLY_X86_ZH"
@@ -774,7 +774,7 @@ Class UpdateOracleSuite
 		
 		StrMainVer 	= 	Split(StrVersion,".")
 
-		if InStr(StrColName,"Benchmark Factory") >=	1 then
+		if (InStr(StrColName,"Benchmark Factory") >=	1) or (InStr(StrColName,"Benchmark Factory Trial") >=	1) then
 			StrVer 	= 	StrMainVer(0) + "." + StrMainVer(1) + "." + StrMainVer(2)
 		else
 			StrVer 	= 	StrMainVer(0) + "." + StrMainVer(1)
