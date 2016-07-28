@@ -751,6 +751,10 @@ Class UpdateOracleSuite
 					StrProduct="BENCHMARK FACTORY TRIAL%"
 				case "BENCHMARKFACTORY_TRIAL_X64_EN"
 					StrProduct="BENCHMARK FACTORY TRIAL%"
+                                case "BENCHMARKFACTORY_X64_EN"					
+                                        StrProduct="BENCHMARK FACTORY%"				
+                                case "BENCHMARKFACTORY_X86_EN"
+                                     StrProduct="BENCHMARK FACTORY%"
 				case "SQLOPTIMIZERFORORACLE_X64_MULTILANG"
 					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 64-BIT"
 				case else
