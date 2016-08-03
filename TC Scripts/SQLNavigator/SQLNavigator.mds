@@ -429,7 +429,7 @@
 				<Prp name="colcount" type="I" value="1"/>
 				<Prp name="colindex" type="I" value="0"/>
 				<Prp name="rowcount" type="I" value="3"/>
-				<Prp name="rowindex" type="I" value="1"/>
+				<Prp name="rowindex" type="I" value="2"/>
 				<Prp name="type" type="I" value="6"/>
 				<Prp name="val0x0" type="S" value="Off"/>
 				<Prp name="val0x1" type="S" value="Capture images only"/>
@@ -473,7 +473,7 @@
 				<Prp name="colcount" type="I" value="1"/>
 				<Prp name="colindex" type="I" value="0"/>
 				<Prp name="rowcount" type="I" value="3"/>
-				<Prp name="rowindex" type="I" value="1"/>
+				<Prp name="rowindex" type="I" value="2"/>
 				<Prp name="type" type="I" value="6"/>
 				<Prp name="val0x0" type="S" value="Off"/>
 				<Prp name="val0x1" type="S" value="Capture images only"/>
@@ -2290,7 +2290,7 @@
 									<Node name="test parameters"/>
 									<Prp name="count" type="I" value="1"/>
 									<Prp name="description" type="S" value=""/>
-									<Prp name="enabled" type="B" value="0"/>
+									<Prp name="enabled" type="B" value="-1"/>
 									<Prp name="group" type="B" value="0"/>
 									<Prp name="index" type="I" value="0"/>
 									<Prp name="key" type="S" value="{9D52ED57-512C-4438-96B1-BE641AD36213}"/>
@@ -3082,7 +3082,7 @@
 									<Node name="test parameters"/>
 									<Prp name="count" type="I" value="1"/>
 									<Prp name="description" type="S" value=""/>
-									<Prp name="enabled" type="B" value="0"/>
+									<Prp name="enabled" type="B" value="-1"/>
 									<Prp name="group" type="B" value="0"/>
 									<Prp name="index" type="I" value="0"/>
 									<Prp name="key" type="S" value="{441D5FDE-AA2C-4CC5-BD4A-4AA1ED87A1E4}"/>
@@ -3096,7 +3096,7 @@
 							<Node name="test parameters"/>
 							<Prp name="count" type="I" value="1"/>
 							<Prp name="description" type="S" value=""/>
-							<Prp name="enabled" type="B" value="0"/>
+							<Prp name="enabled" type="B" value="-1"/>
 							<Prp name="group" type="B" value="-1"/>
 							<Prp name="index" type="I" value="4"/>
 							<Prp name="key" type="S" value="{561770D1-6FD3-4F93-ACAE-DB152BB478DD}"/>
