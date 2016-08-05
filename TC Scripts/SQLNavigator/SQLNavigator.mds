@@ -2603,7 +2603,7 @@
 							<Prp name="group" type="B" value="-1"/>
 							<Prp name="index" type="I" value="5"/>
 							<Prp name="key" type="S" value="{5FE73DA0-9054-4020-A36F-E2192672F9B6}"/>
-							<Prp name="name" type="S" value="W38 - x64_Web"/>
+							<Prp name="name" type="S" value="W63 - x64_Web"/>
 							<Prp name="stoponerror" type="I" value="2"/>
 							<Prp name="stoponexception" type="I" value="2"/>
 							<Prp name="test moniker" type="S" value=""/>
@@ -2634,7 +2634,7 @@
 							<Prp name="group" type="B" value="-1"/>
 							<Prp name="index" type="I" value="6"/>
 							<Prp name="key" type="S" value="{21420133-2E7A-425D-8C01-434D397D756E}"/>
-							<Prp name="name" type="S" value="W38 - x64_Trial_Full"/>
+							<Prp name="name" type="S" value="W63 - x64_Trial_Full"/>
 							<Prp name="stoponerror" type="I" value="2"/>
 							<Prp name="stoponexception" type="I" value="2"/>
 							<Prp name="test moniker" type="S" value=""/>
@@ -2665,7 +2665,7 @@
 							<Prp name="group" type="B" value="-1"/>
 							<Prp name="index" type="I" value="7"/>
 							<Prp name="key" type="S" value="{96D86F1B-85EF-4B9B-935A-9915F329C358}"/>
-							<Prp name="name" type="S" value="W38 - x64_Trial_Web"/>
+							<Prp name="name" type="S" value="W63 - x64_Trial_Web"/>
 							<Prp name="stoponerror" type="I" value="2"/>
 							<Prp name="stoponexception" type="I" value="2"/>
 							<Prp name="test moniker" type="S" value=""/>
@@ -3082,7 +3082,7 @@
 									<Node name="test parameters"/>
 									<Prp name="count" type="I" value="1"/>
 									<Prp name="description" type="S" value=""/>
-									<Prp name="enabled" type="B" value="-1"/>
+									<Prp name="enabled" type="B" value="0"/>
 									<Prp name="group" type="B" value="0"/>
 									<Prp name="index" type="I" value="0"/>
 									<Prp name="key" type="S" value="{441D5FDE-AA2C-4CC5-BD4A-4AA1ED87A1E4}"/>
@@ -3096,7 +3096,7 @@
 							<Node name="test parameters"/>
 							<Prp name="count" type="I" value="1"/>
 							<Prp name="description" type="S" value=""/>
-							<Prp name="enabled" type="B" value="-1"/>
+							<Prp name="enabled" type="B" value="0"/>
 							<Prp name="group" type="B" value="-1"/>
 							<Prp name="index" type="I" value="4"/>
 							<Prp name="key" type="S" value="{561770D1-6FD3-4F93-ACAE-DB152BB478DD}"/>
