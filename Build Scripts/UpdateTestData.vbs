@@ -2353,6 +2353,502 @@ Class UpdateSQLServerSuite
 
 End Class
 
+Class UpdateSQLNavigatorSuite
+        '==============================DSI_ProductSelectionPage_VerifyProductDetail========================================
+	Sub Update_DSI_SQLNavigator_VerifyProductDetail(ByVal StrProduct,ByVal StrVersion)
+		
+		on error resume next
+		
+		if IsEmpty(StrProduct) then
+			wscript.quit 100
+		else
+			select case UCase(StrProduct)
+				case "SQLNavigator_X64_EN"
+					StrProduct="SQL Navigator 64-BIT"
+				case "SQLNavigator_X86_EN"
+					StrProduct="SQL Navigator 32-BIT"
+				case "SQLNavigator_TRIAL_X86_EN"
+					StrProduct="SQL Navigator 32-BIT TRIAL"
+				case "SQLNavigator_TRIAL_X64_EN"
+					StrProduct="SQL Navigator 64-BIT TRIAL"
+				case "CODETESTERORACLE_X86_EN"
+					StrProduct="DELL% CODE TESTER FOR ORACLE"
+				case "BENCHMARKFACTORY_X64_EN"
+					StrProduct="BENCHMARK FACTORY% 64-BIT"
+				case "BENCHMARKFACTORY_X86_EN"
+					StrProduct="BENCHMARK FACTORY% 32-BIT"
+				case "BENCHMARKFACTORY_TRIAL_X86_EN"
+					StrProduct="BENCHMARK FACTORY% 32-BIT Trial"
+				case "BENCHMARKFACTORY_TRIAL_X64_EN"
+					StrProduct="BENCHMARK FACTORY% 64-BIT Trial"
+				case "SQLOPTIMIZERFORORACLE_X64_MULTILANG"
+					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 64-BIT"
+				case "SQLOPTIMIZERFORORACLE_X86_MULTILANG"
+					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 32-BIT"
+				case "SQLOPTIMIZERFORORACLE_TRIAL_X86_MULTILANG"
+					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 32-BIT TRIAL"
+				case "SQLOPTIMIZERFORORACLE_TRIAL_X64_MULTILANG"
+					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 64-BIT TRIAL"
+				case else
+					StrProduct="Null"
+			end select
+		end if
+		
+		Conn.Execute "Update DSI.dbo.DSI_SQLNavigator_VerifyProductDetail set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
+		
+		if Err.Number <> 0 then
+			Err.Clear
+		end if
+
+	End Sub
+        '==============================DSI_FinishInstall_SQLNavigator========================================
+	Sub Update_DSI_FinishInstall_SQLNavigator(ByVal StrProduct,ByVal StrVersion)
+		
+		Dim StrColFolder,StrMainVer,Query,StrVer
+		on error resume next
+		
+		Set regEx = New RegExp
+		
+		if IsEmpty(StrProduct) then
+			wscript.quit 100
+		else
+			select case UCase(StrProduct)
+				case "SQLNavigator_X64_EN"
+					StrProduct="64-bit"
+				case "SQLNavigator_X86_EN"
+					StrProduct="32-bit"
+				case "SQLNavigator_TRIAL_X86_EN"
+					StrProduct="32-bit Trial"
+				case "SQLNavigator_TRIAL_X64_EN"
+					StrProduct="64-bit Trial"
+
+			end select	
+		end if
+		'Update I_Version Column Record
+		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_SQLNavigator set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'SQL Navigator%" + StrProduct +"'"
+		
+		'Update I_InstallFolder Column Record
+		Set Rec		=	CreateObject("ADODB.Recordset")
+		Query		= 	"Select I_InstallFolder from DSI.dbo.DSI_FinishInstall_SQLNavigator where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'SQL Navigator%" + StrProduct +"'"
+		Set Rec		=	Conn.Execute(Query)
+		While not Rec.EOF
+			StrColFolder=Rec.Fields("I_InstallFolder").Value
+			Rec.MoveNext
+		Wend
+		
+		StrMainVer 	= 	Split(StrVersion,".")
+		StrVer 		= 	StrMainVer(0) + "." + StrMainVer(1)
+		regEx.Pattern 	= 	"\d+(\.\d+)+"
+		regEx.Global	=	True
+		StrColFolder 	= 	regEx.Replace(StrColFolder,StrVer)
+		
+		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_SQLNavigator set  I_InstallFolder =" + "'" + StrColFolder + "'" + " where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'SQL Navigator%" + StrProduct +"'"
+		
+		Rec.Close
+		Set Rec	= Nothing
+		
+		if Err.Number <> 0 then
+			Err.Clear
+		end if
+
+	End Sub
+        '==============================DSI_FinishInstall_QuestCodeTester========================================
+	Sub Update_DSI_FinishInstall_QuestCodeTester(ByVal StrProduct,ByVal StrVersion)
+
+		Dim StrColFolder,StrMainVer,Query,StrVer
+		on error resume next
+		
+		Set regEx = New RegExp
+		
+		if IsEmpty(StrProduct) then
+			wscript.quit 100
+		end if
+		
+		'Update I_Version Column
+		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_QuestCodeTester set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like 'DELL_ CODE TESTER FOR ORACLE'"
+		
+		'Update I_InstallFolder Column Record
+		Set Rec		=	CreateObject("ADODB.Recordset")
+		Query		= 	"Select I_InstallFolder from DSI.dbo.DSI_FinishInstall_QuestCodeTester where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'DELL_ CODE TESTER FOR ORACLE'"
+		Set Rec		=	Conn.Execute(Query)
+		While not Rec.EOF
+			StrColFolder=Rec.Fields("I_InstallFolder").Value
+			Rec.MoveNext
+		Wend
+		
+		StrMainVer 	= 	Split(StrVersion,".")
+		StrVer 		= 	StrMainVer(0) + "." + StrMainVer(1)
+		regEx.Pattern 	= 	"\d+(\.\d+)+"
+		regEx.Global	=	True
+		StrColFolder 	= 	regEx.Replace(StrColFolder,StrVer)
+		
+		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_QuestCodeTester set  I_InstallFolder =" + "'" + StrColFolder + "'" + " where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'DELL_ CODE TESTER FOR ORACLE'"
+		
+		Rec.Close
+		Set Rec	= Nothing
+		
+		if Err.Number <> 0 then
+			Err.Clear
+		end if
+
+	End Sub
+        '==============================DSI_FinshInstall_OptimizerforOracle========================================
+	Sub Update_DSI_FinshInstall_OptimizerforOracle(ByVal StrProduct,ByVal StrVersion)
+		
+		Dim StrColFolder,StrMainVer,Query,StrVer
+		on error resume next
+		
+		Set regEx = New RegExp
+		
+		if IsEmpty(StrProduct) then
+			wscript.quit 100
+		else
+			select case StrProduct
+				case "SQLOPTIMIZERFORORACLE_X64_MULTILANG"
+					StrProduct="64-bit"
+				case "SQLOPTIMIZERFORORACLE_X86_MULTILANG"
+					StrProduct="32-bit"
+				case "SQLOPTIMIZERFORORACLE_TRIAL_X86_MULTILANG"
+					StrProduct="32-bit Trial"
+				case "SQLOPTIMIZERFORORACLE_TRIAL_X64_MULTILANG"
+					StrProduct="64-bit Trial"
+			end select	
+		end if
+		'Update I_Version Column
+		Conn.Execute "Update DSI.dbo.DSI_FinshInstall_OptimizerforOracle set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Dell% SQL Optimizer for Oracle%" + StrProduct +"'"
+		
+		'Update I_InstallFolder Column Record
+		Set Rec		=	CreateObject("ADODB.Recordset")
+		Query		= 	"Select I_InstallFolder from DSI.dbo.DSI_FinshInstall_OptimizerforOracle where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Dell% SQL Optimizer for Oracle%" + StrProduct +"'"
+		Set Rec		=	Conn.Execute(Query)
+		While not Rec.EOF
+			StrColFolder=Rec.Fields("I_InstallFolder").Value
+			Rec.MoveNext
+		Wend
+		
+		StrMainVer 	= 	Split(StrVersion,".")
+		StrVer 		= 	StrMainVer(0) + "." + StrMainVer(1)
+		regEx.Pattern 	= 	"\d+(\.\d+)+"
+		regEx.Global	=	True
+		StrColFolder 	= 	regEx.Replace(StrColFolder,StrVer)
+		
+		Conn.Execute "Update DSI.dbo.DSI_FinshInstall_OptimizerforOracle set  I_InstallFolder =" + "'" + StrColFolder + "'" + " where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Dell% SQL Optimizer for Oracle%" + StrProduct +"'"
+		
+		Rec.Close
+		Set Rec	= Nothing
+		
+		if Err.Number <> 0 then
+			Err.Clear
+		end if
+
+	End Sub
+        
+	'==============================DSI_FinishInstall_BMF========================================
+	Sub Update_DSI_FinishInstall_BMF(ByVal StrProduct,ByVal StrVersion)
+
+		Dim StrColFolder,StrMainVer,Query,StrVer,StrColDisplay
+		on error resume next
+		
+		Set regEx = New RegExp
+		
+		if IsEmpty(StrProduct) then
+			wscript.quit 100
+		else
+			select case StrProduct
+				case "BENCHMARKFACTORY_X64_EN"
+					StrProduct="BENCHMARK FACTORY% 64-BIT"
+				case "BENCHMARKFACTORY_X86_EN"
+					StrProduct="BENCHMARK FACTORY% 32-BIT"
+				case "BENCHMARKFACTORY_TRIAL_X86_EN"
+					StrProduct="BENCHMARK FACTORY% 32-BIT TRIAL"
+				case "BENCHMARKFACTORY_TRIAL_X64_EN"
+					StrProduct="BENCHMARK FACTORY% 64-BIT TRIAL"
+			end select	
+		end if
+		'Update I_Version Column
+		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_BMF set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
+		
+		'Update I_InstallFolder Column Record
+		Set Rec		=	CreateObject("ADODB.Recordset")
+		Query		= 	"Select I_InstallFolder from DSI.dbo.DSI_FinishInstall_BMF where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
+		Set Rec		=	Conn.Execute(Query)
+		While not Rec.EOF
+			StrColFolder=Rec.Fields("I_InstallFolder").Value
+			Rec.MoveNext
+		Wend
+		StrMainVer 	= 	Split(StrVersion,".")
+		StrVer 		= 	StrMainVer(0) + "." + StrMainVer(1) + "." + StrMainVer(2)
+		regEx.Pattern 	= 	"\d+(\.\d+)+"
+		regEx.Global	=	True
+		StrColFolder 	= 	regEx.Replace(StrColFolder,StrVer)
+		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_BMF set  I_InstallFolder =" + "'" + StrColFolder + "'" + " where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
+		
+		'Update I_DisplayVersion Column Record
+		Query		= 	"Select I_DisplayVersion from DSI.dbo.DSI_FinishInstall_BMF where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
+		Set Rec		=	Conn.Execute(Query)
+		While not Rec.EOF
+			StrColDisplay	=	Rec.Fields("I_DisplayVersion").Value
+			Rec.MoveNext
+		Wend
+		StrMainVer 	= 	Split(StrVersion,".")
+		StrVer 		= 	StrMainVer(0) + "." + StrMainVer(1) + "." + StrMainVer(3)
+		if InStr(StrColDisplay,"32-bit") >= 3 then
+			StrColDisplay	=	StrMainVer(0) + "." + StrMainVer(1) + " (32-bit)" + "." + StrMainVer(3)
+		elseif InStr(StrColDisplay,"64-bit") >= 3  then
+			StrColDisplay	=	StrMainVer(0) + "." + StrMainVer(1) + " (64-bit)" + "." + StrMainVer(3)
+		else
+			StrColDisplay 	= 	StrMainVer(0) + "." + StrMainVer(1) + "." + StrMainVer(3)
+		end if
+		
+		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_BMF set  I_DisplayVersion =" + "'" + StrColDisplay + "'" + " where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
+		
+		Rec.Close
+		Set Rec	= Nothing
+		
+		if Err.Number <> 0 then
+			Err.Clear
+		end if
+
+	End Sub
+        '==============================DSI_FinishInstall_VerifyRegistry========================================
+	Sub Update_DSI_FinishInstall_VerifyRegistry(ByVal StrProduct,ByVal StrVersion)
+		
+		Dim StrColName,StrMainVer,Query,StrVer
+		Dim Matches,match,RetStr
+		
+		on error resume next
+		
+		Set regEx = New RegExp
+		
+		if IsEmpty(StrProduct) then
+			wscript.quit 100
+		else
+			select case UCase(StrProduct)
+				case "SQLNavigator_X64_EN"
+					StrProduct="SQL Navigator 64-BIT"
+				case "SQLNavigator_X86_EN"
+					StrProduct="SQL Navigator 32-BIT"
+				case "SQLNavigator_TRIAL_X86_EN"
+					StrProduct="SQL Navigator 32-BIT TRIAL"
+				case "SQLNavigator_TRIAL_X64_EN"
+					StrProduct="SQL Navigator 64-BIT TRIAL"
+				case "CODETESTERORACLE_X86_EN"
+					StrProduct="DELL% CODE TESTER FOR ORACLE"
+				case "BENCHMARKFACTORY_X64_EN"
+					StrProduct="BENCHMARK FACTORY% 64-BIT"
+				case "BENCHMARKFACTORY_X86_EN"
+					StrProduct="BENCHMARK FACTORY% 32-BIT"
+				case "BENCHMARKFACTORY_TRIAL_X86_EN"
+					StrProduct="BENCHMARK FACTORY% 32-BIT Trial"
+				case "BENCHMARKFACTORY_TRIAL_X64_EN"
+					StrProduct="BENCHMARK FACTORY% 64-BIT Trial"
+				case "SQLOPTIMIZERFORORACLE_X64_MULTILANG"
+					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 64-BIT"
+				case "SQLOPTIMIZERFORORACLE_X86_MULTILANG"
+					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 32-BIT"
+				case "SQLOPTIMIZERFORORACLE_TRIAL_X86_MULTILANG"
+					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 32-BIT TRIAL"
+				case "SQLOPTIMIZERFORORACLE_TRIAL_X64_MULTILANG"
+					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 64-BIT TRIAL"
+				case else
+					StrProduct="Null"
+			end select
+		end if
+		'Update I_ProductVersion Column
+		Conn.Execute "Update DSI.dbo.DSI_SQLNavigator_VerifyRegistry set  I_ProductVersion =" + "'" + StrVersion + "'" + " where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_InstallerDisplayProductName) like '" + StrProduct + "'"
+		
+		'Update I_ProductName Column
+		Set Rec		=	CreateObject("ADODB.Recordset")
+		Query		= 	"Select I_ProductName from DSI.dbo.DSI_SQLNavigator_VerifyRegistry where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_InstallerDisplayProductName) like '" + StrProduct + "'"
+		Set Rec		=	Conn.Execute(Query)
+		While not Rec.EOF
+			StrColName=Rec.Fields("I_ProductName").Value
+			Rec.MoveNext
+		Wend
+		
+		StrMainVer 	= 	Split(StrVersion,".")
+		
+		if InStr(StrColName,"Benchmark Factory") >=	1 then
+			StrVer 	= 	StrMainVer(0) + "." + StrMainVer(1) + "." + StrMainVer(2)
+		else
+			StrVer 	= 	StrMainVer(0) + "." + StrMainVer(1)
+		end if
+		
+		regEx.Pattern 	= 	"\d+(\.\d+)+"
+		regEx.Global	=	True
+		Set Matches		=	RegEx.Execute(StrColName)
+		For each match in matches
+			RetStr		=	Match.Value
+		Next
+		if RetStr <> "" then
+			StrColName 	= 	regEx.Replace(StrColName,StrVer)
+			Conn.Execute "Update DSI.dbo.DSI_SQLNavigator_VerifyRegistry set  I_ProductName =" + "'" + StrColName + "'" + " where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_InstallerDisplayProductName) like '" + StrProduct + "'"
+		end if
+		
+		Rec.Close
+		Set Rec	= Nothing
+		
+		if Err.Number <> 0 then
+			Err.Clear
+		end if
+
+	End Sub
+
+	'==============================DSI_ValidateShortcutAndKeyFile========================================
+	Sub Update_DSI_ValidateShortcutAndKeyFile(ByVal StrProduct,ByVal StrVersion)
+		
+		Dim StrColName,StrMainVer,Query,StrVer
+		Dim Matches,match,RetStr
+		
+		on error resume next
+		
+		Set regEx = New RegExp
+		
+		if IsEmpty(StrProduct) then
+			wscript.quit 100
+		else
+			select case UCase(StrProduct)
+				case "SQLNavigator_X64_EN"
+					StrProduct="SQL Navigator [1-9].[0-9]"
+				case "SQLNavigator_X86_EN"
+					StrProduct="SQL Navigator [1-9].[0-9]"
+				case "SQLNavigator_TRIAL_X86_EN"
+					StrProduct="SQL Navigator [1-9].[0-9] TRIAL"
+				case "SQLNavigator_TRIAL_X64_EN"
+					StrProduct="SQL Navigator [1-9].[0-9] TRIAL"
+				case "CODETESTERORACLE_X86_EN"
+					StrProduct="DELL CODE TESTER FOR ORACLE%"
+				case "SPOTLIGHTONORACLE_X64_MULTILANG"
+					StrProduct="SPOTLIGHT ON ORACLE%"
+				case "SPOTLIGHTONORACLE_X86_MULTILANG"
+					StrProduct="SPOTLIGHT ON ORACLE%"
+				case "BENCHMARKFACTORY_TRIAL_X86_EN"
+					StrProduct="BENCHMARK FACTORY TRIAL [1-9].[0-9].[0-9]"
+				case "BENCHMARKFACTORY_TRIAL_X64_EN"
+					StrProduct="BENCHMARK FACTORY TRIAL [1-9].[0-9].[0-9](64-bit)"
+                                case "BENCHMARKFACTORY_X64_EN"					
+                                        StrProduct="BENCHMARK FACTORY [1-9].[0-9].[0-9](64-bit)"				
+                                case "BENCHMARKFACTORY_X86_EN"
+                                     StrProduct="BENCHMARK FACTORY [1-9].[0-9].[0-9]"
+				case "SQLOPTIMIZERFORORACLE_X64_MULTILANG"
+					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 64-BIT"
+				case else
+					StrProduct="Null"
+			end select
+		end if
+
+		
+		'Update I_ProductName Column
+		Set Rec		=	CreateObject("ADODB.Recordset")
+		Query		= 	"Select I_ProductName from DSI.dbo.DSI_SQLNavigator_ValidateShortcutAndKeyFile where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
+		Set Rec		=	Conn.Execute(Query)
+		While not Rec.EOF
+			StrColName=Rec.Fields("I_ProductName").Value
+			Rec.MoveNext
+		Wend
+		
+		StrMainVer 	= 	Split(StrVersion,".")
+
+		if (InStr(StrColName,"Benchmark Factory") >=	1) or (InStr(StrColName,"Benchmark Factory Trial") >=	1) then
+			StrVer 	= 	StrMainVer(0) + "." + StrMainVer(1) + "." + StrMainVer(2)
+		else
+			StrVer 	= 	StrMainVer(0) + "." + StrMainVer(1)
+		end if
+		
+		regEx.Pattern 	= 	"\d+(\.\d+)+"
+		regEx.Global	=	True
+		Set Matches		=	RegEx.Execute(StrColName)
+		For each match in matches
+			RetStr		=	Match.Value
+		Next
+		if RetStr <> "" then
+			StrColName 	= 	regEx.Replace(StrColName,StrVer)
+			Conn.Execute "Update DSI.dbo.DSI_SQLNavigator_ValidateShortcutAndKeyFile set  I_ProductName =" + "'" + StrColName + "'" + " where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
+		end if
+		
+		Rec.Close
+		Set Rec	= Nothing
+		
+		if Err.Number <> 0 then
+			Err.Clear
+		end if
+
+	End Sub
+        
+'==============================DSI_SilentInstallMsiBuild========================================
+	Sub Update_SilentInstallMsiBuild(ByVal StrProduct,ByVal StrVersion)
+		
+		Dim StrColName,Query,StrVer
+		Dim Matches,match,RetStr
+		
+		on error resume next
+		
+		Set regEx = New RegExp
+		
+		if IsEmpty(StrProduct) then
+			wscript.quit 100
+		else
+			select case UCase(StrProduct)
+				case "SQLNavigator_X64_EN"
+					StrProduct="SQL Navigator 64-BIT"
+				case "SQLNavigator_X86_EN"
+					StrProduct="SQL Navigator 32-BIT"
+				case "SQLNavigator_TRIAL_X86_EN"
+					StrProduct="SQL Navigator 32-BIT TRIAL"
+				case "SQLNavigator_TRIAL_X64_EN"
+					StrProduct="SQL Navigator 64-BIT TRIAL"
+				case "CODETESTERORACLE_X86_EN"
+					StrProduct="DELL% CODE TESTER FOR ORACLE"
+				case "BENCHMARKFACTORY_X64_EN"
+					StrProduct="BENCHMARK FACTORY% 64-BIT"
+				case "BENCHMARKFACTORY_X86_EN"
+					StrProduct="BENCHMARK FACTORY% 32-BIT"
+				case "BENCHMARKFACTORY_TRIAL_X86_EN"
+					StrProduct="BENCHMARK FACTORY% 32-BIT Trial"
+				case "BENCHMARKFACTORY_TRIAL_X64_EN"
+					StrProduct="BENCHMARK FACTORY% 64-BIT Trial"
+				case "SQLOPTIMIZERFORORACLE_X64_MULTILANG"
+					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 64-BIT"
+				case "SQLOPTIMIZERFORORACLE_X86_MULTILANG"
+					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 32-BIT"
+				case "SQLOPTIMIZERFORORACLE_TRIAL_X86_MULTILANG"
+					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 32-BIT TRIAL"
+				case "SQLOPTIMIZERFORORACLE_TRIAL_X64_MULTILANG"
+					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 64-BIT TRIAL"
+				case else
+					StrProduct="Null"
+			end select
+		end if
+		
+		'Update I_FilePath Column
+		Set Rec		=	CreateObject("ADODB.Recordset")
+		Query		= 	"Select I_FilePath from DSI.dbo.DSI_SQLNavigator_SilentInstallMsiBuild where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
+		Set Rec		=	Conn.Execute(Query)
+		While not Rec.EOF
+			StrColName=Rec.Fields("I_FilePath").Value
+			Rec.MoveNext
+		Wend
+		
+		regEx.Pattern 	= 	"\d+(\.\d+)+"
+		regEx.Global	=	True
+		Set Matches		=	RegEx.Execute(StrColName)
+		For each match in matches
+			RetStr		=	Match.Value
+		Next
+		if RetStr <> "" then
+			StrColName 	= 	regEx.Replace(StrColName,StrVersion)
+			Conn.Execute "Update DSI.dbo.DSI_SQLNavigator_SilentInstallMsiBuild set  I_FilePath =" + "'" + StrColName + "'" + " where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
+		end if
+		
+		Rec.Close
+		Set Rec	= Nothing
+		
+		if Err.Number <> 0 then
+			Err.Clear
+		end if
+
+	End Sub
+End Class
 '================================================================================
 
 Sub UpdateTestData()
@@ -2529,6 +3025,27 @@ Sub UpdateTestData()
 					Call NewSQLServerSuite.Update_SQLServer_SilentInstallMsiBuild(ProductName,ProductVersion)
                                         'Update Shortcut table data
 					Call NewSQLServerSuite.Update_DSI_SQLServer_ValidateShortcutAndKeyFile(ProductName,ProductVersion)
+                                case UCase("SQLNavigator")
+					Set NewSQLNavigator	=	New UpdateSQLNavigator
+					'Update all finish installation data
+					Select Case Trim(UCase(PreProduct(0)))
+						case "SQLNavigator"
+							Call NewSQLNavigator.Update_DSI_FinishInstall_SQLNavigator(ProductName,ProductVersion) 
+						case "SQLOPTIMIZERFORSQLSERVER"
+							Call NewSQLNavigator.Update_DSI_FinshInstall_OptimizerforOracle(ProductName,ProductVersion)
+						case "BENCHMARKFACTORY"
+							Call NewSQLNavigator.Update_DSI_FinishInstall_BMF(ProductName,ProductVersion)
+                                                case "CODETESTERORACLE"
+							Call NewSQLNavigator.Update_DSI_FinishInstall_QuestCodeTester(ProductName,ProductVersion) 
+					End Select
+					'Update Product Details table data
+					Call NewSQLNavigator.Update_DSI_SQLNavigator_VerifyProductDetail(ProductName,ProductVersion)
+					'Update Verify Reistry table data
+					Call NewSQLNavigator.Update_DSI_FinishInstall_VerifyRegistry(ProductName,ProductVersion)
+					'Update Silent Install table data
+					Call NewSQLNavigator.Update_SilentInstallMsiBuild(ProductName,ProductVersion)
+                                        'Update Shortcut table data
+					Call NewSQLNavigator.Update_DSI_ValidateShortcutAndKeyFile(ProductName,ProductVersion)
 			end Select
 		end if
 	Next
