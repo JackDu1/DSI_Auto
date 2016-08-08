@@ -2852,6 +2852,7 @@ End Class
 
 Sub UpdateTestData()
 
+        on error resume next 
 
 	Dim XMLDoc,FSO,regEx
 	Dim ErrorMsg,i
