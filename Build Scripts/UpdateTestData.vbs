@@ -2465,11 +2465,11 @@ Class UpdateSQLNavigatorSuite
 		end if
 		
 		'Update I_Version Column
-		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_QuestCodeTester set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like 'DELL_ CODE TESTER FOR ORACLE'"
+		Conn.Execute "Update DSI.dbo.DSI_SQLNavigator_FinishInstall_QCTO set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like 'DELL_ CODE TESTER FOR ORACLE'"
 		
 		'Update I_InstallFolder Column Record
 		Set Rec		=	CreateObject("ADODB.Recordset")
-		Query		= 	"Select I_InstallFolder from DSI.dbo.DSI_FinishInstall_QuestCodeTester where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'DELL_ CODE TESTER FOR ORACLE'"
+		Query		= 	"Select I_InstallFolder from DSI.dbo.DSI_SQLNavigator_FinishInstall_QCTO where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'DELL_ CODE TESTER FOR ORACLE'"
 		Set Rec		=	Conn.Execute(Query)
 		While not Rec.EOF
 			StrColFolder=Rec.Fields("I_InstallFolder").Value
@@ -2482,7 +2482,7 @@ Class UpdateSQLNavigatorSuite
 		regEx.Global	=	True
 		StrColFolder 	= 	regEx.Replace(StrColFolder,StrVer)
 		
-		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_QuestCodeTester set  I_InstallFolder =" + "'" + StrColFolder + "'" + " where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'DELL_ CODE TESTER FOR ORACLE'"
+		Conn.Execute "Update DSI.dbo.DSI_SQLNavigator_FinishInstall_QCTO set  I_InstallFolder =" + "'" + StrColFolder + "'" + " where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'DELL_ CODE TESTER FOR ORACLE'"
 		
 		Rec.Close
 		Set Rec	= Nothing
@@ -2515,11 +2515,11 @@ Class UpdateSQLNavigatorSuite
 			end select	
 		end if
 		'Update I_Version Column
-		Conn.Execute "Update DSI.dbo.DSI_FinshInstall_OptimizerforOracle set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Dell% SQL Optimizer for Oracle%" + StrProduct +"'"
+		Conn.Execute "Update DSI.dbo.DSI_SQLNavigator_FinshInstall_OptimizerforOracle set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Dell% SQL Optimizer for Oracle%" + StrProduct +"'"
 		
 		'Update I_InstallFolder Column Record
 		Set Rec		=	CreateObject("ADODB.Recordset")
-		Query		= 	"Select I_InstallFolder from DSI.dbo.DSI_FinshInstall_OptimizerforOracle where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Dell% SQL Optimizer for Oracle%" + StrProduct +"'"
+		Query		= 	"Select I_InstallFolder from DSI.dbo.DSI_SQLNavigator_FinshInstall_OptimizerforOracle where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Dell% SQL Optimizer for Oracle%" + StrProduct +"'"
 		Set Rec		=	Conn.Execute(Query)
 		While not Rec.EOF
 			StrColFolder=Rec.Fields("I_InstallFolder").Value
@@ -2532,7 +2532,7 @@ Class UpdateSQLNavigatorSuite
 		regEx.Global	=	True
 		StrColFolder 	= 	regEx.Replace(StrColFolder,StrVer)
 		
-		Conn.Execute "Update DSI.dbo.DSI_FinshInstall_OptimizerforOracle set  I_InstallFolder =" + "'" + StrColFolder + "'" + " where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Dell% SQL Optimizer for Oracle%" + StrProduct +"'"
+		Conn.Execute "Update DSI.dbo.DSI_SQLNavigator_FinshInstall_OptimizerforOracle set  I_InstallFolder =" + "'" + StrColFolder + "'" + " where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Dell% SQL Optimizer for Oracle%" + StrProduct +"'"
 		
 		Rec.Close
 		Set Rec	= Nothing
@@ -2565,11 +2565,11 @@ Class UpdateSQLNavigatorSuite
 			end select	
 		end if
 		'Update I_Version Column
-		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_BMF set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
+		Conn.Execute "Update DSI.dbo.DSI_SQLNavigator_FinishInstall_BMF set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
 		
 		'Update I_InstallFolder Column Record
 		Set Rec		=	CreateObject("ADODB.Recordset")
-		Query		= 	"Select I_InstallFolder from DSI.dbo.DSI_FinishInstall_BMF where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
+		Query		= 	"Select I_InstallFolder from DSI.dbo.DSI_SQLNavigator_FinishInstall_BMF where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
 		Set Rec		=	Conn.Execute(Query)
 		While not Rec.EOF
 			StrColFolder=Rec.Fields("I_InstallFolder").Value
@@ -2580,10 +2580,10 @@ Class UpdateSQLNavigatorSuite
 		regEx.Pattern 	= 	"\d+(\.\d+)+"
 		regEx.Global	=	True
 		StrColFolder 	= 	regEx.Replace(StrColFolder,StrVer)
-		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_BMF set  I_InstallFolder =" + "'" + StrColFolder + "'" + " where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
+		Conn.Execute "Update DSI.dbo.DSI_SQLNavigator_FinishInstall_BMF set  I_InstallFolder =" + "'" + StrColFolder + "'" + " where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
 		
 		'Update I_DisplayVersion Column Record
-		Query		= 	"Select I_DisplayVersion from DSI.dbo.DSI_FinishInstall_BMF where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
+		Query		= 	"Select I_DisplayVersion from DSI.dbo.DSI_SQLNavigator_FinishInstall_BMF where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
 		Set Rec		=	Conn.Execute(Query)
 		While not Rec.EOF
 			StrColDisplay	=	Rec.Fields("I_DisplayVersion").Value
@@ -2599,7 +2599,7 @@ Class UpdateSQLNavigatorSuite
 			StrColDisplay 	= 	StrMainVer(0) + "." + StrMainVer(1) + "." + StrMainVer(3)
 		end if
 		
-		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_BMF set  I_DisplayVersion =" + "'" + StrColDisplay + "'" + " where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
+		Conn.Execute "Update DSI.dbo.DSI_SQLNavigator_FinishInstall_BMF set  I_DisplayVersion =" + "'" + StrColDisplay + "'" + " where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
 		
 		Rec.Close
 		Set Rec	= Nothing
