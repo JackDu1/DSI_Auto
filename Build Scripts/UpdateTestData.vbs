@@ -3025,7 +3025,7 @@ Sub UpdateTestData()
 					Call NewSQLServerSuite.Update_SQLServer_SilentInstallMsiBuild(ProductName,ProductVersion)
                                         'Update Shortcut table data
 					Call NewSQLServerSuite.Update_DSI_SQLServer_ValidateShortcutAndKeyFile(ProductName,ProductVersion)
-                                case UCase("SQLNavigator")
+                                case UCase("SQLNAVIGATOR")
 					Set NewSQLNavigator	=	New UpdateSQLNavigatorSuite
 					'Update all finish installation data
 					Select Case Trim(UCase(PreProduct(0)))
