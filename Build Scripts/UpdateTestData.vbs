@@ -2400,7 +2400,7 @@ Class UpdateSQLNavigatorSuite
 			Err.Clear
 		end if
 
-	End
+	End Sub
  '==============================DSI_FinishInstall_SQLNavigator========================================
 	Sub Update_DSI_FinishInstall_SQLNavigator(ByVal StrProduct,ByVal StrVersion)
 		
@@ -2852,7 +2852,6 @@ End Class
 
 Sub UpdateTestData()
 
-	on error resume next
 
 	Dim XMLDoc,FSO,regEx
 	Dim ErrorMsg,i
