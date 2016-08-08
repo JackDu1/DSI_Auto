@@ -2354,7 +2354,7 @@ Class UpdateSQLServerSuite
 End Class
 
 Class UpdateSQLNavigatorSuite
-        '==============================DSI_ProductSelectionPage_VerifyProductDetail========================================
+'==============================DSI_ProductSelectionPage_VerifyProductDetail========================================
 	Sub Update_DSI_SQLNavigator_VerifyProductDetail(ByVal StrProduct,ByVal StrVersion)
 		
 		on error resume next
@@ -2400,8 +2400,8 @@ Class UpdateSQLNavigatorSuite
 			Err.Clear
 		end if
 
-	End Sub
-        '==============================DSI_FinishInstall_SQLNavigator========================================
+	End
+ '==============================DSI_FinishInstall_SQLNavigator========================================
 	Sub Update_DSI_FinishInstall_SQLNavigator(ByVal StrProduct,ByVal StrVersion)
 		
 		Dim StrColFolder,StrMainVer,Query,StrVer
@@ -2452,7 +2452,7 @@ Class UpdateSQLNavigatorSuite
 		end if
 
 	End Sub
-        '==============================DSI_FinishInstall_QuestCodeTester========================================
+ '==============================DSI_FinishInstall_QuestCodeTester========================================
 	Sub Update_DSI_FinishInstall_QuestCodeTester(ByVal StrProduct,ByVal StrVersion)
 
 		Dim StrColFolder,StrMainVer,Query,StrVer
@@ -2492,7 +2492,7 @@ Class UpdateSQLNavigatorSuite
 		end if
 
 	End Sub
-        '==============================DSI_FinshInstall_OptimizerforOracle========================================
+ '==============================DSI_FinshInstall_OptimizerforOracle========================================
 	Sub Update_DSI_FinshInstall_OptimizerforOracle(ByVal StrProduct,ByVal StrVersion)
 		
 		Dim StrColFolder,StrMainVer,Query,StrVer
@@ -2542,8 +2542,7 @@ Class UpdateSQLNavigatorSuite
 		end if
 
 	End Sub
-        
-	'==============================DSI_FinishInstall_BMF========================================
+ '==============================DSI_FinishInstall_BMF========================================
 	Sub Update_DSI_FinishInstall_BMF(ByVal StrProduct,ByVal StrVersion)
 
 		Dim StrColFolder,StrMainVer,Query,StrVer,StrColDisplay
@@ -2610,7 +2609,7 @@ Class UpdateSQLNavigatorSuite
 		end if
 
 	End Sub
-        '==============================DSI_FinishInstall_VerifyRegistry========================================
+'==============================DSI_FinishInstall_VerifyRegistry========================================
 	Sub Update_DSI_FinishInstall_VerifyRegistry(ByVal StrProduct,ByVal StrVersion)
 		
 		Dim StrColName,StrMainVer,Query,StrVer
@@ -2857,7 +2856,7 @@ Sub UpdateTestData()
 
 	Dim XMLDoc,FSO,regEx
 	Dim ErrorMsg,i
-	Dim NewOracleSuite,NewSAPSuite,NewDB2Suite,NewSQLServerSuite,UpdateSQLNavigatorSuite
+	Dim NewOracleSuite,NewSAPSuite,NewDB2Suite,NewSQLServerSuite,NewSQLNavigator
 	Dim ProjectFile
 	Dim RootNode,ProductNode,NodeName
 	Dim productName,productversion,StrProduct,PreProduct
