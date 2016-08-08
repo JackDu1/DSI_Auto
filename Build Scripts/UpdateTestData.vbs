@@ -2363,13 +2363,13 @@ Class UpdateSQLNavigatorSuite
 			wscript.quit 100
 		else
 			select case UCase(StrProduct)
-				case "SQLNavigator_X64_EN"
+				case "SQLNAVIGATOR_X64_EN"
 					StrProduct="SQL NAVIGATOR% 64-BIT"
-				case "SQLNavigator_X86_EN"
+				case "SQLNAVIGATOR_X86_EN"
 					StrProduct="SQL NAVIGATOR% 32-BIT"
-				case "SQLNavigator_TRIAL_X86_EN"
+				case "SQLNAVIGATOR_TRIAL_X86_EN"
 					StrProduct="SQL NAVIGATOR% 32-BIT TRIAL"
-				case "SQLNavigator_TRIAL_X64_EN"
+				case "SQLNAVIGATOR_TRIAL_X64_EN"
 					StrProduct="SQL NAVIGATOR% 64-BIT TRIAL"
 				case "CODETESTERORACLE_X86_EN"
 					StrProduct="DELL% CODE TESTER FOR ORACLE"
@@ -2413,13 +2413,13 @@ Class UpdateSQLNavigatorSuite
 			wscript.quit 100
 		else
 			select case UCase(StrProduct)
-				case "SQLNavigator_X64_EN"
+				case "SQLNAVIGATOR_X64_EN"
 					StrProduct="64-bit"
-				case "SQLNavigator_X86_EN"
+				case "SQLNAVIGATOR_X86_EN"
 					StrProduct="32-bit"
-				case "SQLNavigator_TRIAL_X86_EN"
+				case "SQLNAVIGATOR_TRIAL_X86_EN"
 					StrProduct="32-bit Trial"
-				case "SQLNavigator_TRIAL_X64_EN"
+				case "SQLNAVIGATOR_TRIAL_X64_EN"
 					StrProduct="64-bit Trial"
 
 			end select	
@@ -2623,13 +2623,13 @@ Class UpdateSQLNavigatorSuite
 			wscript.quit 100
 		else
 			select case UCase(StrProduct)
-				case "SQLNavigator_X64_EN"
+				case "SQLNAVIGATOR_X64_EN"
 					StrProduct="SQL NAVIGATOR% 64-BIT"
-				case "SQLNavigator_X86_EN"
+				case "SQLNAVIGATOR_X86_EN"
 					StrProduct="SQL NAVIGATOR% 32-BIT"
-				case "SQLNavigator_TRIAL_X86_EN"
+				case "SQLNAVIGATOR_TRIAL_X86_EN"
 					StrProduct="SQL NAVIGATOR% 32-BIT TRIAL"
-				case "SQLNavigator_TRIAL_X64_EN"
+				case "SQLNAVIGATOR_TRIAL_X64_EN"
 					StrProduct="SQL NAVIGATOR% 64-BIT TRIAL"
 				case "CODETESTERORACLE_X86_EN"
 					StrProduct="DELL% CODE TESTER FOR ORACLE"
@@ -2707,13 +2707,13 @@ Class UpdateSQLNavigatorSuite
 			wscript.quit 100
 		else
 			select case UCase(StrProduct)
-				case "SQLNavigator_X64_EN"
+				case "SQLNAVIGATOR_X64_EN"
 					StrProduct="SQL NAVIGATOR [1-9].[0-9]"
-				case "SQLNavigator_X86_EN"
+				case "SQLNAVIGATOR_X86_EN"
 					StrProduct="SQL NAVIGATOR [1-9].[0-9]"
-				case "SQLNavigator_TRIAL_X86_EN"
+				case "SQLNAVIGATOR_TRIAL_X86_EN"
 					StrProduct="SQL NAVIGATOR [1-9].[0-9] TRIAL"
-				case "SQLNavigator_TRIAL_X64_EN"
+				case "SQLNAVIGATOR_TRIAL_X64_EN"
 					StrProduct="SQL NAVIGATOR [1-9].[0-9] TRIAL"
 				case "CODETESTERORACLE_X86_EN"
 					StrProduct="DELL CODE TESTER FOR ORACLE%"
@@ -2788,13 +2788,13 @@ Class UpdateSQLNavigatorSuite
 			wscript.quit 100
 		else
 			select case UCase(StrProduct)
-				case "SQLNavigator_X64_EN"
+				case "SQLNAVIGATOR_X64_EN"
 					StrProduct="SQL NAVIGATOR% 64-BIT"
-				case "SQLNavigator_X86_EN"
+				case "SQLNAVIGATOR_X86_EN"
 					StrProduct="SQL NAVIGATOR% 32-BIT"
-				case "SQLNavigator_TRIAL_X86_EN"
+				case "SQLNAVIGATOR_TRIAL_X86_EN"
 					StrProduct="SQL NAVIGATOR% 32-BIT TRIAL"
-				case "SQLNavigator_TRIAL_X64_EN"
+				case "SQLNAVIGATOR_TRIAL_X64_EN"
 					StrProduct="SQL NAVIGATOR% 64-BIT TRIAL"
 				case "CODETESTERORACLE_X86_EN"
 					StrProduct="DELL% CODE TESTER FOR ORACLE"
