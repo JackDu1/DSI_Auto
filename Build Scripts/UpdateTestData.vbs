@@ -2857,7 +2857,7 @@ Sub UpdateTestData()
 
 	Dim XMLDoc,FSO,regEx
 	Dim ErrorMsg,i
-	Dim NewOracleSuite,NewSAPSuite,NewDB2Suite,NewSQLServerSuite
+	Dim NewOracleSuite,NewSAPSuite,NewDB2Suite,NewSQLServerSuite,UpdateSQLNavigatorSuite
 	Dim ProjectFile
 	Dim RootNode,ProductNode,NodeName
 	Dim productName,productversion,StrProduct,PreProduct
