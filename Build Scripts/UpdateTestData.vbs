@@ -2425,11 +2425,11 @@ Class UpdateSQLNavigatorSuite
 			end select	
 		end if
 		'Update I_Version Column Record
-		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_SQLNavigator set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'SQL Navigator_ " + StrProduct +"'"
+		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_SQLNavigator set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'SQL Navigator%" + StrProduct +"'"
 		
 		'Update I_InstallFolder Column Record
 		Set Rec		=	CreateObject("ADODB.Recordset")
-		Query		= 	"Select I_InstallFolder from DSI.dbo.DSI_FinishInstall_SQLNavigator where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'SQL Navigator_ " + StrProduct +"'"
+		Query		= 	"Select I_InstallFolder from DSI.dbo.DSI_FinishInstall_SQLNavigator where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'SQL Navigator%" + StrProduct +"'"
 		Set Rec		=	Conn.Execute(Query)
 		While not Rec.EOF
 			StrColFolder=Rec.Fields("I_InstallFolder").Value
@@ -2442,7 +2442,7 @@ Class UpdateSQLNavigatorSuite
 		regEx.Global	=	True
 		StrColFolder 	= 	regEx.Replace(StrColFolder,StrVer)
 		
-		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_SQLNavigator set  I_InstallFolder =" + "'" + StrColFolder + "'" + " where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'SQL Navigator_ " + StrProduct +"'"
+		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_SQLNavigator set  I_InstallFolder =" + "'" + StrColFolder + "'" + " where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'SQL Navigator% " + StrProduct +"'"
 		
 		Rec.Close
 		Set Rec	= Nothing
@@ -2624,13 +2624,13 @@ Class UpdateSQLNavigatorSuite
 		else
 			select case UCase(StrProduct)
 				case "SQLNavigator_X64_EN"
-					StrProduct="SQL Navigator_ 64-BIT"
+					StrProduct="SQL Navigator% 64-BIT"
 				case "SQLNavigator_X86_EN"
-					StrProduct="SQL Navigator_ 32-BIT"
+					StrProduct="SQL Navigator% 32-BIT"
 				case "SQLNavigator_TRIAL_X86_EN"
-					StrProduct="SQL Navigator_ 32-BIT TRIAL"
+					StrProduct="SQL Navigator% 32-BIT TRIAL"
 				case "SQLNavigator_TRIAL_X64_EN"
-					StrProduct="SQL Navigator_ 64-BIT TRIAL"
+					StrProduct="SQL Navigator% 64-BIT TRIAL"
 				case "CODETESTERORACLE_X86_EN"
 					StrProduct="DELL% CODE TESTER FOR ORACLE"
 				case "BENCHMARKFACTORY_X64_EN"
@@ -2789,13 +2789,13 @@ Class UpdateSQLNavigatorSuite
 		else
 			select case UCase(StrProduct)
 				case "SQLNavigator_X64_EN"
-					StrProduct="SQL Navigator_ 64-BIT"
+					StrProduct="SQL Navigator% 64-BIT"
 				case "SQLNavigator_X86_EN"
-					StrProduct="SQL Navigator_ 32-BIT"
+					StrProduct="SQL Navigator% 32-BIT"
 				case "SQLNavigator_TRIAL_X86_EN"
-					StrProduct="SQL Navigator_ 32-BIT TRIAL"
+					StrProduct="SQL Navigator% 32-BIT TRIAL"
 				case "SQLNavigator_TRIAL_X64_EN"
-					StrProduct="SQL Navigator_ 64-BIT TRIAL"
+					StrProduct="SQL Navigator% 64-BIT TRIAL"
 				case "CODETESTERORACLE_X86_EN"
 					StrProduct="DELL% CODE TESTER FOR ORACLE"
 				case "BENCHMARKFACTORY_X64_EN"
