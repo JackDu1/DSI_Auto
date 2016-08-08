@@ -3023,12 +3023,12 @@ Sub UpdateTestData()
 					Call NewSQLServerSuite.Update_SQLServer_SilentInstallMsiBuild(ProductName,ProductVersion)
                                         'Update Shortcut table data
 					Call NewSQLServerSuite.Update_DSI_SQLServer_ValidateShortcutAndKeyFile(ProductName,ProductVersion)
-                                case UCase("SQLNAVIGATOR")
+                                case UCase("SQLNavigator")
 					Set NewSQLNavigator = New UpdateSQLNavigatorSuite
 					'Update all finish installation data
 					Select Case Trim(UCase(PreProduct(0)))
 						case "SQLNAVIGATOR"
-							Call NewSQLNavigator.Update_DSI_FinishInstall_SQLNavigator(ProductName,ProductVersion) 
+							'Call NewSQLNavigator.Update_DSI_FinishInstall_SQLNavigator(ProductName,ProductVersion) 
 						case "SQLOPTIMIZERFORORACLE"
 							Call NewSQLNavigator.Update_DSI_FinshInstall_OptimizerforOracle(ProductName,ProductVersion)
 						case "BENCHMARKFACTORY"
@@ -3037,13 +3037,13 @@ Sub UpdateTestData()
 							Call NewSQLNavigator.Update_DSI_FinishInstall_QuestCodeTester(ProductName,ProductVersion) 
 					End Select
 					'Update Product Details table data
-					Call NewSQLNavigator.Update_DSI_SQLNavigator_VerifyProductDetail(ProductName,ProductVersion)
+					 Call NewSQLNavigator.Update_DSI_SQLNavigator_VerifyProductDetail(ProductName,ProductVersion)
 					'Update Verify Reistry table data
-					Call NewSQLNavigator.Update_DSI_FinishInstall_VerifyRegistry(ProductName,ProductVersion)
+					 Call NewSQLNavigator.Update_DSI_FinishInstall_VerifyRegistry(ProductName,ProductVersion)
 					'Update Silent Install table data
-					Call NewSQLNavigator.Update_SilentInstallMsiBuild(ProductName,ProductVersion)
+					 Call NewSQLNavigator.Update_SilentInstallMsiBuild(ProductName,ProductVersion)
                                         'Update Shortcut table data
-					Call NewSQLNavigatorSuite.Update_DSI_ValidateShortcutAndKeyFile(ProductName,ProductVersion)
+					 Call NewSQLNavigatorSuite.Update_DSI_ValidateShortcutAndKeyFile(ProductName,ProductVersion)
 			end Select
 		end if
 	Next
