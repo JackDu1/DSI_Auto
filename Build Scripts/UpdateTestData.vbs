@@ -2856,7 +2856,7 @@ Sub UpdateTestData()
 
 	Dim XMLDoc,FSO,regEx
 	Dim ErrorMsg,i
-	Dim NewOracleSuite,NewSAPSuite,NewDB2Suite,NewSQLServerSuite,NewSQLNavigator
+	Dim NewOracleSuite,NewSAPSuite,NewDB2Suite,NewSQLServerSuite,NewSQLNavigatorSuite
 	Dim ProjectFile
 	Dim RootNode,ProductNode,NodeName
 	Dim productName,productversion,StrProduct,PreProduct
@@ -3025,26 +3025,26 @@ Sub UpdateTestData()
                                         'Update Shortcut table data
 					Call NewSQLServerSuite.Update_DSI_SQLServer_ValidateShortcutAndKeyFile(ProductName,ProductVersion)
                                 case UCase("SQLNAVIGATOR")
-					Set NewSQLNavigator	=	New UpdateSQLNavigatorSuite
+					Set NewSQLNavigatorSuite = New UpdateSQLNavigatorSuite
 					'Update all finish installation data
 					Select Case Trim(UCase(PreProduct(0)))
 						case "SQLNAVIGATOR"
-							Call NewSQLNavigator.Update_DSI_FinishInstall_SQLNavigator(ProductName,ProductVersion) 
+							Call NewSQLNavigatorSuite.Update_DSI_FinishInstall_SQLNavigator(ProductName,ProductVersion) 
 						case "SQLOPTIMIZERFORORACLE"
-							Call NewSQLNavigator.Update_DSI_FinshInstall_OptimizerforOracle(ProductName,ProductVersion)
+							Call NewSQLNavigatorSuite.Update_DSI_FinshInstall_OptimizerforOracle(ProductName,ProductVersion)
 						case "BENCHMARKFACTORY"
-							Call NewSQLNavigator.Update_DSI_FinishInstall_BMF(ProductName,ProductVersion)
+							Call NewSQLNavigatorSuite.Update_DSI_FinishInstall_BMF(ProductName,ProductVersion)
                                                 case "CODETESTERORACLE"
-							Call NewSQLNavigator.Update_DSI_FinishInstall_QuestCodeTester(ProductName,ProductVersion) 
+							Call NewSQLNavigatorSuite.Update_DSI_FinishInstall_QuestCodeTester(ProductName,ProductVersion) 
 					End Select
 					'Update Product Details table data
-					Call NewSQLNavigator.Update_DSI_SQLNavigator_VerifyProductDetail(ProductName,ProductVersion)
+					Call NewSQLNavigatorSuite.Update_DSI_SQLNavigator_VerifyProductDetail(ProductName,ProductVersion)
 					'Update Verify Reistry table data
-					Call NewSQLNavigator.Update_DSI_FinishInstall_VerifyRegistry(ProductName,ProductVersion)
+					Call NewSQLNavigatorSuite.Update_DSI_FinishInstall_VerifyRegistry(ProductName,ProductVersion)
 					'Update Silent Install table data
-					Call NewSQLNavigator.Update_SilentInstallMsiBuild(ProductName,ProductVersion)
+					Call NewSQLNavigatorSuite.Update_SilentInstallMsiBuild(ProductName,ProductVersion)
                                         'Update Shortcut table data
-					Call NewSQLNavigator.Update_DSI_ValidateShortcutAndKeyFile(ProductName,ProductVersion)
+					Call NewSQLNavigatorSuite.Update_DSI_ValidateShortcutAndKeyFile(ProductName,ProductVersion)
 			end Select
 		end if
 	Next
