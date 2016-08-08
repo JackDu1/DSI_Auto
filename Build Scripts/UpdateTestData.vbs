@@ -3029,9 +3029,9 @@ Sub UpdateTestData()
 					Set NewSQLNavigator	=	New UpdateSQLNavigatorSuite
 					'Update all finish installation data
 					Select Case Trim(UCase(PreProduct(0)))
-						case "SQLNavigator"
+						case "SQLNAVIGATOR"
 							Call NewSQLNavigator.Update_DSI_FinishInstall_SQLNavigator(ProductName,ProductVersion) 
-						case "SQLOPTIMIZERFORSQLSERVER"
+						case "SQLOPTIMIZERFORORACLE"
 							Call NewSQLNavigator.Update_DSI_FinshInstall_OptimizerforOracle(ProductName,ProductVersion)
 						case "BENCHMARKFACTORY"
 							Call NewSQLNavigator.Update_DSI_FinishInstall_BMF(ProductName,ProductVersion)
