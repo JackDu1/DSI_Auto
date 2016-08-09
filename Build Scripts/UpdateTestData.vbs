@@ -3044,7 +3044,7 @@ Sub UpdateTestData()
 					'Update Silent Install table data
 					   Call NewSQLNavigator.Update_SilentInstallMsiBuild(ProductName,ProductVersion)
                                         'Update Shortcut table data
-					   Call NewSQLNavigator.Update_DSI_ValidateShortcutAndKeyFile(ProductName,ProductVersion)
+					   Call NewSQLNavigatorSuite.Update_DSI_ValidateShortcutAndKeyFile(ProductName,ProductVersion)
 			end Select
 		end if
 	Next
