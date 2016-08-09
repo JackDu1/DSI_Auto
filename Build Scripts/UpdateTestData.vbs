@@ -2815,7 +2815,7 @@ Class UpdateSQLNavigatorSuite
 				case "SQLOPTIMIZERFORORACLE_TRIAL_X64_MULTILANG"
 					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 64-BIT TRIAL"
 				case else
-					StrProduct="Null"
+					StrProduct="Null" 
 			end select
 		end if
 		
