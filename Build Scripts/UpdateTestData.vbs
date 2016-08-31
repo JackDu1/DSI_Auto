@@ -293,10 +293,17 @@ Class UpdateOracleSuite
 		
 		if IsEmpty(StrProduct) then
 			wscript.quit 100
+		else
+			select case StrProduct
+				case "CodeTesterOracle_x64_EN"
+					StrProduct="64-bit"
+				case "CodeTesterOracle_x86_EN"
+					StrProduct="32-bit"
+			end select	
 		end if
 		
 		'Update I_Version Column
-		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_QuestCodeTester set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like 'DELL_ CODE TESTER FOR ORACLE'"
+		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_QuestCodeTester set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like 'DELL% CODE TESTER FOR ORACLE%" + StrProduct +"'"
 		
 		'Update I_InstallFolder Column Record
 		Set Rec		=	CreateObject("ADODB.Recordset")
@@ -313,7 +320,7 @@ Class UpdateOracleSuite
 		regEx.Global	=	True
 		StrColFolder 	= 	regEx.Replace(StrColFolder,StrVer)
 		
-		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_QuestCodeTester set  I_InstallFolder =" + "'" + StrColFolder + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'DELL_ CODE TESTER FOR ORACLE'"
+		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_QuestCodeTester set  I_InstallFolder =" + "'" + StrColFolder + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'DELL% CODE TESTER FOR ORACLE%" + StrProduct +"'"
 		
 		Rec.Close
 		Set Rec	= Nothing
@@ -324,49 +331,7 @@ Class UpdateOracleSuite
 
 	End Sub
 
-	'==============================DSI_FinishInstall_BackupReportForOracle========================================
-	Sub Update_DSI_FinishInstall_BackupReportForOracle(ByVal StrProduct,ByVal StrVersion)
-
-		Dim StrColFolder,StrMainVer,Query,StrVer
-		on error resume next
-		
-		Set regEx = New RegExp
-		
-		if IsEmpty(StrProduct) then
-			wscript.quit 100	
-		end if
-		
-		'Update I_Version Column
-		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_BackupReportForOracle set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like 'DELL_ BACKUP REPORTER FOR ORACLE'"
-		
-		'Update I_InstallFolder Column Record
-		Set Rec		=	CreateObject("ADODB.Recordset")
-		Query		= 	"Select I_InstallFolder from DSI.dbo.DSI_FinishInstall_BackupReportForOracle where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'DELL_ BACKUP REPORTER FOR ORACLE'"
-		Set Rec		=	Conn.Execute(Query)
-		While not Rec.EOF
-			StrColFolder=Rec.Fields("I_InstallFolder").Value
-			Rec.MoveNext
-		Wend
-		
-		StrMainVer 	= 	Split(StrVersion,".")
-		StrVer 		= 	StrMainVer(0) + "." + StrMainVer(1)
-		regEx.Pattern 	= 	"\d+(\.\d+)+"
-		regEx.Global	=	True
-		StrColFolder 	= 	regEx.Replace(StrColFolder,StrVer)
-		
-		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_BackupReportForOracle set  I_InstallFolder =" + "'" + StrColFolder + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'DELL_ BACKUP REPORTER FOR ORACLE'"
-		
-		Rec.Close
-		Set Rec	= Nothing
-		
-		if Err.Number <> 0 then
-			Err.Clear
-		end if
-
-	End Sub
-
-
-	'==============================DSI_FinishInstall_BackupReportForOracle========================================
+	'==============================DSI_FinishInstall_ToadforMySQLFreeware========================================
 	Sub Update_DSI_FinishInstall_ToadforMySQLFreeware(ByVal StrProduct,ByVal StrVersion)
 
 		Dim StrColFolder,StrMainVer,Query,StrVer
@@ -445,7 +410,9 @@ Class UpdateOracleSuite
 				case "BACKUPREPORTER_X86_EN"
 					StrProduct="DELL% BACKUP REPORTER FOR ORACLE"
 				case "CODETESTERORACLE_X86_EN"
-					StrProduct="DELL% CODE TESTER FOR ORACLE"
+					StrProduct="DELL% CODE TESTER FOR ORACLE 32-BIT"
+                                case "CODETESTERORACLE_X64_EN"
+					StrProduct="DELL% CODE TESTER FOR ORACLE 64-BIT"
 				case "TOADDATAMODELER_X86_EN"
 					StrProduct="TOAD% DATA MODELER 32-BIT"
                                 case "TOADDATAMODELER_X64_EN"
@@ -523,10 +490,10 @@ Class UpdateOracleSuite
 					StrProduct="TOAD%FOR ORACLE 64-BIT READ-ONLY"
 				case "TOADFORMYSQL_FREEWARE_X86_EN"
 					StrProduct="TOAD% FOR MYSQL"
-				case "BACKUPREPORTER_X86_EN"
-					StrProduct="DELL% BACKUP REPORTER FOR ORACLE"
 				case "CODETESTERORACLE_X86_EN"
-					StrProduct="DELL% CODE TESTER FOR ORACLE"
+					StrProduct="DELL% CODE TESTER FOR ORACLE 32-BIT"
+				case "CODETESTERORACLE_X64_EN"
+					StrProduct="DELL% CODE TESTER FOR ORACLE 64-BIT"
 				case "TOADDATAMODELER_X86_EN"
 					StrProduct="TOAD% DATA MODELER 32-BIT"
                                 case "TOADDATAMODELER_X64_EN"
@@ -636,10 +603,10 @@ Class UpdateOracleSuite
 					StrProduct="TOAD%FOR ORACLE 64-BIT READ-ONLY"
 				case "TOADFORMYSQL_FREEWARE_X86_EN"
 					StrProduct="TOAD% FOR MYSQL"
-				case "BACKUPREPORTER_X86_EN"
-					StrProduct="DELL% BACKUP REPORTER FOR ORACLE"
 				case "CODETESTERORACLE_X86_EN"
-					StrProduct="DELL% CODE TESTER FOR ORACLE"
+					StrProduct="DELL% CODE TESTER FOR ORACLE 32-BIT"
+				case "CODETESTERORACLE_X64_EN"
+					StrProduct="DELL% CODE TESTER FOR ORACLE 64-BIT"
 				case "TOADDATAMODELER_X86_EN"
 					StrProduct="TOAD% DATA MODELER 32-BIT"
                                 case "TOADDATAMODELER_X64_EN"
@@ -738,7 +705,9 @@ Class UpdateOracleSuite
 				case "TOADFORMYSQL_FREEWARE_X86_EN"
 					StrProduct="TOAD FOR MYSQL%"
 				case "CODETESTERORACLE_X86_EN"
-					StrProduct="DELL CODE TESTER FOR ORACLE%"
+					StrProduct="CODE TESTER FOR ORACLE%"
+				case "CODETESTERORACLE_X64_EN"
+					StrProduct="CODE TESTER FOR ORACLE%"
 				case "TOADDATAMODELER_X86_EN"
 					StrProduct="TOAD DATA MODELER%"
                                 case "TOADDATAMODELER_X64_EN"
