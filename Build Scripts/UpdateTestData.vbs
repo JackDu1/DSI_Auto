@@ -295,9 +295,9 @@ Class UpdateOracleSuite
 			wscript.quit 100
 		else
 			select case StrProduct
-				case "CodeTesterOracle_x64_EN"
+				case "CODETESTERORACLE_X64_EN"
 					StrProduct="64-bit"
-				case "CodeTesterOracle_x86_EN"
+				case "CODETESTERORACLE_X86_EN"
 					StrProduct="32-bit"
 			end select	
 		end if
