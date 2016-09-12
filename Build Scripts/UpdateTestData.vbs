@@ -307,7 +307,7 @@ Class UpdateOracleSuite
 		
 		'Update I_InstallFolder Column Record
 		Set Rec		=	CreateObject("ADODB.Recordset")
-		Query		= 	"Select I_InstallFolder from DSI.dbo.DSI_FinishInstall_QuestCodeTester where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'DELL_ CODE TESTER FOR ORACLE'"
+		Query		= 	"Select I_InstallFolder from DSI.dbo.DSI_FinishInstall_QuestCodeTester where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like 'DELL% CODE TESTER FOR ORACLE%" + StrProduct +"'"
 		Set Rec		=	Conn.Execute(Query)
 		While not Rec.EOF
 			StrColFolder=Rec.Fields("I_InstallFolder").Value
