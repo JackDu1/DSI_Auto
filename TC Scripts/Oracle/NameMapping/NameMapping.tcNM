@@ -22,7 +22,7 @@
 								<Value PropertyType="0" Value="Toad_for_Oracle_*" Type="5" />
 							</Property>
 							<Property Name="Name">
-								<Value PropertyType="0" Value="Process(&apos;Toad_for_Oracle*l&apos;)" Type="5" />
+								<Value PropertyType="0" Value="Process(&apos;Toad_for_Oracle*&apos;,2)" Type="5" />
 							</Property>
 						</Properties>
 						<Children>
