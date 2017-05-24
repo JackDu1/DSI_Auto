@@ -26,6 +26,9 @@
 			<Node name="{268a68bb-a5f5-4f0f-8b9f-ceb6540a5e0e}">
 				<Prp name="relpath" type="S" value="SQLServer\SQLServer.mds.tcLS"/>
 			</Node>
+			<Node name="{69a9620a-e8f1-45f3-a0d2-6a4c9770ee0f}">
+				<Prp name="relpath" type="S" value="SQLNavigator\SQLNavigator.mds.tcLS"/>
+			</Node>
 			<Node name="{7842a309-718d-4e08-b953-31aa0aa3df1c}">
 				<Prp name="relpath" type="S" value="SAP\SAP.mds.tcLS"/>
 			</Node>
