@@ -1,4 +1,4 @@
-C:\Components\TestExecute\setup.exe /z" -silentmode"
+C:\Components\TestExecute\setup.exe /z"-silentmode"
 ping /n 10 127.0.0.1 > nul
 
 :waitstop
