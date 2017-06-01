@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<Root Signature="{5DCBAC3B-D39C-497C-9BE8-744CBADD37AA}" NameMappingVersion="4" Cookie="332">
+<Root Signature="{5DCBAC3B-D39C-497C-9BE8-744CBADD37AA}" NameMappingVersion="4" Cookie="334">
 	<Nodes Name="NameMapping" Key="{BE401E45-B2D6-4FBA-931A-C2117D5C51AD}">
 		<Properties />
 		<Children>
@@ -1442,6 +1442,14 @@
 								</Children>
 								<TypeInfo Item0="1" />
 							</Child2>
+							<Child3 Name="QSOOZOS_MainForm" Key="{8EFC030C-5598-4430-A071-DC30B5CF232B}" ParallelWalk="True">
+								<Properties>
+									<Property0 Name="ClassName" Cookie="332" />
+									<Property1 Name="Name" Cookie="333" />
+								</Properties>
+								<Children />
+								<TypeInfo Item0="61" />
+							</Child3>
 						</Children>
 						<TypeInfo Item0="0" />
 					</Child11>
@@ -1631,6 +1639,7 @@
 			<Child2 Name="QSDB2_HwndSource_AboutWindow" Owner="{C5D0E954-C3BC-4D96-BF2A-021D97245673}">
 				<Child0 Name="QSDB2_Label_ProductionVersion" Owner="{2359E131-48E2-4934-8FD5-D8911F2521EC}" />
 			</Child2>
+			<Child3 Name="QSOOZOS_MainForm" Owner="{8EFC030C-5598-4430-A071-DC30B5CF232B}" />
 		</Child13>
 	</LogicalNodes>
 	<Storages Current="0">
@@ -1871,7 +1880,7 @@
 			<Property233 Cookie="272" PropertyType="0" Value="User Experience Feedback" Type="5" />
 			<Property234 Cookie="273" PropertyType="0" Value="HwndSource" Type="5" />
 			<Property235 Cookie="276" PropertyType="0" Value="HwndSource" Type="5" />
-			<Property236 Cookie="277" PropertyType="0" Value="WPFObject(&apos;HwndSource: ShellWindow&apos;, &apos;Dell™ SQL Optimizer for IBM® DB2® z/OS® *&apos;)" Type="5" />
+			<Property236 Cookie="277" PropertyType="0" Value="WPFObject(&apos;HwndSource: ShellWindow&apos;, &apos;Quest™ SQL Optimizer for IBM® DB2® z/OS® *&apos;)" Type="5" />
 			<Property237 Cookie="278" PropertyType="0" Value="About Dell™ SQL Optimizer for IBM® DB2® z/OS®" Type="5" />
 			<Property238 Cookie="279" PropertyType="0" Value="HwndSource" Type="5" />
 			<Property239 Cookie="280" PropertyType="0" Value="AboutWindow" Type="5" />
@@ -1926,6 +1935,8 @@
 			<Property288 Cookie="329" PropertyType="0" Value="CCopyUserSettingsDialog" Type="5" />
 			<Property289 Cookie="330" PropertyType="0" Value="Dialog" Type="5" />
 			<Property290 Cookie="331" PropertyType="0" Value="Copy_User_Settings" Type="5" />
+			<Property291 Cookie="332" PropertyType="0" Value="Window" Type="5" />
+			<Property292 Cookie="333" PropertyType="0" Value="UIAObject(&apos;Quest_SQL_Optimizer_for_IBM_DB2_z_OS_*)" Type="5" />
 		</Child0>
 	</Storages>
 	<TypeInfo StoreCodeCompletion="1">
