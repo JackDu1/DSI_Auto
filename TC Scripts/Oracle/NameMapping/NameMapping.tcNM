@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<Root Signature="{5DCBAC3B-D39C-497C-9BE8-744CBADD37AA}" NameMappingVersion="4" Cookie="341">
+<Root Signature="{5DCBAC3B-D39C-497C-9BE8-744CBADD37AA}" NameMappingVersion="4" Cookie="346">
 	<Nodes Name="NameMapping" Key="{BE401E45-B2D6-4FBA-931A-C2117D5C51AD}">
 		<Properties />
 		<Children>
@@ -540,21 +540,20 @@
 							</Child2>
 							<Child3 Name="DSI_CancellationWindow" Key="{121645CE-2BB6-404C-B9B2-869980D16AD2}" ParallelWalk="True">
 								<Properties>
-									<Property0 Name="WndCaption" Cookie="192" />
+									<Property0 Name="Name" Cookie="342" />
 								</Properties>
 								<Children>
 									<Child0 Name="btnYes" Key="{D666792E-BAA6-4B04-835D-B919C5171AFE}" ParallelWalk="True">
 										<Properties>
-											<Property0 Name="WndClass" Cookie="193" />
-											<Property1 Name="WndCaption" Cookie="194" />
+											<Property0 Name="Name" Cookie="343" />
 										</Properties>
 										<Children />
 										<TypeInfo Item0="23" />
 									</Child0>
 									<Child1 Name="btnNo" Key="{BC3618CE-7A0F-47E9-8ABB-C78116291AAE}" ParallelWalk="True">
 										<Properties>
-											<Property0 Name="WndClass" Cookie="195" />
-											<Property1 Name="WndCaption" Cookie="196" />
+											<Property0 Name="WndCaption" Cookie="344" />
+											<Property1 Name="Name" Cookie="345" />
 										</Properties>
 										<Children />
 										<TypeInfo Item0="23" />
@@ -1662,134 +1661,134 @@
 			<Property141 Cookie="189" PropertyType="0" Value="TfrmUserExperienceFeedback" Type="5" />
 			<Property142 Cookie="190" PropertyType="0" Value="TfrmSpotlightFeedback" Type="5" />
 			<Property143 Cookie="191" PropertyType="0" Value="SysTreeView32" Type="5" />
-			<Property144 Cookie="192" PropertyType="0" Value="Cancel and Lose Selections?" Type="5" />
-			<Property145 Cookie="193" PropertyType="0" Value="Button" Type="5" />
-			<Property146 Cookie="194" PropertyType="0" Value="&amp;Yes" Type="5" />
-			<Property147 Cookie="195" PropertyType="0" Value="Button" Type="5" />
-			<Property148 Cookie="196" PropertyType="0" Value="&amp;No" Type="5" />
-			<Property149 Cookie="197" PropertyType="0" Value="TProjectLucyStartup" Type="5" />
-			<Property150 Cookie="198" PropertyType="0" Value="TFmLicenseTrialNotification" Type="5" />
-			<Property151 Cookie="199" PropertyType="0" Value="FmLicenseTrialNotification" Type="5" />
-			<Property152 Cookie="201" PropertyType="0" Value="TConfirmNoNagDlg" Type="5" />
-			<Property153 Cookie="202" PropertyType="0" Value="lblValidationError" Type="5" />
-			<Property154 Cookie="203" PropertyType="0" Value="TTntMessageForm.UnicodeClass" Type="5" />
-			<Property155 Cookie="204" PropertyType="0" Value="Toad Data Modeler" Type="5" />
-			<Property156 Cookie="211" PropertyType="0" Value="TFMain" Type="5" />
-			<Property157 Cookie="212" PropertyType="0" Value="VCLObject(&apos;FMain&apos;)" Type="5" />
-			<Property158 Cookie="213" PropertyType="0" Value="WinFormsObject(&apos;ImproveExperienceForm&apos;)" Type="5" />
-			<Property159 Cookie="214" PropertyType="0" Value="ImproveExperienceForm" Type="5" />
-			<Property160 Cookie="215" PropertyType="0" Value="WinFormsObject(&apos;frmUserExperience&apos;)" Type="5" />
-			<Property161 Cookie="216" PropertyType="0" Value="frmUserExperience" Type="5" />
-			<Property162 Cookie="217" PropertyType="0" Value="WinFormsObject(&apos;frmWelcomeWindow&apos;)" Type="5" />
-			<Property163 Cookie="218" PropertyType="0" Value="frmWelcomeWindow" Type="5" />
-			<Property164 Cookie="219" PropertyType="0" Value="VisualControlCenterClass" Type="5" />
-			<Property165 Cookie="220" PropertyType="0" Value="Benchmark Factory™*" Type="5" />
-			<Property166 Cookie="223" PropertyType="0" Value="#32770" Type="5" />
-			<Property167 Cookie="224" PropertyType="0" Value="About Benchmark Factory™*" Type="5" />
-			<Property168 Cookie="225" PropertyType="0" Value="#32770" Type="5" />
-			<Property169 Cookie="226" PropertyType="0" Value="About Benchmark Factory™*" Type="5" />
-			<Property170 Cookie="227" PropertyType="0" Value="Window(&apos;#32770&apos;, &apos;About Benchmark Factory™ - Trial&apos;, 1)" Type="5" />
-			<Property171 Cookie="228" PropertyType="0" Value="dgvProperties" Type="5" />
-			<Property172 Cookie="229" PropertyType="0" Value="WinFormsObject(&apos;frmMigrationVersionSelector&apos;)" Type="5" />
-			<Property173 Cookie="230" PropertyType="0" Value="Window(&apos;#32770&apos;, &apos;Copy User Settings&apos;, 1)" Type="5" />
-			<Property174 Cookie="231" PropertyType="0" Value="wbrDescription" Type="5" />
-			<Property175 Cookie="233" PropertyType="0" Value="lblCopyright1" Type="5" />
-			<Property176 Cookie="234" PropertyType="0" Value="lblCopyright2" Type="5" />
-			<Property177 Cookie="235" PropertyType="0" Value="ALL RIGHTS RESERVED" Type="5" />
-			<Property178 Cookie="236" PropertyType="0" Value="rtbAgreement" Type="5" />
-			<Property179 Cookie="238" PropertyType="0" Value="CCopyUserSettingsDialog" Type="5" />
-			<Property180 Cookie="239" PropertyType="0" Value="Copy_User_Settings" Type="5" />
-			<Property181 Cookie="240" PropertyType="0" Value="Copy User Settings" Type="5" />
-			<Property182 Cookie="241" PropertyType="0" Value="Final" Type="5" />
-			<Property183 Cookie="242" PropertyType="0" Value="WinFormsObject(&apos;Final&apos;)" Type="5" />
-			<Property184 Cookie="243" PropertyType="0" Value="ProductInstallation" Type="5" />
-			<Property185 Cookie="244" PropertyType="0" Value="pnlBottom" Type="5" />
-			<Property186 Cookie="245" PropertyType="0" Value="lblTotalProgress" Type="5" />
-			<Property187 Cookie="246" PropertyType="0" Value="pnlBody" Type="5" />
-			<Property188 Cookie="247" PropertyType="0" Value="lblStatus" Type="5" />
-			<Property189 Cookie="248" PropertyType="0" Value="lblProduct" Type="5" />
-			<Property190 Cookie="251" PropertyType="0" Value="ProgressBar" Type="5" />
-			<Property191 Cookie="252" PropertyType="0" Value="True" Type="6" />
-			<Property192 Cookie="253" PropertyType="0" Value="WinFormsObject(&apos;lblRootDir&apos;)" Type="5" />
-			<Property193 Cookie="254" PropertyType="0" Value="TLabel" Type="5" />
-			<Property194 Cookie="255" PropertyType="0" Value="lblVersion" Type="5" />
-			<Property195 Cookie="258" PropertyType="0" Value="TfrmRWfromISConfirm" Type="5" />
-			<Property196 Cookie="259" PropertyType="0" Value="frmRWfromISConfirm" Type="5" />
-			<Property197 Cookie="260" PropertyType="0" Value="#32770" Type="5" />
-			<Property198 Cookie="261" PropertyType="0" Value="CUserExperienceDialog" Type="5" />
-			<Property199 Cookie="262" PropertyType="0" Value="TToadLabel" Type="5" />
-			<Property200 Cookie="263" PropertyType="0" Value="lblTitle" Type="5" />
-			<Property201 Cookie="264" PropertyType="0" Value="richTextBox1" Type="5" />
-			<Property202 Cookie="265" PropertyType="0" Value="ProductUninstallation" Type="5" />
-			<Property203 Cookie="266" PropertyType="0" Value="pnlBody" Type="5" />
-			<Property204 Cookie="267" PropertyType="0" Value="pnlBottom" Type="5" />
-			<Property205 Cookie="268" PropertyType="0" Value="lblProduct" Type="5" />
-			<Property206 Cookie="269" PropertyType="0" Value="lblStatus" Type="5" />
-			<Property207 Cookie="270" PropertyType="0" Value="pbrOverallExecute" Type="5" />
-			<Property208 Cookie="271" PropertyType="0" Value="lblTotalProgress" Type="5" />
-			<Property209 Cookie="272" PropertyType="0" Value="pnlBody" Type="5" />
-			<Property210 Cookie="273" PropertyType="0" Value="pbxAd" Type="5" />
-			<Property211 Cookie="274" PropertyType="0" Value="LicenseAgreement" Type="5" />
-			<Property212 Cookie="275" PropertyType="0" Value="WinFormsObject(&apos;LicenseAgreement&apos;)" Type="5" />
-			<Property213 Cookie="276" PropertyType="0" Value="RadioButton" Type="5" />
-			<Property214 Cookie="277" PropertyType="0" Value="WinFormsObject(&apos;radAccept&apos;)" Type="5" />
-			<Property215 Cookie="282" PropertyType="0" Value="Toad_for_Oracle_*" Type="5" />
-			<Property216 Cookie="283" PropertyType="0" Value="Process(&apos;Toad_for_Oracle_*&apos;, 2)" Type="5" />
-			<Property217 Cookie="284" PropertyType="0" Value="WinFormsObject(&apos;radNotAccept&apos;)" Type="5" />
-			<Property218 Cookie="285" PropertyType="0" Value="RadioButton" Type="5" />
-			<Property219 Cookie="286" PropertyType="0" Value="WinFormsObject(&apos;panel1&apos;)" Type="5" />
-			<Property220 Cookie="287" PropertyType="0" Value="Panel" Type="5" />
-			<Property221 Cookie="288" PropertyType="0" Value="WinFormsObject(&apos;pnlMain&apos;)" Type="5" />
-			<Property222 Cookie="289" PropertyType="0" Value="Panel" Type="5" />
-			<Property223 Cookie="290" PropertyType="0" Value="WinFormsObject(&apos;llblHowTo&apos;)" Type="5" />
-			<Property224 Cookie="291" PropertyType="0" Value="LinkLabel" Type="5" />
-			<Property225 Cookie="292" PropertyType="0" Value="WinFormsObject(&apos;wbrIntro&apos;)" Type="5" />
-			<Property226 Cookie="293" PropertyType="0" Value="WebBrowser" Type="5" />
-			<Property227 Cookie="294" PropertyType="0" Value="TPanel" Type="5" />
-			<Property228 Cookie="295" PropertyType="0" Value="VCLObject(&apos;pnlBorder&apos;)" Type="5" />
-			<Property229 Cookie="296" PropertyType="0" Value="TPanel" Type="5" />
-			<Property230 Cookie="297" PropertyType="0" Value="VCLObject(&apos;pnlBackground&apos;)" Type="5" />
-			<Property231 Cookie="298" PropertyType="0" Value="TPanel" Type="5" />
-			<Property232 Cookie="299" PropertyType="0" Value="VCLObject(&apos;pnlBottom&apos;)" Type="5" />
-			<Property233 Cookie="300" PropertyType="0" Value="TPanel" Type="5" />
-			<Property234 Cookie="301" PropertyType="0" Value="VCLObject(&apos;btnDone&apos;)" Type="5" />
-			<Property235 Cookie="302" PropertyType="0" Value="WinFormsObject(&apos;UserExperienceDialog&apos;)" Type="5" />
-			<Property236 Cookie="303" PropertyType="0" Value="UserExperienceDialog" Type="5" />
-			<Property237 Cookie="304" PropertyType="0" Value="WinFormsObject(&apos;MainForm&apos;)" Type="5" />
-			<Property238 Cookie="305" PropertyType="0" Value="MainForm" Type="5" />
-			<Property239 Cookie="306" PropertyType="0" Value="WinFormsObject(&apos;AboutDialog&apos;)" Type="5" />
-			<Property240 Cookie="307" PropertyType="0" Value="AboutDialog" Type="5" />
-			<Property241 Cookie="308" PropertyType="0" Value="WinFormsObject(&apos;buildLabel&apos;)" Type="5" />
-			<Property242 Cookie="309" PropertyType="0" Value="LabelControl" Type="5" />
-			<Property243 Cookie="310" PropertyType="0" Value="frmCheckForUpdates" Type="5" />
-			<Property244 Cookie="313" PropertyType="0" Value="frmMain" Type="5" />
-			<Property245 Cookie="314" PropertyType="0" Value="ucMainAllModules1" Type="5" />
-			<Property246 Cookie="315" PropertyType="0" Value="ucMainTabsT" Type="5" />
-			<Property247 Cookie="316" PropertyType="0" Value="pnlTop" Type="5" />
-			<Property248 Cookie="317" PropertyType="0" Value="tlpBar" Type="5" />
-			<Property249 Cookie="318" PropertyType="0" Value="btnHelp" Type="5" />
-			<Property250 Cookie="319" PropertyType="0" Value="ucMainModulesT" Type="5" />
-			<Property251 Cookie="320" PropertyType="0" Value="panelSQLLab" Type="5" />
-			<Property252 Cookie="321" PropertyType="0" Value="ucLabBaseUI" Type="5" />
-			<Property253 Cookie="322" PropertyType="0" Value="FSQLLabMainMidUI" Type="5" />
-			<Property254 Cookie="323" PropertyType="0" Value="ucTunOptDefaultMidUI1" Type="5" />
-			<Property255 Cookie="324" PropertyType="0" Value="ucSQLLabDesc1" Type="5" />
-			<Property256 Cookie="325" PropertyType="0" Value="baseTableLayoutPanel2" Type="5" />
-			<Property257 Cookie="326" PropertyType="0" Value="Dialog" Type="5" />
-			<Property258 Cookie="327" PropertyType="0" Value="1" Type="0" />
-			<Property259 Cookie="328" PropertyType="0" Value="TfrmSpotlightMessageBox" Type="5" />
-			<Property260 Cookie="329" PropertyType="0" Value="frmSpotlightMessageBox" Type="5" />
-			<Property261 Cookie="330" PropertyType="0" Value="VCLObject" Type="5" />
-			<Property262 Cookie="331" PropertyType="0" Value="TMessageForm" Type="5" />
-			<Property263 Cookie="332" PropertyType="0" Value="TPanel" Type="5" />
-			<Property264 Cookie="333" PropertyType="0" Value="PaButtons" Type="5" />
-			<Property265 Cookie="334" PropertyType="0" Value="TButton" Type="5" />
-			<Property266 Cookie="335" PropertyType="0" Value="BtnOK" Type="5" />
-			<Property267 Cookie="336" PropertyType="0" Value="TPanel" Type="5" />
-			<Property268 Cookie="337" PropertyType="0" Value="PicturePanel" Type="5" />
-			<Property269 Cookie="338" PropertyType="0" Value="Dialog" Type="5" />
-			<Property270 Cookie="339" PropertyType="0" Value="License_Error" Type="5" />
-			<Property271 Cookie="340" PropertyType="0" Value="cboBitness" Type="5" />
+			<Property144 Cookie="197" PropertyType="0" Value="TProjectLucyStartup" Type="5" />
+			<Property145 Cookie="198" PropertyType="0" Value="TFmLicenseTrialNotification" Type="5" />
+			<Property146 Cookie="199" PropertyType="0" Value="FmLicenseTrialNotification" Type="5" />
+			<Property147 Cookie="201" PropertyType="0" Value="TConfirmNoNagDlg" Type="5" />
+			<Property148 Cookie="202" PropertyType="0" Value="lblValidationError" Type="5" />
+			<Property149 Cookie="203" PropertyType="0" Value="TTntMessageForm.UnicodeClass" Type="5" />
+			<Property150 Cookie="204" PropertyType="0" Value="Toad Data Modeler" Type="5" />
+			<Property151 Cookie="211" PropertyType="0" Value="TFMain" Type="5" />
+			<Property152 Cookie="212" PropertyType="0" Value="VCLObject(&apos;FMain&apos;)" Type="5" />
+			<Property153 Cookie="213" PropertyType="0" Value="WinFormsObject(&apos;ImproveExperienceForm&apos;)" Type="5" />
+			<Property154 Cookie="214" PropertyType="0" Value="ImproveExperienceForm" Type="5" />
+			<Property155 Cookie="215" PropertyType="0" Value="WinFormsObject(&apos;frmUserExperience&apos;)" Type="5" />
+			<Property156 Cookie="216" PropertyType="0" Value="frmUserExperience" Type="5" />
+			<Property157 Cookie="217" PropertyType="0" Value="WinFormsObject(&apos;frmWelcomeWindow&apos;)" Type="5" />
+			<Property158 Cookie="218" PropertyType="0" Value="frmWelcomeWindow" Type="5" />
+			<Property159 Cookie="219" PropertyType="0" Value="VisualControlCenterClass" Type="5" />
+			<Property160 Cookie="220" PropertyType="0" Value="Benchmark Factory" Type="5" />
+			<Property161 Cookie="223" PropertyType="0" Value="#32770" Type="5" />
+			<Property162 Cookie="224" PropertyType="0" Value="About Benchmark Factory®" Type="5" />
+			<Property163 Cookie="225" PropertyType="0" Value="#32770" Type="5" />
+			<Property164 Cookie="226" PropertyType="0" Value="About Benchmark Factory™*" Type="5" />
+			<Property165 Cookie="227" PropertyType="0" Value="Window(&apos;#32770&apos;, &apos;About Benchmark Factory™ - Trial&apos;, 1)" Type="5" />
+			<Property166 Cookie="228" PropertyType="0" Value="dgvProperties" Type="5" />
+			<Property167 Cookie="229" PropertyType="0" Value="WinFormsObject(&apos;frmMigrationVersionSelector&apos;)" Type="5" />
+			<Property168 Cookie="230" PropertyType="0" Value="Window(&apos;#32770&apos;, &apos;Copy User Settings&apos;, 1)" Type="5" />
+			<Property169 Cookie="231" PropertyType="0" Value="wbrDescription" Type="5" />
+			<Property170 Cookie="233" PropertyType="0" Value="lblCopyright1" Type="5" />
+			<Property171 Cookie="234" PropertyType="0" Value="lblCopyright2" Type="5" />
+			<Property172 Cookie="235" PropertyType="0" Value="ALL RIGHTS RESERVED" Type="5" />
+			<Property173 Cookie="236" PropertyType="0" Value="rtbAgreement" Type="5" />
+			<Property174 Cookie="238" PropertyType="0" Value="CCopyUserSettingsDialog" Type="5" />
+			<Property175 Cookie="239" PropertyType="0" Value="Copy_User_Settings" Type="5" />
+			<Property176 Cookie="240" PropertyType="0" Value="Copy User Settings" Type="5" />
+			<Property177 Cookie="241" PropertyType="0" Value="Final" Type="5" />
+			<Property178 Cookie="242" PropertyType="0" Value="WinFormsObject(&apos;Final&apos;)" Type="5" />
+			<Property179 Cookie="243" PropertyType="0" Value="ProductInstallation" Type="5" />
+			<Property180 Cookie="244" PropertyType="0" Value="pnlBottom" Type="5" />
+			<Property181 Cookie="245" PropertyType="0" Value="lblTotalProgress" Type="5" />
+			<Property182 Cookie="246" PropertyType="0" Value="pnlBody" Type="5" />
+			<Property183 Cookie="247" PropertyType="0" Value="lblStatus" Type="5" />
+			<Property184 Cookie="248" PropertyType="0" Value="lblProduct" Type="5" />
+			<Property185 Cookie="251" PropertyType="0" Value="ProgressBar" Type="5" />
+			<Property186 Cookie="252" PropertyType="0" Value="True" Type="6" />
+			<Property187 Cookie="253" PropertyType="0" Value="WinFormsObject(&apos;lblRootDir&apos;)" Type="5" />
+			<Property188 Cookie="254" PropertyType="0" Value="TLabel" Type="5" />
+			<Property189 Cookie="255" PropertyType="0" Value="lblVersion" Type="5" />
+			<Property190 Cookie="258" PropertyType="0" Value="TfrmRWfromISConfirm" Type="5" />
+			<Property191 Cookie="259" PropertyType="0" Value="frmRWfromISConfirm" Type="5" />
+			<Property192 Cookie="260" PropertyType="0" Value="#32770" Type="5" />
+			<Property193 Cookie="261" PropertyType="0" Value="CUserExperienceDialog" Type="5" />
+			<Property194 Cookie="262" PropertyType="0" Value="TToadLabel" Type="5" />
+			<Property195 Cookie="263" PropertyType="0" Value="lblTitle" Type="5" />
+			<Property196 Cookie="264" PropertyType="0" Value="richTextBox1" Type="5" />
+			<Property197 Cookie="265" PropertyType="0" Value="ProductUninstallation" Type="5" />
+			<Property198 Cookie="266" PropertyType="0" Value="pnlBody" Type="5" />
+			<Property199 Cookie="267" PropertyType="0" Value="pnlBottom" Type="5" />
+			<Property200 Cookie="268" PropertyType="0" Value="lblProduct" Type="5" />
+			<Property201 Cookie="269" PropertyType="0" Value="lblStatus" Type="5" />
+			<Property202 Cookie="270" PropertyType="0" Value="pbrOverallExecute" Type="5" />
+			<Property203 Cookie="271" PropertyType="0" Value="lblTotalProgress" Type="5" />
+			<Property204 Cookie="272" PropertyType="0" Value="pnlBody" Type="5" />
+			<Property205 Cookie="273" PropertyType="0" Value="pbxAd" Type="5" />
+			<Property206 Cookie="274" PropertyType="0" Value="LicenseAgreement" Type="5" />
+			<Property207 Cookie="275" PropertyType="0" Value="WinFormsObject(&apos;LicenseAgreement&apos;)" Type="5" />
+			<Property208 Cookie="276" PropertyType="0" Value="RadioButton" Type="5" />
+			<Property209 Cookie="277" PropertyType="0" Value="WinFormsObject(&apos;radAccept&apos;)" Type="5" />
+			<Property210 Cookie="282" PropertyType="0" Value="Toad_for_Oracle_*" Type="5" />
+			<Property211 Cookie="283" PropertyType="0" Value="Process(&apos;Toad_for_Oracle_*&apos;, 2)" Type="5" />
+			<Property212 Cookie="284" PropertyType="0" Value="WinFormsObject(&apos;radNotAccept&apos;)" Type="5" />
+			<Property213 Cookie="285" PropertyType="0" Value="RadioButton" Type="5" />
+			<Property214 Cookie="286" PropertyType="0" Value="WinFormsObject(&apos;panel1&apos;)" Type="5" />
+			<Property215 Cookie="287" PropertyType="0" Value="Panel" Type="5" />
+			<Property216 Cookie="288" PropertyType="0" Value="WinFormsObject(&apos;pnlMain&apos;)" Type="5" />
+			<Property217 Cookie="289" PropertyType="0" Value="Panel" Type="5" />
+			<Property218 Cookie="290" PropertyType="0" Value="WinFormsObject(&apos;llblHowTo&apos;)" Type="5" />
+			<Property219 Cookie="291" PropertyType="0" Value="LinkLabel" Type="5" />
+			<Property220 Cookie="292" PropertyType="0" Value="WinFormsObject(&apos;wbrIntro&apos;)" Type="5" />
+			<Property221 Cookie="293" PropertyType="0" Value="WebBrowser" Type="5" />
+			<Property222 Cookie="294" PropertyType="0" Value="TPanel" Type="5" />
+			<Property223 Cookie="295" PropertyType="0" Value="VCLObject(&apos;pnlBorder&apos;)" Type="5" />
+			<Property224 Cookie="296" PropertyType="0" Value="TPanel" Type="5" />
+			<Property225 Cookie="297" PropertyType="0" Value="VCLObject(&apos;pnlBackground&apos;)" Type="5" />
+			<Property226 Cookie="298" PropertyType="0" Value="TPanel" Type="5" />
+			<Property227 Cookie="299" PropertyType="0" Value="VCLObject(&apos;pnlBottom&apos;)" Type="5" />
+			<Property228 Cookie="300" PropertyType="0" Value="TPanel" Type="5" />
+			<Property229 Cookie="301" PropertyType="0" Value="VCLObject(&apos;btnDone&apos;)" Type="5" />
+			<Property230 Cookie="302" PropertyType="0" Value="WinFormsObject(&apos;UserExperienceDialog&apos;)" Type="5" />
+			<Property231 Cookie="303" PropertyType="0" Value="UserExperienceDialog" Type="5" />
+			<Property232 Cookie="304" PropertyType="0" Value="WinFormsObject(&apos;MainForm&apos;)" Type="5" />
+			<Property233 Cookie="305" PropertyType="0" Value="MainForm" Type="5" />
+			<Property234 Cookie="306" PropertyType="0" Value="WinFormsObject(&apos;AboutDialog&apos;)" Type="5" />
+			<Property235 Cookie="307" PropertyType="0" Value="AboutDialog" Type="5" />
+			<Property236 Cookie="308" PropertyType="0" Value="WinFormsObject(&apos;buildLabel&apos;)" Type="5" />
+			<Property237 Cookie="309" PropertyType="0" Value="LabelControl" Type="5" />
+			<Property238 Cookie="310" PropertyType="0" Value="frmCheckForUpdates" Type="5" />
+			<Property239 Cookie="313" PropertyType="0" Value="frmMain" Type="5" />
+			<Property240 Cookie="314" PropertyType="0" Value="ucMainAllModules1" Type="5" />
+			<Property241 Cookie="315" PropertyType="0" Value="ucMainTabsT" Type="5" />
+			<Property242 Cookie="316" PropertyType="0" Value="pnlTop" Type="5" />
+			<Property243 Cookie="317" PropertyType="0" Value="tlpBar" Type="5" />
+			<Property244 Cookie="318" PropertyType="0" Value="btnHelp" Type="5" />
+			<Property245 Cookie="319" PropertyType="0" Value="ucMainModulesT" Type="5" />
+			<Property246 Cookie="320" PropertyType="0" Value="panelSQLLab" Type="5" />
+			<Property247 Cookie="321" PropertyType="0" Value="ucLabBaseUI" Type="5" />
+			<Property248 Cookie="322" PropertyType="0" Value="FSQLLabMainMidUI" Type="5" />
+			<Property249 Cookie="323" PropertyType="0" Value="ucTunOptDefaultMidUI1" Type="5" />
+			<Property250 Cookie="324" PropertyType="0" Value="ucSQLLabDesc1" Type="5" />
+			<Property251 Cookie="325" PropertyType="0" Value="baseTableLayoutPanel2" Type="5" />
+			<Property252 Cookie="326" PropertyType="0" Value="Dialog" Type="5" />
+			<Property253 Cookie="327" PropertyType="0" Value="1" Type="0" />
+			<Property254 Cookie="328" PropertyType="0" Value="TfrmSpotlightMessageBox" Type="5" />
+			<Property255 Cookie="329" PropertyType="0" Value="frmSpotlightMessageBox" Type="5" />
+			<Property256 Cookie="330" PropertyType="0" Value="VCLObject" Type="5" />
+			<Property257 Cookie="331" PropertyType="0" Value="TMessageForm" Type="5" />
+			<Property258 Cookie="332" PropertyType="0" Value="TPanel" Type="5" />
+			<Property259 Cookie="333" PropertyType="0" Value="PaButtons" Type="5" />
+			<Property260 Cookie="334" PropertyType="0" Value="TButton" Type="5" />
+			<Property261 Cookie="335" PropertyType="0" Value="BtnOK" Type="5" />
+			<Property262 Cookie="336" PropertyType="0" Value="TPanel" Type="5" />
+			<Property263 Cookie="337" PropertyType="0" Value="PicturePanel" Type="5" />
+			<Property264 Cookie="338" PropertyType="0" Value="Dialog" Type="5" />
+			<Property265 Cookie="339" PropertyType="0" Value="License_Error" Type="5" />
+			<Property266 Cookie="340" PropertyType="0" Value="cboBitness" Type="5" />
+			<Property267 Cookie="341" PropertyType="0" Value="WinFormsObject(&apos;CancelSelection&apos;)" Type="5" />
+			<Property268 Cookie="342" PropertyType="0" Value="WinFormsObject(&apos;CancelSelection&apos;)" Type="5" />
+			<Property269 Cookie="343" PropertyType="0" Value="WinFormsObject(&apos;btnYes&apos;)" Type="5" />
+			<Property270 Cookie="344" PropertyType="0" Value="No" Type="5" />
+			<Property271 Cookie="345" PropertyType="0" Value="WinFormsObject(&apos;btnNo&apos;)" Type="5" />
 		</Child0>
 	</Storages>
 	<TypeInfo StoreCodeCompletion="1">
@@ -76630,29 +76629,29 @@
 		<Child246 Hash="1058615109">
 			<Data Properties="000000000000000000000000000000000000000000000000FFFFFFFFFFFFFFFF0000000004000000040000003500000000000000000000000000000000000000000000000000000000000000">
 				<FunctionDescriptions>
-					<Child0 Name="_NewEnum" Doc="Returns an enumerator for the children collection." IsBasic="True" Data="0000000000000000000000000400000002000000040000000000000054000000000000000D006F00000000000000730000006600">
+					<Child0 Name="_NewEnum" Doc="Returns an enumerator for the children collection." IsBasic="True" Data="0000000000000000000000000400000002000000040000000000000054000000000000000D000000000000000000730000006600">
 						<ReturnValue Param0="13" />
 					</Child0>
-					<Child1 Name="AddRef" IsBasic="True" Data="00000000000000000000000004000000010000000400000000000000040000000000000013006700000000000000000001007400">
+					<Child1 Name="AddRef" IsBasic="True" Data="00000000000000000000000004000000010000000400000000000000040000000000000013000000000000000000000001007400">
 						<ReturnValue Param0="19" />
 					</Child1>
 					<Child2 Name="Caption" Doc="Returns the object&apos;s accessibility name." IsBasic="True" Data="000000000000000000000000040000000200000004000000000000001C0000000000000008000000000000000000000000000000">
 						<ReturnValue Param0="8" />
 					</Child2>
-					<Child3 Name="Child" Doc="Returns a child object by its index." IsBasic="True" Param0="Index" Data="00000000000000000000000004000000010000000400000001000000300000000000000009007600000000000000680000007300">
+					<Child3 Name="Child" Doc="Returns a child object by its index." IsBasic="True" Param0="Index" Data="00000000000000000000000004000000010000000400000001000000300000000000000009000000000000000000680000007300">
 						<Param0>
 							<TypeDesc Param0="3" />
 							<ParamDesc Flags="1" />
 						</Param0>
 						<ReturnValue Param0="9" />
 					</Child3>
-					<Child4 Name="ChildCount" Doc="The number of child objects." IsBasic="True" Data="000000000000000000000000040000000200000004000000000000002C0000000000000003007400000000000000620000002000">
+					<Child4 Name="ChildCount" Doc="The number of child objects." IsBasic="True" Data="000000000000000000000000040000000200000004000000000000002C0000000000000003000000000000000000620000002000">
 						<ReturnValue Param0="3" />
 					</Child4>
 					<Child5 Name="ClassName" Doc="Gets a string containing the class name of the element as assigned by the control developer." IsBasic="True" Data="0000000000000000000000000400000002000000040000000000000054000000000000000C000000000000000000000000000000">
 						<ReturnValue Param0="12" />
 					</Child5>
-					<Child6 Name="Click" Doc="Simulates a left-button single click in a window or control as specified (relative position, shift keys)." IsBasic="True" Param0="ClientX" Param1="ClientY" Param2="Shift" Data="000000000000000000000000040000000100000004000000030000001C00000000000000180061000000000000006F0000007300">
+					<Child6 Name="Click" Doc="Simulates a left-button single click in a window or control as specified (relative position, shift keys)." IsBasic="True" Param0="ClientX" Param1="ClientY" Param2="Shift" Data="000000000000000000000000040000000100000004000000030000001C00000000000000180000000000000000006F0000007300">
 						<Param0>
 							<TypeDesc Param0="3" />
 							<ParamDesc Flags="49" Value="-1" Type="0" />
@@ -76667,14 +76666,14 @@
 						</Param2>
 						<ReturnValue Param0="24" />
 					</Child6>
-					<Child7 Name="ClickItem" Doc="Selects the item, specified as an index, from 0, or a name." IsBasic="True" Param0="Item" Data="000000000000000000000000040000000100000004000000010000001C0000000000000018007000000000000000660000006300">
+					<Child7 Name="ClickItem" Doc="Selects the item, specified as an index, from 0, or a name." IsBasic="True" Param0="Item" Data="000000000000000000000000040000000100000004000000010000001C0000000000000018000000000000000000660000006300">
 						<Param0>
 							<TypeDesc Param0="12" />
 							<ParamDesc Flags="1" />
 						</Param0>
 						<ReturnValue Param0="24" />
 					</Child7>
-					<Child8 Name="ClickR" Doc="Simulates a right-button single click in a window or control as specified (relative position, shift keys)." IsBasic="True" Param0="ClientX" Param1="ClientY" Param2="Shift" Data="000000000000000000000000040000000100000004000000030000002400000000000000180062000000000000006F0000002000">
+					<Child8 Name="ClickR" Doc="Simulates a right-button single click in a window or control as specified (relative position, shift keys)." IsBasic="True" Param0="ClientX" Param1="ClientY" Param2="Shift" Data="000000000000000000000000040000000100000004000000030000002400000000000000180000000000000000006F0000002000">
 						<Param0>
 							<TypeDesc Param0="3" />
 							<ParamDesc Flags="49" Value="-1" Type="0" />
@@ -76701,19 +76700,19 @@
 					<Child12 Name="Description" Doc="Returns the object&apos;s accessibility description." IsBasic="True" Data="00000000000000000000000004000000020000000400000000000000200000000000000008000000000000000000000000000000">
 						<ReturnValue Param0="8" />
 					</Child12>
-					<Child13 Name="DropDown" Doc="Opens the control&apos;s drop-down window." IsBasic="True" Data="000000000000000000000000040000000100000004000000000000001C000000000000001800FC22000000000000740000000000">
+					<Child13 Name="DropDown" Doc="Opens the control&apos;s drop-down window." IsBasic="True" Data="000000000000000000000000040000000100000004000000000000001C0000000000000018000000000000000000740000000000">
 						<ReturnValue Param0="24" />
 					</Child13>
-					<Child14 Name="Enabled" Doc="Specifies whether the object is enabled or disabled." IsBasic="True" Data="0000000000000000000000000400000002000000040000000000000038000000000000000B006900000000000000700000007800">
+					<Child14 Name="Enabled" Doc="Specifies whether the object is enabled or disabled." IsBasic="True" Data="0000000000000000000000000400000002000000040000000000000038000000000000000B000000000000000000700000007800">
 						<ReturnValue Param0="11" />
 					</Child14>
-					<Child15 Name="Exists" Doc="True if the object exists in the system; else, false." IsBasic="True" Data="0000000000000000000000000400000002000000040000000000000034000000000000000B006500000000000000620000006500">
+					<Child15 Name="Exists" Doc="True if the object exists in the system; else, false." IsBasic="True" Data="0000000000000000000000000400000002000000040000000000000034000000000000000B000000000000000000620000006500">
 						<ReturnValue Param0="11" />
 					</Child15>
 					<Child16 Name="Expand" Doc="Expands the nodes of the user interface (UI) item." IsBasic="True" Data="00000000000000000000000004000000010000000400000000000000200000000000000018000000000000000000000000000000">
 						<ReturnValue Param0="24" />
 					</Child16>
-					<Child17 Name="Find" Doc="Returns an object by the values of the specified properties." IsBasic="True" Param0="PropNames" Param1="PropValues" Param2="Depth" Param3="RefreshTree" Data="000000000000000000000000040000000100000004000000040000003C0000000000000009004400000000000000730000005400">
+					<Child17 Name="Find" Doc="Returns an object by the values of the specified properties." IsBasic="True" Param0="PropNames" Param1="PropValues" Param2="Depth" Param3="RefreshTree" Data="000000000000000000000000040000000100000004000000040000003C0000000000000009000000000000000000730000005400">
 						<Param0>
 							<TypeDesc Param0="12" />
 							<ParamDesc Flags="1" />
@@ -76732,7 +76731,7 @@
 						</Param3>
 						<ReturnValue Param0="9" />
 					</Child17>
-					<Child18 Name="FindAll" Doc="Returns an array of objects by the values of the specified properties." IsBasic="True" Param0="PropNames" Param1="PropValues" Param2="Depth" Param3="RefreshTree" Data="0000000000000000000000000400000001000000040000000400000040000000000000000C004400000000000000730000005400">
+					<Child18 Name="FindAll" Doc="Returns an array of objects by the values of the specified properties." IsBasic="True" Param0="PropNames" Param1="PropValues" Param2="Depth" Param3="RefreshTree" Data="0000000000000000000000000400000001000000040000000400000040000000000000000C000000000000000000730000005400">
 						<Param0>
 							<TypeDesc Param0="12" />
 							<ParamDesc Flags="1" />
@@ -76751,7 +76750,7 @@
 						</Param3>
 						<ReturnValue Param0="12" />
 					</Child18>
-					<Child19 Name="FindAllChildren" Doc="Returns an array of objects by the values of the specified properties." IsBasic="True" Param0="PropNames" Param1="PropValues" Param2="Depth" Param3="RefreshTree" Data="0000000000000000000000000400000001000000040000000400000060000000000000000C006400000000000000540000006900">
+					<Child19 Name="FindAllChildren" Doc="Returns an array of objects by the values of the specified properties." IsBasic="True" Param0="PropNames" Param1="PropValues" Param2="Depth" Param3="RefreshTree" Data="0000000000000000000000000400000001000000040000000400000060000000000000000C000000000000000000540000006900">
 						<Param0>
 							<TypeDesc Param0="12" />
 							<ParamDesc Flags="1" />
@@ -76770,7 +76769,7 @@
 						</Param3>
 						<ReturnValue Param0="12" />
 					</Child19>
-					<Child20 Name="FindChild" Doc="Returns an object by the values of the specified properties." IsBasic="True" Param0="PropNames" Param1="PropValues" Param2="Depth" Param3="RefreshTree" Data="000000000000000000000000040000000100000004000000040000005C0000000000000009006900000000000000540000006900">
+					<Child20 Name="FindChild" Doc="Returns an object by the values of the specified properties." IsBasic="True" Param0="PropNames" Param1="PropValues" Param2="Depth" Param3="RefreshTree" Data="000000000000000000000000040000000100000004000000040000005C0000000000000009000000000000000000540000006900">
 						<Param0>
 							<TypeDesc Param0="12" />
 							<ParamDesc Flags="1" />
@@ -76789,7 +76788,7 @@
 						</Param3>
 						<ReturnValue Param0="9" />
 					</Child20>
-					<Child21 Name="FindId" Doc="Returns an object by its ID." IsBasic="True" Param0="Id" Param1="RefreshTree" Data="00000000000000000000000004000000010000000400000002000000200000000000000009006600000000000000730000006600">
+					<Child21 Name="FindId" Doc="Returns an object by its ID." IsBasic="True" Param0="Id" Param1="RefreshTree" Data="00000000000000000000000004000000010000000400000002000000200000000000000009000000000000000000730000006600">
 						<Param0>
 							<TypeDesc Param0="3" />
 							<ParamDesc Flags="1" />
@@ -76803,10 +76802,10 @@
 					<Child22 Name="FrameworkId" Doc="Gets the control&apos;s specified direction." IsBasic="True" Data="0000000000000000000000000400000002000000040000000000000070000000000000000C000000000000000000000000000000">
 						<ReturnValue Param0="12" />
 					</Child22>
-					<Child23 Name="FullName" Doc="Returns the full name of an object.&#32;&#32;Its full name uniquely identifies an object in the system." IsBasic="True" Data="00000000000000000000000004000000020000000400000000000000500000000000000008006E00000000000000690000006900">
+					<Child23 Name="FullName" Doc="Returns the full name of an object.&#32;&#32;Its full name uniquely identifies an object in the system." IsBasic="True" Data="00000000000000000000000004000000020000000400000000000000500000000000000008000000000000000000690000006900">
 						<ReturnValue Param0="8" />
 					</Child23>
-					<Child24 Name="GetIDsOfNames" IsBasic="True" Param0="riid" Param1="rgszNames" Param2="cNames" Param3="lcid" Param4="rgdispid" Data="00000000000000000000000004000000010000000400000005000000140000000000000018006D00000000000000660001006100">
+					<Child24 Name="GetIDsOfNames" IsBasic="True" Param0="riid" Param1="rgszNames" Param2="cNames" Param3="lcid" Param4="rgdispid" Data="00000000000000000000000004000000010000000400000005000000140000000000000018000000000000000000660001006100">
 						<Param0>
 							<TypeDesc Param0="26" Param1="29" Type1="0" />
 							<ParamDesc Flags="1" />
@@ -76829,7 +76828,7 @@
 						</Param4>
 						<ReturnValue Param0="24" />
 					</Child24>
-					<Child25 Name="GetTypeInfo" IsBasic="True" Param0="itinfo" Param1="lcid" Param2="pptinfo" Data="00000000000000000000000004000000010000000400000003000000100000000000000018006D00000000000000660001006100">
+					<Child25 Name="GetTypeInfo" IsBasic="True" Param0="itinfo" Param1="lcid" Param2="pptinfo" Data="00000000000000000000000004000000010000000400000003000000100000000000000018000000000000000000660001006100">
 						<Param0>
 							<TypeDesc Param0="23" />
 							<ParamDesc Flags="1" />
@@ -76844,20 +76843,20 @@
 						</Param2>
 						<ReturnValue Param0="24" />
 					</Child25>
-					<Child26 Name="GetTypeInfoCount" IsBasic="True" Param0="pctinfo" Data="000000000000000000000000040000000100000004000000010000000C00000000000000180061000000000000006C0001005400">
+					<Child26 Name="GetTypeInfoCount" IsBasic="True" Param0="pctinfo" Data="000000000000000000000000040000000100000004000000010000000C00000000000000180000000000000000006C0001005400">
 						<Param0>
 							<TypeDesc Param0="26" Param1="23" />
 							<ParamDesc Flags="2" />
 						</Param0>
 						<ReturnValue Param0="24" />
 					</Child26>
-					<Child27 Name="Height" Doc="The object&apos;s height in pixels." IsBasic="True" Data="00000000000000000000000004000000020000000400000000000000340000000000000003002000000000000000660000007400">
+					<Child27 Name="Height" Doc="The object&apos;s height in pixels." IsBasic="True" Data="00000000000000000000000004000000020000000400000000000000340000000000000003000000000000000000660000007400">
 						<ReturnValue Param0="3" />
 					</Child27>
-					<Child28 Name="Id" Doc="Object ID. For processes, the process ID; for windows, the window handle, etc." IsBasic="True" Data="000000000000000000000000040000000200000004000000000000001C0000000000000003004900000000000000660000006100">
+					<Child28 Name="Id" Doc="Object ID. For processes, the process ID; for windows, the window handle, etc." IsBasic="True" Data="000000000000000000000000040000000200000004000000000000001C0000000000000003000000000000000000660000006100">
 						<ReturnValue Param0="3" />
 					</Child28>
-					<Child29 Name="Invoke" IsBasic="True" Param0="dispidMember" Param1="riid" Param2="lcid" Param3="wFlags" Param4="pdispparams" Param5="pvarResult" Param6="pexcepinfo" Param7="puArgErr" Data="00000000000000000000000004000000010000000400000008000000180000000000000018004E00000000000000670001007400">
+					<Child29 Name="Invoke" IsBasic="True" Param0="dispidMember" Param1="riid" Param2="lcid" Param3="wFlags" Param4="pdispparams" Param5="pvarResult" Param6="pexcepinfo" Param7="puArgErr" Data="00000000000000000000000004000000010000000400000008000000180000000000000018000000000000000000670001007400">
 						<Param0>
 							<TypeDesc Param0="3" />
 							<ParamDesc Flags="1" />
@@ -76902,7 +76901,7 @@
 					<Child31 Name="ItemCount" Doc="Returns the total number of items in the combo box control." IsBasic="True" Data="000000000000000000000000040000000200000004000000000000001C0000000000000003000000000000000000000000000000">
 						<ReturnValue Param0="3" />
 					</Child31>
-					<Child32 Name="Keys" Doc="Simulates one or several keypresses." IsBasic="True" Param0="Keys" Data="000000000000000000000000040000000100000004000000010000004000000000000000180075000000000000006E0000006400">
+					<Child32 Name="Keys" Doc="Simulates one or several keypresses." IsBasic="True" Param0="Keys" Data="000000000000000000000000040000000100000004000000010000004000000000000000180000000000000000006E0000006400">
 						<Param0>
 							<TypeDesc Param0="8" />
 							<ParamDesc Flags="1" />
@@ -76912,10 +76911,10 @@
 					<Child33 Name="LocalizedControlType" Doc="Gets a description of the control type." IsBasic="True" Data="0000000000000000000000000400000002000000040000000000000034000000000000000C000000000000000000000000000000">
 						<ReturnValue Param0="12" />
 					</Child33>
-					<Child34 Name="MappedName" Doc="Specifies the mapped name of the object." IsBasic="True" Data="00000000000000000000000004000000020000000400000000000000480000000000000008006500000000000000680000002000">
+					<Child34 Name="MappedName" Doc="Specifies the mapped name of the object." IsBasic="True" Data="00000000000000000000000004000000020000000400000000000000480000000000000008000000000000000000680000002000">
 						<ReturnValue Param0="8" />
 					</Child34>
-					<Child35 Name="Name" Doc="Object name." IsBasic="True" Data="000000000000000000000000040000000200000004000000000000002400000000000000080063000000000000006D0000002000">
+					<Child35 Name="Name" Doc="Object name." IsBasic="True" Data="000000000000000000000000040000000200000004000000000000002400000000000000080000000000000000006D0000002000">
 						<ReturnValue Param0="8" />
 					</Child35>
 					<Child36 Name="ObjectGroupIndex" IsBasic="True" Data="0000000000000000000000000400000002000000040000000000000020000000000000000C000000000000000000000000000000">
@@ -76927,10 +76926,10 @@
 					<Child38 Name="ObjectType" Doc="Returns the object&apos;s type name." IsBasic="True" Data="000000000000000000000000040000000200000004000000000000001C0000000000000008000000000000000000000000000000">
 						<ReturnValue Param0="8" />
 					</Child38>
-					<Child39 Name="Parent" Doc="Parent object." IsBasic="True" Data="000000000000000000000000040000000200000004000000000000002800000000000000090063000000000000006D0000002000">
+					<Child39 Name="Parent" Doc="Parent object." IsBasic="True" Data="000000000000000000000000040000000200000004000000000000002800000000000000090000000000000000006D0000002000">
 						<ReturnValue Param0="9" />
 					</Child39>
-					<Child40 Name="QueryInterface" IsBasic="True" Param0="riid" Param1="ppvObj" Data="00000000000000000000000004000000010000000400000002000000000000000000000018005C000000000000006F0001007300">
+					<Child40 Name="QueryInterface" IsBasic="True" Param0="riid" Param1="ppvObj" Data="000000000000000000000000040000000100000004000000020000000000000000000000180000000000000000006F0001007300">
 						<Param0>
 							<TypeDesc Param0="26" Param1="29" Type1="0" />
 							<ParamDesc Flags="1" />
@@ -76941,10 +76940,10 @@
 						</Param1>
 						<ReturnValue Param0="24" />
 					</Child40>
-					<Child41 Name="Refresh" Doc="Updates the internal list of child objects." IsBasic="True" Data="000000000000000000000000040000000100000004000000000000004C0000000000000018006E00000000000000650000000000">
+					<Child41 Name="Refresh" Doc="Updates the internal list of child objects." IsBasic="True" Data="000000000000000000000000040000000100000004000000000000004C0000000000000018000000000000000000650000000000">
 						<ReturnValue Param0="24" />
 					</Child41>
-					<Child42 Name="Release" IsBasic="True" Data="00000000000000000000000004000000010000000400000000000000080000000000000013006E00000000000000650001000000">
+					<Child42 Name="Release" IsBasic="True" Data="00000000000000000000000004000000010000000400000000000000080000000000000013000000000000000000650001000000">
 						<ReturnValue Param0="19" />
 					</Child42>
 					<Child43 Name="RuntimeId" Doc="Gets the runtime identifier of the element." IsBasic="True" Data="000000000000000000000000040000000200000004000000000000001C000000000000000C000000000000000000000000000000">
@@ -76953,17 +76952,17 @@
 					<Child44 Name="SetFocus" Doc="Sets focus to the specified Window object." IsBasic="True" Data="000000000000000000000000040000000100000004000000000000001C0000000000000018000000000000000000000000000000">
 						<ReturnValue Param0="24" />
 					</Child44>
-					<Child45 Name="Validate" Doc="Generates the OnValidate event." IsBasic="True" Param0="Params" Data="00000000000000000000000004000000010000000400000001000100380000000000000018007300000000000000730000006600">
+					<Child45 Name="Validate" Doc="Generates the OnValidate event." IsBasic="True" Param0="Params" Data="00000000000000000000000004000000010000000400000001000100380000000000000018000000000000000000730000006600">
 						<Param0>
 							<TypeDesc Param0="12" />
 							<ParamDesc Flags="17" />
 						</Param0>
 						<ReturnValue Param0="24" />
 					</Child45>
-					<Child46 Name="Visible" Doc="Specifies whether an onscreen object is visible to users." IsBasic="True" Data="000000000000000000000000040000000200000004000000000000001C000000000000000B00F30B000000000000000000000C00">
+					<Child46 Name="Visible" Doc="Specifies whether an onscreen object is visible to users." IsBasic="True" Data="000000000000000000000000040000000200000004000000000000001C000000000000000B000000000000000000000000000C00">
 						<ReturnValue Param0="11" />
 					</Child46>
-					<Child47 Name="WaitChild" Doc="Delays script execution until the specified child object appears in the child list or the specified time limit is reached." IsBasic="True" Param0="ChildName" Param1="WaitTime" Data="00000000000000000000000004000000010000000400000002000000440000000000000009007000000000000000730000007200">
+					<Child47 Name="WaitChild" Doc="Delays script execution until the specified child object appears in the child list or the specified time limit is reached." IsBasic="True" Param0="ChildName" Param1="WaitTime" Data="00000000000000000000000004000000010000000400000002000000440000000000000009000000000000000000730000007200">
 						<Param0>
 							<TypeDesc Param0="8" />
 							<ParamDesc Flags="1" />
@@ -76974,7 +76973,7 @@
 						</Param1>
 						<ReturnValue Param0="9" />
 					</Child47>
-					<Child48 Name="WaitProperty" Doc="Delays the script execution until the specified property equals the specified value or until the specified time limit elapses." IsBasic="True" Param0="PropertyName" Param1="PropertyValue" Param2="WaitTime" Data="0000000000000000000000000400000001000000040000000300000058000000000000000B006E00000000000000730000007200">
+					<Child48 Name="WaitProperty" Doc="Delays the script execution until the specified property equals the specified value or until the specified time limit elapses." IsBasic="True" Param0="PropertyName" Param1="PropertyValue" Param2="WaitTime" Data="0000000000000000000000000400000001000000040000000300000058000000000000000B000000000000000000730000007200">
 						<Param0>
 							<TypeDesc Param0="8" />
 							<ParamDesc Flags="1" />
@@ -76989,20 +76988,20 @@
 						</Param2>
 						<ReturnValue Param0="11" />
 					</Child48>
-					<Child49 Name="Width" Doc="The object&apos;s width in pixels." IsBasic="True" Data="00000000000000000000000004000000020000000400000000000000300000000000000003002000000000000000660000007400">
+					<Child49 Name="Width" Doc="The object&apos;s width in pixels." IsBasic="True" Data="00000000000000000000000004000000020000000400000000000000300000000000000003000000000000000000660000007400">
 						<ReturnValue Param0="3" />
 					</Child49>
-					<Child50 Name="wItem" Doc="Returns the name of the item specified by its index." IsBasic="True" Param0="Index" Data="00000000000000000000000004000000020000000400000001000000240000000000000008006F00000000000000720000006F00">
+					<Child50 Name="wItem" Doc="Returns the name of the item specified by its index." IsBasic="True" Param0="Index" Data="00000000000000000000000004000000020000000400000001000000240000000000000008000000000000000000720000006F00">
 						<Param0>
 							<TypeDesc Param0="3" />
 							<ParamDesc Flags="1" />
 						</Param0>
 						<ReturnValue Param0="8" />
 					</Child50>
-					<Child51 Name="wItemCount" Doc="Returns the total number of items in the combo box." IsBasic="True" Data="00000000000000000000000004000000020000000400000000000000200000000000000003006500000000000000660000006500">
+					<Child51 Name="wItemCount" Doc="Returns the total number of items in the combo box." IsBasic="True" Data="00000000000000000000000004000000020000000400000000000000200000000000000003000000000000000000660000006500">
 						<ReturnValue Param0="3" />
 					</Child51>
-					<Child52 Name="wText" Doc="Returns the control text." IsBasic="True" Data="000000000000000000000000040000000200000004000000000000001C0000000000000008006400000000000000200000007400">
+					<Child52 Name="wText" Doc="Returns the control text." IsBasic="True" Data="000000000000000000000000040000000200000004000000000000001C0000000000000008000000000000000000200000007400">
 						<ReturnValue Param0="8" />
 					</Child52>
 				</FunctionDescriptions>
