@@ -1891,8 +1891,8 @@
 			<Property244 Cookie="285" PropertyType="0" Value="Grid" Type="5" />
 			<Property245 Cookie="286" PropertyType="0" Value="Label" Type="5" />
 			<Property246 Cookie="287" PropertyType="0" Value="1" Type="0" />
-			<Property247 Cookie="288" PropertyType="0" Value="TFmLicenseTrialNotification" Type="5" />
-			<Property248 Cookie="289" PropertyType="0" Value="VCLObject(&apos;FmLicenseTrialNotification&apos;)" Type="5" />
+			<Property247 Cookie="288" PropertyType="0" Value="TFLicenseTrialNotification" Type="5" />
+			<Property248 Cookie="289" PropertyType="0" Value="VCLObject(&apos;FLicenseTrialNotification&apos;)" Type="5" />
 			<Property249 Cookie="290" PropertyType="0" Value="WinFormsObject(&apos;ConnectionForm&apos;)" Type="5" />
 			<Property250 Cookie="291" PropertyType="0" Value="ConnectionForm" Type="5" />
 			<Property251 Cookie="292" PropertyType="0" Value="WinFormsObject(&apos;MainForm&apos;)" Type="5" />
