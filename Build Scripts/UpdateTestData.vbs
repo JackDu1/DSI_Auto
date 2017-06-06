@@ -94,11 +94,11 @@ Class UpdateOracleSuite
 			end select	
 		end if
 		'Update I_Version Column
-		Conn.Execute "Update DSI.dbo.DSI_FinshInstall_OptimizerforOracle set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Dell% SQL Optimizer for Oracle%" + StrProduct +"'"
+		Conn.Execute "Update DSI.dbo.DSI_FinshInstall_OptimizerforOracle set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Quest% SQL Optimizer for Oracle%" + StrProduct +"'"
 		
 		'Update I_InstallFolder Column Record
 		Set Rec		=	CreateObject("ADODB.Recordset")
-		Query		= 	"Select I_InstallFolder from DSI.dbo.DSI_FinshInstall_OptimizerforOracle where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Dell% SQL Optimizer for Oracle%" + StrProduct +"'"
+		Query		= 	"Select I_InstallFolder from DSI.dbo.DSI_FinshInstall_OptimizerforOracle where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Quest% SQL Optimizer for Oracle%" + StrProduct +"'"
 		Set Rec		=	Conn.Execute(Query)
 		While not Rec.EOF
 			StrColFolder=Rec.Fields("I_InstallFolder").Value
@@ -111,7 +111,7 @@ Class UpdateOracleSuite
 		regEx.Global	=	True
 		StrColFolder 	= 	regEx.Replace(StrColFolder,StrVer)
 		
-		Conn.Execute "Update DSI.dbo.DSI_FinshInstall_OptimizerforOracle set  I_InstallFolder =" + "'" + StrColFolder + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Dell% SQL Optimizer for Oracle%" + StrProduct +"'"
+		Conn.Execute "Update DSI.dbo.DSI_FinshInstall_OptimizerforOracle set  I_InstallFolder =" + "'" + StrColFolder + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Quest% SQL Optimizer for Oracle%" + StrProduct +"'"
 		
 		Rec.Close
 		Set Rec	= Nothing
@@ -303,11 +303,11 @@ Class UpdateOracleSuite
 		end if
 		
 		'Update I_Version Column
-		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_QuestCodeTester set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like 'DELL% CODE TESTER FOR ORACLE%" + StrProduct +"'"
+		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_QuestCodeTester set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like 'Quest% CODE TESTER FOR ORACLE%" + StrProduct +"'"
 		
 		'Update I_InstallFolder Column Record
 		Set Rec		=	CreateObject("ADODB.Recordset")
-		Query		= 	"Select I_InstallFolder from DSI.dbo.DSI_FinishInstall_QuestCodeTester where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like 'DELL% CODE TESTER FOR ORACLE%" + StrProduct +"'"
+		Query		= 	"Select I_InstallFolder from DSI.dbo.DSI_FinishInstall_QuestCodeTester where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like 'Quest% CODE TESTER FOR ORACLE%" + StrProduct +"'"
 		Set Rec		=	Conn.Execute(Query)
 		While not Rec.EOF
 			StrColFolder=Rec.Fields("I_InstallFolder").Value
@@ -320,7 +320,7 @@ Class UpdateOracleSuite
 		regEx.Global	=	True
 		StrColFolder 	= 	regEx.Replace(StrColFolder,StrVer)
 		
-		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_QuestCodeTester set  I_InstallFolder =" + "'" + StrColFolder + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'DELL% CODE TESTER FOR ORACLE%" + StrProduct +"'"
+		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_QuestCodeTester set  I_InstallFolder =" + "'" + StrColFolder + "'" + " where Projectid = 1 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Quest% CODE TESTER FOR ORACLE%" + StrProduct +"'"
 		
 		Rec.Close
 		Set Rec	= Nothing
@@ -410,9 +410,9 @@ Class UpdateOracleSuite
 				case "BACKUPREPORTER_X86_EN"
 					StrProduct="DELL% BACKUP REPORTER FOR ORACLE"
 				case "CODETESTERORACLE_X86_EN"
-					StrProduct="DELL% CODE TESTER FOR ORACLE 32-BIT"
+					StrProduct="Quest% CODE TESTER FOR ORACLE 32-BIT"
                                 case "CODETESTERORACLE_X64_EN"
-					StrProduct="DELL% CODE TESTER FOR ORACLE 64-BIT"
+					StrProduct="Quest% CODE TESTER FOR ORACLE 64-BIT"
 				case "TOADDATAMODELER_X86_EN"
 					StrProduct="TOAD% DATA MODELER 32-BIT"
                                 case "TOADDATAMODELER_X64_EN"
@@ -430,13 +430,13 @@ Class UpdateOracleSuite
 				case "BENCHMARKFACTORY_TRIAL_X64_EN"
 					StrProduct="BENCHMARK FACTORY% 64-BIT Trial"
 				case "SQLOPTIMIZERFORORACLE_X64_MULTILANG"
-					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 64-BIT"
+					StrProduct="Quest% SQL OPTIMIZER FOR ORACLE 64-BIT"
 				case "SQLOPTIMIZERFORORACLE_X86_MULTILANG"
-					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 32-BIT"
+					StrProduct="Quest% SQL OPTIMIZER FOR ORACLE 32-BIT"
 				case "SQLOPTIMIZERFORORACLE_TRIAL_X86_MULTILANG"
-					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 32-BIT TRIAL"
+					StrProduct="Quest% SQL OPTIMIZER FOR ORACLE 32-BIT TRIAL"
 				case "SQLOPTIMIZERFORORACLE_TRIAL_X64_MULTILANG"
-					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 64-BIT TRIAL"
+					StrProduct="Quest% SQL OPTIMIZER FOR ORACLE 64-BIT TRIAL"
 				case else
 					StrProduct="Null"
 			end select
@@ -491,9 +491,9 @@ Class UpdateOracleSuite
 				case "TOADFORMYSQL_FREEWARE_X86_EN"
 					StrProduct="TOAD% FOR MYSQL"
 				case "CODETESTERORACLE_X86_EN"
-					StrProduct="DELL% CODE TESTER FOR ORACLE 32-BIT"
+					StrProduct="Quest% CODE TESTER FOR ORACLE 32-BIT"
 				case "CODETESTERORACLE_X64_EN"
-					StrProduct="DELL% CODE TESTER FOR ORACLE 64-BIT"
+					StrProduct="Quest% CODE TESTER FOR ORACLE 64-BIT"
 				case "TOADDATAMODELER_X86_EN"
 					StrProduct="TOAD% DATA MODELER 32-BIT"
                                 case "TOADDATAMODELER_X64_EN"
@@ -511,13 +511,13 @@ Class UpdateOracleSuite
 				case "BENCHMARKFACTORY_TRIAL_X64_EN"
 					StrProduct="BENCHMARK FACTORY% 64-BIT Trial"
 				case "SQLOPTIMIZERFORORACLE_X64_MULTILANG"
-					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 64-BIT"
+					StrProduct="Quest% SQL OPTIMIZER FOR ORACLE 64-BIT"
 				case "SQLOPTIMIZERFORORACLE_X86_MULTILANG"
-					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 32-BIT"
+					StrProduct="Quest% SQL OPTIMIZER FOR ORACLE 32-BIT"
 				case "SQLOPTIMIZERFORORACLE_TRIAL_X86_MULTILANG"
-					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 32-BIT TRIAL"
+					StrProduct="Quest% SQL OPTIMIZER FOR ORACLE 32-BIT TRIAL"
 				case "SQLOPTIMIZERFORORACLE_TRIAL_X64_MULTILANG"
-					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 64-BIT TRIAL"
+					StrProduct="Quest% SQL OPTIMIZER FOR ORACLE 64-BIT TRIAL"
 				case else
 					StrProduct="Null"
 			end select
@@ -604,9 +604,9 @@ Class UpdateOracleSuite
 				case "TOADFORMYSQL_FREEWARE_X86_EN"
 					StrProduct="TOAD% FOR MYSQL"
 				case "CODETESTERORACLE_X86_EN"
-					StrProduct="DELL% CODE TESTER FOR ORACLE 32-BIT"
+					StrProduct="Quest% CODE TESTER FOR ORACLE 32-BIT"
 				case "CODETESTERORACLE_X64_EN"
-					StrProduct="DELL% CODE TESTER FOR ORACLE 64-BIT"
+					StrProduct="Quest% CODE TESTER FOR ORACLE 64-BIT"
 				case "TOADDATAMODELER_X86_EN"
 					StrProduct="TOAD% DATA MODELER 32-BIT"
                                 case "TOADDATAMODELER_X64_EN"
@@ -624,13 +624,13 @@ Class UpdateOracleSuite
 				case "BENCHMARKFACTORY_TRIAL_X64_EN"
 					StrProduct="BENCHMARK FACTORY% 64-BIT Trial"
 				case "SQLOPTIMIZERFORORACLE_X64_MULTILANG"
-					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 64-BIT"
+					StrProduct="Quest% SQL OPTIMIZER FOR ORACLE 64-BIT"
 				case "SQLOPTIMIZERFORORACLE_X86_MULTILANG"
-					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 32-BIT"
+					StrProduct="Quest% SQL OPTIMIZER FOR ORACLE 32-BIT"
 				case "SQLOPTIMIZERFORORACLE_TRIAL_X86_MULTILANG"
-					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 32-BIT TRIAL"
+					StrProduct="Quest% SQL OPTIMIZER FOR ORACLE 32-BIT TRIAL"
 				case "SQLOPTIMIZERFORORACLE_TRIAL_X64_MULTILANG"
-					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 64-BIT TRIAL"
+					StrProduct="Quest% SQL OPTIMIZER FOR ORACLE 64-BIT TRIAL"
 				case else
 					StrProduct="Null"
 			end select
@@ -725,7 +725,7 @@ Class UpdateOracleSuite
                                 case "BENCHMARKFACTORY_X86_EN"
                                      StrProduct="BENCHMARK FACTORY [1-9].[0-9].[0-9]"
 				case "SQLOPTIMIZERFORORACLE_X64_MULTILANG"
-					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 64-BIT"
+					StrProduct="Quest% SQL OPTIMIZER FOR ORACLE 64-BIT"
 				case else
 					StrProduct="Null"
 			end select
@@ -825,11 +825,11 @@ Class UpdateSAPSuite
 			wscript.quit 100
 		end if
 		'Update I_Version Column
-		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_QuestSQLOptimizerforSybase set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 3 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like 'DELL% SQL OPTIMIZER FOR SAP% ASE'"
+		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_QuestSQLOptimizerforSybase set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 3 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like 'Quest% SQL OPTIMIZER FOR SAP% ASE'"
 		
 		'Update I_InstallFolder Column Record
 		Set Rec		=	CreateObject("ADODB.Recordset")
-		Query		= 	"Select I_InstallFolder from DSI.dbo.DSI_FinishInstall_QuestSQLOptimizerforSybase where Projectid = 3 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'DELL% SQL OPTIMIZER FOR SAP% ASE'"
+		Query		= 	"Select I_InstallFolder from DSI.dbo.DSI_FinishInstall_QuestSQLOptimizerforSybase where Projectid = 3 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Quest% SQL OPTIMIZER FOR SAP% ASE'"
 		Set Rec		=	Conn.Execute(Query)
 		While not Rec.EOF
 			StrColFolder=Rec.Fields("I_InstallFolder").Value
@@ -842,7 +842,7 @@ Class UpdateSAPSuite
 		regEx.Global	=	True
 		StrColFolder 	= 	regEx.Replace(StrColFolder,StrVer)
 		
-		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_QuestSQLOptimizerforSybase set  I_InstallFolder =" + "'" + StrColFolder + "'" + " where Projectid = 3 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'DELL% SQL OPTIMIZER FOR SAP% ASE'"
+		Conn.Execute "Update DSI.dbo.DSI_FinishInstall_QuestSQLOptimizerforSybase set  I_InstallFolder =" + "'" + StrColFolder + "'" + " where Projectid = 3 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Quest% SQL OPTIMIZER FOR SAP% ASE'"
 		
 		Rec.Close
 		Set Rec	= Nothing
@@ -1032,7 +1032,7 @@ Class UpdateSAPSuite
 				case "BENCHMARKFACTORY_TRIAL_X86_EN"
 					StrProduct="BENCHMARK FACTORY_ FOR DATABASES TRIAL"
 				case "SQLOPTIMIZERFORSAP_X86_EN"
-					StrProduct="Dell_ SQL OPTIMIZER FOR SAP_ ASE"
+					StrProduct="Quest_ SQL OPTIMIZER FOR SAP_ ASE"
 				case else
 					StrProduct="Null"
 			end select
@@ -1073,7 +1073,7 @@ Class UpdateSAPSuite
 				case "BENCHMARKFACTORY_TRIAL_X86_EN"
 					StrProduct="BENCHMARK FACTORY_ FOR DATABASES TRIAL"
 				case "SQLOPTIMIZERFORSAP_X86_EN"
-					StrProduct="Dell_ SQL OPTIMIZER FOR SAP_ ASE"
+					StrProduct="Quest_ SQL OPTIMIZER FOR SAP_ ASE"
 				case else
 					StrProduct="Null"
 			end select
@@ -1142,7 +1142,7 @@ Class UpdateSAPSuite
 				case "BENCHMARKFACTORY_TRIAL_X86_EN"
 					StrProduct="BENCHMARK FACTORY_ FOR DATABASES TRIAL"
 				case "SQLOPTIMIZERFORSAP_X86_EN"
-					StrProduct="Dell_ SQL OPTIMIZER FOR SAP_ ASE"
+					StrProduct="Quest_ SQL OPTIMIZER FOR SAP_ ASE"
 				case else
 					StrProduct="Null"
 			end select
@@ -1310,9 +1310,9 @@ Class UpdateDB2Suite
 		else
 			select case UCase(StrProduct)
 				case "SQLOPTIMIZERFORDB2LUW_X86_EN"
-					StrProduct="Dell% SQL Optimizer for IBM% DB2% LUW"
+					StrProduct="Quest% SQL Optimizer for IBM% DB2% LUW"
 				case "SQLOPTIMIZERFORDB2LUW_X64_EN"
-					StrProduct="Dell% SQL Optimizer for IBM% DB2% LUW"
+					StrProduct="Quest% SQL Optimizer for IBM% DB2% LUW"
 			end select
 		end if
 		
@@ -1359,9 +1359,9 @@ Class UpdateDB2Suite
 		else
 			select case UCase(StrProduct)
 				case "SQLOPTIMIZERFORDB2ZOS_X86_EN"
-					StrProduct="Dell% SQL Optimizer for IBM% DB2% z_OS_"
+					StrProduct="Quest% SQL Optimizer for IBM% DB2% z_OS_"
 				case "SQLOPTIMIZERFORDB2ZOS_X64_EN"
-					StrProduct="Dell% SQL Optimizer for IBM% DB2% z_OS_"
+					StrProduct="Quest% SQL Optimizer for IBM% DB2% z_OS_"
 			end select
 		end if
 		'Update I_Version Column
@@ -1583,9 +1583,9 @@ Class UpdateDB2Suite
 				case "BENCHMARKFACTORY_TRIAL_X86_EN"
 					StrProduct="BENCHMARK FACTORY_ FOR DATABASES TRIAL"
 				case "SQLOPTIMIZERFORDB2LUW_X86_EN"
-					StrProduct="Dell_ SQL OPTIMIZER FOR IBM_ DB2% LUW"
+					StrProduct="Quest_ SQL OPTIMIZER FOR IBM_ DB2% LUW"
 				case "SQLOPTIMIZERFORDB2ZOS_X86_EN"
-					StrProduct="Dell_ SQL OPTIMIZER FOR IBM_ DB2% Z_OS_"
+					StrProduct="Quest_ SQL OPTIMIZER FOR IBM_ DB2% Z_OS_"
 				case else
 					StrProduct="Null"
 			end select
@@ -1628,9 +1628,9 @@ Class UpdateDB2Suite
 				case "BENCHMARKFACTORY_TRIAL_X86_EN"
 					StrProduct="BENCHMARK FACTORY_ FOR DATABASES TRIAL"
 				case "SQLOPTIMIZERFORDB2LUW_X86_EN"
-					StrProduct="Dell_ SQL OPTIMIZER FOR IBM_ DB2% LUW"
+					StrProduct="Quest_ SQL OPTIMIZER FOR IBM_ DB2% LUW"
 				case "SQLOPTIMIZERFORDB2ZOS_X86_EN"
-					StrProduct="Dell_ SQL OPTIMIZER FOR IBM_ DB2% Z_OS_"
+					StrProduct="Quest_ SQL OPTIMIZER FOR IBM_ DB2% Z_OS_"
 				case else
 					StrProduct="Null"
 			end select
@@ -1702,9 +1702,9 @@ Class UpdateDB2Suite
 				case "BENCHMARKFACTORY_TRIAL_X86_EN"
 					StrProduct="BENCHMARK FACTORY_ FOR DATABASES TRIAL"
 				case "SQLOPTIMIZERFORDB2LUW_X86_EN"
-					StrProduct="Dell_ SQL OPTIMIZER FOR IBM_ DB2% LUW"
+					StrProduct="Quest_ SQL OPTIMIZER FOR IBM_ DB2% LUW"
 				case "SQLOPTIMIZERFORDB2ZOS_X86_EN"
-					StrProduct="Dell_ SQL OPTIMIZER FOR IBM_ DB2% Z_OS_"
+					StrProduct="Quest_ SQL OPTIMIZER FOR IBM_ DB2% Z_OS_"
 				case else
 					StrProduct="Null"
 			end select
@@ -1984,9 +1984,9 @@ Class UpdateSQLServerSuite
 		else
 			select case UCase(StrProduct)
 				case "SQLOPTIMIZERFORSQLSERVER_X86_EN"
-					StrProduct="DELL% SQL OPTIMIZER FOR SQL SERVER"
+					StrProduct="Quest% SQL OPTIMIZER FOR SQL SERVER"
 				case "SQLOPTIMIZERFORSQLSERVER_TRIAL_X86_EN"
-					StrProduct="DELL% SQL OPTIMIZER FOR SQL SERVER TRIAL"
+					StrProduct="Quest% SQL OPTIMIZER FOR SQL SERVER TRIAL"
 			end select
 		end if
 		
@@ -2096,9 +2096,9 @@ Class UpdateSQLServerSuite
 				case "BENCHMARKFACTORY_TRIAL_X86_EN"
 					StrProduct="BENCHMARK FACTORY_ FOR DATABASES TRIAL"
 				case "SQLOPTIMIZERFORSQLSERVER_X86_EN"
-					StrProduct="DELL_ SQL OPTIMIZER FOR SQL SERVER"
+					StrProduct="Quest_ SQL OPTIMIZER FOR SQL SERVER"
 				case "SQLOPTIMIZERFORSQLSERVER_TRIAL_X86_EN"
-					StrProduct="DELL_ SQL OPTIMIZER FOR SQL SERVER TRIAL"
+					StrProduct="Quest_ SQL OPTIMIZER FOR SQL SERVER TRIAL"
 				case else
 					StrProduct="Null"
 			end select
@@ -2168,9 +2168,9 @@ Class UpdateSQLServerSuite
 				case "BENCHMARKFACTORY_TRIAL_X86_EN"
 					StrProduct="BENCHMARK FACTORY_ FOR DATABASES TRIAL"
 				case "SQLOPTIMIZERFORSQLSERVER_X86_EN"
-					StrProduct="Dell_ SQL OPTIMIZER FOR SQL SERVER"
+					StrProduct="Quest_ SQL OPTIMIZER FOR SQL SERVER"
 				case "SQLOPTIMIZERFORSQLSERVER_TRIAL_X86_EN"
-					StrProduct="Dell_ SQL OPTIMIZER FOR SQL SERVER TRIAL"
+					StrProduct="Quest_ SQL OPTIMIZER FOR SQL SERVER TRIAL"
 				case else
 					StrProduct="Null"
 			end select
@@ -2213,9 +2213,9 @@ Class UpdateSQLServerSuite
 				case "BENCHMARKFACTORY_TRIAL_X86_EN"
 					StrProduct="BENCHMARK FACTORY_ FOR DATABASES TRIAL"
 				case "SQLOPTIMIZERFORSQLSERVER_X86_EN"
-					StrProduct="Dell_ SQL OPTIMIZER FOR SQL SERVER"
+					StrProduct="Quest_ SQL OPTIMIZER FOR SQL SERVER"
 				case "SQLOPTIMIZERFORSQLSERVER_TRIAL_X86_EN"
-					StrProduct="Dell_ SQL OPTIMIZER FOR SQL SERVER TRIAL"
+					StrProduct="Quest_ SQL OPTIMIZER FOR SQL SERVER TRIAL"
 				case else
 					StrProduct="Null"
 			end select
@@ -2351,13 +2351,13 @@ Class UpdateSQLNavigatorSuite
 				case "BENCHMARKFACTORY_TRIAL_X64_EN"
 					StrProduct="BENCHMARK FACTORY% 64-BIT Trial"
 				case "SQLOPTIMIZERFORORACLE_X64_MULTILANG"
-					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 64-BIT"
+					StrProduct="Quest% SQL OPTIMIZER FOR ORACLE 64-BIT"
 				case "SQLOPTIMIZERFORORACLE_X86_MULTILANG"
-					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 32-BIT"
+					StrProduct="Quest% SQL OPTIMIZER FOR ORACLE 32-BIT"
 				case "SQLOPTIMIZERFORORACLE_TRIAL_X86_MULTILANG"
-					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 32-BIT TRIAL"
+					StrProduct="Quest% SQL OPTIMIZER FOR ORACLE 32-BIT TRIAL"
 				case "SQLOPTIMIZERFORORACLE_TRIAL_X64_MULTILANG"
-					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 64-BIT TRIAL"
+					StrProduct="Quest% SQL OPTIMIZER FOR ORACLE 64-BIT TRIAL"
 				case else
 					StrProduct="Null"
 			end select
@@ -2434,11 +2434,11 @@ Class UpdateSQLNavigatorSuite
 		end if
 		
 		'Update I_Version Column
-		Conn.Execute "Update DSI.dbo.DSI_SQLNavigator_FinishInstall_QCTO set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like 'DELL_ CODE TESTER FOR ORACLE'"
+		Conn.Execute "Update DSI.dbo.DSI_SQLNavigator_FinishInstall_QCTO set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like 'Quest_ CODE TESTER FOR ORACLE'"
 		
 		'Update I_InstallFolder Column Record
 		Set Rec		=	CreateObject("ADODB.Recordset")
-		Query		= 	"Select I_InstallFolder from DSI.dbo.DSI_SQLNavigator_FinishInstall_QCTO where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'DELL_ CODE TESTER FOR ORACLE'"
+		Query		= 	"Select I_InstallFolder from DSI.dbo.DSI_SQLNavigator_FinishInstall_QCTO where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Quest_ CODE TESTER FOR ORACLE'"
 		Set Rec		=	Conn.Execute(Query)
 		While not Rec.EOF
 			StrColFolder=Rec.Fields("I_InstallFolder").Value
@@ -2451,7 +2451,7 @@ Class UpdateSQLNavigatorSuite
 		regEx.Global	=	True
 		StrColFolder 	= 	regEx.Replace(StrColFolder,StrVer)
 		
-		Conn.Execute "Update DSI.dbo.DSI_SQLNavigator_FinishInstall_QCTO set  I_InstallFolder =" + "'" + StrColFolder + "'" + " where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'DELL_ CODE TESTER FOR ORACLE'"
+		Conn.Execute "Update DSI.dbo.DSI_SQLNavigator_FinishInstall_QCTO set  I_InstallFolder =" + "'" + StrColFolder + "'" + " where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Quest_ CODE TESTER FOR ORACLE'"
 		
 		Rec.Close
 		Set Rec	= Nothing
@@ -2484,11 +2484,11 @@ Class UpdateSQLNavigatorSuite
 			end select	
 		end if
 		'Update I_Version Column
-		Conn.Execute "Update DSI.dbo.DSI_SQLNavigator_FinshInstall_OptimizerforOracle set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Dell% SQL Optimizer for Oracle%" + StrProduct +"'"
+		Conn.Execute "Update DSI.dbo.DSI_SQLNavigator_FinshInstall_OptimizerforOracle set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Quest% SQL Optimizer for Oracle%" + StrProduct +"'"
 		
 		'Update I_InstallFolder Column Record
 		Set Rec		=	CreateObject("ADODB.Recordset")
-		Query		= 	"Select I_InstallFolder from DSI.dbo.DSI_SQLNavigator_FinshInstall_OptimizerforOracle where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Dell% SQL Optimizer for Oracle%" + StrProduct +"'"
+		Query		= 	"Select I_InstallFolder from DSI.dbo.DSI_SQLNavigator_FinshInstall_OptimizerforOracle where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Quest% SQL Optimizer for Oracle%" + StrProduct +"'"
 		Set Rec		=	Conn.Execute(Query)
 		While not Rec.EOF
 			StrColFolder=Rec.Fields("I_InstallFolder").Value
@@ -2501,7 +2501,7 @@ Class UpdateSQLNavigatorSuite
 		regEx.Global	=	True
 		StrColFolder 	= 	regEx.Replace(StrColFolder,StrVer)
 		
-		Conn.Execute "Update DSI.dbo.DSI_SQLNavigator_FinshInstall_OptimizerforOracle set  I_InstallFolder =" + "'" + StrColFolder + "'" + " where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Dell% SQL Optimizer for Oracle%" + StrProduct +"'"
+		Conn.Execute "Update DSI.dbo.DSI_SQLNavigator_FinshInstall_OptimizerforOracle set  I_InstallFolder =" + "'" + StrColFolder + "'" + " where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Quest% SQL Optimizer for Oracle%" + StrProduct +"'"
 		
 		Rec.Close
 		Set Rec	= Nothing
@@ -2611,13 +2611,13 @@ Class UpdateSQLNavigatorSuite
 				case "BENCHMARKFACTORY_TRIAL_X64_EN"
 					StrProduct="BENCHMARK FACTORY% 64-BIT Trial"
 				case "SQLOPTIMIZERFORORACLE_X64_MULTILANG"
-					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 64-BIT"
+					StrProduct="Quest% SQL OPTIMIZER FOR ORACLE 64-BIT"
 				case "SQLOPTIMIZERFORORACLE_X86_MULTILANG"
-					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 32-BIT"
+					StrProduct="Quest% SQL OPTIMIZER FOR ORACLE 32-BIT"
 				case "SQLOPTIMIZERFORORACLE_TRIAL_X86_MULTILANG"
-					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 32-BIT TRIAL"
+					StrProduct="Quest% SQL OPTIMIZER FOR ORACLE 32-BIT TRIAL"
 				case "SQLOPTIMIZERFORORACLE_TRIAL_X64_MULTILANG"
-					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 64-BIT TRIAL"
+					StrProduct="Quest% SQL OPTIMIZER FOR ORACLE 64-BIT TRIAL"
 				case else
 					StrProduct="Null"
 			end select
@@ -2699,7 +2699,7 @@ Class UpdateSQLNavigatorSuite
                                 case "BENCHMARKFACTORY_X86_EN"
                                      StrProduct="BENCHMARK FACTORY [1-9].[0-9].[0-9]"
 				case "SQLOPTIMIZERFORORACLE_X64_MULTILANG"
-					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 64-BIT"
+					StrProduct="Quest% SQL OPTIMIZER FOR ORACLE 64-BIT"
 				case else
 					StrProduct="Null"
 			end select
@@ -2776,13 +2776,13 @@ Class UpdateSQLNavigatorSuite
 				case "BENCHMARKFACTORY_TRIAL_X64_EN"
 					StrProduct="BENCHMARK FACTORY% 64-BIT Trial"
 				case "SQLOPTIMIZERFORORACLE_X64_MULTILANG"
-					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 64-BIT"
+					StrProduct="Quest% SQL OPTIMIZER FOR ORACLE 64-BIT"
 				case "SQLOPTIMIZERFORORACLE_X86_MULTILANG"
-					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 32-BIT"
+					StrProduct="Quest% SQL OPTIMIZER FOR ORACLE 32-BIT"
 				case "SQLOPTIMIZERFORORACLE_TRIAL_X86_MULTILANG"
-					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 32-BIT TRIAL"
+					StrProduct="Quest% SQL OPTIMIZER FOR ORACLE 32-BIT TRIAL"
 				case "SQLOPTIMIZERFORORACLE_TRIAL_X64_MULTILANG"
-					StrProduct="DELL% SQL OPTIMIZER FOR ORACLE 64-BIT TRIAL"
+					StrProduct="Quest% SQL OPTIMIZER FOR ORACLE 64-BIT TRIAL"
 				case else
 					StrProduct="Null" 
 			end select
