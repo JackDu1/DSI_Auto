@@ -785,11 +785,11 @@ Class UpdateSAPSuite
 			wscript.quit 100	
 		end if
 		'Update I_Version Column
-		Conn.Execute "Update DSI.dbo.DSI_SAP_ToadforSybase set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 3 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Toad_ for SAP Solutions'"
+		Conn.Execute "Update DSI.dbo.DSI_SAP_ToadforSybase set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 3 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Toad_ for SAP_ Solutions 64-bit'"
 		
 		'Update I_InstallFolder Column Record
 		Set Rec		=	CreateObject("ADODB.Recordset")
-		Query		= 	"Select I_InstallFolder from DSI.dbo.DSI_SAP_ToadforSybase where Projectid = 3 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Toad_ for SAP Solutions'"
+		Query		= 	"Select I_InstallFolder from DSI.dbo.DSI_SAP_ToadforSybase where Projectid = 3 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Toad_ for SAP_ Solutions 64-bit'"
 		Set Rec		=	Conn.Execute(Query)
 		While not Rec.EOF
 			StrColFolder=Rec.Fields("I_InstallFolder").Value
@@ -802,7 +802,7 @@ Class UpdateSAPSuite
 		regEx.Global	=	True
 		StrColFolder 	= 	regEx.Replace(StrColFolder,StrVer)
 		
-		Conn.Execute "Update DSI.dbo.DSI_SAP_ToadforSybase set  I_InstallFolder =" + "'" + StrColFolder + "'" + " where Projectid = 3 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Toad_ for SAP Solutions'"
+		Conn.Execute "Update DSI.dbo.DSI_SAP_ToadforSybase set  I_InstallFolder =" + "'" + StrColFolder + "'" + " where Projectid = 3 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Toad_ for SAP_ Solutions 64-bit'"
 		
 		Rec.Close
 		Set Rec	= Nothing
@@ -864,7 +864,7 @@ Class UpdateSAPSuite
 		else
 			select case StrProduct
 				case "BENCHMARKFACTORY_X64_EN"
-					StrProduct="Benchmark Factory% for Databases"
+					StrProduct="Benchmark Factory% 64-BIT"
 				case "BENCHMARKFACTORY_X86_EN"
 					StrProduct="Benchmark Factory% for Databases"
 				case "BENCHMARKFACTORY_TRIAL_X86_EN"
@@ -1019,8 +1019,8 @@ Class UpdateSAPSuite
 			wscript.quit 100
 		else
 			select case UCase(StrProduct)
-				case "TOADFORSAP_X86_EN"
-					StrProduct="TOAD_ FOR SAP SOLUTIONS"
+				case "TOADFORSAP_X64_EN"
+					StrProduct="TOAD_ FOR SAP_ SOLUTIONS 64-BIT"
 				case "TOADDATAMODELER_X86_EN"
 					StrProduct="TOAD% DATA MODELER 32-BIT"
                                 case "TOADDATAMODELER_X64_EN"
@@ -1028,7 +1028,7 @@ Class UpdateSAPSuite
 				case "SPOTLIGHTONSAP_X86_EN"
 					StrProduct="SPOTLIGHT_ ON SAP_ ASE"
 				case "BENCHMARKFACTORY_X86_EN"
-					StrProduct="BENCHMARK FACTORY_ FOR DATABASES"
+					StrProduct="BENCHMARK FACTORY_ 64-BIT"
 				case "BENCHMARKFACTORY_TRIAL_X86_EN"
 					StrProduct="BENCHMARK FACTORY_ FOR DATABASES TRIAL"
 				case "SQLOPTIMIZERFORSAP_X86_EN"
@@ -1061,7 +1061,7 @@ Class UpdateSAPSuite
 		else
 			select case UCase(StrProduct)
 				case "TOADFORSAP_X86_EN"
-					StrProduct="TOAD_ FOR SAP SOLUTIONS"
+					StrProduct="TOAD_ FOR SAP_ SOLUTIONS 64-BIT"
 				case "TOADDATAMODELER_X86_EN"
 					StrProduct="TOAD% DATA MODELER 32-BIT"
                                 case "TOADDATAMODELER_X64_EN"
@@ -1069,7 +1069,7 @@ Class UpdateSAPSuite
 				case "SPOTLIGHTONSAP_X86_EN"
 					StrProduct="SPOTLIGHT_ ON SAP_ ASE"
 				case "BENCHMARKFACTORY_X86_EN"
-					StrProduct="BENCHMARK FACTORY_ FOR DATABASES"
+					StrProduct="BENCHMARK FACTORY_ 64-BIT"
 				case "BENCHMARKFACTORY_TRIAL_X86_EN"
 					StrProduct="BENCHMARK FACTORY_ FOR DATABASES TRIAL"
 				case "SQLOPTIMIZERFORSAP_X86_EN"
@@ -1130,7 +1130,7 @@ Class UpdateSAPSuite
 		else
 			select case UCase(StrProduct)
 				case "TOADFORSAP_X86_EN"
-					StrProduct="TOAD_ FOR SAP SOLUTIONS"
+					StrProduct="TOAD_ FOR SAP_ SOLUTIONS 64-BIT"
 				case "TOADDATAMODELER_X86_EN"
 					StrProduct="TOAD% DATA MODELER 32-BIT"
                                 case "TOADDATAMODELER_X64_EN"
@@ -1138,7 +1138,7 @@ Class UpdateSAPSuite
 				case "SPOTLIGHTONSAP_X86_EN"
 					StrProduct="SPOTLIGHT_ ON SAP_ ASE"
 				case "BENCHMARKFACTORY_X86_EN"
-					StrProduct="BENCHMARK FACTORY_ FOR DATABASES"
+					StrProduct="BENCHMARK FACTORY_ 64-BIT"
 				case "BENCHMARKFACTORY_TRIAL_X86_EN"
 					StrProduct="BENCHMARK FACTORY_ FOR DATABASES TRIAL"
 				case "SQLOPTIMIZERFORSAP_X86_EN"
@@ -1190,8 +1190,8 @@ Class UpdateSAPSuite
 			wscript.quit 100
 		else
 			select case UCase(StrProduct)
-				case "TOADFORSAP_X86_EN"
-					StrProduct="TOAD_ FOR SAP SOLUTIONS%"
+				case "TOADFORSAP_X64_EN"
+					StrProduct="TOAD_ FOR SAP_ SOLUTIONS%"
 				case "TOADDATAMODELER_X86_EN"
 					StrProduct="TOAD DATA MODELER%"
                                 case "TOADDATAMODELER_X64_EN"
@@ -2341,7 +2341,7 @@ Class UpdateSQLNavigatorSuite
 				case "SQLNAVIGATOR_TRIAL_X64_EN"
 					StrProduct="SQL NAVIGATOR% 64-BIT TRIAL"
 				case "CODETESTERORACLE_X86_EN"
-					StrProduct="DELL% CODE TESTER FOR ORACLE"
+					StrProduct="Quest% CODE TESTER FOR ORACLE 64-BIT"
 				case "BENCHMARKFACTORY_X64_EN"
 					StrProduct="BENCHMARK FACTORY% 64-BIT"
 				case "BENCHMARKFACTORY_X86_EN"
@@ -2434,11 +2434,11 @@ Class UpdateSQLNavigatorSuite
 		end if
 		
 		'Update I_Version Column
-		Conn.Execute "Update DSI.dbo.DSI_SQLNavigator_FinishInstall_QCTO set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like 'Quest_ CODE TESTER FOR ORACLE'"
+		Conn.Execute "Update DSI.dbo.DSI_SQLNavigator_FinishInstall_QCTO set  I_Version =" + "'" + StrVersion + "'" + " where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like 'Quest_ CODE TESTER FOR ORACLE 64-BIT'"
 		
 		'Update I_InstallFolder Column Record
 		Set Rec		=	CreateObject("ADODB.Recordset")
-		Query		= 	"Select I_InstallFolder from DSI.dbo.DSI_SQLNavigator_FinishInstall_QCTO where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Quest_ CODE TESTER FOR ORACLE'"
+		Query		= 	"Select I_InstallFolder from DSI.dbo.DSI_SQLNavigator_FinishInstall_QCTO where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Quest_ CODE TESTER FOR ORACLE 64-BIT'"
 		Set Rec		=	Conn.Execute(Query)
 		While not Rec.EOF
 			StrColFolder=Rec.Fields("I_InstallFolder").Value
@@ -2451,7 +2451,7 @@ Class UpdateSQLNavigatorSuite
 		regEx.Global	=	True
 		StrColFolder 	= 	regEx.Replace(StrColFolder,StrVer)
 		
-		Conn.Execute "Update DSI.dbo.DSI_SQLNavigator_FinishInstall_QCTO set  I_InstallFolder =" + "'" + StrColFolder + "'" + " where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Quest_ CODE TESTER FOR ORACLE'"
+		Conn.Execute "Update DSI.dbo.DSI_SQLNavigator_FinishInstall_QCTO set  I_InstallFolder =" + "'" + StrColFolder + "'" + " where Projectid = 5 and UPPER(I_AutoUpdate) = 'TRUE' and I_ProductName like 'Quest_ CODE TESTER FOR ORACLE 64-BIT'"
 		
 		Rec.Close
 		Set Rec	= Nothing
@@ -2601,7 +2601,7 @@ Class UpdateSQLNavigatorSuite
 				case "SQLNAVIGATOR_TRIAL_X64_EN"
 					StrProduct="SQL NAVIGATOR% 64-BIT TRIAL"
 				case "CODETESTERORACLE_X86_EN"
-					StrProduct="DELL% CODE TESTER FOR ORACLE"
+					StrProduct="QUEST% CODE TESTER FOR ORACLE 64-BIT"
 				case "BENCHMARKFACTORY_X64_EN"
 					StrProduct="BENCHMARK FACTORY% 64-BIT"
 				case "BENCHMARKFACTORY_X86_EN"
@@ -2685,7 +2685,7 @@ Class UpdateSQLNavigatorSuite
 				case "SQLNAVIGATOR_TRIAL_X64_EN"
 					StrProduct="SQL NAVIGATOR [1-9].[0-9] TRIAL"
 				case "CODETESTERORACLE_X86_EN"
-					StrProduct="DELL CODE TESTER FOR ORACLE%"
+					StrProduct="QUEST CODE TESTER FOR ORACLE%"
 				case "SPOTLIGHTONORACLE_X64_MULTILANG"
 					StrProduct="SPOTLIGHT ON ORACLE%"
 				case "SPOTLIGHTONORACLE_X86_MULTILANG"
@@ -2766,7 +2766,7 @@ Class UpdateSQLNavigatorSuite
 				case "SQLNAVIGATOR_TRIAL_X64_EN"
 					StrProduct="SQL NAVIGATOR% 64-BIT TRIAL"
 				case "CODETESTERORACLE_X86_EN"
-					StrProduct="DELL% CODE TESTER FOR ORACLE"
+					StrProduct="QUEST% CODE TESTER FOR ORACLE 64-BIT"
 				case "BENCHMARKFACTORY_X64_EN"
 					StrProduct="BENCHMARK FACTORY% 64-BIT"
 				case "BENCHMARKFACTORY_X86_EN"
