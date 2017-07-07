@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<Root Signature="{5DCBAC3B-D39C-497C-9BE8-744CBADD37AA}" NameMappingVersion="4" Cookie="349">
+<Root Signature="{5DCBAC3B-D39C-497C-9BE8-744CBADD37AA}" NameMappingVersion="4" Cookie="352">
 	<Nodes Name="NameMapping" Key="{BE401E45-B2D6-4FBA-931A-C2117D5C51AD}">
 		<Properties />
 		<Children>
@@ -539,21 +539,19 @@
 							</Child2>
 							<Child3 Name="DSI_CancellationWindow" Key="{121645CE-2BB6-404C-B9B2-869980D16AD2}">
 								<Properties>
-									<Property0 Name="WndCaption" Cookie="192" />
+									<Property0 Name="Name" Cookie="349" />
 								</Properties>
 								<Children>
 									<Child0 Name="btnYes" Key="{D666792E-BAA6-4B04-835D-B919C5171AFE}">
 										<Properties>
-											<Property0 Name="WndClass" Cookie="193" />
-											<Property1 Name="WndCaption" Cookie="194" />
+											<Property0 Name="NativeClrObject.Name" Cookie="351" />
 										</Properties>
 										<Children />
 										<TypeInfo Item0="23" />
 									</Child0>
 									<Child1 Name="btnNo" Key="{BC3618CE-7A0F-47E9-8ABB-C78116291AAE}">
 										<Properties>
-											<Property0 Name="WndClass" Cookie="195" />
-											<Property1 Name="WndCaption" Cookie="196" />
+											<Property0 Name="NativeClrObject.Name" Cookie="350" />
 										</Properties>
 										<Children />
 										<TypeInfo Item0="23" />
@@ -1134,154 +1132,152 @@
 			<Property159 Cookie="189" PropertyType="0" Value="TfrmUserExperienceFeedback" Type="5" />
 			<Property160 Cookie="190" PropertyType="0" Value="TfrmSpotlightFeedback" Type="5" />
 			<Property161 Cookie="191" PropertyType="0" Value="SysTreeView32" Type="5" />
-			<Property162 Cookie="192" PropertyType="0" Value="Cancel and Lose Selections?" Type="5" />
-			<Property163 Cookie="193" PropertyType="0" Value="Button" Type="5" />
-			<Property164 Cookie="194" PropertyType="0" Value="&amp;Yes" Type="5" />
-			<Property165 Cookie="195" PropertyType="0" Value="Button" Type="5" />
-			<Property166 Cookie="196" PropertyType="0" Value="&amp;No" Type="5" />
-			<Property167 Cookie="197" PropertyType="0" Value="TProjectLucyStartup" Type="5" />
-			<Property168 Cookie="198" PropertyType="0" Value="TFmLicenseTrialNotification" Type="5" />
-			<Property169 Cookie="199" PropertyType="0" Value="FmLicenseTrialNotification" Type="5" />
-			<Property170 Cookie="200" PropertyType="0" Value="Error" Type="5" />
-			<Property171 Cookie="201" PropertyType="0" Value="TConfirmNoNagDlg" Type="5" />
-			<Property172 Cookie="202" PropertyType="0" Value="lblValidationError" Type="5" />
-			<Property173 Cookie="203" PropertyType="0" Value="TTntMessageForm.UnicodeClass" Type="5" />
-			<Property174 Cookie="204" PropertyType="0" Value="Toad Data Modeler" Type="5" />
-			<Property175 Cookie="205" PropertyType="0" Value="LicenseAgreement" Type="5" />
-			<Property176 Cookie="211" PropertyType="0" Value="Tf_Main" Type="5" />
-			<Property177 Cookie="212" PropertyType="0" Value="VCLObject(&apos;f_Main&apos;)" Type="5" />
-			<Property178 Cookie="213" PropertyType="0" Value="WinFormsObject(&apos;ImproveExperienceForm&apos;)" Type="5" />
-			<Property179 Cookie="214" PropertyType="0" Value="ImproveExperienceForm" Type="5" />
-			<Property180 Cookie="215" PropertyType="0" Value="lblCopyright1" Type="5" />
-			<Property181 Cookie="216" PropertyType="0" Value="lblCopyright1" Type="5" />
-			<Property182 Cookie="217" PropertyType="0" Value="lblCopyright2" Type="5" />
-			<Property183 Cookie="218" PropertyType="0" Value="wbrIntro" Type="5" />
-			<Property184 Cookie="219" PropertyType="0" Value="System.Windows.Forms.WebBrowser" Type="5" />
-			<Property185 Cookie="220" PropertyType="0" Value="rtbAgreement" Type="5" />
-			<Property186 Cookie="221" PropertyType="0" Value="lblRootDir" Type="5" />
-			<Property187 Cookie="222" PropertyType="0" Value="lblRootDir" Type="5" />
-			<Property188 Cookie="223" PropertyType="0" Value="dgvProperties" Type="5" />
-			<Property189 Cookie="224" PropertyType="0" Value="wbrDescription" Type="5" />
-			<Property190 Cookie="225" PropertyType="0" Value="Process(&apos;SpotlightOnSqlServer_Standard_*&apos;)" Type="5" />
-			<Property191 Cookie="226" PropertyType="0" Value="TfrmInstallWizard" Type="5" />
-			<Property192 Cookie="227" PropertyType="0" Value="Spotlight on SQL Server Installation" Type="5" />
-			<Property193 Cookie="228" PropertyType="0" Value="TfrmInstallWizard" Type="5" />
-			<Property194 Cookie="229" PropertyType="0" Value="Spotlight on SQL Server Installation" Type="5" />
-			<Property195 Cookie="230" PropertyType="0" Value="TfrmInstallCenter" Type="5" />
-			<Property196 Cookie="231" PropertyType="0" Value="frmInstallCenter" Type="5" />
-			<Property197 Cookie="232" PropertyType="0" Value="Spotlight on SQL Server Installation Center" Type="5" />
-			<Property198 Cookie="233" PropertyType="0" Value="TSpotlightHyperlinkWinControl" Type="5" />
-			<Property199 Cookie="234" PropertyType="0" Value="lnkCompact" Type="5" />
-			<Property200 Cookie="235" PropertyType="0" Value="Install Spotlight on SQL Server" Type="5" />
-			<Property201 Cookie="236" PropertyType="0" Value="SpotlightEssentialsSplashScreen" Type="5" />
-			<Property202 Cookie="237" PropertyType="0" Value="splashControl1" Type="5" />
-			<Property203 Cookie="238" PropertyType="0" Value="picturePanel" Type="5" />
-			<Property204 Cookie="239" PropertyType="0" Value="labelProductVersion" Type="5" />
-			<Property205 Cookie="240" PropertyType="0" Value="TfrmSpotlightMessageBox" Type="5" />
-			<Property206 Cookie="241" PropertyType="0" Value="frmSpotlightMessageBox" Type="5" />
-			<Property207 Cookie="242" PropertyType="0" Value="TPanel" Type="5" />
-			<Property208 Cookie="243" PropertyType="0" Value="pnlMain" Type="5" />
-			<Property209 Cookie="244" PropertyType="0" Value="TSpotlightPageControl" Type="5" />
-			<Property210 Cookie="245" PropertyType="0" Value="pagAbout" Type="5" />
-			<Property211 Cookie="246" PropertyType="0" Value="TSpotlightTabSheet" Type="5" />
-			<Property212 Cookie="247" PropertyType="0" Value="tabInstalledProducts" Type="5" />
-			<Property213 Cookie="248" PropertyType="0" Value="TSpotlightSimpleWebBrowser" Type="5" />
-			<Property214 Cookie="249" PropertyType="0" Value="htmInstalledProducts" Type="5" />
-			<Property215 Cookie="250" PropertyType="0" Value="Panel" Type="5" />
-			<Property216 Cookie="251" PropertyType="0" Value="1" Type="0" />
-			<Property217 Cookie="252" PropertyType="0" Value="Panel" Type="5" />
-			<Property218 Cookie="253" PropertyType="0" Value="about:blank" Type="5" />
-			<Property219 Cookie="254" PropertyType="0" Value="1" Type="0" />
-			<Property220 Cookie="255" PropertyType="0" Value="Pane" Type="5" />
-			<Property221 Cookie="256" PropertyType="0" Value="0" Type="0" />
-			<Property222 Cookie="257" PropertyType="0" Value="1" Type="0" />
-			<Property223 Cookie="258" PropertyType="0" Value="Table" Type="5" />
-			<Property224 Cookie="259" PropertyType="0" Value="0" Type="0" />
-			<Property225 Cookie="260" PropertyType="0" Value="1" Type="0" />
-			<Property226 Cookie="261" PropertyType="0" Value="Cell" Type="5" />
-			<Property227 Cookie="262" PropertyType="0" Value="2" Type="0" />
-			<Property228 Cookie="263" PropertyType="0" Value="1" Type="0" />
-			<Property229 Cookie="264" PropertyType="0" Value="Edit" Type="5" />
-			<Property230 Cookie="265" PropertyType="0" Value="1" Type="0" />
-			<Property231 Cookie="266" PropertyType="0" Value="1" Type="0" />
-			<Property232 Cookie="267" PropertyType="0" Value="Quest SQL Optimizer for SQL Server" Type="5" />
-			<Property233 Cookie="268" PropertyType="0" Value="Quest SQL Optimizer for SQL Server" Type="5" />
-			<Property234 Cookie="269" PropertyType="0" Value="frmUserExperience" Type="5" />
-			<Property235 Cookie="270" PropertyType="0" Value="ShellWindow" Type="5" />
-			<Property236 Cookie="271" PropertyType="0" Value="Dell? SQL Optimizer for SQL Server? *" Type="5" />
-			<Property237 Cookie="272" PropertyType="0" Value="ShellWindow" Type="5" />
-			<Property238 Cookie="273" PropertyType="0" Value="Dell? SQL Optimizer for SQL Server? *" Type="5" />
-			<Property239 Cookie="274" PropertyType="0" Value="frmAbout" Type="5" />
-			<Property240 Cookie="275" PropertyType="0" Value="labVersion" Type="5" />
-			<Property241 Cookie="276" PropertyType="0" Value="ConnectionForm" Type="5" />
-			<Property242 Cookie="277" PropertyType="0" Value="Connections" Type="5" />
-			<Property243 Cookie="278" PropertyType="0" Value="ConnectionForm" Type="5" />
-			<Property244 Cookie="279" PropertyType="0" Value="WinFormsObject(&apos;ConnectionForm&apos;)" Type="5" />
-			<Property245 Cookie="280" PropertyType="0" Value="Connections" Type="5" />
-			<Property246 Cookie="281" PropertyType="0" Value="ConnectionForm" Type="5" />
-			<Property247 Cookie="282" PropertyType="0" Value="Connections" Type="5" />
-			<Property248 Cookie="283" PropertyType="0" Value="Form" Type="5" />
-			<Property249 Cookie="284" PropertyType="0" Value="ConnectionForm" Type="5" />
-			<Property250 Cookie="285" PropertyType="0" Value="WinFormsObject(&apos;ConnectionForm&apos;)" Type="5" />
-			<Property251 Cookie="286" PropertyType="0" Value="ConnectionForm" Type="5" />
-			<Property252 Cookie="287" PropertyType="0" Value="WinFormsObject(&apos;ConnectionForm&apos;)" Type="5" />
-			<Property253 Cookie="288" PropertyType="0" Value="ConnectionForm" Type="5" />
-			<Property254 Cookie="289" PropertyType="0" Value="WinFormsObject(&apos;ConnectionForm&apos;)" Type="5" />
-			<Property255 Cookie="290" PropertyType="0" Value="Connections" Type="5" />
-			<Property256 Cookie="295" PropertyType="0" Value="ConnectionForm" Type="5" />
-			<Property257 Cookie="296" PropertyType="0" Value="WinFormsObject(&apos;ConnectionForm&apos;)" Type="5" />
-			<Property258 Cookie="297" PropertyType="0" Value="Toad" Type="5" />
-			<Property259 Cookie="298" PropertyType="0" Value="ProductInstallation" Type="5" />
-			<Property260 Cookie="299" PropertyType="0" Value="pnlBottom" Type="5" />
-			<Property261 Cookie="300" PropertyType="0" Value="lblProduct" Type="5" />
-			<Property262 Cookie="301" PropertyType="0" Value="lblStatus" Type="5" />
-			<Property263 Cookie="302" PropertyType="0" Value="ProductUninstallation" Type="5" />
-			<Property264 Cookie="303" PropertyType="0" Value="pnlBottom" Type="5" />
-			<Property265 Cookie="304" PropertyType="0" Value="WindowsForms10.STATIC.app.0.be074_r39_ad2" Type="5" />
-			<Property266 Cookie="305" PropertyType="0" Value="Product: Toad™ for SQL Server" Type="5" />
-			<Property267 Cookie="306" PropertyType="0" Value="pbrOverallExecute" Type="5" />
-			<Property268 Cookie="307" PropertyType="0" Value="lblStatus" Type="5" />
-			<Property269 Cookie="308" PropertyType="0" Value="lblTotalProgress" Type="5" />
-			<Property270 Cookie="309" PropertyType="0" Value="pnlBody" Type="5" />
-			<Property271 Cookie="310" PropertyType="0" Value="pbxAd" Type="5" />
-			<Property272 Cookie="311" PropertyType="0" Value="pbrOverallExecute" Type="5" />
-			<Property273 Cookie="312" PropertyType="0" Value="lblTotalProgress" Type="5" />
-			<Property274 Cookie="313" PropertyType="0" Value="pnlBody" Type="5" />
-			<Property275 Cookie="314" PropertyType="0" Value="pnlBody" Type="5" />
-			<Property276 Cookie="315" PropertyType="0" Value="pbxAd" Type="5" />
-			<Property277 Cookie="316" PropertyType="0" Value="Final" Type="5" />
-			<Property278 Cookie="317" PropertyType="0" Value="lblProduct" Type="5" />
-			<Property279 Cookie="318" PropertyType="0" Value="Dialog" Type="5" />
-			<Property280 Cookie="319" PropertyType="0" Value="License_Error" Type="5" />
-			<Property281 Cookie="320" PropertyType="0" Value="sqlnavigator" Type="5" />
-			<Property282 Cookie="321" PropertyType="0" Value="TfrmConfirmationDialog" Type="5" />
-			<Property283 Cookie="322" PropertyType="0" Value="TfrmTutor2" Type="5" />
-			<Property284 Cookie="323" PropertyType="0" Value="Tutorial Message" Type="5" />
-			<Property285 Cookie="324" PropertyType="0" Value="TfrmWhatisNew" Type="5" />
-			<Property286 Cookie="325" PropertyType="0" Value="What&apos;s new in SQL Navigator" Type="5" />
-			<Property287 Cookie="326" PropertyType="0" Value="TfrmError" Type="5" />
-			<Property288 Cookie="327" PropertyType="0" Value="Error" Type="5" />
-			<Property289 Cookie="328" PropertyType="0" Value="TfrmLogOn" Type="5" />
-			<Property290 Cookie="329" PropertyType="0" Value="Oracle Logon" Type="5" />
-			<Property291 Cookie="330" PropertyType="0" Value="TButton" Type="5" />
-			<Property292 Cookie="331" PropertyType="0" Value="btnNo" Type="5" />
-			<Property293 Cookie="332" PropertyType="0" Value="TfrmMain" Type="5" />
-			<Property294 Cookie="333" PropertyType="0" Value="frmMain" Type="5" />
-			<Property295 Cookie="334" PropertyType="0" Value="TfrmAbout" Type="5" />
-			<Property296 Cookie="335" PropertyType="0" Value="frmAbout" Type="5" />
-			<Property297 Cookie="336" PropertyType="0" Value="TLabel" Type="5" />
-			<Property298 Cookie="337" PropertyType="0" Value="lblVersion" Type="5" />
-			<Property299 Cookie="338" PropertyType="0" Value="Quest SQL Optimizer for Oracle" Type="5" />
-			<Property300 Cookie="339" PropertyType="0" Value="frmWelcomeWindow" Type="5" />
-			<Property301 Cookie="340" PropertyType="0" Value="Welcome" Type="5" />
-			<Property302 Cookie="341" PropertyType="0" Value="frmUserExperience" Type="5" />
-			<Property303 Cookie="342" PropertyType="0" Value="WinFormsObject(&apos;frmCheckForUpdates&apos;)" Type="5" />
-			<Property304 Cookie="343" PropertyType="0" Value="Licensing" Type="5" />
-			<Property305 Cookie="344" PropertyType="0" Value="frmAuthorizationM" Type="5" />
-			<Property306 Cookie="345" PropertyType="0" Value="TSelectProfileVersionDlg" Type="5" />
-			<Property307 Cookie="346" PropertyType="0" Value="SelectProfileVersionDlg" Type="5" />
-			<Property308 Cookie="347" PropertyType="0" Value="Dialog" Type="5" />
-			<Property309 Cookie="348" PropertyType="0" Value="Information" Type="5" />
+			<Property162 Cookie="197" PropertyType="0" Value="TProjectLucyStartup" Type="5" />
+			<Property163 Cookie="198" PropertyType="0" Value="TFmLicenseTrialNotification" Type="5" />
+			<Property164 Cookie="199" PropertyType="0" Value="FmLicenseTrialNotification" Type="5" />
+			<Property165 Cookie="200" PropertyType="0" Value="Error" Type="5" />
+			<Property166 Cookie="201" PropertyType="0" Value="TConfirmNoNagDlg" Type="5" />
+			<Property167 Cookie="202" PropertyType="0" Value="lblValidationError" Type="5" />
+			<Property168 Cookie="203" PropertyType="0" Value="TTntMessageForm.UnicodeClass" Type="5" />
+			<Property169 Cookie="204" PropertyType="0" Value="Toad Data Modeler" Type="5" />
+			<Property170 Cookie="205" PropertyType="0" Value="LicenseAgreement" Type="5" />
+			<Property171 Cookie="211" PropertyType="0" Value="Tf_Main" Type="5" />
+			<Property172 Cookie="212" PropertyType="0" Value="VCLObject(&apos;f_Main&apos;)" Type="5" />
+			<Property173 Cookie="213" PropertyType="0" Value="WinFormsObject(&apos;ImproveExperienceForm&apos;)" Type="5" />
+			<Property174 Cookie="214" PropertyType="0" Value="ImproveExperienceForm" Type="5" />
+			<Property175 Cookie="215" PropertyType="0" Value="lblCopyright1" Type="5" />
+			<Property176 Cookie="216" PropertyType="0" Value="lblCopyright1" Type="5" />
+			<Property177 Cookie="217" PropertyType="0" Value="lblCopyright2" Type="5" />
+			<Property178 Cookie="218" PropertyType="0" Value="wbrIntro" Type="5" />
+			<Property179 Cookie="219" PropertyType="0" Value="System.Windows.Forms.WebBrowser" Type="5" />
+			<Property180 Cookie="220" PropertyType="0" Value="rtbAgreement" Type="5" />
+			<Property181 Cookie="221" PropertyType="0" Value="lblRootDir" Type="5" />
+			<Property182 Cookie="222" PropertyType="0" Value="lblRootDir" Type="5" />
+			<Property183 Cookie="223" PropertyType="0" Value="dgvProperties" Type="5" />
+			<Property184 Cookie="224" PropertyType="0" Value="wbrDescription" Type="5" />
+			<Property185 Cookie="225" PropertyType="0" Value="Process(&apos;SpotlightOnSqlServer_Standard_*&apos;)" Type="5" />
+			<Property186 Cookie="226" PropertyType="0" Value="TfrmInstallWizard" Type="5" />
+			<Property187 Cookie="227" PropertyType="0" Value="Spotlight on SQL Server Installation" Type="5" />
+			<Property188 Cookie="228" PropertyType="0" Value="TfrmInstallWizard" Type="5" />
+			<Property189 Cookie="229" PropertyType="0" Value="Spotlight on SQL Server Installation" Type="5" />
+			<Property190 Cookie="230" PropertyType="0" Value="TfrmInstallCenter" Type="5" />
+			<Property191 Cookie="231" PropertyType="0" Value="frmInstallCenter" Type="5" />
+			<Property192 Cookie="232" PropertyType="0" Value="Spotlight on SQL Server Installation Center" Type="5" />
+			<Property193 Cookie="233" PropertyType="0" Value="TSpotlightHyperlinkWinControl" Type="5" />
+			<Property194 Cookie="234" PropertyType="0" Value="lnkCompact" Type="5" />
+			<Property195 Cookie="235" PropertyType="0" Value="Install Spotlight on SQL Server" Type="5" />
+			<Property196 Cookie="236" PropertyType="0" Value="SpotlightEssentialsSplashScreen" Type="5" />
+			<Property197 Cookie="237" PropertyType="0" Value="splashControl1" Type="5" />
+			<Property198 Cookie="238" PropertyType="0" Value="picturePanel" Type="5" />
+			<Property199 Cookie="239" PropertyType="0" Value="labelProductVersion" Type="5" />
+			<Property200 Cookie="240" PropertyType="0" Value="TfrmSpotlightMessageBox" Type="5" />
+			<Property201 Cookie="241" PropertyType="0" Value="frmSpotlightMessageBox" Type="5" />
+			<Property202 Cookie="242" PropertyType="0" Value="TPanel" Type="5" />
+			<Property203 Cookie="243" PropertyType="0" Value="pnlMain" Type="5" />
+			<Property204 Cookie="244" PropertyType="0" Value="TSpotlightPageControl" Type="5" />
+			<Property205 Cookie="245" PropertyType="0" Value="pagAbout" Type="5" />
+			<Property206 Cookie="246" PropertyType="0" Value="TSpotlightTabSheet" Type="5" />
+			<Property207 Cookie="247" PropertyType="0" Value="tabInstalledProducts" Type="5" />
+			<Property208 Cookie="248" PropertyType="0" Value="TSpotlightSimpleWebBrowser" Type="5" />
+			<Property209 Cookie="249" PropertyType="0" Value="htmInstalledProducts" Type="5" />
+			<Property210 Cookie="250" PropertyType="0" Value="Panel" Type="5" />
+			<Property211 Cookie="251" PropertyType="0" Value="1" Type="0" />
+			<Property212 Cookie="252" PropertyType="0" Value="Panel" Type="5" />
+			<Property213 Cookie="253" PropertyType="0" Value="about:blank" Type="5" />
+			<Property214 Cookie="254" PropertyType="0" Value="1" Type="0" />
+			<Property215 Cookie="255" PropertyType="0" Value="Pane" Type="5" />
+			<Property216 Cookie="256" PropertyType="0" Value="0" Type="0" />
+			<Property217 Cookie="257" PropertyType="0" Value="1" Type="0" />
+			<Property218 Cookie="258" PropertyType="0" Value="Table" Type="5" />
+			<Property219 Cookie="259" PropertyType="0" Value="0" Type="0" />
+			<Property220 Cookie="260" PropertyType="0" Value="1" Type="0" />
+			<Property221 Cookie="261" PropertyType="0" Value="Cell" Type="5" />
+			<Property222 Cookie="262" PropertyType="0" Value="2" Type="0" />
+			<Property223 Cookie="263" PropertyType="0" Value="1" Type="0" />
+			<Property224 Cookie="264" PropertyType="0" Value="Edit" Type="5" />
+			<Property225 Cookie="265" PropertyType="0" Value="1" Type="0" />
+			<Property226 Cookie="266" PropertyType="0" Value="1" Type="0" />
+			<Property227 Cookie="267" PropertyType="0" Value="Quest SQL Optimizer for SQL Server" Type="5" />
+			<Property228 Cookie="268" PropertyType="0" Value="Quest SQL Optimizer for SQL Server" Type="5" />
+			<Property229 Cookie="269" PropertyType="0" Value="frmUserExperience" Type="5" />
+			<Property230 Cookie="270" PropertyType="0" Value="ShellWindow" Type="5" />
+			<Property231 Cookie="271" PropertyType="0" Value="Dell? SQL Optimizer for SQL Server? *" Type="5" />
+			<Property232 Cookie="272" PropertyType="0" Value="ShellWindow" Type="5" />
+			<Property233 Cookie="273" PropertyType="0" Value="Dell? SQL Optimizer for SQL Server? *" Type="5" />
+			<Property234 Cookie="274" PropertyType="0" Value="frmAbout" Type="5" />
+			<Property235 Cookie="275" PropertyType="0" Value="labVersion" Type="5" />
+			<Property236 Cookie="276" PropertyType="0" Value="ConnectionForm" Type="5" />
+			<Property237 Cookie="277" PropertyType="0" Value="Connections" Type="5" />
+			<Property238 Cookie="278" PropertyType="0" Value="ConnectionForm" Type="5" />
+			<Property239 Cookie="279" PropertyType="0" Value="WinFormsObject(&apos;ConnectionForm&apos;)" Type="5" />
+			<Property240 Cookie="280" PropertyType="0" Value="Connections" Type="5" />
+			<Property241 Cookie="281" PropertyType="0" Value="ConnectionForm" Type="5" />
+			<Property242 Cookie="282" PropertyType="0" Value="Connections" Type="5" />
+			<Property243 Cookie="283" PropertyType="0" Value="Form" Type="5" />
+			<Property244 Cookie="284" PropertyType="0" Value="ConnectionForm" Type="5" />
+			<Property245 Cookie="285" PropertyType="0" Value="WinFormsObject(&apos;ConnectionForm&apos;)" Type="5" />
+			<Property246 Cookie="286" PropertyType="0" Value="ConnectionForm" Type="5" />
+			<Property247 Cookie="287" PropertyType="0" Value="WinFormsObject(&apos;ConnectionForm&apos;)" Type="5" />
+			<Property248 Cookie="288" PropertyType="0" Value="ConnectionForm" Type="5" />
+			<Property249 Cookie="289" PropertyType="0" Value="WinFormsObject(&apos;ConnectionForm&apos;)" Type="5" />
+			<Property250 Cookie="290" PropertyType="0" Value="Connections" Type="5" />
+			<Property251 Cookie="295" PropertyType="0" Value="ConnectionForm" Type="5" />
+			<Property252 Cookie="296" PropertyType="0" Value="WinFormsObject(&apos;ConnectionForm&apos;)" Type="5" />
+			<Property253 Cookie="297" PropertyType="0" Value="Toad" Type="5" />
+			<Property254 Cookie="298" PropertyType="0" Value="ProductInstallation" Type="5" />
+			<Property255 Cookie="299" PropertyType="0" Value="pnlBottom" Type="5" />
+			<Property256 Cookie="300" PropertyType="0" Value="lblProduct" Type="5" />
+			<Property257 Cookie="301" PropertyType="0" Value="lblStatus" Type="5" />
+			<Property258 Cookie="302" PropertyType="0" Value="ProductUninstallation" Type="5" />
+			<Property259 Cookie="303" PropertyType="0" Value="pnlBottom" Type="5" />
+			<Property260 Cookie="304" PropertyType="0" Value="WindowsForms10.STATIC.app.0.be074_r39_ad2" Type="5" />
+			<Property261 Cookie="305" PropertyType="0" Value="Product: Toad™ for SQL Server" Type="5" />
+			<Property262 Cookie="306" PropertyType="0" Value="pbrOverallExecute" Type="5" />
+			<Property263 Cookie="307" PropertyType="0" Value="lblStatus" Type="5" />
+			<Property264 Cookie="308" PropertyType="0" Value="lblTotalProgress" Type="5" />
+			<Property265 Cookie="309" PropertyType="0" Value="pnlBody" Type="5" />
+			<Property266 Cookie="310" PropertyType="0" Value="pbxAd" Type="5" />
+			<Property267 Cookie="311" PropertyType="0" Value="pbrOverallExecute" Type="5" />
+			<Property268 Cookie="312" PropertyType="0" Value="lblTotalProgress" Type="5" />
+			<Property269 Cookie="313" PropertyType="0" Value="pnlBody" Type="5" />
+			<Property270 Cookie="314" PropertyType="0" Value="pnlBody" Type="5" />
+			<Property271 Cookie="315" PropertyType="0" Value="pbxAd" Type="5" />
+			<Property272 Cookie="316" PropertyType="0" Value="Final" Type="5" />
+			<Property273 Cookie="317" PropertyType="0" Value="lblProduct" Type="5" />
+			<Property274 Cookie="318" PropertyType="0" Value="Dialog" Type="5" />
+			<Property275 Cookie="319" PropertyType="0" Value="License_Error" Type="5" />
+			<Property276 Cookie="320" PropertyType="0" Value="sqlnavigator" Type="5" />
+			<Property277 Cookie="321" PropertyType="0" Value="TfrmConfirmationDialog" Type="5" />
+			<Property278 Cookie="322" PropertyType="0" Value="TfrmTutor2" Type="5" />
+			<Property279 Cookie="323" PropertyType="0" Value="Tutorial Message" Type="5" />
+			<Property280 Cookie="324" PropertyType="0" Value="TfrmWhatisNew" Type="5" />
+			<Property281 Cookie="325" PropertyType="0" Value="What&apos;s new in SQL Navigator" Type="5" />
+			<Property282 Cookie="326" PropertyType="0" Value="TfrmError" Type="5" />
+			<Property283 Cookie="327" PropertyType="0" Value="Error" Type="5" />
+			<Property284 Cookie="328" PropertyType="0" Value="TfrmLogOn" Type="5" />
+			<Property285 Cookie="329" PropertyType="0" Value="Oracle Logon" Type="5" />
+			<Property286 Cookie="330" PropertyType="0" Value="TButton" Type="5" />
+			<Property287 Cookie="331" PropertyType="0" Value="btnNo" Type="5" />
+			<Property288 Cookie="332" PropertyType="0" Value="TfrmMain" Type="5" />
+			<Property289 Cookie="333" PropertyType="0" Value="frmMain" Type="5" />
+			<Property290 Cookie="334" PropertyType="0" Value="TfrmAbout" Type="5" />
+			<Property291 Cookie="335" PropertyType="0" Value="frmAbout" Type="5" />
+			<Property292 Cookie="336" PropertyType="0" Value="TLabel" Type="5" />
+			<Property293 Cookie="337" PropertyType="0" Value="lblVersion" Type="5" />
+			<Property294 Cookie="338" PropertyType="0" Value="Quest SQL Optimizer for Oracle" Type="5" />
+			<Property295 Cookie="339" PropertyType="0" Value="frmWelcomeWindow" Type="5" />
+			<Property296 Cookie="340" PropertyType="0" Value="Welcome" Type="5" />
+			<Property297 Cookie="341" PropertyType="0" Value="frmUserExperience" Type="5" />
+			<Property298 Cookie="342" PropertyType="0" Value="WinFormsObject(&apos;frmCheckForUpdates&apos;)" Type="5" />
+			<Property299 Cookie="343" PropertyType="0" Value="Licensing" Type="5" />
+			<Property300 Cookie="344" PropertyType="0" Value="frmAuthorizationM" Type="5" />
+			<Property301 Cookie="345" PropertyType="0" Value="TSelectProfileVersionDlg" Type="5" />
+			<Property302 Cookie="346" PropertyType="0" Value="SelectProfileVersionDlg" Type="5" />
+			<Property303 Cookie="347" PropertyType="0" Value="Dialog" Type="5" />
+			<Property304 Cookie="348" PropertyType="0" Value="Information" Type="5" />
+			<Property305 Cookie="349" PropertyType="0" Value="WinFormsObject(&apos;CancelSelection&apos;)" Type="5" />
+			<Property306 Cookie="350" PropertyType="0" Value="btnNo" Type="5" />
+			<Property307 Cookie="351" PropertyType="0" Value="btnYes" Type="5" />
 		</Child0>
 	</Storages>
 	<TypeInfo StoreCodeCompletion="1">
