@@ -1123,7 +1123,7 @@
 			<Property150 Cookie="180" PropertyType="0" Value="btnFolderBrowse" Type="5" />
 			<Property151 Cookie="181" PropertyType="0" Value="Button" Type="5" />
 			<Property152 Cookie="182" PropertyType="0" Value="OK" Type="5" />
-			<Property153 Cookie="183" PropertyType="0" Value="DellCodeTesterOracle" Type="5" />
+			<Property153 Cookie="183" PropertyType="0" Value="CTO" Type="5" />
 			<Property154 Cookie="184" PropertyType="0" Value="TfrmTestManager2" Type="5" />
 			<Property155 Cookie="185" PropertyType="0" Value="frmTestManager2" Type="5" />
 			<Property156 Cookie="186" PropertyType="0" Value="TfrmAbout" Type="5" />

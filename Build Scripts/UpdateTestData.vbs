@@ -901,13 +901,13 @@ Class UpdateSAPSuite
 			Rec.MoveNext
 		Wend
 		StrMainVer 	= 	Split(StrVersion,".")
-		StrVer 		= 	StrMainVer(0) + "." + StrMainVer(1) + "." + StrMainVer(3)
+		StrVer 		= 	StrMainVer(0) + "." + StrMainVer(1) + "." + StrMainVer(2)+ "." + StrMainVer(3)
 		if InStr(StrColDisplay,"32-bit") >= 3 then
-			StrColDisplay	=	StrMainVer(0) + "." + StrMainVer(1) + " (32-bit)" + "." + StrMainVer(3)
+			StrColDisplay	=	StrMainVer(0) + "." + StrMainVer(1)+ "." + StrMainVer(2) + " (32-bit)" + "." + StrMainVer(3)
 		elseif InStr(StrColDisplay,"64-bit") >= 3  then
-			StrColDisplay	=	StrMainVer(0) + "." + StrMainVer(1) + " (64-bit)" + "." + StrMainVer(3)
+			StrColDisplay	=	StrMainVer(0) + "." + StrMainVer(1)+ "." + StrMainVer(2) + " (64-bit)" + "." + StrMainVer(3)
 		else
-			StrColDisplay 	= 	StrMainVer(0) + "." + StrMainVer(1) + "." + StrMainVer(3)
+			StrColDisplay 	= 	StrMainVer(0) + "." + StrMainVer(1)+ "." + StrMainVer(2) + "." + StrMainVer(3)
 		end if
 		
 		Conn.Execute "Update DSI.dbo.DSI_SAP_BMF set  I_DisplayVersion =" + "'" + StrColDisplay + "'" + " where Projectid = 3 and UPPER(I_AutoUpdate) = 'TRUE' and UPPER(I_ProductName) like '" + StrProduct + "'"
