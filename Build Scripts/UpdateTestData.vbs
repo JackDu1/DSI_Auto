@@ -1828,9 +1828,13 @@ Class UpdateSQLServerSuite
 		else
 			select case StrProduct
 				case "BENCHMARKFACTORY_X86_EN"
-					StrProduct="Benchmark Factory_ for Databases"
+					StrProduct="Benchmark Factory_ 32-bit"
 				case "BENCHMARKFACTORY_TRIAL_X86_EN"
-					StrProduct="Benchmark Factory_ for Databases Trial"
+					StrProduct="Benchmark Factory_ 32-bit Trial"
+                                case "BENCHMARKFACTORY_X64_EN"
+					StrProduct="Benchmark Factory_ 64-bit"
+				case "BENCHMARKFACTORY_TRIAL_X64_EN"
+					StrProduct="Benchmark Factory_ 64-bit Trial"
 			end select	
 		end if
 		'Update I_Version Column
@@ -1984,9 +1988,9 @@ Class UpdateSQLServerSuite
 		else
 			select case UCase(StrProduct)
 				case "SQLOPTIMIZERFORSQLSERVER_X86_EN"
-					StrProduct="Quest% SQL OPTIMIZER FOR SQL SERVER"
+					StrProduct="Quest% SQL OPTIMIZER FOR SQL SERVER 32-BIT"
 				case "SQLOPTIMIZERFORSQLSERVER_TRIAL_X86_EN"
-					StrProduct="Quest% SQL OPTIMIZER FOR SQL SERVER TRIAL"
+					StrProduct="Quest% SQL OPTIMIZER FOR SQL SERVER 32-BIT TRIAL"
 			end select
 		end if
 		
@@ -2032,9 +2036,11 @@ Class UpdateSQLServerSuite
 		else
 			select case UCase(StrProduct)
 				case "TOADFORSQLSERVER_X86_EN"
-					StrProduct="TOAD_ FOR SQL SERVER"
+					StrProduct="TOAD_ FOR SQL SERVER 32-BIT"
 				case "TOADFORSQLSERVER_TRIAL_X86_EN"
 					StrProduct="TOAD_ FOR SQL SERVER TRIAL"
+                                case "TOADFORSQLSERVER_X64_EN"
+					StrProduct="TOAD_ FOR SQL SERVER 64-BIT"
 			end select	
 		end if
 		
@@ -2082,23 +2088,27 @@ Class UpdateSQLServerSuite
 		else
 			select case UCase(StrProduct)
 				case "TOADFORSQLSERVER_X86_EN"
-					StrProduct="TOAD_ FOR SQL SERVER"
+					StrProduct="TOAD_ FOR SQL SERVER 32-BIT"
+                                case "TOADFORSQLSERVER_X64_EN"
+					StrProduct="TOAD_ FOR SQL SERVER 64-BIT"
 				case "TOADFORSQLSERVER_TRIAL_X86_EN"
 					StrProduct="TOAD_ FOR SQL SERVER TRIAL"
 				case "TOADDATAMODELER_X86_EN"
 					StrProduct="TOAD% DATA MODELER 32-BIT"
                                 case "TOADDATAMODELER_X64_EN"
 					StrProduct="TOAD% DATA MODELER 64-BIT"
-				case "SPOTLIGHTONSQLSERVER_STANDARD_X86_EN"
-					StrProduct="SPOTLIGHT_ ON SQL SERVER STANDARD"
 				case "BENCHMARKFACTORY_X86_EN"
-					StrProduct="BENCHMARK FACTORY_ FOR DATABASES"
+					StrProduct="BENCHMARK FACTORY_ 32-BIT"
+				case "BENCHMARKFACTORY_TRIAL_X64_EN"
+					StrProduct="BENCHMARK FACTORY_ 64-BIT TRIAL"
+				case "BENCHMARKFACTORY_X64_EN"
+					StrProduct="BENCHMARK FACTORY_ 64-BIT"
 				case "BENCHMARKFACTORY_TRIAL_X86_EN"
-					StrProduct="BENCHMARK FACTORY_ FOR DATABASES TRIAL"
+					StrProduct="BENCHMARK FACTORY_ 32-BIT TRIAL"
 				case "SQLOPTIMIZERFORSQLSERVER_X86_EN"
-					StrProduct="Quest_ SQL OPTIMIZER FOR SQL SERVER"
+					StrProduct="Quest_ SQL OPTIMIZER FOR SQL SERVER 32-BIT"
 				case "SQLOPTIMIZERFORSQLSERVER_TRIAL_X86_EN"
-					StrProduct="Quest_ SQL OPTIMIZER FOR SQL SERVER TRIAL"
+					StrProduct="Quest_ SQL OPTIMIZER FOR SQL SERVER 32-BIT TRIAL"
 				case else
 					StrProduct="Null"
 			end select
@@ -2154,23 +2164,25 @@ Class UpdateSQLServerSuite
 		else
 			select case UCase(StrProduct)
 				case "TOADFORSQLSERVER_X86_EN"
-					StrProduct="TOAD_ FOR SQL SERVER"
-				case "TOADFORSQLSERVER_TRIAL_X86_EN"
-					StrProduct="TOAD_ FOR SQL SERVER TRIAL"
+					StrProduct="TOAD_ FOR SQL SERVER 32-BIT"
+				case "TOADFORSQLSERVER_X64_EN"
+					StrProduct="TOAD_ FOR SQL SERVER 64-BIT"
 				case "TOADDATAMODELER_X86_EN"
 					StrProduct="TOAD% DATA MODELER 32-BIT"
                                 case "TOADDATAMODELER_X64_EN"
 					StrProduct="TOAD% DATA MODELER 64-BIT"
-				case "SPOTLIGHTONSQLSERVER_STANDARD_X86_EN"
-					StrProduct="SPOTLIGHT_ ON SQL SERVER STANDARD"
 				case "BENCHMARKFACTORY_X86_EN"
-					StrProduct="BENCHMARK FACTORY_ FOR DATABASES"
+					StrProduct="BENCHMARK FACTORY_ 32-BIT"
 				case "BENCHMARKFACTORY_TRIAL_X86_EN"
-					StrProduct="BENCHMARK FACTORY_ FOR DATABASES TRIAL"
+					StrProduct="BENCHMARK FACTORY_ 32-BIT TRIAL"
+				case "BENCHMARKFACTORY_X64_EN"
+					StrProduct="BENCHMARK FACTORY_ 64-BIT"
+				case "BENCHMARKFACTORY_TRIAL_X64_EN"
+					StrProduct="BENCHMARK FACTORY_ 64-BIT TRIAL"
 				case "SQLOPTIMIZERFORSQLSERVER_X86_EN"
-					StrProduct="Quest_ SQL OPTIMIZER FOR SQL SERVER"
+					StrProduct="Quest_ SQL OPTIMIZER FOR SQL SERVER 32-BIT"
 				case "SQLOPTIMIZERFORSQLSERVER_TRIAL_X86_EN"
-					StrProduct="Quest_ SQL OPTIMIZER FOR SQL SERVER TRIAL"
+					StrProduct="Quest_ SQL OPTIMIZER FOR SQL SERVER 32-BIT TRIAL"
 				case else
 					StrProduct="Null"
 			end select
@@ -2199,23 +2211,25 @@ Class UpdateSQLServerSuite
 		else
 			select case UCase(StrProduct)
 				case "TOADFORSQLSERVER_X86_EN"
-					StrProduct="TOAD_ FOR SQL SERVER"
-				case "TOADFORSQLSERVER_TRIAL_X86_EN"
-					StrProduct="TOAD_ FOR SQL SERVER TRIAL"
+					StrProduct="TOAD_ FOR SQL SERVER 32-BIT"
+				case "TOADFORSQLSERVER_X64_EN"
+					StrProduct="TOAD_ FOR SQL SERVER 64-BIT"
 				case "TOADDATAMODELER_X86_EN"
 					StrProduct="TOAD% DATA MODELER 32-BIT"
                                 case "TOADDATAMODELER_X64_EN"
 					StrProduct="TOAD% DATA MODELER 64-BIT"
-				case "SPOTLIGHTONSQLSERVER_STANDARD_X86_EN"
-					StrProduct="SPOTLIGHT_ ON SQL SERVER STANDARD"
 				case "BENCHMARKFACTORY_X86_EN"
-					StrProduct="BENCHMARK FACTORY_ FOR DATABASES"
+					StrProduct="BENCHMARK FACTORY_ 32-BIT"
 				case "BENCHMARKFACTORY_TRIAL_X86_EN"
-					StrProduct="BENCHMARK FACTORY_ FOR DATABASES TRIAL"
+					StrProduct="BENCHMARK FACTORY_ 32-BIT TRIAL"
+				case "BENCHMARKFACTORY_X64_EN"
+					StrProduct="BENCHMARK FACTORY_ 64-BIT"
+				case "BENCHMARKFACTORY_TRIAL_X64_EN"
+					StrProduct="BENCHMARK FACTORY_ 64-BIT TRIAL"
 				case "SQLOPTIMIZERFORSQLSERVER_X86_EN"
-					StrProduct="Quest_ SQL OPTIMIZER FOR SQL SERVER"
+					StrProduct="Quest_ SQL OPTIMIZER FOR SQL SERVER 32-BIT"
 				case "SQLOPTIMIZERFORSQLSERVER_TRIAL_X86_EN"
-					StrProduct="Quest_ SQL OPTIMIZER FOR SQL SERVER TRIAL"
+					StrProduct="Quest_ SQL OPTIMIZER FOR SQL SERVER 32-BIT TRIAL"
 				case else
 					StrProduct="Null"
 			end select
@@ -2265,17 +2279,19 @@ Class UpdateSQLServerSuite
 			select case UCase(StrProduct)
 				case "TOADFORSQLSERVER_X86_EN"
 					StrProduct="TOAD FOR SQL SERVER%"
-				case "TOADFORSQLSERVER_TRIAL_X86_EN"
+				case "TOADFORSQLSERVER_X64_EN"
 					StrProduct="TOAD FOR SQL SERVER%"
 				case "TOADDATAMODELER_X86_EN"
 					StrProduct="TOAD DATA MODELER%"
                                 case "TOADDATAMODELER_X64_EN"
 					StrProduct="TOAD DATA MODELER%"
-				case "SPOTLIGHTONSQLSERVER_STANDARD_X86_EN"
-					StrProduct="SPOTLIGHT ON SQL SERVER%"
 				case "BENCHMARKFACTORY_X86_EN"
 					StrProduct="BENCHMARK FACTORY%"
 				case "BENCHMARKFACTORY_TRIAL_X86_EN"
+					StrProduct="BENCHMARK FACTORY%"
+				case "BENCHMARKFACTORY_X64_EN"
+					StrProduct="BENCHMARK FACTORY%"
+				case "BENCHMARKFACTORY_TRIAL_X64_EN"
 					StrProduct="BENCHMARK FACTORY%"
 				case else
 					StrProduct="Null"
